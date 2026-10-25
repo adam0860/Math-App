@@ -6,6 +6,8 @@ with more depth: every lesson explains *why* each rule works, walks through comp
 examples step by step, lets you play with live graphs, and makes you calculate real answers.
 It is a sibling of C++ Forge and shares its engine.
 
+![Math Forge lesson with an interactive Taylor series graph](docs/screenshot-lesson.png)
+
 - **Four complete courses (130 lessons)**
   - **College Algebra:** 10 units — numbers and exponents, polynomials and factoring,
     equations and inequalities, lines, systems and matrices, quadratics and complex
