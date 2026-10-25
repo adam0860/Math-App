@@ -1,4 +1,66 @@
 import type { GlossaryEntry } from '../../types';
 
 // Glossary terms introduced by this unit that are NOT in scripts/glossary-master.ts.
-export const glossary: GlossaryEntry[] = [];
+export const glossary: GlossaryEntry[] = [
+  {
+    id: 'consistent-system',
+    term: 'Consistent System',
+    aliases: ['consistent'],
+    course: 'algebra',
+    category: 'Systems',
+    short: 'A system of equations that has **at least one** solution.',
+    long: 'A consistent system is called **independent** if it has exactly one solution (for two lines: they cross once) and **dependent** if it has infinitely many (the equations describe the same line or plane).',
+    see: ['inconsistent-system', 'dependent-system', 'system-of-equations'],
+  },
+  {
+    id: 'inconsistent-system',
+    term: 'Inconsistent System',
+    aliases: ['inconsistent'],
+    course: 'algebra',
+    category: 'Systems',
+    short: 'A system of equations with **no** solution, such as two parallel lines.',
+    long: 'Solving an inconsistent system always ends in a false statement such as $0 = 5$. In an augmented matrix it shows up as a row $[\\,0 \\; 0 \\; \\cdots \\; 0 \\mid c\\,]$ with $c \\ne 0$.',
+    tex: '\\begin{cases} y = 2x + 1 \\\\ y = 2x - 2 \\end{cases}',
+    see: ['consistent-system', 'parallel-lines'],
+  },
+  {
+    id: 'dependent-system',
+    term: 'Dependent System',
+    aliases: ['dependent'],
+    course: 'algebra',
+    category: 'Systems',
+    short: 'A consistent system with **infinitely many** solutions, because at least one equation adds no new information.',
+    long: 'For two variables, the two equations describe the same line. Solving produces a true statement such as $0 = 0$, and the solutions are written with a free parameter, e.g. $(t,\\, 2t + 1)$.',
+    tex: '\\begin{cases} y = 3x - 2 \\\\ 6x - 2y = 4 \\end{cases}',
+    see: ['consistent-system', 'free-variable'],
+  },
+  {
+    id: 'row-echelon-form',
+    term: 'Row-Echelon Form',
+    aliases: ['echelon form', 'REF'],
+    course: 'algebra',
+    category: 'Systems',
+    short: 'A matrix shape where each row\'s first nonzero entry (its **pivot**) sits to the right of the pivot above it, and any all-zero rows are at the bottom.',
+    long: 'Gaussian elimination turns an augmented matrix into row-echelon form; the system is then solved from the bottom up by back-substitution. In **reduced** row-echelon form every pivot is $1$ and is the only nonzero entry in its column, so the solution can be read off directly.',
+    tex: '\\left[\\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\\\ 0 & 1 & -2 & -4 \\\\ 0 & 0 & -7 & -21 \\end{array}\\right]',
+    see: ['gaussian-elimination', 'augmented-matrix', 'back-substitution'],
+  },
+  {
+    id: 'back-substitution',
+    term: 'Back-Substitution',
+    course: 'algebra',
+    category: 'Systems',
+    short: 'Solving a triangular system from the last equation upward: find the last variable, substitute it into the equation above, and repeat.',
+    see: ['row-echelon-form', 'gaussian-elimination'],
+  },
+  {
+    id: 'free-variable',
+    term: 'Free Variable',
+    aliases: ['parameter (of a solution set)'],
+    course: 'algebra',
+    category: 'Systems',
+    short: 'In a dependent system, a variable with no pivot in its column; it may take any value $t$, and the other variables are expressed in terms of it.',
+    tex: '(x, y, z) = (3 - 2t,\\; 1 + t,\\; t)',
+    see: ['dependent-system', 'row-echelon-form'],
+  },
+];
