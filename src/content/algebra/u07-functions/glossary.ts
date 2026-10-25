@@ -1,4 +1,65 @@
 import type { GlossaryEntry } from '../../types';
 
 // Glossary terms introduced by this unit that are NOT in scripts/glossary-master.ts.
-export const glossary: GlossaryEntry[] = [];
+export const glossary: GlossaryEntry[] = [
+  {
+    id: 'relation',
+    term: 'Relation',
+    course: 'algebra',
+    category: 'Functions',
+    short: 'Any set of input–output pairs $(x, y)$. A function is a special relation in which each input has exactly one output.',
+    long: 'Relations can be given as lists of ordered pairs, tables, equations or graphs. The circle $x^2 + y^2 = 4$ is a relation but not a function, because most inputs $x$ are paired with two values of $y$.',
+    tex: '\\{(1, 4),\\ (1, 5),\\ (2, 6)\\}',
+    see: ['function', 'vertical-line-test'],
+  },
+  {
+    id: 'implied-domain',
+    term: 'Implied Domain',
+    aliases: ['natural domain'],
+    course: 'algebra',
+    category: 'Functions',
+    short: 'When a function is given only by a formula, its domain is taken to be all real numbers for which the formula produces a real number.',
+    long: 'In College Algebra this usually means excluding inputs that make a denominator zero and inputs that make the radicand of an even root negative. In applied problems the situation may restrict the domain further.',
+    tex: 'f(x) = \\frac{\\sqrt{x - 3}}{x - 5} \\implies \\text{domain } [3, 5) \\cup (5, \\infty)',
+    see: ['domain', 'range'],
+  },
+  {
+    id: 'parent-function',
+    term: 'Parent Function',
+    aliases: ['toolkit function'],
+    course: 'algebra',
+    category: 'Functions',
+    short: 'The simplest member of a family of functions, such as $x^2$, $|x|$, $\\sqrt{x}$, $x^3$ or $\\frac{1}{x}$, from which the rest of the family is built by transformations.',
+    tex: 'g(x) = a\\,f\\big(b(x - h)\\big) + k',
+    see: ['transformation', 'translation', 'reflection'],
+  },
+  {
+    id: 'stretch-and-compression',
+    term: 'Stretch and Compression',
+    aliases: ['dilation', 'vertical stretch', 'horizontal compression'],
+    course: 'algebra',
+    category: 'Functions',
+    short: 'A transformation that scales a graph away from or toward an axis: $a\\,f(x)$ scales vertically by $|a|$, and $f(bx)$ scales horizontally by $\\frac{1}{|b|}$.',
+    long: 'Multiplying the output by $a$ multiplies every $y$-coordinate by $a$. Multiplying the input by $b$ makes the graph reach each feature $b$ times sooner, so every $x$-coordinate is divided by $b$. A negative factor adds a reflection.',
+    tex: '(x, y) \\mapsto \\left(\\tfrac{x}{b},\\ a y\\right)',
+    see: ['transformation', 'reflection'],
+  },
+  {
+    id: 'identity-function',
+    term: 'Identity Function',
+    course: 'algebra',
+    category: 'Functions',
+    short: 'The function $I(x) = x$ that returns its input unchanged. A function and its inverse compose to the identity.',
+    tex: 'f\\big(f^{-1}(x)\\big) = x, \\qquad f^{-1}\\big(f(x)\\big) = x',
+    see: ['inverse-function', 'composition'],
+  },
+  {
+    id: 'restricted-domain',
+    term: 'Restricted Domain',
+    course: 'algebra',
+    category: 'Functions',
+    short: 'A smaller domain chosen on purpose, usually to make a function one-to-one so that it has an inverse — e.g. $x^2$ for $x \\ge 0$ has inverse $\\sqrt{x}$.',
+    long: 'Restricting domains is how square roots, logarithms of negative bases and the inverse trig functions are defined: keep one piece of the graph on which the function passes the horizontal line test.',
+    see: ['one-to-one-function', 'inverse-function', 'horizontal-line-test'],
+  },
+];
