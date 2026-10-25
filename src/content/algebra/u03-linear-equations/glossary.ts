@@ -1,4 +1,50 @@
 import type { GlossaryEntry } from '../../types';
 
 // Glossary terms introduced by this unit that are NOT in scripts/glossary-master.ts.
-export const glossary: GlossaryEntry[] = [];
+export const glossary: GlossaryEntry[] = [
+  {
+    id: 'equivalent-equations',
+    term: 'Equivalent Equations',
+    aliases: ['equivalent equation'],
+    course: 'algebra',
+    category: 'Equations & Inequalities',
+    short: 'Equations that have exactly the same solutions, such as $2x + 1 = 7$ and $x = 3$.',
+    long: 'Adding the same quantity to both sides of an equation, or multiplying both sides by the same **nonzero** number, always produces an equivalent equation, because each step can be undone. Solving an equation is a chain of equivalent equations ending in $x = \\text{number}$.',
+    tex: '2x + 1 = 7 \\iff 2x = 6 \\iff x = 3',
+    see: ['linear-equation', 'solution'],
+  },
+  {
+    id: 'contradiction-equation',
+    term: 'Contradiction (equation)',
+    aliases: ['inconsistent equation'],
+    course: 'algebra',
+    category: 'Equations & Inequalities',
+    short: 'An equation that is false for every value of the variable, so it has no solution; solving it ends in a false statement such as $6 = 5$.',
+    long: 'Example: $2(x + 3) = 2x + 5$ simplifies to $6 = 5$. Graphically, the two sides are parallel lines that never meet. Its solution set is the empty set $\\varnothing$.',
+    tex: '2(x + 3) = 2x + 5 \\implies 6 = 5',
+    see: ['identity-equation', 'linear-equation'],
+  },
+  {
+    id: 'set-builder-notation',
+    term: 'Set-Builder Notation',
+    course: 'algebra',
+    category: 'Equations & Inequalities',
+    short: 'A way to describe a set by the rule its members satisfy, read "the set of all $x$ such that…": $\\{x \\mid x > 2\\}$.',
+    long: 'Set-builder notation names the condition rather than listing members, which is necessary for infinite sets such as solution sets of inequalities. It is equivalent to interval notation for intervals: $\\{x \\mid -1 < x \\le 4\\} = (-1, 4]$.',
+    tex: '\\{x \\mid -1 < x \\le 4\\} = (-1, 4]',
+    see: ['interval-notation', 'inequality'],
+  },
+  {
+    id: 'tolerance-interval',
+    term: 'Tolerance',
+    aliases: ['margin of error'],
+    course: 'algebra',
+    category: 'Equations & Inequalities',
+    short: 'The allowed distance from a target value; "within $k$ of $c$" is written $|x - c| \\le k$.',
+    long: 'Manufacturing specs, polling margins of error and floating-point comparisons in code all use tolerances. The inequality $|x - c| \\le k$ is equivalent to $c - k \\le x \\le c + k$: the interval of width $2k$ centred at $c$.',
+    tex: '|x - c| \\le k \\iff c - k \\le x \\le c + k',
+    example: 'bool closeEnough(double a, double b) {\n    return std::fabs(a - b) <= 1e-9;  // |a - b| <= tolerance\n}',
+    exampleLang: 'cpp',
+    see: ['absolute-value', 'compound-inequality'],
+  },
+];
