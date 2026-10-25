@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.cppforge.app',
-  appName: 'C++ Forge',
+  appId: 'com.mathforge.app',
+  appName: 'Math Forge',
   webDir: 'dist',
   android: {
     backgroundColor: '#0b0e17',

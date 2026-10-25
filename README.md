@@ -1,38 +1,41 @@
-# C++ Forge
+# Math Forge
 
-**Learn C++, then Unreal Engine C++, with deep, interactive lessons.** C++ Forge is a
-Windows and Android app in the spirit of Sololearn and Duolingo, with more depth: every
-lesson explains *why* the language or engine works the way it does, shows what happens
-under the hood, and checks your understanding with questions whose feedback teaches.
+**College Algebra, Trigonometry, Calculus I and Calculus II — with deep, interactive
+lessons.** Math Forge is a Windows and Android app in the spirit of Sololearn and Duolingo,
+with more depth: every lesson explains *why* each rule works, walks through complete worked
+examples step by step, lets you play with live graphs, and makes you calculate real answers.
+It is a sibling of C++ Forge and shares its engine.
 
-- **Two complete courses**
-  - **C++ Fundamentals:** 17 units and 66 lessons, from how the compiler sees your code
-    through memory, classes, templates, the STL, error handling, building real
-    programs and concurrency.
-  - **Unreal Engine C++:** 16 units and 56 lessons covering reflection and the UObject
-    system, actors and components, Blueprint exposure, the gameplay framework, Enhanced
-    Input, delegates, collision, timers, memory, interfaces, data-driven design,
-    networking and debugging. It ends with three capstone features.
-- **Rich lessons:** annotated code (tap a line to see why it is there), memory diagrams
-  with pointer arrows, do/don't comparisons, step-by-step processes, collapsible deep
-  dives, "Why?" boxes, and "In Unreal Engine" notes that connect the two courses.
-- **Five question types:** multiple choice (every option explains why it is right or
-  wrong), true/false, fill in the blank (tap a word bank or type), put the lines in
-  order, and find the bug. Questions you miss come back at the end of the lesson and
-  later in spaced-repetition review.
-- **Real code:** every runnable C++ example is compiled and run with GCC, and its output
-  is checked, before each build. A **Run** button opens any example in Compiler Explorer.
-- **Library:** a searchable glossary of 640+ terms (tap any underlined term in a lesson
-  for an instant definition), 23 cheat sheets, bookmarks, and a "read as notes" view of
+- **Four complete courses (130 lessons)**
+  - **College Algebra:** 10 units — numbers and exponents, polynomials and factoring,
+    equations and inequalities, lines, systems and matrices, quadratics and complex
+    numbers, functions, polynomial and rational functions, exponentials and logarithms,
+    sequences and the binomial theorem.
+  - **Trigonometry:** 9 units — radians, right triangles, the unit circle, trig graphs,
+    inverse trig and `atan2`, identities, trig equations, oblique triangles, vectors,
+    polar coordinates and complex numbers in polar form.
+  - **Calculus I:** 8 units — limits, continuity, the derivative, every differentiation
+    rule, related rates and Newton's method, curve analysis and optimization, integrals
+    and the Fundamental Theorem, and first applications.
+  - **Calculus II:** 6 units — volumes, arc length and work, every integration technique,
+    numerical integration, differential equations and Euler's method, parametric and
+    polar calculus, sequences and series, and Taylor series.
+- **Rich lessons:** beautifully typeset math (KaTeX), worked examples where you tap any
+  line to see *why* that step is allowed, interactive graphs with sliders (watch a secant
+  become a tangent, Riemann rectangles converge, a sinusoid shift), theorem and definition
+  boxes, collapsible proofs, exam tips, and "in code and games" notes that connect each
+  idea to programming.
+- **Seven question types:** multiple choice (every option explains itself), true/false,
+  fill in the blank, put the steps in order, **find the mistake** in a worked solution,
+  **calculate** (type an exact or decimal answer: `3/4`, `sqrt(2)/2`, `2pi/3`) and
+  **write the expression** (type a derivative or antiderivative; any equivalent form is
+  accepted, with a live typeset preview). Missed questions return in spaced-repetition
+  review.
+- **Library:** a searchable glossary of 300+ terms (tap any underlined term for an instant
+  definition), formula sheets for every course, bookmarks, and a "read as notes" view of
   every lesson.
-- **Motivation:** XP, levels, a daily goal, streaks, an activity heatmap, achievements,
-  confetti, and synthesized sound effects with haptics. Sound and haptics can each be
-  turned off.
-- **Make it yours:** System, Light, Dark and Midnight (OLED) themes, five accent
-  colours, adjustable text and code size, an "always dark" code theme, reduced motion,
-  and "unlock all lessons" for experienced learners.
-- **Private and offline:** no account and no network needed. Progress stays on your
-  device, and you can export or import it to move between your PC and phone.
+- **Motivation, themes, offline:** XP, levels, daily goals, streaks, achievements; light,
+  dark and OLED themes; no account and no network needed; export/import your progress.
 
 ## Getting the apps
 
@@ -40,10 +43,10 @@ The GitHub Actions workflow in `.github/workflows/build.yml` builds both apps on
 
 | Artifact | Contains | Use it for |
 |---|---|---|
-| `windows-installer-x64` | `CppForge-Setup-<version>-x64.exe` | Most Windows 10/11 PCs |
-| `windows-installer-arm64` | `CppForge-Setup-<version>-arm64.exe` | Windows on ARM (e.g. Snapdragon laptops) |
-| `windows-portable-x64` | `CppForge-Portable-<version>.exe` | Running without installing |
-| `android` | `CppForge-debug.apk` | Android 7.0+; sideload with "Install unknown apps" turned on |
+| `windows-installer-x64` | `MathForge-Setup-<version>-x64.exe` | Most Windows 10/11 PCs |
+| `windows-installer-arm64` | `MathForge-Setup-<version>-arm64.exe` | Windows on ARM (e.g. Snapdragon laptops) |
+| `windows-portable-x64` | `MathForge-Portable-<version>.exe` | Running without installing |
+| `android` | `MathForge-debug.apk` | Android 7.0+; sideload with "Install unknown apps" turned on |
 
 To download them, open the repository's **Actions** tab, pick the latest **Build apps**
 run, and download the artifact you need (GitHub delivers it as a .zip containing the file).
@@ -53,7 +56,7 @@ GitHub **Release**.
 
 ### Signed Android release builds (optional)
 
-To produce a signed `CppForge-release.apk` and a Play Store `.aab`, add these repository
+To produce a signed `MathForge-release.apk` and a Play Store `.aab`, add these repository
 secrets:
 
 | Secret | Value |
@@ -64,16 +67,16 @@ secrets:
 | `ANDROID_KEY_PASSWORD` | key password |
 
 Create a keystore with
-`keytool -genkey -v -keystore release.keystore -alias cppforge -keyalg RSA -keysize 2048 -validity 10000`.
+`keytool -genkey -v -keystore release.keystore -alias mathforge -keyalg RSA -keysize 2048 -validity 10000`.
 
 ## Building locally
 
-Requirements: Node.js 22+, plus g++ 13+ for the example checks.
+Requirements: Node.js 22+, plus g++ 13+ for the C++ example checks.
 
 ```bash
 npm install
 npm run dev              # web version with hot reload at http://localhost:5173
-npm run check            # type-check + validate all lesson content
+npm run check            # type-check + validate all content (every TeX string, graph and answer)
 npm run compile-examples # compile and run every C++ example with g++
 ```
 
@@ -107,17 +110,18 @@ A single React + TypeScript codebase (built with Vite) runs everywhere:
 ```
 src/
   content/            all course content as typed data (see docs/CONTENT_GUIDE.md)
-    types.ts          the content model: lessons, blocks, questions, glossary, cheat sheets
-    cpp/<unit>/       one file per lesson + unit glossary
-    unreal/<unit>/
+    types.ts          the content model: lessons, blocks, graphs, questions, glossary, formula sheets
+    algebra/ trig/ calc1/ calc2/   one folder per unit: one file per lesson + unit glossary
     glossary/ cheatsheets/
-  components/         code blocks + syntax highlighter, rich text, diagrams, modals…
-  questions/          the five interactive question types
+  components/         KaTeX rendering, interactive graphs, derivations, rich text, code blocks…
+  questions/          the seven interactive question types
+  lib/mathexpr.ts     safe expression parser/evaluator used by graphs and answer checking
   screens/            home, course map, lesson player, practice, library, profile, settings
   lib/                state & persistence, spaced repetition, sound, haptics, routing…
   styles/             design tokens (themes/accents) and component styles
 scripts/
-  validate-content.ts structural checks for every lesson, question and glossary link
+  validate-content.ts checks every lesson: structure, KaTeX compilation, graph expressions,
+                      and that every numeric/expression answer evaluates
   compile-examples.ts builds and runs every runnable example with g++
   curriculum.json     the course outline
 electron/             Windows desktop shell
@@ -130,7 +134,3 @@ Lessons are plain TypeScript data, so the type checker and `npm run validate` ca
 mistakes before they ship. Read **[docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md)** for the
 format, the quality bar, and the checks every lesson must pass.
 
----
-
-Unreal Engine is a trademark of Epic Games, Inc. C++ Forge is an independent learning
-resource and is not affiliated with or endorsed by Epic Games.

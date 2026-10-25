@@ -44,7 +44,7 @@ for (const course of courses)
       });
   }
 
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'cppforge-'));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'mathforge-'));
 const normalize = (s: string) =>
   s
     .replace(/\r\n/g, '\n')

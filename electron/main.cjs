@@ -1,10 +1,10 @@
-// Electron entry point for the Windows desktop build of C++ Forge.
+// Electron entry point for the Windows desktop build of Math Forge.
 const { app, BrowserWindow, ipcMain, nativeTheme, protocol, net, shell, Menu, screen } = require('electron');
 const fs = require('node:fs');
 const path = require('node:path');
 const { pathToFileURL } = require('node:url');
 
-// Serve the built web app from a custom, privileged scheme (app://cppforge/…)
+// Serve the built web app from a custom, privileged scheme (app://mathforge/…)
 // instead of file://. This gives the page a stable origin (so localStorage
 // progress persists), lets the Content-Security-Policy use 'self', and keeps
 // fetch/ES modules working exactly as they do on the web.
@@ -48,7 +48,7 @@ function createWindow() {
     minWidth: 380,
     minHeight: 560,
     backgroundColor: '#0b0e17',
-    title: 'C++ Forge',
+    title: 'Math Forge',
     icon: path.join(__dirname, '..', 'build', 'icon.png'),
     show: false,
     autoHideMenuBar: true,
@@ -81,7 +81,7 @@ function createWindow() {
     }
   });
 
-  win.loadURL('app://cppforge/index.html');
+  win.loadURL('app://mathforge/index.html');
 }
 
 // Only one window: launching again focuses the existing one.

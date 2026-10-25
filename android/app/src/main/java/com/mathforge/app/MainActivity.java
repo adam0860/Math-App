@@ -1,4 +1,4 @@
-package com.cppforge.app;
+package com.mathforge.app;
 
 import com.getcapacitor.BridgeActivity;
 
