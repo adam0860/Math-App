@@ -1,4 +1,57 @@
 import type { GlossaryEntry } from '../../types';
 
 // Glossary terms introduced by this unit that are NOT in scripts/glossary-master.ts.
-export const glossary: GlossaryEntry[] = [];
+export const glossary: GlossaryEntry[] = [
+  {
+    id: 'whole-number',
+    term: 'Whole Number',
+    aliases: ['whole numbers'],
+    course: 'algebra',
+    category: 'Numbers',
+    short: 'One of the numbers $0, 1, 2, 3, \\dots$ — the natural numbers together with zero.',
+    long: 'The whole numbers are written $\\mathbb{W}$ in many textbooks. They sit between the natural numbers and the integers: $\\mathbb{N} \\subset \\mathbb{W} \\subset \\mathbb{Z}$. In programming, an `unsigned int` holds a finite range of whole numbers.',
+    see: ['natural-number', 'integer'],
+  },
+  {
+    id: 'lowest-terms',
+    term: 'Lowest Terms',
+    aliases: ['simplest form', 'reduced fraction'],
+    course: 'algebra',
+    category: 'Numbers',
+    short: 'A fraction is in lowest terms when its numerator and denominator have no common factor other than $1$.',
+    long: 'To reduce a fraction, divide the numerator and denominator by their greatest common factor. This is allowed because $\\frac{ak}{bk} = \\frac{a}{b} \\cdot \\frac{k}{k} = \\frac{a}{b}$. Only common **factors** can be cancelled, never terms that are added.',
+    tex: '\\frac{84}{126} = \\frac{2 \\cdot 42}{3 \\cdot 42} = \\frac{2}{3}',
+    see: ['rational-number', 'greatest-common-factor'],
+  },
+  {
+    id: 'mixed-number',
+    term: 'Mixed Number',
+    aliases: ['mixed numbers', 'improper fraction'],
+    course: 'algebra',
+    category: 'Numbers',
+    short: 'A whole number plus a proper fraction, such as $2\\frac{3}{4} = 2 + \\frac{3}{4}$.',
+    long: 'Convert a mixed number to an *improper fraction* (numerator at least as large as the denominator) before multiplying or dividing: $2\\frac{3}{4} = \\frac{2 \\cdot 4 + 3}{4} = \\frac{11}{4}$.',
+    tex: '2\\tfrac{3}{4} = \\frac{11}{4}',
+    see: ['lowest-terms'],
+  },
+  {
+    id: 'radicand',
+    term: 'Radicand',
+    course: 'algebra',
+    category: 'Numbers',
+    short: 'The expression under a radical sign: in $\\sqrt[n]{a}$, the radicand is $a$ and $n$ is the index.',
+    long: 'For an even index the radicand must be non-negative for the root to be a real number; for an odd index any real radicand is allowed, so $\\sqrt[3]{-8} = -2$.',
+    see: ['radical', 'square-root', 'principal-root'],
+  },
+  {
+    id: 'radical-conjugate',
+    term: 'Conjugate (of a radical expression)',
+    aliases: ['conjugate'],
+    course: 'algebra',
+    category: 'Numbers',
+    short: 'The conjugate of $a + \\sqrt{b}$ is $a - \\sqrt{b}$: the same terms with the middle sign flipped. Their product $a^2 - b$ contains no radical.',
+    long: 'Multiplying the numerator and denominator of a fraction by the conjugate of its denominator rationalizes the denominator, because $(a - \\sqrt{b})(a + \\sqrt{b}) = a^2 - (\\sqrt{b})^2 = a^2 - b$. The same trick is used to evaluate limits in calculus.',
+    tex: '(3 - \\sqrt{2})(3 + \\sqrt{2}) = 9 - 2 = 7',
+    see: ['rationalizing-the-denominator', 'difference-of-squares'],
+  },
+];
