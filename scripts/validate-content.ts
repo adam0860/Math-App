@@ -153,10 +153,11 @@ function checkGraph(where: string, g: GraphBlock) {
     params[s.name] = s.value;
   }
   const names = Object.keys(params);
-  const num = (w: string, v: NumOrExpr | undefined) => {
+  // `mayHide`: points whose coordinates are undefined for some slider values are simply hidden.
+  const num = (w: string, v: NumOrExpr | undefined, mayHide = false) => {
     if (v === undefined || typeof v === 'number') return;
     const f = checkExpr(w, v, names);
-    if (f && !Number.isFinite(f(params))) err(w, `"${v}" is not a finite number`);
+    if (f && !mayHide && !Number.isFinite(f(params))) err(w, `"${v}" is not a finite number`);
   };
   const curveFinite = (w: string, f: (env: Env) => number, v: string, a: number, b: number) => {
     let ok = 0;
@@ -189,8 +190,8 @@ function checkGraph(where: string, g: GraphBlock) {
   });
   g.points?.forEach((p, i) => {
     drawables++;
-    num(`${where} points[${i}].x`, p.x);
-    num(`${where} points[${i}].y`, p.y);
+    num(`${where} points[${i}].x`, p.x, true);
+    num(`${where} points[${i}].y`, p.y, true);
   });
   g.segments?.forEach((s, i) => {
     drawables++;
