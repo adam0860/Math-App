@@ -79,6 +79,7 @@ export function normalizeInput(src: string): string {
     .replace(/[−–]/g, '-')
     .replace(/[×·∙⋅]/g, '*')
     .replace(/÷/g, '/')
+    .replace(/°/g, '') // "30°" in a degree-valued answer means 30
     .replace(/π/g, 'pi')
     .replace(/θ/g, 'theta')
     .replace(/√/g, 'sqrt')
