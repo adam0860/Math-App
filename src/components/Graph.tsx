@@ -315,6 +315,7 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
             {areas}
             {(g.vlines ?? []).map((v, i) => {
               const X = sx(num(v.x, env));
+              if (!Number.isFinite(X)) return null;
               return (
                 <g key={`v${i}`}>
                   <line x1={X} y1={0} x2={X} y2={H} className={`g-ref c-${v.color ?? 'gray'}${v.dashed === false ? '' : ' dashed'}`} />
@@ -328,6 +329,7 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
             })}
             {(g.hlines ?? []).map((h, i) => {
               const Y = sy(num(h.y, env));
+              if (!Number.isFinite(Y)) return null;
               return (
                 <g key={`h${i}`}>
                   <line x1={0} y1={Y} x2={W} y2={Y} className={`g-ref c-${h.color ?? 'gray'}${h.dashed === false ? '' : ' dashed'}`} />
@@ -348,6 +350,7 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
               const ay = sy(num(s.from[1], env));
               const bx = sx(num(s.to[0], env));
               const by = sy(num(s.to[1], env));
+              if (![ax, ay, bx, by].every(Number.isFinite)) return null;
               return (
                 <g key={`s${i}`}>
                   <line
