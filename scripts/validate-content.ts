@@ -385,7 +385,7 @@ function checkQuestion(where: string, q: QuestionStep, stats: LessonStats) {
       if (q.wordBank) {
         const bank = q.wordBank;
         if (!q.templateIsCode) bank.forEach((w, wi) => checkInline(`${where} wordBank[${wi}]`, w));
-        if (new Set(bank).size !== bank.length) err(where, 'word bank has duplicate chips');
+        // Repeated chips are allowed (one per blank that shares the answer); each chip is placed once.
         q.blanks.forEach((b, i) => {
           if (!b.answers.some((a) => bank.includes(a))) err(where, `no accepted answer for blank ${i} is in the word bank`);
         });

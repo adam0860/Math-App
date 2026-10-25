@@ -177,7 +177,8 @@ Every question has a `prompt`, an `explanation` (shown after answering — it mu
 - `fill` — `template` is inline text with `___` blanks. **A blank can never be inside a
   `$…$` span**: close the math before the blank and reopen after. Prefer a `wordBank`
   (chips are inline text, e.g. `'$2x$'`); blank `answers` must match a chip exactly.
-  Without a word bank learners type; numbers are compared by value.
+  If two blanks share an answer, put that chip in the bank twice (each chip is placed
+  once). Without a word bank learners type; numbers are compared by value.
 - `order` — `lines` (inline text, usually `$…$`) in the correct order, 3–7 lines;
   optional `distractors`. Great for "order the steps of this solution". Exactly one valid
   order.
