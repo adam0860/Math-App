@@ -1,0 +1,206 @@
+{
+  "algebra": [
+    { "dir": "u01-foundations", "id": "alg-u01-foundations", "icon": "🔢", "title": "Number Foundations", "description": "The real number system, order of operations, fractions, exponents and radicals — the toolkit every later topic leans on.",
+      "lessons": [
+        ["alg-real-numbers", "The Real Number System"],
+        ["alg-order-of-operations", "Order of Operations and Number Properties"],
+        ["alg-fractions", "Fractions and Rational Arithmetic"],
+        ["alg-exponents", "Exponent Rules and Scientific Notation"],
+        ["alg-radicals", "Roots, Radicals and Rational Exponents"] ] },
+    { "dir": "u02-polynomials", "id": "alg-u02-polynomials", "icon": "🧮", "title": "Expressions and Polynomials", "description": "Working with variables: simplifying expressions, polynomial arithmetic, factoring and rational expressions.",
+      "lessons": [
+        ["alg-expressions", "Variables, Expressions and Like Terms"],
+        ["alg-polynomial-arithmetic", "Polynomial Arithmetic"],
+        ["alg-factoring-basics", "Factoring: GCF and Grouping"],
+        ["alg-factoring-trinomials", "Factoring Trinomials and Special Patterns"],
+        ["alg-rational-expressions", "Rational Expressions"] ] },
+    { "dir": "u03-linear-equations", "id": "alg-u03-linear-equations", "icon": "⚖️", "title": "Linear Equations and Inequalities", "description": "Solving equations by keeping them balanced, rearranging formulas, and handling inequalities and absolute values.",
+      "lessons": [
+        ["alg-linear-equations", "Solving Linear Equations"],
+        ["alg-literal-equations", "Formulas and Word Problems"],
+        ["alg-linear-inequalities", "Linear Inequalities and Interval Notation"],
+        ["alg-absolute-value", "Absolute Value Equations and Inequalities"] ] },
+    { "dir": "u04-lines", "id": "alg-u04-lines", "icon": "📈", "title": "Lines and the Coordinate Plane", "description": "Points, distance, slope and the equations of lines and circles.",
+      "lessons": [
+        ["alg-coordinate-plane", "The Coordinate Plane, Distance and Midpoint"],
+        ["alg-slope", "Slope as Rate of Change"],
+        ["alg-line-equations", "Equations of Lines"],
+        ["alg-circles", "Circles"] ] },
+    { "dir": "u05-systems", "id": "alg-u05-systems", "icon": "🔗", "title": "Systems of Equations", "description": "Finding where lines meet: graphing, substitution, elimination, and a first look at matrices.",
+      "lessons": [
+        ["alg-systems-substitution", "Systems: Graphing and Substitution"],
+        ["alg-systems-elimination", "Elimination and Applications"],
+        ["alg-systems-matrices", "Three Variables and Matrix Row Reduction"] ] },
+    { "dir": "u06-quadratics", "id": "alg-u06-quadratics", "icon": "🎯", "title": "Quadratics and Complex Numbers", "description": "Every way to solve a quadratic, what the discriminant tells you, complex numbers, and the shape of parabolas.",
+      "lessons": [
+        ["alg-quadratic-factoring", "Solving Quadratics by Factoring and Square Roots"],
+        ["alg-completing-square", "Completing the Square"],
+        ["alg-quadratic-formula", "The Quadratic Formula and the Discriminant"],
+        ["alg-complex-numbers", "Complex Numbers"],
+        ["alg-parabolas", "Graphing Parabolas"] ] },
+    { "dir": "u07-functions", "id": "alg-u07-functions", "icon": "🧩", "title": "Functions", "description": "The central idea of the course: functions, their graphs, transformations, composition and inverses.",
+      "lessons": [
+        ["alg-functions-intro", "What Is a Function?"],
+        ["alg-function-graphs", "Reading the Graph of a Function"],
+        ["alg-transformations", "Transformations of Functions"],
+        ["alg-combining-functions", "Combining and Composing Functions"],
+        ["alg-inverse-functions", "Inverse Functions"] ] },
+    { "dir": "u08-polynomial-functions", "id": "alg-u08-polynomial-functions", "icon": "〰️", "title": "Polynomial and Rational Functions", "description": "End behavior, zeros and division of polynomials, then rational functions and their asymptotes.",
+      "lessons": [
+        ["alg-polynomial-functions", "Polynomial Functions and End Behavior"],
+        ["alg-polynomial-division", "Polynomial Division and the Remainder Theorem"],
+        ["alg-polynomial-zeros", "Finding the Zeros of Polynomials"],
+        ["alg-rational-functions", "Rational Functions and Asymptotes"] ] },
+    { "dir": "u09-exp-log", "id": "alg-u09-exp-log", "icon": "🚀", "title": "Exponential and Logarithmic Functions", "description": "Growth that compounds, the number e, logarithms as the undo button, and solving exponential equations.",
+      "lessons": [
+        ["alg-exponential-functions", "Exponential Functions and the Number e"],
+        ["alg-logarithms", "Logarithms"],
+        ["alg-log-properties", "Properties of Logarithms"],
+        ["alg-exp-log-equations", "Solving Exponential and Logarithmic Equations"],
+        ["alg-exp-models", "Growth, Decay and Compound Interest"] ] },
+    { "dir": "u10-sequences", "id": "alg-u10-sequences", "icon": "🔁", "title": "Sequences, Series and Counting", "description": "Patterns that go on forever, summation notation, and the binomial theorem — a bridge to discrete math.",
+      "lessons": [
+        ["alg-sequences", "Sequences and Summation Notation"],
+        ["alg-arithmetic-geometric", "Arithmetic and Geometric Sequences and Series"],
+        ["alg-binomial-theorem", "Counting and the Binomial Theorem"] ] }
+  ],
+  "trig": [
+    { "dir": "u01-angles", "id": "trig-u01-angles", "icon": "📐", "title": "Angles and Radians", "description": "Measuring rotation in degrees and radians, arc length, sector area and angular speed.",
+      "lessons": [
+        ["trig-angles-radians", "Angles, Degrees and Radians"],
+        ["trig-arc-length", "Arc Length, Sector Area and Angular Speed"] ] },
+    { "dir": "u02-right-triangles", "id": "trig-u02-right-triangles", "icon": "◺", "title": "Right Triangle Trigonometry", "description": "Sine, cosine and tangent as ratios of sides, the special triangles, and solving real triangles.",
+      "lessons": [
+        ["trig-right-triangle-ratios", "SOH CAH TOA: The Trig Ratios"],
+        ["trig-special-triangles", "Special Right Triangles"],
+        ["trig-solving-right-triangles", "Solving Right Triangles"] ] },
+    { "dir": "u03-unit-circle", "id": "trig-u03-unit-circle", "icon": "⭕", "title": "The Unit Circle", "description": "Trig functions for any angle: the unit circle, reference angles, signs by quadrant, and all six functions.",
+      "lessons": [
+        ["trig-unit-circle", "Trig Functions on the Unit Circle"],
+        ["trig-reference-angles", "Reference Angles and Quadrant Signs"],
+        ["trig-six-functions", "All Six Trig Functions"] ] },
+    { "dir": "u04-graphs", "id": "trig-u04-graphs", "icon": "🌊", "title": "Graphs of Trig Functions", "description": "Waves on a graph: sine and cosine curves, amplitude, period and phase, the other four graphs, and modeling.",
+      "lessons": [
+        ["trig-sine-cosine-graphs", "Graphs of Sine and Cosine"],
+        ["trig-sinusoid-transformations", "Amplitude, Period and Phase Shift"],
+        ["trig-other-graphs", "Graphs of Tangent and the Reciprocal Functions"],
+        ["trig-modeling-periodic", "Modeling Periodic Motion"] ] },
+    { "dir": "u05-inverse-trig", "id": "trig-u05-inverse-trig", "icon": "↩️", "title": "Inverse Trig Functions", "description": "Getting angles back from ratios: arcsin, arccos, arctan, and the atan2 function every game engine uses.",
+      "lessons": [
+        ["trig-inverse-functions", "Inverse Trig Functions"],
+        ["trig-atan2", "Direction Angles and atan2"] ] },
+    { "dir": "u06-identities", "id": "trig-u06-identities", "icon": "🔑", "title": "Trigonometric Identities", "description": "The fundamental identities, proving identities, and the sum, difference, double- and half-angle formulas.",
+      "lessons": [
+        ["trig-fundamental-identities", "The Fundamental Identities"],
+        ["trig-verifying-identities", "Verifying Identities"],
+        ["trig-sum-difference", "Sum and Difference Formulas"],
+        ["trig-double-half-angle", "Double-Angle and Half-Angle Formulas"] ] },
+    { "dir": "u07-equations", "id": "trig-u07-equations", "icon": "🎲", "title": "Trigonometric Equations", "description": "Solving equations with infinitely many solutions: general solutions, intervals, and identity-powered strategies.",
+      "lessons": [
+        ["trig-basic-equations", "Solving Basic Trig Equations"],
+        ["trig-advanced-equations", "Solving Equations with Identities and Multiple Angles"] ] },
+    { "dir": "u08-oblique", "id": "trig-u08-oblique", "icon": "🔺", "title": "Oblique Triangles", "description": "Triangles without a right angle: the Law of Sines (and its ambiguous case), the Law of Cosines, and area.",
+      "lessons": [
+        ["trig-law-of-sines", "The Law of Sines"],
+        ["trig-law-of-cosines", "The Law of Cosines and Triangle Area"] ] },
+    { "dir": "u09-vectors-polar", "id": "trig-u09-vectors-polar", "icon": "🧭", "title": "Vectors, Polar Coordinates and Complex Numbers", "description": "Trig in two dimensions: vectors and components, polar coordinates, and the polar form of complex numbers.",
+      "lessons": [
+        ["trig-vectors", "Vectors in the Plane"],
+        ["trig-polar-coordinates", "Polar Coordinates and Polar Graphs"],
+        ["trig-complex-polar", "Complex Numbers in Polar Form"] ] }
+  ],
+  "calc1": [
+    { "dir": "u01-limits", "id": "calc1-u01-limits", "icon": "🎯", "title": "Limits", "description": "The idea calculus is built on: what a function approaches, how to compute it, and what happens at infinity.",
+      "lessons": [
+        ["calc1-limits-intro", "The Idea of a Limit"],
+        ["calc1-one-sided-limits", "One-Sided and Infinite Limits"],
+        ["calc1-limit-laws", "Computing Limits Algebraically"],
+        ["calc1-squeeze-theorem", "The Squeeze Theorem and Trig Limits"],
+        ["calc1-limits-at-infinity", "Limits at Infinity"],
+        ["calc1-epsilon-delta", "The Precise Definition of a Limit"] ] },
+    { "dir": "u02-continuity", "id": "calc1-u02-continuity", "icon": "✏️", "title": "Continuity", "description": "Functions you can draw without lifting your pen, the kinds of breaks, and the Intermediate Value Theorem.",
+      "lessons": [
+        ["calc1-continuity", "Continuity and Discontinuities"],
+        ["calc1-ivt", "The Intermediate Value Theorem"] ] },
+    { "dir": "u03-derivative", "id": "calc1-u03-derivative", "icon": "📉", "title": "The Derivative", "description": "Instantaneous rate of change: tangent lines, the limit definition, the derivative as a function, and rates in the real world.",
+      "lessons": [
+        ["calc1-tangent-lines", "Tangent Lines and the Derivative at a Point"],
+        ["calc1-derivative-function", "The Derivative as a Function"],
+        ["calc1-rates-of-change", "Rates of Change: Velocity and Beyond"] ] },
+    { "dir": "u04-rules", "id": "calc1-u04-rules", "icon": "⚙️", "title": "Differentiation Rules", "description": "Shortcuts that make derivatives fast: power, product, quotient and chain rules, implicit differentiation, and the derivatives of every elementary function.",
+      "lessons": [
+        ["calc1-power-rule", "The Power Rule and Basic Rules"],
+        ["calc1-product-quotient", "The Product and Quotient Rules"],
+        ["calc1-trig-derivatives", "Derivatives of Trig Functions"],
+        ["calc1-chain-rule", "The Chain Rule"],
+        ["calc1-implicit-differentiation", "Implicit Differentiation"],
+        ["calc1-exp-log-derivatives", "Derivatives of Exponential and Logarithmic Functions"],
+        ["calc1-inverse-trig-derivatives", "Derivatives of Inverse Functions"] ] },
+    { "dir": "u05-applications", "id": "calc1-u05-applications", "icon": "🛠️", "title": "Derivatives in Action", "description": "Related rates, linear approximation, and Newton's method — derivatives solving real problems.",
+      "lessons": [
+        ["calc1-related-rates", "Related Rates"],
+        ["calc1-linear-approximation", "Linear Approximation and Differentials"],
+        ["calc1-newtons-method", "Newton's Method"] ] },
+    { "dir": "u06-analysis", "id": "calc1-u06-analysis", "icon": "🏔️", "title": "Analyzing Functions", "description": "What derivatives say about shape: extrema, the Mean Value Theorem, concavity, curve sketching, L'Hôpital's rule and optimization.",
+      "lessons": [
+        ["calc1-extrema", "Maximum and Minimum Values"],
+        ["calc1-mean-value-theorem", "The Mean Value Theorem"],
+        ["calc1-derivative-tests", "Derivatives and the Shape of a Graph"],
+        ["calc1-curve-sketching", "Curve Sketching"],
+        ["calc1-lhopital", "L'Hôpital's Rule"],
+        ["calc1-optimization", "Optimization Problems"] ] },
+    { "dir": "u07-integrals", "id": "calc1-u07-integrals", "icon": "∫", "title": "Integrals", "description": "Accumulation: antiderivatives, Riemann sums, the definite integral, the Fundamental Theorem of Calculus and substitution.",
+      "lessons": [
+        ["calc1-antiderivatives", "Antiderivatives"],
+        ["calc1-riemann-sums", "Area and Riemann Sums"],
+        ["calc1-definite-integral", "The Definite Integral"],
+        ["calc1-ftc", "The Fundamental Theorem of Calculus"],
+        ["calc1-u-substitution", "Integration by Substitution"] ] },
+    { "dir": "u08-integral-applications", "id": "calc1-u08-integral-applications", "icon": "🗺️", "title": "First Applications of Integrals", "description": "Net change, area between curves, and the average value of a function.",
+      "lessons": [
+        ["calc1-net-change", "The Net Change Theorem"],
+        ["calc1-area-between-curves", "Area Between Curves"],
+        ["calc1-average-value", "The Average Value of a Function"] ] }
+  ],
+  "calc2": [
+    { "dir": "u01-volumes", "id": "calc2-u01-volumes", "icon": "🧊", "title": "Applications of Integration", "description": "Slicing solids into disks, washers and shells, measuring curves, and computing work.",
+      "lessons": [
+        ["calc2-volumes-disks", "Volumes by Slicing: Disks and Washers"],
+        ["calc2-volumes-shells", "Volumes by Cylindrical Shells"],
+        ["calc2-arc-length", "Arc Length and Surface Area"],
+        ["calc2-work", "Work and Physical Applications"] ] },
+    { "dir": "u02-techniques", "id": "calc2-u02-techniques", "icon": "🧰", "title": "Techniques of Integration", "description": "The integration toolkit: by parts, trig integrals, trig substitution, partial fractions, strategy, numerical methods and improper integrals.",
+      "lessons": [
+        ["calc2-integration-by-parts", "Integration by Parts"],
+        ["calc2-trig-integrals", "Trigonometric Integrals"],
+        ["calc2-trig-substitution", "Trigonometric Substitution"],
+        ["calc2-partial-fractions", "Partial Fractions"],
+        ["calc2-integration-strategy", "Strategy for Integration"],
+        ["calc2-numerical-integration", "Numerical Integration"],
+        ["calc2-improper-integrals", "Improper Integrals"] ] },
+    { "dir": "u03-differential-equations", "id": "calc2-u03-differential-equations", "icon": "🌀", "title": "Differential Equations", "description": "Equations about rates of change: slope fields, Euler's method (the heart of game physics), separable equations and growth models.",
+      "lessons": [
+        ["calc2-diffeq-intro", "Differential Equations, Slope Fields and Euler's Method"],
+        ["calc2-separable-equations", "Separable Equations"],
+        ["calc2-growth-models", "Exponential and Logistic Growth"] ] },
+    { "dir": "u04-parametric-polar", "id": "calc2-u04-parametric-polar", "icon": "🌸", "title": "Parametric Equations and Polar Coordinates", "description": "Curves traced over time and in polar form, and how to do calculus on them.",
+      "lessons": [
+        ["calc2-parametric-calculus", "Calculus with Parametric Curves"],
+        ["calc2-polar-calculus", "Areas and Lengths in Polar Coordinates"] ] },
+    { "dir": "u05-series", "id": "calc2-u05-series", "icon": "♾️", "title": "Sequences and Series", "description": "Adding infinitely many numbers: sequences, series, and every major convergence test.",
+      "lessons": [
+        ["calc2-sequences", "Sequences"],
+        ["calc2-series-intro", "Infinite Series"],
+        ["calc2-integral-test", "The Integral Test and p-Series"],
+        ["calc2-comparison-tests", "The Comparison Tests"],
+        ["calc2-alternating-series", "Alternating Series"],
+        ["calc2-ratio-root-tests", "Absolute Convergence and the Ratio and Root Tests"],
+        ["calc2-series-strategy", "Strategy for Testing Series"] ] },
+    { "dir": "u06-power-series", "id": "calc2-u06-power-series", "icon": "🔭", "title": "Power Series and Taylor Series", "description": "Functions as infinite polynomials: power series, Taylor and Maclaurin series, and how computers really calculate sin x.",
+      "lessons": [
+        ["calc2-power-series", "Power Series"],
+        ["calc2-functions-as-series", "Representing Functions as Power Series"],
+        ["calc2-taylor-series", "Taylor and Maclaurin Series"],
+        ["calc2-taylor-applications", "Applications of Taylor Polynomials"] ] }
+  ]
+}
