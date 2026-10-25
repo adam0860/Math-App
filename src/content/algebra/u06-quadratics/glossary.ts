@@ -1,4 +1,55 @@
 import type { GlossaryEntry } from '../../types';
 
 // Glossary terms introduced by this unit that are NOT in scripts/glossary-master.ts.
-export const glossary: GlossaryEntry[] = [];
+export const glossary: GlossaryEntry[] = [
+  {
+    id: 'quadratic-double-root',
+    term: 'Double Root',
+    aliases: ['repeated root', 'repeated solution'],
+    course: 'algebra',
+    category: 'Quadratics',
+    short: 'A solution that occurs twice because its factor is squared, as $x = 3$ in $(x - 3)^2 = 0$. The parabola touches the $x$-axis there without crossing.',
+    long: 'A quadratic has a double root exactly when its discriminant $b^2 - 4ac$ is $0$. The quadratic formula then gives the single value $x = -\\frac{b}{2a}$, which is also the $x$-coordinate of the vertex.',
+    tex: 'x^2 - 6x + 9 = (x - 3)^2 = 0 \\implies x = 3',
+    see: ['discriminant', 'multiplicity', 'perfect-square-trinomial'],
+  },
+  {
+    id: 'vietas-formulas',
+    term: "Vieta's Formulas",
+    aliases: ['sum and product of roots'],
+    course: 'algebra',
+    category: 'Quadratics',
+    short: 'For $ax^2 + bx + c = 0$ with roots $r_1, r_2$: $r_1 + r_2 = -\\frac{b}{a}$ and $r_1 r_2 = \\frac{c}{a}$.',
+    long: 'They follow from $a(x - r_1)(x - r_2) = ax^2 - a(r_1 + r_2)x + a r_1 r_2$ and comparing coefficients. They hold for complex roots too, and give a fast check on any solution.',
+    tex: 'r_1 + r_2 = -\\frac{b}{a}, \\qquad r_1 r_2 = \\frac{c}{a}',
+    see: ['quadratic-formula'],
+  },
+  {
+    id: 'pure-imaginary-number',
+    term: 'Pure Imaginary Number',
+    course: 'algebra',
+    category: 'Complex Numbers',
+    short: 'A complex number of the form $bi$ with $b \\neq 0$ and real part $0$, such as $3i$ or $-\\sqrt{2}\\,i$.',
+    see: ['imaginary-unit', 'complex-number'],
+  },
+  {
+    id: 'complex-plane',
+    term: 'Complex Plane',
+    aliases: ['Argand plane', 'Argand diagram'],
+    course: 'algebra',
+    category: 'Complex Numbers',
+    short: 'A coordinate plane in which the complex number $a + bi$ is drawn as the point $(a, b)$: real part across, imaginary part up.',
+    long: 'In the complex plane, adding complex numbers adds them like 2D vectors, and multiplying by $i$ rotates a point $90°$ counterclockwise about the origin.',
+    see: ['complex-number', 'polar-form-complex'],
+  },
+  {
+    id: 'projectile-motion',
+    term: 'Projectile Motion',
+    course: 'algebra',
+    category: 'Quadratics',
+    short: 'Motion under constant gravity alone. Height is a quadratic in time, $y(t) = -\\frac{1}{2}g t^2 + v_0 t + y_0$, so the path of a thrown object is a parabola.',
+    long: 'The vertex of the height function gives the peak: it occurs at $t = \\frac{v_0}{g}$ and is $\\frac{v_0^2}{2g}$ above the launch height. Near Earth\'s surface $g \\approx 9.8$ m/s² $\\approx 32$ ft/s².',
+    tex: 'y(t) = -\\tfrac{1}{2} g t^2 + v_0 t + y_0',
+    see: ['parabola', 'vertex'],
+  },
+];

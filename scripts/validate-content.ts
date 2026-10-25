@@ -200,6 +200,7 @@ function checkGraph(where: string, g: GraphBlock) {
   g.vlines?.forEach((v, i) => num(`${where} vlines[${i}]`, v.x));
   g.hlines?.forEach((h, i) => num(`${where} hlines[${i}]`, h.y));
   g.areas?.forEach((a, i) => {
+    drawables++;
     const w = `${where} areas[${i}]`;
     checkExpr(w, a.expr, ['x', ...names]);
     if (a.expr2) checkExpr(w, a.expr2, ['x', ...names]);
@@ -207,6 +208,7 @@ function checkGraph(where: string, g: GraphBlock) {
     num(w, a.to);
   });
   if (g.riemann) {
+    drawables++;
     const w = `${where} riemann`;
     checkExpr(w, g.riemann.expr, ['x', ...names]);
     num(w, g.riemann.from);
