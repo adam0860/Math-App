@@ -56,8 +56,8 @@ export const glossary: GlossaryEntry[] = [
   },
   {
     id: 'gchem-free-radical',
-    term: 'Radical',
-    aliases: ['free radical', 'radicals', 'odd-electron species'],
+    term: 'Free Radical',
+    aliases: ['radical (chemistry)', 'radicals', 'odd-electron species'],
     course: 'genchem',
     category: 'Bonding',
     short: 'An atom, molecule or ion with one or more unpaired electrons, such as $\\ce{NO}$, $\\ce{NO2}$ or $\\ce{ClO2}$. Any species with an odd number of electrons is a radical.',

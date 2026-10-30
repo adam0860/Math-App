@@ -115,7 +115,13 @@ function checkReading(where: string, refs: ReadingRef[]) {
 }
 
 // --------------------------------------------------------------------- graphs
+/** "8.99e9" in a key or graph expression means 8.99·e·9 (Euler's number), not 8.99×10⁹. */
+function checkNoENotation(where: string, src: string) {
+  if (/[0-9.]e[+-]?\d/.test(src)) err(where, `"${src}" looks like e-notation, which evaluates as Euler's number here; write 8.99*10^9`);
+}
+
 function checkExpr(where: string, src: string, allowed: string[]): ((env: Env) => number) | null {
+  checkNoENotation(where, src);
   try {
     const node = parse(src);
     const bad = [...variablesOf(node)].filter((v) => !allowed.includes(v));
@@ -443,6 +449,7 @@ function checkQuestion(where: string, q: QuestionStep, stats: LessonStats) {
       const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
       if (!answers.length) err(where, 'numeric question has no answer');
       for (const a of answers) {
+        checkNoENotation(where, a);
         try {
           const node = parse(a);
           if (variablesOf(node).size) err(where, `numeric answer "${a}" must not contain variables`);
