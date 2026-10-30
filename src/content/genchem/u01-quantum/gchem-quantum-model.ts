@@ -307,7 +307,7 @@ export const lesson: Lesson = {
         {
           type: 'figure',
           svg: FIG_DOTS,
-          alt: 'Two dot-density pictures, each a slice through the nucleus. Left, the 1s orbital: dots densest at the nucleus and thinning smoothly outward, with a scale bar of one Bohr radius, 52.9 picometers. Right, the 2s orbital on a scale five times smaller: a dense small core, an empty ring marked by a dashed red circle, then a broad outer shell of dots.',
+          alt: 'Two dot-density pictures, each a slice through the nucleus. Left, the 1s orbital: dots densest at the nucleus and thinning smoothly outward, with a scale bar of one Bohr radius, 52.9 picometers. Right, the 2s orbital on a scale about four times smaller, with a scale bar of five Bohr radii: a dense small core, an empty ring marked by a dashed red circle, then a broad outer shell of dots.',
           caption: 'Each dot is a place the electron might be found; dot density is $\\psi^2$. The 1s cloud is densest at the nucleus. The 2s orbital is much larger and has a spherical **node** (dashed red circle) where the electron is never found.',
         },
         {

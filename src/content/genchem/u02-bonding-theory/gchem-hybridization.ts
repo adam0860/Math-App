@@ -269,7 +269,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'analogy',
           title: 'Your eyes run on this',
-          text: 'Vision starts when a photon breaks the π bond in 11-cis-retinal for an instant. The molecule twists to the trans form and the π bond re-forms, a shape change that triggers the nerve signal. A photon can supply the roughly 270 kJ/mol a thermal collision cannot; the rod cells responsible for night vision rely on exactly this switch.',
+          text: 'Vision starts when a photon breaks the π bond in 11-cis-retinal for an instant. The molecule twists to the trans form and the π bond re-forms, a shape change that triggers the nerve signal. A visible photon (about 240 kJ/mol at the 500 nm that rhodopsin absorbs) lifts the molecule into an excited state where the π bond is effectively broken, something no thermal collision can do; the rod cells responsible for night vision rely on exactly this switch.',
         },
       ],
     },
