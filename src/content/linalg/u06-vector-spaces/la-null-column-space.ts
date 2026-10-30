@@ -376,7 +376,7 @@ A*(1, 0, -3, 1) = (0, 0, 0)
 A*(-8, 3, 6, -2) = (0, 0, 0)`,
           annotations: [
             { lines: '5-7', text: 'The two spanning vectors of $\\operatorname{Nul} A$ found earlier, plus the combination $3\\mathbf{u} - 2\\mathbf{v}$.' },
-            { lines: '9-10', text: 'Row $i$ of $A$ dotted with $\\mathbf{n}$ gives entry $i$ of $A\\mathbf{n}$.' },
+            { lines: '10-11', text: 'Row $i$ of $A$ dotted with $\\mathbf{n}$ gives entry $i$ of $A\\mathbf{n}$.' },
           ],
         },
       ],

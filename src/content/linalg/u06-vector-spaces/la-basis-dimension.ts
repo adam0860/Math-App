@@ -35,7 +35,7 @@ export const lesson: Lesson = {
           items: [
             'The [[standard-basis]] of $\\mathbb{R}^n$ is $\\{\\mathbf{e}_1, \\dots, \\mathbf{e}_n\\}$, the columns of $I_n$.',
             'The standard basis of $\\mathbb{P}_n$ is $\\{1, t, t^2, \\dots, t^n\\}$: every polynomial of degree $\\le n$ is a combination $a_0 \\cdot 1 + a_1 t + \\cdots + a_n t^n$, and the only combination equal to the zero polynomial has all $a_i = 0$.',
-            'Any $n$ columns of an invertible $n \\times n$ matrix form a basis of $\\mathbb{R}^n$, by the [[invertible-matrix-theorem|Invertible Matrix Theorem]]: the columns are independent and span $\\mathbb{R}^n$.',
+            'The $n$ columns of an invertible $n \\times n$ matrix form a basis of $\\mathbb{R}^n$, by the [[invertible-matrix-theorem|Invertible Matrix Theorem]]: the columns are independent and span $\\mathbb{R}^n$.',
           ],
         },
         {

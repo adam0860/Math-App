@@ -223,7 +223,7 @@ int main() {
         'Use row replacements to create zeros below each pivot, column by column',
         'Stop once the matrix is upper triangular',
         'Multiply the diagonal entries',
-        'Multiply by $(-1)^s$ for the $s$ swaps (and by any factors pulled out of rows)',
+        'Multiply that product by $(-1)^s$ for the $s$ swaps (and by any factors pulled out of rows)',
       ],
       distractors: ['Scale every pivot to $1$ and ignore the scale factors'],
       explanation: 'Swaps and replacements produce an upper triangular matrix whose determinant is the product of its diagonal; the only bookkeeping is a sign for each swap and any factor you pulled out. You do **not** need reduced echelon form, and silently scaling pivots to $1$ changes the determinant.',
