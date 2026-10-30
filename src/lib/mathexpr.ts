@@ -502,11 +502,21 @@ function decimals(s: string): number | null {
  * accepted when it is the exact value correctly rounded to at least
  * `minDecimals` places (0.71 for √2/2), or within `tolerance` when given.
  */
+/**
+ * Typed scientific notation for numeric answers: "6.02e23", "4.0E-11", "1.5e+3"
+ * become "6.02*10^(23)". Only a digit (or decimal point) directly followed by
+ * e/E and an integer exponent is rewritten, so "e^2", "2e^x" and "e - 1" keep
+ * meaning Euler's number.
+ */
+export function expandSciNotation(src: string): string {
+  return src.replace(/([0-9.])[eE]([+-]?\d+)(?![\d.]|\s*[\^!(])/g, '$1*10^($2)');
+}
+
 export function numericMatches(input: string, answer: string, opts: { tolerance?: number; minDecimals?: number } = {}): boolean {
   const target = evalConst(answer);
   let got: number;
   try {
-    const node = parse(cleanAnswer(input));
+    const node = parse(expandSciNotation(cleanAnswer(input)));
     if (variablesOf(node).size > 0) return false;
     got = compile(node)({});
   } catch {
