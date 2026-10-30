@@ -92,7 +92,7 @@ export const lesson: Lesson = {
       hint: 'A triple bond counts as one group, just like a single bond.',
       label: 'electron groups $=$',
       answer: '2',
-      explanation: 'Carbon has a single bond to H and a triple bond to N, and no lone pairs: 2 groups. Two groups point in opposite directions, so $\\ce{HCN}$ is **linear** with a $180^\\circ$ angle — the same shape as $\\ce{CO2}$. Counting the 4 bonding pairs of the triple bond separately is the classic mistake; all six of its electrons lie in the same direction.',
+      explanation: 'Carbon has a single bond to H and a triple bond to N, and no lone pairs: 2 groups. Two groups point in opposite directions, so $\\ce{HCN}$ is **linear** with a $180^\\circ$ angle — the same shape as $\\ce{CO2}$. Counting the 3 bonding pairs of the triple bond separately is the classic mistake; all six of its electrons lie in the same direction.',
     },
     // ------------------------------------------------------------------ 3
     {
@@ -421,7 +421,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'why',
           title: 'Why only N, O and F?',
-          text: 'These three are the most electronegative elements, so an H bonded to them is stripped nearly bare: a tiny, concentrated $\\delta+$. They are also small atoms whose lone pairs are compact and easy to approach. Chlorine is nearly as electronegative as nitrogen, but it is a much larger atom, so its lone pairs are spread out and it forms only weak hydrogen bonds.',
+          text: 'These three are among the most electronegative elements, so an H bonded to them is stripped nearly bare: a tiny, concentrated $\\delta+$. They are also small atoms whose lone pairs are compact and easy to approach. Chlorine is even slightly more electronegative than nitrogen (3.16 vs 3.04), but it is a much larger atom, so its lone pairs are spread out and it forms only weak hydrogen bonds.',
         },
       ],
     },
