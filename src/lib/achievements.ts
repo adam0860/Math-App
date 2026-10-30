@@ -56,6 +56,9 @@ export const achievements: Achievement[] = [
   { id: 'linalg-graduate', icon: '🧊', title: 'Linear Algebra Graduate', description: 'Complete the entire Linear Algebra course.', test: courseDone('linalg') },
   { id: 'chem-graduate', icon: '⚗️', title: 'Lab Ready', description: 'Complete the entire Chemistry Foundations course.', test: courseDone('chem') },
   { id: 'mole-master', icon: '🧪', title: 'Mole Master', description: 'Finish The Mole and Stoichiometry unit.', test: unitDone('chem-u04-mole') },
+  { id: 'equilibrium-reached', icon: '⚖️', title: 'Equilibrium Reached', description: 'Finish the Chemical Equilibrium unit.', test: unitDone('gchem-u08-equilibrium') },
+  { id: 'voltage', icon: '🔋', title: 'Full Charge', description: 'Finish the Electrochemistry unit.', test: unitDone('gchem-u11-electrochemistry') },
+  { id: 'genchem-graduate', icon: '🥼', title: 'General Chemistry Graduate', description: 'Complete the entire General Chemistry course.', test: courseDone('genchem') },
   { id: 'calc2-graduate', icon: '🏆', title: 'Calculus II Graduate', description: 'Complete the entire Calculus II course.', test: courseDone('calc2') },
   {
     id: 'night-owl',

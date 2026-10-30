@@ -48,6 +48,14 @@ const courseMeta = {
     description:
       'A compact on-ramp to college chemistry: matter and measurement, atoms and the periodic table, ionic and covalent bonding, chemical equations and reactions, the mole and stoichiometry, and a first look at solutions, gases, and acids and bases.',
   },
+  genchem: {
+    exportName: 'genchemCourse',
+    title: 'General Chemistry',
+    short: 'Gen Chem',
+    subtitle: 'The full two-semester college course — from quantum atoms to equilibrium and electrochemistry',
+    description:
+      'University general chemistry: electronic structure and bonding theory, aqueous reactions and redox, thermochemistry, gases, liquids, solids and solutions, kinetics, equilibrium, acid–base and solubility equilibria, thermodynamics, electrochemistry, and nuclear and transition-metal chemistry.',
+  },
   linalg: {
     exportName: 'linalgCourse',
     title: 'Linear Algebra',

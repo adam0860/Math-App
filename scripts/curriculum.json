@@ -280,5 +280,77 @@
         ["chem-solutions", "Solutions, Molarity and Dilution"],
         ["chem-gas-laws", "The Gas Laws"],
         ["chem-acids-bases", "Acids, Bases and pH"] ] }
+  ],
+  "genchem": [
+    {"dir": "u01-quantum", "id": "gchem-u01-quantum", "icon": "⚡", "title": "Electronic Structure", "description": "Light and the photon, the quantum-mechanical atom, quantum numbers and orbital shapes, and how electron configurations explain magnetism and periodic properties.",
+      "lessons": [
+        ["gchem-light-photons", "Light, Photons and Atomic Spectra"],
+        ["gchem-quantum-model", "The Quantum-Mechanical Atom"],
+        ["gchem-quantum-numbers", "Quantum Numbers and Orbitals"],
+        ["gchem-configurations-properties", "Configurations, Magnetism and Periodic Properties"] ] },
+    {"dir": "u02-bonding-theory", "id": "gchem-u02-bonding-theory", "icon": "🧬", "title": "Bonding Theory", "description": "Lattice energy, formal charge and resonance, bond enthalpies, VSEPR for expanded octets, hybridization, and molecular orbital theory.",
+      "lessons": [
+        ["gchem-ionic-lattice", "Ionic Bonding and Lattice Energy"],
+        ["gchem-lewis-advanced", "Formal Charge, Resonance and Bond Enthalpy"],
+        ["gchem-vsepr-advanced", "VSEPR for Five and Six Electron Groups"],
+        ["gchem-hybridization", "Valence Bond Theory and Hybridization"],
+        ["gchem-mo-theory", "Molecular Orbital Theory"] ] },
+    {"dir": "u03-aqueous-reactions", "id": "gchem-u03-aqueous-reactions", "icon": "🌊", "title": "Reactions in Aqueous Solution", "description": "Electrolytes and net ionic equations, acid–base reactions and titration calculations, and oxidation–reduction with half-reaction balancing.",
+      "lessons": [
+        ["gchem-aqueous-ionic", "Electrolytes, Precipitation and Net Ionic Equations"],
+        ["gchem-acid-base-titration", "Acid–Base Reactions and Titrations"],
+        ["gchem-redox", "Oxidation States and Redox Reactions"],
+        ["gchem-balancing-redox", "Balancing Redox by Half-Reactions"] ] },
+    {"dir": "u04-thermochemistry", "id": "gchem-u04-thermochemistry", "icon": "🔥", "title": "Thermochemistry", "description": "Energy, heat and work, calorimetry, enthalpy and Hess's law, and standard enthalpies of formation.",
+      "lessons": [
+        ["gchem-energy-heat-work", "Energy, Heat and Work"],
+        ["gchem-calorimetry", "Calorimetry"],
+        ["gchem-enthalpy-hess", "Enthalpy and Hess's Law"],
+        ["gchem-formation-enthalpy", "Standard Enthalpies of Formation"] ] },
+    {"dir": "u05-gases-states", "id": "gchem-u05-gases-states", "icon": "💨", "title": "Gases, Liquids and Solids", "description": "Gas mixtures and partial pressures, the kinetic-molecular theory and molecular speeds, real gases, intermolecular forces and vapor pressure, and solids and phase diagrams.",
+      "lessons": [
+        ["gchem-gas-mixtures", "Gas Stoichiometry and Partial Pressures"],
+        ["gchem-kinetic-theory", "Kinetic-Molecular Theory, Speeds and Effusion"],
+        ["gchem-real-gases", "Real Gases"],
+        ["gchem-liquids-vapor-pressure", "Intermolecular Forces, Liquids and Vapor Pressure"],
+        ["gchem-solids-phase-diagrams", "Solids and Phase Diagrams"] ] },
+    {"dir": "u06-solutions", "id": "gchem-u06-solutions", "icon": "🧂", "title": "Properties of Solutions", "description": "The solution process and what controls solubility, concentration units, and colligative properties.",
+      "lessons": [
+        ["gchem-solution-process", "The Solution Process and Solubility"],
+        ["gchem-concentration-units", "Concentration Units"],
+        ["gchem-colligative", "Colligative Properties"] ] },
+    {"dir": "u07-kinetics", "id": "gchem-u07-kinetics", "icon": "⏱️", "title": "Chemical Kinetics", "description": "Reaction rates and rate laws, integrated rate laws and half-life, the Arrhenius equation, and mechanisms and catalysis.",
+      "lessons": [
+        ["gchem-rates-rate-laws", "Reaction Rates and Rate Laws"],
+        ["gchem-integrated-rate-laws", "Integrated Rate Laws and Half-Life"],
+        ["gchem-arrhenius", "Collision Theory and the Arrhenius Equation"],
+        ["gchem-mechanisms-catalysis", "Reaction Mechanisms and Catalysis"] ] },
+    {"dir": "u08-equilibrium", "id": "gchem-u08-equilibrium", "icon": "⚖️", "title": "Chemical Equilibrium", "description": "The equilibrium constant, the reaction quotient and Le Châtelier's principle, and solving equilibrium problems with ICE tables.",
+      "lessons": [
+        ["gchem-equilibrium-constant", "The Equilibrium Constant"],
+        ["gchem-le-chatelier", "The Reaction Quotient and Le Châtelier's Principle"],
+        ["gchem-ice-tables", "Solving Equilibrium Problems"] ] },
+    {"dir": "u09-acid-base-equilibria", "id": "gchem-u09-acid-base-equilibria", "icon": "🧪", "title": "Acid–Base and Solubility Equilibria", "description": "Weak acids and bases, salts and polyprotic acids, buffers, titration curves and indicators, and solubility equilibria.",
+      "lessons": [
+        ["gchem-weak-acids-bases", "Weak Acids, Weak Bases, Ka and Kb"],
+        ["gchem-salts-polyprotic", "Acid–Base Properties of Salts and Polyprotic Acids"],
+        ["gchem-buffers", "Buffers"],
+        ["gchem-titration-curves", "Titration Curves and Indicators"],
+        ["gchem-solubility-equilibria", "Solubility Equilibria and Ksp"] ] },
+    {"dir": "u10-thermodynamics", "id": "gchem-u10-thermodynamics", "icon": "🌀", "title": "Thermodynamics", "description": "Entropy and the second law, Gibbs free energy and spontaneity, and how free energy is tied to the equilibrium constant.",
+      "lessons": [
+        ["gchem-entropy", "Entropy and the Second Law"],
+        ["gchem-gibbs-free-energy", "Gibbs Free Energy"],
+        ["gchem-free-energy-equilibrium", "Free Energy and Equilibrium"] ] },
+    {"dir": "u11-electrochemistry", "id": "gchem-u11-electrochemistry", "icon": "🔋", "title": "Electrochemistry", "description": "Galvanic cells and standard reduction potentials, cell potential, free energy and the Nernst equation, and batteries, corrosion and electrolysis.",
+      "lessons": [
+        ["gchem-galvanic-cells", "Galvanic Cells and Standard Potentials"],
+        ["gchem-nernst", "Cell Potential, Free Energy and the Nernst Equation"],
+        ["gchem-batteries-electrolysis", "Batteries, Corrosion and Electrolysis"] ] },
+    {"dir": "u12-nuclear-transition", "id": "gchem-u12-nuclear-transition", "icon": "☢️", "title": "Nuclear Chemistry and Transition Metals", "description": "Radioactive decay and nuclear equations, decay kinetics and dating, binding energy, and transition metals and coordination compounds.",
+      "lessons": [
+        ["gchem-radioactive-decay", "Radioactivity and Nuclear Equations"],
+        ["gchem-nuclear-energy", "Decay Kinetics, Binding Energy, Fission and Fusion"],
+        ["gchem-coordination", "Transition Metals and Coordination Compounds"] ] }
   ]
 }

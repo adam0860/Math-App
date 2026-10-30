@@ -4,6 +4,7 @@ import { trigGlossary } from './trig';
 import { calc1Glossary } from './calc1';
 import { calc2Glossary } from './calc2';
 import { chemGlossary } from './chem';
+import { genchemGlossary } from './genchem';
 import { linalgGlossary } from './linalg';
 import { glossary as algebra_u01 } from '../algebra/u01-foundations/glossary';
 import { glossary as algebra_u02 } from '../algebra/u02-polynomials/glossary';
@@ -51,6 +52,18 @@ import { glossary as chem_u02 } from '../chem/u02-atoms-periodic-table/glossary'
 import { glossary as chem_u03 } from '../chem/u03-bonding/glossary';
 import { glossary as chem_u04 } from '../chem/u04-mole/glossary';
 import { glossary as chem_u05 } from '../chem/u05-solutions-gases-acids/glossary';
+import { glossary as genchem_u01 } from '../genchem/u01-quantum/glossary';
+import { glossary as genchem_u02 } from '../genchem/u02-bonding-theory/glossary';
+import { glossary as genchem_u03 } from '../genchem/u03-aqueous-reactions/glossary';
+import { glossary as genchem_u04 } from '../genchem/u04-thermochemistry/glossary';
+import { glossary as genchem_u05 } from '../genchem/u05-gases-states/glossary';
+import { glossary as genchem_u06 } from '../genchem/u06-solutions/glossary';
+import { glossary as genchem_u07 } from '../genchem/u07-kinetics/glossary';
+import { glossary as genchem_u08 } from '../genchem/u08-equilibrium/glossary';
+import { glossary as genchem_u09 } from '../genchem/u09-acid-base-equilibria/glossary';
+import { glossary as genchem_u10 } from '../genchem/u10-thermodynamics/glossary';
+import { glossary as genchem_u11 } from '../genchem/u11-electrochemistry/glossary';
+import { glossary as genchem_u12 } from '../genchem/u12-nuclear-transition/glossary';
 
 export const glossary: GlossaryEntry[] = [
   ...algebraGlossary,
@@ -58,6 +71,7 @@ export const glossary: GlossaryEntry[] = [
   ...calc1Glossary,
   ...calc2Glossary,
   ...chemGlossary,
+  ...genchemGlossary,
   ...linalgGlossary,
   ...algebra_u01,
   ...algebra_u02,
@@ -105,4 +119,16 @@ export const glossary: GlossaryEntry[] = [
   ...chem_u03,
   ...chem_u04,
   ...chem_u05,
+  ...genchem_u01,
+  ...genchem_u02,
+  ...genchem_u03,
+  ...genchem_u04,
+  ...genchem_u05,
+  ...genchem_u06,
+  ...genchem_u07,
+  ...genchem_u08,
+  ...genchem_u09,
+  ...genchem_u10,
+  ...genchem_u11,
+  ...genchem_u12,
 ];
