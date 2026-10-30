@@ -241,7 +241,7 @@ export const lesson: Lesson = {
         { text: '$A^{-1}B^{-1}C^{-1}$', why: 'This keeps the original order. Multiply it by $ABC$: $(A^{-1}B^{-1}C^{-1})(ABC)$ has $C^{-1}$ next to $A$, which does not cancel. Only works if the matrices commute.' },
         { text: '$C^{-1}B^{-1}A^{-1}$', correct: true, why: 'Check: $(ABC)(C^{-1}B^{-1}A^{-1}) = AB(CC^{-1})B^{-1}A^{-1} = A(BB^{-1})A^{-1} = AA^{-1} = I$. Each matrix meets its own inverse from the inside out.' },
         { text: '$\\frac{1}{ABC}$', why: 'Dividing by a matrix is not defined. "Division" by a matrix means multiplying by its inverse on a specific side.' },
-        { text: '$(CBA)^{T}$', why: 'Transposes and inverses are different operations; $(CBA)^{T} = A^{T}B^{T}C^{T}$, which only equals the inverse for special (orthogonal) matrices.' },
+        { text: '$(CBA)^{T}$', why: 'Transposes and inverses are different operations, and $(CBA)^{T} = A^{T}B^{T}C^{T}$ keeps the original order. Even for orthogonal matrices (where $Q^{T} = Q^{-1}$) it becomes $A^{-1}B^{-1}C^{-1}$, which is the wrong order; the inverse would be $(ABC)^{T}$.' },
       ],
       explanation: 'Socks and shoes with three layers: the transformation $ABC$ applies $C$ first and $A$ last, so undoing it removes $A$ first: $(ABC)^{-1} = C^{-1}B^{-1}A^{-1}$. Notice that $(ABC)(C^{-1}B^{-1}A^{-1})$ cancels from the middle outward.',
     },

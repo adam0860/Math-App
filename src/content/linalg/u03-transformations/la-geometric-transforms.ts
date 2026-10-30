@@ -434,7 +434,7 @@ export const lesson: Lesson = {
           rows: [
             ['Rotation by $\\theta$', '$\\begin{bmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{bmatrix}$', 'lengths, angles, orientation'],
             ['Uniform scale by $k > 0$', '$\\begin{bmatrix} k & 0 \\\\ 0 & k \\end{bmatrix}$', 'angles, orientation'],
-            ['Non-uniform scale', '$\\begin{bmatrix} s_x & 0 \\\\ 0 & s_y \\end{bmatrix}$', 'axis directions (orientation too if $s_x, s_y > 0$)'],
+            ['Non-uniform scale', '$\\begin{bmatrix} s_x & 0 \\\\ 0 & s_y \\end{bmatrix}$', 'axis directions (orientation too if $s_x s_y > 0$)'],
             ['Reflection across line at $\\varphi$', '$\\begin{bmatrix} \\cos 2\\varphi & \\sin 2\\varphi \\\\ \\sin 2\\varphi & -\\cos 2\\varphi \\end{bmatrix}$', 'lengths, angles; **reverses** orientation'],
             ['Horizontal shear', '$\\begin{bmatrix} 1 & k \\\\ 0 & 1 \\end{bmatrix}$', 'area, horizontal lines'],
             ['Vertical shear', '$\\begin{bmatrix} 1 & 0 \\\\ k & 1 \\end{bmatrix}$', 'area, vertical lines'],
