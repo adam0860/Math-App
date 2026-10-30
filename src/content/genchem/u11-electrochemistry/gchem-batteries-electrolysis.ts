@@ -82,7 +82,7 @@ export const lesson: Lesson = {
       unit: 'V',
       answer: '6*(1.69 - (-0.3505))',
       answerTex: '12.2\\ \\text{V}',
-      tolerance: 0.06,
+      tolerance: 0.05,
       explanation: 'One cell: $E^\\circ = 1.69 - (-0.3505) = 2.04$ V. Six in series: $6 \\times 2.04 = 12.2$ V, the familiar "12-volt" battery (a fully charged one reads about 12.6–12.7 V because its acid is more concentrated than 1 M). Note that adding cells **in series** multiplies the voltage, unlike multiplying a half-reaction by a coefficient, which leaves $E^\\circ$ unchanged: here you really have six separate pumps pushing the same electrons in turn.',
     },
     // ------------------------------------------------------------------ 3
@@ -350,7 +350,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'p',
-          text: '**Brine (concentrated aqueous NaCl).** At the cathode, water ($-0.83$ V in neutral solution) is far easier to reduce than $\\ce{Na+}$ ($-2.71$ V), so the products are $\\ce{H2}$ and $\\ce{OH-}$, never sodium metal. At the anode, the table says water oxidation ($1.229$ V) should beat chloride ($1.358$ V), since it needs less voltage. But oxygen\'s large overpotential reverses the order, and **chlorine** comes off instead:',
+          text: '**Brine (concentrated aqueous NaCl).** At the cathode, water ($E^\\circ = -0.83$ V at 1 M $\\ce{OH-}$, about $-0.41$ V in neutral solution) is far easier to reduce than $\\ce{Na+}$ ($-2.71$ V), so the products are $\\ce{H2}$ and $\\ce{OH-}$, never sodium metal. At the anode, the table says water oxidation ($1.229$ V) should beat chloride ($1.358$ V), since it needs less voltage. But oxygen\'s large overpotential reverses the order, and **chlorine** comes off instead:',
         },
         {
           type: 'math',

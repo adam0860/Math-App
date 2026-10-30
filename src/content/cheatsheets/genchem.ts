@@ -273,7 +273,7 @@ export const genchemCheatSheets: CheatSheet[] = [
           { label: 'The four sign cases', tex: '\\begin{array}{cc|l} \\Delta H & \\Delta S & \\text{spontaneous?} \\\\ \\hline - & + & \\text{at all } T \\\\ + & - & \\text{at no } T \\\\ - & - & \\text{at low } T\\ (T < \\Delta H/\\Delta S) \\\\ + & + & \\text{at high } T\\ (T > \\Delta H/\\Delta S) \\end{array}' },
           { label: 'Crossover temperature', tex: 'T = \\frac{\\Delta H^\\circ}{\\Delta S^\\circ}', text: 'Where $\\Delta G^\\circ = 0$ (assumes $\\Delta H^\\circ$, $\\Delta S^\\circ$ roughly constant). At a phase change it is the transition temperature.' },
           { label: 'Example: ammonia synthesis', tex: '\\ce{N2 + 3H2 -> 2NH3}: \\ \\Delta G^\\circ = -91.8\\ \\text{kJ} - (298.15\\ \\text{K})(-0.1981\\ \\text{kJ/K}) = -32.7\\ \\text{kJ}', text: 'Spontaneous at 25 °C, but $\\Delta S < 0$ makes it nonspontaneous above about 463 K under standard conditions.' },
-          { label: 'Maximum useful work', tex: 'w_{\\text{max}} = \\Delta G' },
+          { label: 'Maximum useful work', tex: '|w_{\\text{max}}| = -\\Delta G', text: 'The most non-expansion work a spontaneous process (ΔG < 0) can deliver.' },
         ],
       },
       {

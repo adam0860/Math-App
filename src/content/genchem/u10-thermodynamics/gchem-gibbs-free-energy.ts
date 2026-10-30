@@ -325,7 +325,7 @@ export const lesson: Lesson = {
       unit: '%',
       answer: '818.1/890.6*100',
       answerTex: '91.9\\%',
-      tolerance: 0.06,
+      tolerance: 0.05,
       explanation: '$\\frac{-818.1}{-890.6} \\times 100\\% = 91.9\\%$. The remaining $72.5$ kJ ($= -T\\Delta S^\\circ$, since $\\Delta S^\\circ = -242.9$ J/K) must be released as heat to satisfy the second law. Compare a hydrogen fuel cell at 83%: its entropy loss per unit of enthalpy is larger.',
     },
     // ------------------------------------------------------------------ 13

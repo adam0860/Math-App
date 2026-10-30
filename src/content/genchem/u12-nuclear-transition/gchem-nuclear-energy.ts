@@ -400,7 +400,7 @@ export const lesson: Lesson = {
             { tex: '\\Delta m = 236.052595 - 235.866571 = 0.186024\\ \\text{u}', why: 'Mass lost.' },
             { tex: 'E = 0.186024 \\times 931.5\\ \\text{MeV} = 173.3\\ \\text{MeV}', why: 'Convert to energy, mostly as kinetic energy of the fragments, which becomes heat.' },
           ],
-          result: 'About 173 MeV here, and about 200 MeV in total once the radioactive fragments decay. Per gram of U-235 that is about $7 \\times 10^{7}$ kJ, roughly 1.5 million times the 46 kJ/g of gasoline. That energy density is why a naval reactor can run a submarine or aircraft carrier for decades without refueling.',
+          result: 'About 173 MeV here, and about 200 MeV in total once the radioactive fragments decay. Counting just the 173 MeV released at the moment of fission, one gram of U-235 gives about $7 \\times 10^{7}$ kJ, roughly 1.5 million times the 46 kJ/g of gasoline. That energy density is why a naval reactor can run a submarine or aircraft carrier for decades without refueling.',
         },
         {
           type: 'figure',

@@ -308,7 +308,7 @@ export const lesson: Lesson = {
         {
           type: 'graph',
           x: [0, 2.5],
-          y: [0, 5],
+          y: [0, 6],
           xStep: 0.5,
           yStep: 1,
           functions: [

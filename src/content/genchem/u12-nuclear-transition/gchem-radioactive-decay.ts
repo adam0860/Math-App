@@ -450,7 +450,7 @@ export const lesson: Lesson = {
           steps: [
             { tex: 'D = \\frac{0.014\\ \\text{J}}{70\\ \\text{kg}} = 2.0 \\times 10^{-4}\\ \\text{J/kg} = 2.0 \\times 10^{-4}\\ \\text{Gy}', why: 'Absorbed dose is energy per kilogram of tissue; 1 J/kg is 1 Gy by definition.' },
             { tex: 'H = w_R D = 1 \\times 2.0 \\times 10^{-4}\\ \\text{Gy} = 2.0 \\times 10^{-4}\\ \\text{Sv}', why: 'Gamma rays have $w_R = 1$, so grays and sieverts are numerically equal here.' },
-            { tex: '= 0.20\\ \\text{mSv}', why: '$1\\ \\text{Sv} = 1000\\ \\text{mSv}$. This is about two chest X-rays.' },
+            { tex: '= 0.20\\ \\text{mSv}', why: '$1\\ \\text{Sv} = 1000\\ \\text{mSv}$. That is the dose of several chest X-rays (each is about 0.02–0.1 mSv).' },
           ],
           result: 'If the same 0.014 J came from an internal alpha emitter, $w_R = 20$ would make it 4.0 mSv: twenty times the biological effect for the same energy.',
         },

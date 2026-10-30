@@ -91,9 +91,9 @@ export const lesson: Lesson = {
           steps: [
             { tex: '-nFE^\\circ = -RT\\ln K', why: 'Both sides equal $\\Delta G^\\circ$.' },
             { tex: 'E^\\circ = \\frac{RT}{nF}\\ln K', why: 'Divide both sides by $-nF$.' },
-            { tex: '\\frac{RT}{F} = \\frac{(8.314\\ \\text{J mol}^{-1}\\text{K}^{-1})(298.15\\ \\text{K})}{96{,}485\\ \\text{C mol}^{-1}} = 0.025693\\ \\text{V}', why: 'At 25 °C. J/C is a volt, and the mol and K units cancel.' },
+            { tex: '\\frac{RT}{F} = \\frac{(8.314\\ \\text{J mol}^{-1}\\text{K}^{-1})(298.15\\ \\text{K})}{96{,}485\\ \\text{C mol}^{-1}} = 0.025691\\ \\text{V}', why: 'At 25 °C. J/C is a volt, and the mol and K units cancel.' },
             { tex: '\\ln K = \\ln 10 \\cdot \\log K = 2.3026\\,\\log K', why: 'Change of base: chemists usually prefer base-10 logarithms (see [[common-logarithm]]).' },
-            { tex: 'E^\\circ = \\frac{0.05916\\ \\text{V}}{n}\\log K \\quad (25\\ ^\\circ\\text{C})', why: '$0.025693 \\times 2.3026 = 0.05916$ V, often rounded to 0.0592 V. Equivalently, $\\log K = \\frac{nE^\\circ}{0.05916\\ \\text{V}}$.' },
+            { tex: 'E^\\circ = \\frac{0.05916\\ \\text{V}}{n}\\log K \\quad (25\\ ^\\circ\\text{C})', why: '$0.025691 \\times 2.3026 = 0.05916$ V, often rounded to 0.0592 V. Equivalently, $\\log K = \\frac{nE^\\circ}{0.05916\\ \\text{V}}$.' },
           ],
         },
         {
