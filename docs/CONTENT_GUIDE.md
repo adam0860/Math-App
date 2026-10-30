@@ -1,6 +1,6 @@
 # Math Forge — Content Authoring Guide
 
-Math Forge teaches College Algebra, Trigonometry, Calculus I and Calculus II through short
+Math Forge teaches College Algebra, Trigonometry, Calculus I, Calculus II and Linear Algebra through short
 interactive lessons. It is inspired by Sololearn/Duolingo but aims to be **much deeper**:
 every lesson explains *why* each rule works, shows full worked examples, uses graphs the
 learner can play with, and checks understanding with questions where the learner actually
@@ -25,7 +25,7 @@ src/content/
 ```
 
 Courses: `algebra` (lesson ids `alg-…`), `trig` (`trig-…`), `calc1` (`calc1-…`),
-`calc2` (`calc2-…`). Every lesson file already exists as a **stub**. Replace the whole stub
+`calc2` (`calc2-…`), `linalg` (`la-…`). Every lesson file already exists as a **stub**. Replace the whole stub
 with the finished lesson. Keep the lesson `id` exactly as in the stub. You may refine the
 title slightly. The full outline is in `scripts/curriculum.json` — read the neighbouring
 lessons' titles so you don't duplicate topics owned by another lesson, and so you know what
@@ -37,7 +37,7 @@ on other units at the same time.
 ## 2. Audience and voice
 
 - Assume knowledge of all *earlier* lessons and courses in the outline (Algebra → Trig →
-  Calc I → Calc II), nothing later. If you must mention a later idea, explain it in one
+  Calc I → Calc II → Linear Algebra), nothing later. If you must mention a later idea, explain it in one
   sentence.
 - The learner may be rusty: the first algebra units should be gentle and confidence
   building, but never babyish. Calculus lessons should be at the level of a solid
