@@ -1,12 +1,14 @@
-# Math Forge
+# STEM Forge
 
-**College Algebra, Trigonometry, Calculus I, Calculus II and Linear Algebra — with deep,
-interactive lessons.** Math Forge is a Windows and Android app in the spirit of Sololearn and Duolingo,
+*(formerly STEM Forge)*
+
+**Math — College Algebra, Trigonometry, Calculus I, Calculus II and Linear Algebra — and
+Chemistry, with deep, interactive lessons.** STEM Forge is a Windows and Android app in the spirit of Sololearn and Duolingo,
 with more depth: every lesson explains *why* each rule works, walks through complete worked
 examples step by step, lets you play with live graphs, and makes you calculate real answers.
 It is a sibling of C++ Forge and shares its engine.
 
-![Math Forge lesson with an interactive Taylor series graph](docs/screenshot-lesson.png)
+![STEM Forge lesson with an interactive Taylor series graph](docs/screenshot-lesson.png)
 
 - **Five complete courses (162 lessons)**
   - **College Algebra:** 10 units — numbers and exponents, polynomials and factoring,
@@ -50,10 +52,10 @@ The GitHub Actions workflow in `.github/workflows/build.yml` builds both apps on
 
 | Artifact | Contains | Use it for |
 |---|---|---|
-| `windows-installer-x64` | `MathForge-Setup-<version>-x64.exe` | Most Windows 10/11 PCs |
-| `windows-installer-arm64` | `MathForge-Setup-<version>-arm64.exe` | Windows on ARM (e.g. Snapdragon laptops) |
-| `windows-portable-x64` | `MathForge-Portable-<version>.exe` | Running without installing |
-| `android` | `MathForge-debug.apk` | Android 7.0+; sideload with "Install unknown apps" turned on |
+| `windows-installer-x64` | `StemForge-Setup-<version>-x64.exe` | Most Windows 10/11 PCs |
+| `windows-installer-arm64` | `StemForge-Setup-<version>-arm64.exe` | Windows on ARM (e.g. Snapdragon laptops) |
+| `windows-portable-x64` | `StemForge-Portable-<version>.exe` | Running without installing |
+| `android` | `StemForge-debug.apk` | Android 7.0+; sideload with "Install unknown apps" turned on |
 
 To download them, open the repository's **Actions** tab, pick the latest **Build apps**
 run, and download the artifact you need (GitHub delivers it as a .zip containing the file).
@@ -63,7 +65,7 @@ GitHub **Release**.
 
 ### Signed Android release builds (optional)
 
-To produce a signed `MathForge-release.apk` and a Play Store `.aab`, add these repository
+To produce a signed `StemForge-release.apk` and a Play Store `.aab`, add these repository
 secrets:
 
 | Secret | Value |
