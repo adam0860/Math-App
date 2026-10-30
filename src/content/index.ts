@@ -3,10 +3,12 @@ import { algebraCourse } from './algebra';
 import { trigCourse } from './trig';
 import { calc1Course } from './calc1';
 import { calc2Course } from './calc2';
+import { linalgCourse } from './linalg';
+import { chemCourse } from './chem';
 import { glossary } from './glossary';
 import { cheatSheets } from './cheatsheets';
 
-export const courses: Course[] = [algebraCourse, trigCourse, calc1Course, calc2Course];
+export const courses: Course[] = [algebraCourse, trigCourse, calc1Course, calc2Course, linalgCourse, chemCourse];
 
 /** Short label for a course id ("Calc I"), or "All courses" for shared glossary terms. */
 export function courseLabel(id: CourseId | 'all'): string {

@@ -40,6 +40,22 @@ const courseMeta = {
     description:
       'Volumes and work, the full toolkit of integration techniques, numerical methods, differential equations, parametric and polar calculus, and sequences, series, and Taylor series.',
   },
+  chem: {
+    exportName: 'chemCourse',
+    title: 'Chemistry Foundations',
+    short: 'Chem',
+    subtitle: 'High school chemistry — atoms, bonds, reactions and the mole',
+    description:
+      'A compact on-ramp to college chemistry: matter and measurement, atoms and the periodic table, ionic and covalent bonding, chemical equations and reactions, the mole and stoichiometry, and a first look at solutions, gases, and acids and bases.',
+  },
+  linalg: {
+    exportName: 'linalgCourse',
+    title: 'Linear Algebra',
+    short: 'Lin Alg',
+    subtitle: 'Vectors, matrices and transformations — the math inside every game engine',
+    description:
+      'Vectors and the dot and cross products, solving linear systems by row reduction, linear transformations and the matrices that drive 2D and 3D graphics, determinants, vector spaces, eigenvalues, orthogonality, least squares and the SVD.',
+  },
 };
 
 const q = (s) => JSON.stringify(s);

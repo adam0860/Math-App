@@ -18,7 +18,8 @@
  * Exit code is non-zero when any ERROR is found. WARNINGS are advisory.
  */
 import katex from 'katex';
-import type { Block, GraphBlock, Lesson, Step, QuestionStep, GlossaryEntry, ReadingRef, NumOrExpr } from '../src/content/types';
+import 'katex/contrib/mhchem';
+import type { Block, FigureBlock, GraphBlock, Lesson, Step, QuestionStep, GlossaryEntry, ReadingRef, NumOrExpr } from '../src/content/types';
 import { compile, equivalent, evalConst, parse, variablesOf, type Env } from '../src/lib/mathexpr';
 import { MATH_GLOSSARY_IDS } from './glossary-master';
 import { loadContent } from './load-content';
@@ -45,7 +46,7 @@ const definedIds = new Set(glossary.map((g) => g.id));
 const resolvable = (id: string) => definedIds.has(id) || (partial && masterIds.has(id));
 
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-const PREFIX: Record<string, string> = { algebra: 'alg-', trig: 'trig-', calc1: 'calc1-', calc2: 'calc2-' };
+const PREFIX: Record<string, string> = { algebra: 'alg-', trig: 'trig-', calc1: 'calc1-', calc2: 'calc2-', linalg: 'la-', chem: 'chem-', genchem: 'gchem-', orgo: 'ochem-' };
 
 // ----------------------------------------------------------------------- TeX
 function checkTex(where: string, tex: string, display = false) {
@@ -236,6 +237,30 @@ interface LessonStats {
   graphs: number;
 }
 
+// ------------------------------------------------------------------- figures
+function checkFigure(where: string, b: FigureBlock) {
+  const svg = b.svg ?? '';
+  if (!/^\s*<svg[\s>]/.test(svg)) err(where, 'figure svg must start with <svg');
+  if (!/<svg[^>]*\bviewBox=/.test(svg)) err(where, 'figure <svg> needs a viewBox so it can scale');
+  if (/<script|\son[a-z]+\s*=|javascript:|<image|<foreignObject|xlink:href="http/i.test(svg))
+    err(where, 'figure svg may not contain scripts, event handlers, external images or foreignObject');
+  // Balanced tags (a cheap well-formedness check).
+  const stack: string[] = [];
+  for (const m of svg.replace(/<!--[\s\S]*?-->/g, '').matchAll(/<(\/?)([a-zA-Z][\w:-]*)([^>]*?)(\/?)>/g)) {
+    const [, close, name, , self] = m;
+    if (self) continue;
+    if (close) {
+      if (stack.pop() !== name) {
+        err(where, `figure svg: unexpected </${name}>`);
+        return;
+      }
+    } else stack.push(name);
+  }
+  if (stack.length) err(where, `figure svg: unclosed <${stack[stack.length - 1]}>`);
+  if (!b.alt?.trim()) err(where, 'figure needs alt text');
+  if (b.caption) checkInline(where + ' caption', b.caption);
+}
+
 function checkBlocks(where: string, blocks: Block[], stats: LessonStats) {
   if (!Array.isArray(blocks) || blocks.length === 0) {
     err(where, 'no blocks');
@@ -267,6 +292,10 @@ function checkBlocks(where: string, blocks: Block[], stats: LessonStats) {
       case 'graph':
         stats.graphs++;
         checkGraph(w, b);
+        break;
+      case 'figure':
+        stats.graphs++;
+        checkFigure(w, b);
         break;
       case 'theorem':
         checkInline(w + ' name', b.name);
@@ -510,7 +539,7 @@ function checkLesson(where: string, lesson: Lesson, courseId: string) {
   if (computed < 2) err(w, `needs at least 2 numeric/expr questions where the learner computes an answer (has ${computed})`);
   if (stats.why < 1) err(w, 'needs at least one callout with variant "why"');
   if (stats.worked < 1) err(w, 'needs at least one worked example (a `derivation` block)');
-  if (stats.graphs < 1 && courseId !== 'algebra') warn(w, 'no graph — most trig and calculus ideas are clearer with a picture');
+  if (stats.graphs < 1 && courseId !== 'algebra') warn(w, 'no graph or figure — most ideas are clearer with a picture');
   let run = 0;
   lesson.steps.forEach((s, i) => {
     run = s.kind === 'concept' ? 0 : run + 1;

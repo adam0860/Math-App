@@ -1,9 +1,9 @@
 {
   "name": "math-forge",
-  "productName": "Math Forge",
-  "version": "1.0.0",
-  "description": "Learn College Algebra, Trigonometry and Calculus I & II with deep, interactive lessons.",
-  "author": "Math Forge",
+  "productName": "STEM Forge",
+  "version": "1.2.0",
+  "description": "Learn math and chemistry with deep, interactive lessons.",
+  "author": "STEM Forge",
   "license": "MIT",
   "private": true,
   "type": "module",

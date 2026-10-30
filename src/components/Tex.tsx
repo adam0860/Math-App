@@ -1,4 +1,5 @@
 import katex from 'katex';
+import 'katex/contrib/mhchem'; // \ce{…} and \pu{…} for chemistry
 import { memo } from 'react';
 
 /*
