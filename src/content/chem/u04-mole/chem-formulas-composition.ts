@@ -295,7 +295,7 @@ export const lesson: Lesson = {
             { tex: 'n = \\frac{56.1}{14.027} = 4.00', why: 'The molecule weighs 4 times as much as one $\\ce{CH2}$ unit.' },
             { tex: '(\\ce{CH2})_4 = \\ce{C4H8}', why: 'Multiply every subscript by 4.' },
           ],
-          result: 'The molecular formula is $\\ce{C4H8}$ (a butene).',
+          result: 'The molecular formula is $\\ce{C4H8}$ (a butene, or cyclobutane: same formula, different structure).',
         },
         {
           type: 'graph',

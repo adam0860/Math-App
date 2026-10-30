@@ -574,7 +574,7 @@ export const lesson: Lesson = {
     // ------------------------------------------------------------------ 17
     {
       kind: 'order',
-      prompt: 'Put the steps for balancing $\\ce{Ca(OH)2 + H3PO4 -> Ca3(PO4)2 + H2O}$ in the order the systematic method uses.',
+      prompt: 'Put the steps for balancing $\\ce{Ca(OH)2 + H3PO4 -> Ca3(PO4)2 + H2O}$ in the order Example 2 above used.',
       lines: [
         'Give $\\ce{Ca3(PO4)2}$, the most complex formula, a coefficient of 1',
         'Balance Ca: put a 3 in front of $\\ce{Ca(OH)2}$',

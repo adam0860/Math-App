@@ -248,7 +248,7 @@ export const lesson: Lesson = {
       options: [
         { text: 'None — the solution was unsaturated, so nothing ever comes out', why: 'It *starts* unsaturated at $50\\ ^\\circ\\text{C}$ (the limit there is about $85\\ \\text{g}$), but at $20\\ ^\\circ\\text{C}$ the limit drops below $60\\ \\text{g}$, so some solid must come out.' },
         { text: 'About $28\\ \\text{g}$', correct: true, why: 'At $20\\ ^\\circ\\text{C}$ the water holds only about $32\\ \\text{g}$. The other $60 - 32 \\approx 28\\ \\text{g}$ has nowhere to go but out of solution.' },
-        { text: 'About $54\\ \\text{g}$', why: 'That is $85 - 32$, the difference between the two *solubility limits*. But the solution never held $85\\ \\text{g}$ — only $60\\ \\text{g}$ was dissolved.' },
+        { text: 'About $53\\ \\text{g}$', why: 'That is $85 - 32$, the difference between the two *solubility limits*. But the solution never held $85\\ \\text{g}$ — only $60\\ \\text{g}$ was dissolved.' },
         { text: 'All $60\\ \\text{g}$', why: 'Cooling lowers the limit; it does not drop it to zero. The water still holds about $32\\ \\text{g}$ at $20\\ ^\\circ\\text{C}$.' },
       ],
       explanation: 'Track what is actually dissolved. At $50\\ ^\\circ\\text{C}$ the purple point ($60\\ \\text{g}$) lies below the curve, so all $60\\ \\text{g}$ dissolves. As the solution cools, the point moves left; it hits the curve at roughly $38\\ ^\\circ\\text{C}$, where the solution becomes saturated. Below that, crystals form. At $20\\ ^\\circ\\text{C}$ only about $32\\ \\text{g}$ can stay dissolved, so about $60 - 32 = 28\\ \\text{g}$ crystallizes.',

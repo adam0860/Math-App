@@ -117,7 +117,7 @@ export const lesson: Lesson = {
     // ------------------------------------------------------------------ 5
     {
       kind: 'order',
-      prompt: 'Order the steps to find the mass of $\\ce{N2}$ produced from a weighed sample of $\\ce{NaN3}$.',
+      prompt: 'Order the steps to find the mass of $\\ce{N2}$ produced from a weighed sample of $\\ce{NaN3}$, following the roadmap from this lesson (balance first).',
       lines: [
         'Write and balance the equation: $\\ce{2NaN3 -> 2Na + 3N2}$',
         'Convert grams of $\\ce{NaN3}$ to moles using its molar mass',

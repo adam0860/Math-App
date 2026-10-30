@@ -74,7 +74,6 @@ export const glossary: GlossaryEntry[] = [
   {
     id: 'chem-net-ionic-equation',
     term: 'Net Ionic Equation',
-    aliases: ['Complete ionic equation'],
     course: 'chem',
     category: 'Reactions',
     short: 'An equation showing only the particles that actually change in a reaction in solution: dissolved ionic compounds are written as ions, and spectator ions are cancelled.',
