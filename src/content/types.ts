@@ -15,10 +15,12 @@
  *   [label](https://…)  external link (opens in the system browser)
  *   [[glossary-id]]     glossary term; shows the term name and a tap-to-define popover
  *   [[glossary-id|text]] glossary term with custom display text
+ * Chemistry: inside $…$ (and every TeX field) use mhchem, e.g. $\ce{2H2 + O2 -> 2H2O}$,
+ * $\ce{SO4^2-}$, $\ce{Fe^3+}$, $\pu{6.02e23 mol-1}$.
  * Paragraph breaks inside a single string: use "\n\n".
  */
 
-export type CourseId = 'algebra' | 'trig' | 'calc1' | 'calc2' | 'linalg';
+export type CourseId = 'algebra' | 'trig' | 'calc1' | 'calc2' | 'linalg' | 'chem' | 'genchem' | 'orgo';
 
 export type CodeLang = 'cpp' | 'text' | 'shell' | 'csharp' | 'ini' | 'json' | 'cmake';
 
@@ -153,7 +155,28 @@ export type Block =
   /** Key term / theorem box. */
   | { type: 'definition'; term: string; text: string }
   /** A theorem, rule or formula worth remembering. */
-  | { type: 'theorem'; name: string; tex?: string; text?: string };
+  | { type: 'theorem'; name: string; tex?: string; text?: string }
+  | FigureBlock;
+
+/**
+ * A hand-drawn diagram as inline SVG markup: Lewis structures, orbital boxes,
+ * energy-level diagrams, lab setups, particle pictures. Must have a viewBox; it
+ * scales to the card width (cap it with `maxWidth`). Draw with `currentColor`
+ * so it follows the light/dark theme, and use the classes `s-<color>` (stroke),
+ * `f-<color>` (fill) or `t-<color>` (text) with blue | red | green | purple |
+ * orange | teal | gray for the theme's accent colors. `<text>` defaults to the
+ * app font in currentColor. No scripts, event handlers or external images.
+ */
+export interface FigureBlock {
+  type: 'figure';
+  svg: string;
+  /** Short description for screen readers. */
+  alt: string;
+  /** What to notice (inline text). */
+  caption?: string;
+  /** Maximum rendered width in px (default: full card width, up to 520). */
+  maxWidth?: number;
+}
 
 export interface CompareSide {
   title: string;
@@ -341,6 +364,16 @@ export interface Course {
   description: string;
   units: Unit[];
 }
+
+/** Which course each course builds on (shown as a gentle "start there first" hint). */
+export const COURSE_PREREQ: Partial<Record<CourseId, CourseId>> = {
+  trig: 'algebra',
+  calc1: 'trig',
+  calc2: 'calc1',
+  linalg: 'calc2',
+  genchem: 'chem',
+  orgo: 'genchem',
+};
 
 // ---------------------------------------------------------------------------
 // Reference material

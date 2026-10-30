@@ -2,7 +2,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.mathforge.app',
-  appName: 'Math Forge',
+  appName: 'STEM Forge',
   webDir: 'dist',
   android: {
     backgroundColor: '#0b0e17',

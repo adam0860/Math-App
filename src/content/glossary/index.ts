@@ -3,6 +3,7 @@ import { algebraGlossary } from './algebra';
 import { trigGlossary } from './trig';
 import { calc1Glossary } from './calc1';
 import { calc2Glossary } from './calc2';
+import { chemGlossary } from './chem';
 import { linalgGlossary } from './linalg';
 import { glossary as algebra_u01 } from '../algebra/u01-foundations/glossary';
 import { glossary as algebra_u02 } from '../algebra/u02-polynomials/glossary';
@@ -45,12 +46,18 @@ import { glossary as linalg_u05 } from '../linalg/u05-determinants/glossary';
 import { glossary as linalg_u06 } from '../linalg/u06-vector-spaces/glossary';
 import { glossary as linalg_u07 } from '../linalg/u07-eigen/glossary';
 import { glossary as linalg_u08 } from '../linalg/u08-orthogonality/glossary';
+import { glossary as chem_u01 } from '../chem/u01-matter-measurement/glossary';
+import { glossary as chem_u02 } from '../chem/u02-atoms-periodic-table/glossary';
+import { glossary as chem_u03 } from '../chem/u03-bonding/glossary';
+import { glossary as chem_u04 } from '../chem/u04-mole/glossary';
+import { glossary as chem_u05 } from '../chem/u05-solutions-gases-acids/glossary';
 
 export const glossary: GlossaryEntry[] = [
   ...algebraGlossary,
   ...trigGlossary,
   ...calc1Glossary,
   ...calc2Glossary,
+  ...chemGlossary,
   ...linalgGlossary,
   ...algebra_u01,
   ...algebra_u02,
@@ -93,4 +100,9 @@ export const glossary: GlossaryEntry[] = [
   ...linalg_u06,
   ...linalg_u07,
   ...linalg_u08,
+  ...chem_u01,
+  ...chem_u02,
+  ...chem_u03,
+  ...chem_u04,
+  ...chem_u05,
 ];

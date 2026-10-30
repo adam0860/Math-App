@@ -1,4 +1,4 @@
-// Electron entry point for the Windows desktop build of Math Forge.
+// Electron entry point for the Windows desktop build of STEM Forge.
 const { app, BrowserWindow, ipcMain, nativeTheme, protocol, net, shell, Menu, screen } = require('electron');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -11,6 +11,11 @@ const { pathToFileURL } = require('node:url');
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { standard: true, secure: true, supportFetchAPI: true } },
 ]);
+
+// The app was renamed from "Math Forge" to "STEM Forge". Electron derives the
+// data folder from the product name, so pin it to the original folder: progress
+// (localStorage) and window state carry over from earlier installs.
+app.setPath('userData', path.join(app.getPath('appData'), 'Math Forge'));
 
 const DIST = path.join(__dirname, '..', 'dist');
 let win = null;
@@ -48,7 +53,7 @@ function createWindow() {
     minWidth: 380,
     minHeight: 560,
     backgroundColor: '#0b0e17',
-    title: 'Math Forge',
+    title: 'STEM Forge',
     icon: path.join(__dirname, '..', 'build', 'icon.png'),
     show: false,
     autoHideMenuBar: true,

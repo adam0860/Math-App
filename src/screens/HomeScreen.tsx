@@ -220,9 +220,9 @@ function Onboarding() {
           <CourseGlyph key={c.id} course={c.id} size={52} />
         ))}
       </div>
-      <h2 className="sheet-title center">Welcome to Math Forge</h2>
+      <h2 className="sheet-title center">Welcome to STEM Forge</h2>
       <p className="center muted">
-        Deep, interactive lessons that take you from college algebra through Calculus II and Linear Algebra — with graphs you can play with, worked
+        Deep, interactive lessons that take you from college algebra through Calculus II and Linear Algebra, plus chemistry — with graphs you can play with, worked
         examples, and answers you calculate yourself. Every rule comes with the <b>why</b>.
       </p>
       <label className="field">
@@ -255,6 +255,7 @@ function Onboarding() {
               ['calc1', 'I know algebra and trig', 'Start with Calculus I'],
               ['calc2', 'I’ve finished Calculus I', 'Start with Calculus II'],
               ['linalg', 'I want the math behind graphics and games', 'Start with Linear Algebra'],
+              ['chem', 'I’m here for chemistry', 'Start with Chemistry Foundations'],
             ] as const
           ).map(([id, title, sub]) => (
             <button key={id} type="button" className={`choice${path === id ? ' on' : ''}`} onClick={() => setPath(id)}>

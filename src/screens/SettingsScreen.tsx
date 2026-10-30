@@ -61,7 +61,7 @@ export function SettingsScreen() {
   const doImport = async (file: File) => {
     const text = await file.text();
     if (importData(text)) toast({ icon: 'check', title: 'Progress imported', tone: 'success' });
-    else toast({ icon: 'warning', title: 'That file isn’t a Math Forge backup' });
+    else toast({ icon: 'warning', title: 'That file isn’t a STEM Forge backup' });
   };
 
   const reset = async () => {
@@ -205,7 +205,7 @@ export function SettingsScreen() {
 
       <Group title="About" icon="info">
         <p className="muted small group-note">
-          <b>Math Forge</b> v{__APP_VERSION__} — deep, interactive lessons for College Algebra, Trigonometry, Calculus I, Calculus II and Linear Algebra. Works fully offline. Every
+          <b>STEM Forge</b> v{__APP_VERSION__} — deep, interactive lessons in math (College Algebra through Calculus II and Linear Algebra) and chemistry. Works fully offline. Every
           formula is typeset with KaTeX and every answer in the app is machine-checked before release.
         </p>
       </Group>

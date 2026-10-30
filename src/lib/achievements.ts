@@ -54,6 +54,8 @@ export const achievements: Achievement[] = [
   { id: 'eigen-hunter', icon: '🎯', title: 'Eigen Hunter', description: 'Finish the Eigenvalues and Eigenvectors unit.', test: unitDone('la-u07-eigen') },
   { id: 'transformer', icon: '🔄', title: 'Transformer', description: 'Finish the Independence and Linear Transformations unit.', test: unitDone('la-u03-transformations') },
   { id: 'linalg-graduate', icon: '🧊', title: 'Linear Algebra Graduate', description: 'Complete the entire Linear Algebra course.', test: courseDone('linalg') },
+  { id: 'chem-graduate', icon: '⚗️', title: 'Lab Ready', description: 'Complete the entire Chemistry Foundations course.', test: courseDone('chem') },
+  { id: 'mole-master', icon: '🧪', title: 'Mole Master', description: 'Finish The Mole and Stoichiometry unit.', test: unitDone('chem-u04-mole') },
   { id: 'calc2-graduate', icon: '🏆', title: 'Calculus II Graduate', description: 'Complete the entire Calculus II course.', test: courseDone('calc2') },
   {
     id: 'night-owl',

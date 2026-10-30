@@ -40,6 +40,14 @@ const courseMeta = {
     description:
       'Volumes and work, the full toolkit of integration techniques, numerical methods, differential equations, parametric and polar calculus, and sequences, series, and Taylor series.',
   },
+  chem: {
+    exportName: 'chemCourse',
+    title: 'Chemistry Foundations',
+    short: 'Chem',
+    subtitle: 'High school chemistry — atoms, bonds, reactions and the mole',
+    description:
+      'A compact on-ramp to college chemistry: matter and measurement, atoms and the periodic table, ionic and covalent bonding, chemical equations and reactions, the mole and stoichiometry, and a first look at solutions, gases, and acids and bases.',
+  },
   linalg: {
     exportName: 'linalgCourse',
     title: 'Linear Algebra',

@@ -252,5 +252,33 @@
         ["la-gram-schmidt", "Gram–Schmidt and QR Factorization"],
         ["la-least-squares", "Least-Squares Problems"],
         ["la-svd", "Symmetric Matrices and the SVD"] ] }
+  ],
+  "chem": [
+    {"dir": "u01-matter-measurement", "id": "chem-u01-matter-measurement", "icon": "⚖️", "title": "Matter and Measurement", "description": "What chemistry studies, states and classes of matter, physical and chemical change, and the measuring toolkit: SI units, significant figures and dimensional analysis.",
+      "lessons": [
+        ["chem-matter", "Matter, Its States and Its Changes"],
+        ["chem-measurement", "Measurement, Units and Significant Figures"],
+        ["chem-dimensional-analysis", "Dimensional Analysis and Density"] ] },
+    {"dir": "u02-atoms-periodic-table", "id": "chem-u02-atoms-periodic-table", "icon": "⚛️", "title": "Atoms and the Periodic Table", "description": "Protons, neutrons and electrons, isotopes and average atomic mass, how electrons are arranged, and the patterns of the periodic table.",
+      "lessons": [
+        ["chem-atomic-structure", "Atomic Structure and Isotopes"],
+        ["chem-electron-arrangement", "Electron Arrangement and Valence Electrons"],
+        ["chem-periodic-trends", "The Periodic Table and Its Trends"] ] },
+    {"dir": "u03-bonding", "id": "chem-u03-bonding", "icon": "🔗", "title": "Bonding and Compounds", "description": "Why atoms bond, ionic compounds and their formulas and names, covalent molecules and Lewis structures, and molecular shape and polarity.",
+      "lessons": [
+        ["chem-ionic-compounds", "Ions and Ionic Compounds"],
+        ["chem-covalent-lewis", "Covalent Bonds and Lewis Structures"],
+        ["chem-shape-polarity", "Molecular Shape and Polarity"] ] },
+    {"dir": "u04-mole", "id": "chem-u04-mole", "icon": "🧪", "title": "Reactions, the Mole and Stoichiometry", "description": "Writing and balancing chemical equations, the main reaction types, counting particles with the mole, and calculating how much reacts and forms.",
+      "lessons": [
+        ["chem-chemical-equations", "Chemical Equations and Reaction Types"],
+        ["chem-mole", "The Mole and Molar Mass"],
+        ["chem-formulas-composition", "Percent Composition and Empirical Formulas"],
+        ["chem-stoichiometry", "Stoichiometry, Limiting Reactants and Yield"] ] },
+    {"dir": "u05-solutions-gases-acids", "id": "chem-u05-solutions-gases-acids", "icon": "💧", "title": "Solutions, Gases, and Acids and Bases", "description": "Concentration and dilution, the gas laws and the ideal gas law, and a first look at acids, bases and pH.",
+      "lessons": [
+        ["chem-solutions", "Solutions, Molarity and Dilution"],
+        ["chem-gas-laws", "The Gas Laws"],
+        ["chem-acids-bases", "Acids, Bases and pH"] ] }
   ]
 }
