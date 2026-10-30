@@ -420,7 +420,7 @@ export const lesson: Lesson = {
           type: 'figure',
           svg: FIG_AUFBAU,
           alt: 'The sublevels written in rows: 1s; 2s 2p; 3s 3p 3d; 4s 4p 4d 4f; 5s 5p 5d 5f; 6s 6p 6d; 7s 7p. Numbered diagonal arrows run from upper right to lower left through them, giving the filling order 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p, 6s, 4f and so on.',
-          caption: 'Write the sublevels in rows by shell, then read along the diagonals from upper right to lower left. Arrow 5 shows why $4s$ comes before $3d$.',
+          caption: 'Write the sublevels in rows by shell, then read along the diagonals from upper right to lower left. Arrow 4 ends at $4s$ before arrow 5 starts at $3d$, which is why $4s$ comes before $3d$.',
           maxWidth: 420,
         },
         {

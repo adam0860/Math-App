@@ -335,7 +335,7 @@ export const lesson: Lesson = {
       tolerance: 0.05,
       unit: 'cm³',
       label: '$V =$',
-      explanation: '$500.\\ \\cancel{\\text{g}} \\times \\frac{1\\ \\text{cm}^3}{11.3\\ \\cancel{\\text{g}}} = 44.25\\ldots\\ \\text{cm}^3 \\approx 44.2\\ \\text{cm}^3$. If you multiplied instead ($500 \\times 11.3 = 5650$), the units would come out as $\\text{g}^2/\\text{cm}^3$, which is the dimensional-analysis alarm bell.',
+      explanation: '$500.\\ \\cancel{\\text{g}} \\times \\frac{1\\ \\text{cm}^3}{11.3\\ \\cancel{\\text{g}}} = 44.247\\ldots\\ \\text{cm}^3 \\approx 44.2\\ \\text{cm}^3$. If you multiplied instead ($500 \\times 11.3 = 5650$), the units would come out as $\\text{g}^2/\\text{cm}^3$, which is the dimensional-analysis alarm bell.',
     },
     // ------------------------------------------------------------------ 13
     {
