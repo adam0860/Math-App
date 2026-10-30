@@ -6,6 +6,7 @@ const GLYPHS: Record<CourseId, { from: string; to: string; shape: 'hex' | 'circl
   trig: { from: '#2dd4bf', to: '#0f766e', shape: 'circle', text: 'θ', size: 28, italic: true },
   calc1: { from: '#a78bfa', to: '#6d28d9', shape: 'square', text: 'f′', size: 25, italic: true },
   calc2: { from: '#fb923c', to: '#db2777', shape: 'drop', text: '∫', size: 32 },
+  linalg: { from: '#34d399', to: '#047857', shape: 'hex', text: 'Ax', size: 24, italic: true },
 };
 
 /** Course emblems: a coloured badge with the course's signature symbol. */

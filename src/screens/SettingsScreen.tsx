@@ -205,7 +205,7 @@ export function SettingsScreen() {
 
       <Group title="About" icon="info">
         <p className="muted small group-note">
-          <b>Math Forge</b> v{__APP_VERSION__} — deep, interactive lessons for College Algebra, Trigonometry, Calculus I and Calculus II. Works fully offline. Every
+          <b>Math Forge</b> v{__APP_VERSION__} — deep, interactive lessons for College Algebra, Trigonometry, Calculus I, Calculus II and Linear Algebra. Works fully offline. Every
           formula is typeset with KaTeX and every answer in the app is machine-checked before release.
         </p>
       </Group>
