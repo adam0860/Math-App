@@ -40,6 +40,14 @@ const courseMeta = {
     description:
       'Volumes and work, the full toolkit of integration techniques, numerical methods, differential equations, parametric and polar calculus, and sequences, series, and Taylor series.',
   },
+  linalg: {
+    exportName: 'linalgCourse',
+    title: 'Linear Algebra',
+    short: 'Lin Alg',
+    subtitle: 'Vectors, matrices and transformations — the math inside every game engine',
+    description:
+      'Vectors and the dot and cross products, solving linear systems by row reduction, linear transformations and the matrices that drive 2D and 3D graphics, determinants, vector spaces, eigenvalues, orthogonality, least squares and the SVD.',
+  },
 };
 
 const q = (s) => JSON.stringify(s);

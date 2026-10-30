@@ -3,6 +3,7 @@ import { algebraGlossary } from './algebra';
 import { trigGlossary } from './trig';
 import { calc1Glossary } from './calc1';
 import { calc2Glossary } from './calc2';
+import { linalgGlossary } from './linalg';
 import { glossary as algebra_u01 } from '../algebra/u01-foundations/glossary';
 import { glossary as algebra_u02 } from '../algebra/u02-polynomials/glossary';
 import { glossary as algebra_u03 } from '../algebra/u03-linear-equations/glossary';
@@ -36,12 +37,21 @@ import { glossary as calc2_u03 } from '../calc2/u03-differential-equations/gloss
 import { glossary as calc2_u04 } from '../calc2/u04-parametric-polar/glossary';
 import { glossary as calc2_u05 } from '../calc2/u05-series/glossary';
 import { glossary as calc2_u06 } from '../calc2/u06-power-series/glossary';
+import { glossary as linalg_u01 } from '../linalg/u01-vectors/glossary';
+import { glossary as linalg_u02 } from '../linalg/u02-systems/glossary';
+import { glossary as linalg_u03 } from '../linalg/u03-transformations/glossary';
+import { glossary as linalg_u04 } from '../linalg/u04-matrix-algebra/glossary';
+import { glossary as linalg_u05 } from '../linalg/u05-determinants/glossary';
+import { glossary as linalg_u06 } from '../linalg/u06-vector-spaces/glossary';
+import { glossary as linalg_u07 } from '../linalg/u07-eigen/glossary';
+import { glossary as linalg_u08 } from '../linalg/u08-orthogonality/glossary';
 
 export const glossary: GlossaryEntry[] = [
   ...algebraGlossary,
   ...trigGlossary,
   ...calc1Glossary,
   ...calc2Glossary,
+  ...linalgGlossary,
   ...algebra_u01,
   ...algebra_u02,
   ...algebra_u03,
@@ -75,4 +85,12 @@ export const glossary: GlossaryEntry[] = [
   ...calc2_u04,
   ...calc2_u05,
   ...calc2_u06,
+  ...linalg_u01,
+  ...linalg_u02,
+  ...linalg_u03,
+  ...linalg_u04,
+  ...linalg_u05,
+  ...linalg_u06,
+  ...linalg_u07,
+  ...linalg_u08,
 ];

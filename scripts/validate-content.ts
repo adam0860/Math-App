@@ -45,7 +45,7 @@ const definedIds = new Set(glossary.map((g) => g.id));
 const resolvable = (id: string) => definedIds.has(id) || (partial && masterIds.has(id));
 
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-const PREFIX: Record<string, string> = { algebra: 'alg-', trig: 'trig-', calc1: 'calc1-', calc2: 'calc2-' };
+const PREFIX: Record<string, string> = { algebra: 'alg-', trig: 'trig-', calc1: 'calc1-', calc2: 'calc2-', linalg: 'la-' };
 
 // ----------------------------------------------------------------------- TeX
 function checkTex(where: string, tex: string, display = false) {
@@ -510,7 +510,7 @@ function checkLesson(where: string, lesson: Lesson, courseId: string) {
   if (computed < 2) err(w, `needs at least 2 numeric/expr questions where the learner computes an answer (has ${computed})`);
   if (stats.why < 1) err(w, 'needs at least one callout with variant "why"');
   if (stats.worked < 1) err(w, 'needs at least one worked example (a `derivation` block)');
-  if (stats.graphs < 1 && courseId !== 'algebra') warn(w, 'no graph — most trig and calculus ideas are clearer with a picture');
+  if (stats.graphs < 1 && courseId !== 'algebra') warn(w, 'no graph — most trig, calculus and linear algebra ideas are clearer with a picture');
   let run = 0;
   lesson.steps.forEach((s, i) => {
     run = s.kind === 'concept' ? 0 : run + 1;

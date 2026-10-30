@@ -18,7 +18,7 @@
  * Paragraph breaks inside a single string: use "\n\n".
  */
 
-export type CourseId = 'algebra' | 'trig' | 'calc1' | 'calc2';
+export type CourseId = 'algebra' | 'trig' | 'calc1' | 'calc2' | 'linalg';
 
 export type CodeLang = 'cpp' | 'text' | 'shell' | 'csharp' | 'ini' | 'json' | 'cmake';
 

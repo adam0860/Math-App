@@ -1,8 +1,8 @@
 {
   "name": "math-forge",
   "productName": "Math Forge",
-  "version": "1.0.0",
-  "description": "Learn College Algebra, Trigonometry and Calculus I & II with deep, interactive lessons.",
+  "version": "1.1.0",
+  "description": "Learn College Algebra, Trigonometry, Calculus I & II and Linear Algebra with deep, interactive lessons.",
   "author": "Math Forge",
   "license": "MIT",
   "private": true,

@@ -1,14 +1,14 @@
 # Math Forge
 
-**College Algebra, Trigonometry, Calculus I and Calculus II — with deep, interactive
-lessons.** Math Forge is a Windows and Android app in the spirit of Sololearn and Duolingo,
+**College Algebra, Trigonometry, Calculus I, Calculus II and Linear Algebra — with deep,
+interactive lessons.** Math Forge is a Windows and Android app in the spirit of Sololearn and Duolingo,
 with more depth: every lesson explains *why* each rule works, walks through complete worked
 examples step by step, lets you play with live graphs, and makes you calculate real answers.
 It is a sibling of C++ Forge and shares its engine.
 
 ![Math Forge lesson with an interactive Taylor series graph](docs/screenshot-lesson.png)
 
-- **Four complete courses (130 lessons)**
+- **Five complete courses (162 lessons)**
   - **College Algebra:** 10 units — numbers and exponents, polynomials and factoring,
     equations and inequalities, lines, systems and matrices, quadratics and complex
     numbers, functions, polynomial and rational functions, exponentials and logarithms,
@@ -22,6 +22,11 @@ It is a sibling of C++ Forge and shares its engine.
   - **Calculus II:** 6 units — volumes, arc length and work, every integration technique,
     numerical integration, differential equations and Euler's method, parametric and
     polar calculus, sequences and series, and Taylor series.
+  - **Linear Algebra:** 8 units — vectors, dot and cross products, linear systems and row
+    reduction, linear independence and transformations (rotations, shears, reflections),
+    matrix algebra and the 4×4 homogeneous matrices game engines use, determinants, vector
+    spaces and change of basis, eigenvalues and Markov chains, and orthogonality, least
+    squares and the SVD.
 - **Rich lessons:** beautifully typeset math (KaTeX), worked examples where you tap any
   line to see *why* that step is allowed, interactive graphs with sliders (watch a secant
   become a tangent, Riemann rectangles converge, a sinusoid shift), theorem and definition
@@ -113,7 +118,7 @@ A single React + TypeScript codebase (built with Vite) runs everywhere:
 src/
   content/            all course content as typed data (see docs/CONTENT_GUIDE.md)
     types.ts          the content model: lessons, blocks, graphs, questions, glossary, formula sheets
-    algebra/ trig/ calc1/ calc2/   one folder per unit: one file per lesson + unit glossary
+    algebra/ trig/ calc1/ calc2/ linalg/   one folder per unit: one file per lesson + unit glossary
     glossary/ cheatsheets/
   components/         KaTeX rendering, interactive graphs, derivations, rich text, code blocks…
   questions/          the seven interactive question types
