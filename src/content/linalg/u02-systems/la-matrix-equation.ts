@@ -147,7 +147,7 @@ columns: (3, 6)`,
           annotations: [
             { lines: 9, text: 'Inner loop over $j$: a dot product of row $i$ with $\\mathbf{x}$.' },
             { lines: '16-17', text: 'Outer loop over columns: add $x_j$ times column $j$ into the running total (an "axpy" — $a\\mathbf{x} + \\mathbf{y}$).' },
-            { lines: 22, text: 'C arrays are row-major: `A[i]` is row $i$, stored contiguously.' },
+            { lines: 21, text: 'C arrays are row-major: `A[i]` is row $i$, stored contiguously.' },
           ],
         },
         {
