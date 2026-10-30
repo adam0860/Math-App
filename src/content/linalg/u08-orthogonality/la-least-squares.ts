@@ -101,7 +101,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'warning',
           title: 'You cannot cancel $A^{T}$',
-          text: 'It is tempting to "cancel" $A^{T}$ from both sides of $A^{T}A\\hat{\\mathbf{x}} = A^{T}\\mathbf{b}$ and get $A\\hat{\\mathbf{x}} = \\mathbf{b}$. That is only legal if $A^{T}$ is invertible, and a tall $A^{T}$ ($n \\times m$ with $n < m$) never is: it has a nontrivial null space, and $\\mathbf{b} - A\\hat{\\mathbf{x}}$ lives there.',
+          text: 'It is tempting to "cancel" $A^{T}$ from both sides of $A^{T}A\\hat{\\mathbf{x}} = A^{T}\\mathbf{b}$ and get $A\\hat{\\mathbf{x}} = \\mathbf{b}$. That is only legal if $A^{T}$ is invertible, and a wide $A^{T}$ ($n \\times m$ with $n < m$) never is: it has a nontrivial null space, and $\\mathbf{b} - A\\hat{\\mathbf{x}}$ lives there.',
         },
       ],
     },

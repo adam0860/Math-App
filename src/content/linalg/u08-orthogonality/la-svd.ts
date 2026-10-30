@@ -352,7 +352,7 @@ export const lesson: Lesson = {
             { tex: '= \\tfrac{3}{2}\\begin{bmatrix} 1 & 1 \\\\ 3 & 3 \\end{bmatrix} = \\begin{bmatrix} 1.5 & 1.5 \\\\ 4.5 & 4.5 \\end{bmatrix}', why: '$\\frac{3\\sqrt{5}}{\\sqrt{10}\\sqrt{2}} = \\frac{3\\sqrt{5}}{\\sqrt{20}} = \\frac{3}{2}$; the outer product $(1, 3)(1, 1)^{T}$ has rows $(1, 1)$ and $(3, 3)$.' },
             { tex: 'A - A_1 = \\begin{bmatrix} 1.5 & -1.5 \\\\ -0.5 & 0.5 \\end{bmatrix}, \\quad \\sqrt{1.5^2 + 1.5^2 + 0.5^2 + 0.5^2} = \\sqrt{5} = \\sigma_2', why: 'The error is exactly the discarded term $\\sigma_2\\mathbf{u}_2\\mathbf{v}_2^{T}$, and its size is the discarded singular value.' },
           ],
-          result: 'One rank-1 matrix (4 numbers stored as $\\sigma_1$, $\\mathbf{u}_1$, $\\mathbf{v}_1$) captures most of $A$; the dropped part has size $\\sqrt{5}$ out of a total $\\sqrt{50}$.',
+          result: 'One rank-1 matrix (5 numbers stored as $\\sigma_1$, $\\mathbf{u}_1$, $\\mathbf{v}_1$) captures most of $A$; the dropped part has size $\\sqrt{5}$ out of a total $\\sqrt{50}$.',
         },
         {
           type: 'p',

@@ -328,7 +328,7 @@ export const lesson: Lesson = {
     },
     {
       kind: 'order',
-      prompt: 'Put the steps for computing $\\operatorname{proj}_W \\mathbf{y}$ in order, given a spanning set of $W$ that you already know is orthogonal.',
+      prompt: 'Put the steps for computing $\\operatorname{proj}_W \\mathbf{y}$ in order, given a spanning set of $W$ that is supposed to be orthogonal.',
       lines: [
         'Check $\\mathbf{u}_i \\cdot \\mathbf{u}_j = 0$ for every pair $i \\ne j$',
         'For each $j$, compute the weight $\\frac{\\mathbf{y} \\cdot \\mathbf{u}_j}{\\mathbf{u}_j \\cdot \\mathbf{u}_j}$',
@@ -388,7 +388,7 @@ export const lesson: Lesson = {
       label: 'distance $=$',
       answer: 'sqrt(6)/3',
       answerTex: '\\frac{\\sqrt{6}}{3}',
-      explanation: '$\\mathbf{z} = \\mathbf{y} - \\hat{\\mathbf{y}} = \\left(3 - \\tfrac{10}{3}, 1 - \\tfrac{2}{3}, 2 - \\tfrac{4}{3}\\right) = \\left(-\\tfrac{1}{3}, \\tfrac{1}{3}, \\tfrac{2}{3}\\right)$. Its length is $\\tfrac{1}{3}\\sqrt{1 + 1 + 4} = \\tfrac{\\sqrt{6}}{3} \\approx 0.816$. Check it is perpendicular: $\\mathbf{z} \\cdot (1, 1, 0) = 0$ and $\\mathbf{z} \\cdot (1, -1, 1) = -\\tfrac13 - \\tfrac13 + \\tfrac23 = 0$. In fact $\\mathbf{z}$ is a multiple of $(-1, 1, 2) = (1,1,0) \\times (1,-1,1)$, the plane\'s normal.',
+      explanation: '$\\mathbf{z} = \\mathbf{y} - \\hat{\\mathbf{y}} = \\left(3 - \\tfrac{10}{3}, 1 - \\tfrac{2}{3}, 2 - \\tfrac{4}{3}\\right) = \\left(-\\tfrac{1}{3}, \\tfrac{1}{3}, \\tfrac{2}{3}\\right)$. Its length is $\\tfrac{1}{3}\\sqrt{1 + 1 + 4} = \\tfrac{\\sqrt{6}}{3} \\approx 0.816$. Check it is perpendicular: $\\mathbf{z} \\cdot (1, 1, 0) = 0$ and $\\mathbf{z} \\cdot (1, -1, 1) = -\\tfrac13 - \\tfrac13 + \\tfrac23 = 0$. In fact $\\mathbf{z}$ is a multiple of $(-1, 1, 2) = (1,-1,1) \\times (1,1,0)$, the plane\'s normal.',
     },
     {
       kind: 'mcq',
