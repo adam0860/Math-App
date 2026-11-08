@@ -76,7 +76,7 @@ export const lesson: Lesson = {
             ['Addition', '$p$', '$p \\lor q$', 'You may always weaken to an "or".'],
             ['Simplification', '$p \\land q$', '$p$', 'Take one part of an "and".'],
             ['Conjunction', '$p$, $\\;q$', '$p \\land q$', 'Combine two proved facts.'],
-            ['[[dm-resolution|Resolution]]', '$p \\lor q$, $\\;\\neg p \\lor r$', '$q \\lor r$', 'Card 5 of this lesson.'],
+            ['[[dm-resolution|Resolution]]', '$p \\lor q$, $\\;\\neg p \\lor r$', '$q \\lor r$', 'the resolution card later in this lesson.'],
           ],
         },
         {

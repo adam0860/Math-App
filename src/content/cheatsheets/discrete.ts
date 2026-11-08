@@ -686,7 +686,7 @@ export const discreteCheatSheets: CheatSheet[] = [
           },
           {
             label: '$m$-ary trees',
-            tex: 'n = mi + 1, \\qquad \\text{full } m\\text{-ary: } \\ell = (m-1)i + 1, \\qquad \\ell \\le m^h \\implies h \\ge \\lceil \\log_m \\ell \\rceil',
+            tex: '\\text{full } m\\text{-ary: } n = mi + 1, \\;\\; \\ell = (m-1)i + 1; \\qquad \\ell \\le m^h \\implies h \\ge \\lceil \\log_m \\ell \\rceil',
             text: '$n$ vertices, $i$ internal vertices, $\\ell$ leaves, height $h$. A balanced binary tree with $n$ nodes has height $\\Theta(\\log n)$.',
           },
           {
