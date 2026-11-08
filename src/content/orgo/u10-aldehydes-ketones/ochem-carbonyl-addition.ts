@@ -325,7 +325,7 @@ export const lesson: Lesson = {
         { text: '1-Hydroxycyclohexane-1-carbonitrile: OH and CN on the same ring carbon', correct: true, why: 'Cyanide attacks the carbonyl carbon and the resulting alkoxide is protonated by HCN, so the former C=O carbon ends up bearing both OH and C≡N.' },
         { text: 'Cyclohexanecarbonitrile, with CN replacing the oxygen', why: 'Addition does not remove the oxygen; it converts C=O into C–OH. Replacing oxygen entirely would require a later step.' },
         { text: '2-Cyanocyclohexanone, with CN on the carbon next to C=O', why: 'Cyanide is a nucleophile and attacks the electrophilic carbonyl carbon itself, not its neighbor.' },
-        { text: 'An isocyanide with O–C≡N bonding', why: 'The nucleophilic atom of cyanide here is carbon, and it bonds to the carbonyl carbon (the electrophile), not to oxygen.' },
+        { text: 'A cyanate, with O–C≡N bonding', why: 'The nucleophilic atom of cyanide here is carbon, and it bonds to the carbonyl carbon (the electrophile), not to oxygen.' },
       ],
       explanation: 'Basic-conditions nucleophilic addition: $\\ce{-CN}$ adds to the carbonyl carbon, pushing the π electrons onto oxygen; the alkoxide then takes $\\ce{H+}$ from HCN, regenerating cyanide. Product: the cyanohydrin, with OH and CN on the former carbonyl carbon, one carbon more than the starting ketone.',
     },

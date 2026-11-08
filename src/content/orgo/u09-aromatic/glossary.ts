@@ -93,7 +93,7 @@ export const glossary: GlossaryEntry[] = [
   {
     id: 'ochem-antiaromatic',
     term: 'Antiaromatic',
-    aliases: ['antiaromaticity', 'nonaromatic'],
+    aliases: ['antiaromaticity'],
     course: 'orgo',
     category: 'Conjugation and aromaticity',
     short: 'Describes a cyclic, planar, fully conjugated ring with $4n$ π electrons (4, 8, …). It is destabilized relative to an open-chain analog; cyclobutadiene is the classic example.',

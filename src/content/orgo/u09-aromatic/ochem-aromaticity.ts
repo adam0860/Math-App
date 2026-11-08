@@ -176,7 +176,7 @@ export const lesson: Lesson = {
             { label: 'π electrons that exactly fill them ($4n+2$) $=$', expr: '4floor((n-1)/4)+2', digits: 0 },
             { label: 'lowest MO energy $= \\alpha + 2\\beta$; next level $= \\alpha + \\beta \\times$', expr: '2cos(2pi/n)', digits: 3 },
           ],
-          caption: 'Vertical axis: MO energy relative to $\\alpha$, in units of $|\\beta|$ (down is more stable). Each red vertex is one π MO. Slide $N$ from 3 to 8: there is always one lowest level, then degenerate pairs, so the electron count that fills exactly the bonding levels is always $4n + 2$: 2 for $N = 3$ or 4, 6 for $N = 5$–7, 10 for $N = 8$.',
+          caption: 'Vertical axis: MO energy relative to $\\alpha$, in units of $|\\beta|$ (down is more stable). Each red vertex is one π MO. Slide $N$ from 3 to 8: there is always one lowest level, then degenerate pairs, so the electron count that fills exactly the bonding levels is always $4n + 2$: 2 for $N = 3$ or 4, 6 for $N = 5$–8.',
         },
         {
           type: 'deepdive',

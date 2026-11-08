@@ -375,7 +375,7 @@ export const lesson: Lesson = {
         'Step 1: nitrate benzene with $\\ce{HNO3/H2SO4}$ to give nitrobenzene.',
         'Step 2: Friedel–Crafts acylation of nitrobenzene with $\\ce{CH3COCl}$ and $\\ce{AlCl3}$, directed meta by the nitro group.',
       ],
-      errorLines: [3, 4],
+      errorLines: [3],
       explanation: 'The direction logic in line 2 is right, but the order chosen in line 3 leads to an impossible step 4: Friedel–Crafts reactions fail on strongly deactivated rings, and nitrobenzene is so unreactive it is used as a Friedel–Crafts **solvent**. The correct plan reverses the order: acylate benzene first ($\\ce{CH3COCl/AlCl3}$ → acetophenone), then nitrate; the acetyl group directs the nitro group meta.',
     },
     // ------------------------------------------------------------------ 15
