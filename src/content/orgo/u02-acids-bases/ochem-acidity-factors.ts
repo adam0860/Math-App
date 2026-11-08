@@ -216,7 +216,7 @@ export const lesson: Lesson = {
       answer: '10^(4.76-2.86)',
       answerTex: '10^{1.90} \\approx 79',
       tolerance: 3,
-      explanation: '$\\frac{K_a(\\ce{ClCH2COOH})}{K_a(\\ce{CH3COOH})} = 10^{4.76 - 2.86} = 10^{1.90} \\approx 79$. One chlorine two bonds from the carboxylate oxygen makes the acid about 80 times stronger. That corresponds to $1.90 \\times 5.7 \\approx 11$ kJ/mol of extra stabilization of the anion.',
+      explanation: '$\\frac{K_a(\\ce{ClCH2COOH})}{K_a(\\ce{CH3COOH})} = 10^{4.76 - 2.86} = 10^{1.90} \\approx 79$. One chlorine on the carbon next to the carboxyl group makes the acid about 80 times stronger. That corresponds to $1.90 \\times 5.7 \\approx 11$ kJ/mol of extra stabilization of the anion.',
     },
     // ------------------------------------------------------------------ 8
     {
@@ -304,7 +304,7 @@ export const lesson: Lesson = {
           steps: [
             { tex: '\\text{N vs O}', why: 'The four acids: $\\ce{CH3CH2OH}$, $\\ce{CF3CH2OH}$, $\\ce{CH3COOH}$, $\\ce{CH3CH2NH2}$. **Atom**: the amine is the only one whose conjugate base puts the charge on N, which is less electronegative than O. Weakest acid (pKa ≈ 40).' },
             { tex: '\\text{resonance: } \\ce{CH3COO-}', why: '**Resonance**: among the three O–H acids, only acetate is delocalized. Strongest acid (4.76).' },
-            { tex: '\\text{induction: } \\ce{CF3CH2O-}', why: '**Induction**: same atom, no resonance in either, but three fluorines two bonds from the O pull charge away. Trifluoroethanol (12.4) beats ethanol (16).' },
+            { tex: '\\text{induction: } \\ce{CF3CH2O-}', why: '**Induction**: same atom, no resonance in either, but three fluorines, three bonds from the O, pull charge away. Trifluoroethanol (12.4) beats ethanol (16).' },
             { tex: '\\ce{CH3COOH} > \\ce{CF3CH2OH}\\\\ > \\ce{CH3CH2OH} > \\ce{CH3CH2NH2}', why: 'Most acidic to least acidic.' },
           ],
           result: 'Each comparison was settled by the first ARIO factor that differed. Real pKa values agree: 4.76, 12.4, 16, ≈40.',

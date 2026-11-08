@@ -165,7 +165,7 @@ export const lesson: Lesson = {
             ['**π bond next to a cation** (empty p orbital)', 'One: π bond → toward the cation', 'allyl cation, benzyl cation'],
             ['**π bond between atoms of different electronegativity**', 'One: π bond → onto the more electronegative atom', 'C=O → C⁺–O⁻, C≡N → C⁺=N⁻'],
           ],
-          caption: 'A fourth case, alternating π bonds around a ring, is pattern 2 applied repeatedly: benzene, below.',
+          caption: 'A fourth case, π bonds alternating around a ring, needs no charge at all: every π bond shifts one position at once (benzene, below).',
         },
         {
           type: 'figure',
