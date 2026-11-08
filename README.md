@@ -10,7 +10,7 @@ It is a sibling of C++ Forge and shares its engine.
 
 ![STEM Forge lesson with an interactive Taylor series graph](docs/screenshot-lesson.png)
 
-- **Seven complete courses (224 lessons)**
+- **Eight complete courses (264 lessons)**
   - **College Algebra:** 10 units — numbers and exponents, polynomials and factoring,
     equations and inequalities, lines, systems and matrices, quadratics and complex
     numbers, functions, polynomial and rational functions, exponentials and logarithms,
@@ -38,7 +38,13 @@ It is a sibling of C++ Forge and shares its engine.
     structure, bonding theory (hybridization, MO theory), aqueous and redox reactions,
     thermochemistry, gases, liquids and solids, solutions, kinetics, equilibrium, acid–base
     and solubility equilibria, thermodynamics, electrochemistry, and nuclear and
-    transition-metal chemistry. Organic Chemistry is next.
+    transition-metal chemistry.
+  - **Organic Chemistry:** 12 units — the full two-semester course: drawing molecules and
+    resonance, acids and bases, conformations, stereochemistry, substitution and
+    elimination, alkenes and alkynes, radicals, alcohols and ethers, spectroscopy (MS, IR,
+    NMR), aromatic chemistry, aldehydes and ketones, acid derivatives and enolates, amines,
+    biomolecules and retrosynthesis. Structures are drawn from SMILES with OpenChemLib at
+    authoring time and embedded as theme-aware SVG.
 - **Rich lessons:** beautifully typeset math (KaTeX), worked examples where you tap any
   line to see *why* that step is allowed, interactive graphs with sliders (watch a secant
   become a tangent, Riemann rectangles converge, a sinusoid shift), theorem and definition
@@ -130,7 +136,7 @@ A single React + TypeScript codebase (built with Vite) runs everywhere:
 src/
   content/            all course content as typed data (see docs/CONTENT_GUIDE.md)
     types.ts          the content model: lessons, blocks, graphs, questions, glossary, formula sheets
-    algebra/ trig/ calc1/ calc2/ linalg/ chem/ genchem/   one folder per unit: one file per lesson + unit glossary
+    algebra/ trig/ calc1/ calc2/ linalg/ chem/ genchem/ orgo/   one folder per unit: one file per lesson + unit glossary
     glossary/ cheatsheets/
   components/         KaTeX rendering, interactive graphs, derivations, rich text, code blocks…
   questions/          the seven interactive question types
