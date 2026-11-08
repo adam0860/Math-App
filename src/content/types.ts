@@ -86,6 +86,8 @@ export interface GraphBlock {
   caption?: string;
   /** Visible window. */
   x: [number, number];
+  /** Draw the x-axis from high to low values (left = x[1]), as in IR and NMR spectra. */
+  xReversed?: boolean;
   y: [number, number];
   /** Grid / tick spacing. 'pi' places x ticks at multiples of π/2. */
   xStep?: number | 'pi';

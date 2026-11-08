@@ -87,7 +87,8 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
   const [x0, x1] = g.x;
   const [y0, y1] = g.y;
   const H = g.equal ? Math.max(160, Math.min(560, (W * (y1 - y0)) / (x1 - x0))) : (g.height ?? (compact ? 240 : 300));
-  const sx = (x: number) => ((x - x0) / (x1 - x0)) * W;
+  const rev = !!g.xReversed;
+  const sx = (x: number) => (rev ? (x1 - x) / (x1 - x0) : (x - x0) / (x1 - x0)) * W;
   const sy = (y: number) => H - ((y - y0) / (y1 - y0)) * H;
   const clampY = (y: number) => Math.max(-4 * H, Math.min(5 * H, y));
 
@@ -166,6 +167,7 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
   const xLabelEvery = xTicks.length > 14 ? 2 : 1;
   const yLabelEvery = yTicks.length > 12 ? 2 : 1;
   const axisY = y0 <= 0 && y1 >= 0 ? sy(0) : y0 > 0 ? H : 0;
+  // Window entirely to one side of 0: y-axis on the left edge for positive windows (also for reversed spectra), right for negative.
   const axisX = x0 <= 0 && x1 >= 0 ? sx(0) : x0 > 0 ? 0 : W;
 
   // Hover readout on the first function.
@@ -174,7 +176,8 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
   const onMove = (e: PointerEvent<SVGSVGElement>) => {
     if (!firstFn || !svgRef.current) return;
     const r = svgRef.current.getBoundingClientRect();
-    const x = x0 + ((e.clientX - r.left) / r.width) * (x1 - x0);
+    const f = (e.clientX - r.left) / r.width;
+    const x = rev ? x1 - f * (x1 - x0) : x0 + f * (x1 - x0);
     setHover(x);
   };
   const hoverY = hover !== null && firstFn ? firstFn({ ...env, x: hover }) : NaN;
