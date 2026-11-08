@@ -343,7 +343,7 @@ export const lesson: Lesson = {
             { tex: '\\ce{N2}: 2(14.00307) = 28.0061', why: 'Nitrogen is slightly above 14.' },
             { tex: '\\ce{C2H4}: 2(12.00000) + 4(1.00783) = 28.0313', why: 'Each hydrogen adds 0.0078 above its integer mass; hydrogen-rich formulas are heavier than their nominal mass.' },
           ],
-          result: 'The three differ by 0.011 to 0.036 u, easily resolved by an instrument accurate to about 0.001 u (a few parts per million at this mass).',
+          result: 'The three differ by 0.011 to 0.036 u, easily resolved by an instrument accurate to about 0.001 u (about 35 parts per million at this mass).',
         },
         {
           type: 'callout',
@@ -359,7 +359,7 @@ export const lesson: Lesson = {
       label: '$m/z =$',
       answer: '2*12 + 6*1.00783 + 15.99491',
       answerTex: '46.0419',
-      tolerance: 0.00015,
+      tolerance: 0.00006,
       minDecimals: 4,
       explanation: '$2(12.00000) + 6(1.00783) + 15.99491 = 24.00000 + 6.04698 + 15.99491 = 46.0419$. An isomeric formula of nominal mass 46 such as $\\ce{CH2O2}$ (formic acid) has exact mass 46.0055, so high-resolution MS distinguishes them immediately.',
     },

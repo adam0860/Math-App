@@ -355,12 +355,12 @@ export const lesson: Lesson = {
       prompt: 'Order the steps for predicting a ¹H NMR spectrum from a structure.',
       lines: [
         'Group the protons into sets of chemically equivalent protons (this gives the number of signals)',
-        'Estimate the chemical shift of each set from its neighbouring atoms and π bonds',
-        'Assign the integration of each set (its number of protons)',
-        'Count non-equivalent H on adjacent carbons and apply the n+1 rule to each set',
+        'For each set, count the non-equivalent H on the adjacent carbons',
+        'Apply the n+1 rule to that count to get each set\'s multiplicity',
+        'Draw each multiplet at the set\'s estimated chemical shift, with an area proportional to its number of protons',
       ],
       distractors: ['Count the carbons in the molecule to get the number of signals'],
-      explanation: 'Equivalence comes first because every later step is done per set. Shift, integration and multiplicity can then be read off for each set. (Integration and multiplicity are independent of each other, but the standard order is shift, integral, splitting, as in the table for ethyl acetate.) The number of carbons is not the number of proton signals: carbons without H give none, and equivalent carbons share one.',
+      explanation: 'Equivalence comes first because every later step is done per set. The neighbour count is needed before the n+1 rule can give a multiplicity, and only then can the finished multiplet be placed at its shift with its integration. The number of carbons is not the number of proton signals: carbons without H give none, and equivalent carbons share one.',
     },
     // ------------------------------------------------------------------ 15
     {
