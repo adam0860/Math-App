@@ -263,6 +263,14 @@ function checkFigure(where: string, b: FigureBlock) {
     } else stack.push(name);
   }
   if (stack.length) err(where, `figure svg: unclosed <${stack[stack.length - 1]}>`);
+  for (const tag of svg.matchAll(/<[a-zA-Z][^>]*>/g)) {
+    const names = [...tag[0].matchAll(/\s([a-zA-Z:-]+)=/g)].map((m) => m[1]);
+    const dup = names.find((n, i) => names.indexOf(n) !== i);
+    if (dup) {
+      err(where, `figure svg: duplicate ${dup}="…" attribute (the browser keeps only the first): ${tag[0].slice(0, 80)}`);
+      break;
+    }
+  }
   if (!b.alt?.trim()) err(where, 'figure needs alt text');
   if (b.caption) checkInline(where + ' caption', b.caption);
 }
@@ -384,6 +392,10 @@ function checkQuestion(where: string, q: QuestionStep, stats: LessonStats) {
   if (q.graph) {
     stats.graphs++;
     checkGraph(where + ' graph', q.graph);
+  }
+  if (q.figure) {
+    stats.graphs++;
+    checkFigure(where + ' figure', q.figure);
   }
   switch (q.kind) {
     case 'mcq': {

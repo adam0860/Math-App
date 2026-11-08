@@ -5,6 +5,7 @@ import { calc1Glossary } from './calc1';
 import { calc2Glossary } from './calc2';
 import { chemGlossary } from './chem';
 import { genchemGlossary } from './genchem';
+import { orgoGlossary } from './orgo';
 import { linalgGlossary } from './linalg';
 import { glossary as algebra_u01 } from '../algebra/u01-foundations/glossary';
 import { glossary as algebra_u02 } from '../algebra/u02-polynomials/glossary';
@@ -64,6 +65,18 @@ import { glossary as genchem_u09 } from '../genchem/u09-acid-base-equilibria/glo
 import { glossary as genchem_u10 } from '../genchem/u10-thermodynamics/glossary';
 import { glossary as genchem_u11 } from '../genchem/u11-electrochemistry/glossary';
 import { glossary as genchem_u12 } from '../genchem/u12-nuclear-transition/glossary';
+import { glossary as orgo_u01 } from '../orgo/u01-structure/glossary';
+import { glossary as orgo_u02 } from '../orgo/u02-acids-bases/glossary';
+import { glossary as orgo_u03 } from '../orgo/u03-alkanes/glossary';
+import { glossary as orgo_u04 } from '../orgo/u04-stereochemistry/glossary';
+import { glossary as orgo_u05 } from '../orgo/u05-substitution-elimination/glossary';
+import { glossary as orgo_u06 } from '../orgo/u06-alkenes-alkynes/glossary';
+import { glossary as orgo_u07 } from '../orgo/u07-radicals-alcohols-ethers/glossary';
+import { glossary as orgo_u08 } from '../orgo/u08-spectroscopy/glossary';
+import { glossary as orgo_u09 } from '../orgo/u09-aromatic/glossary';
+import { glossary as orgo_u10 } from '../orgo/u10-aldehydes-ketones/glossary';
+import { glossary as orgo_u11 } from '../orgo/u11-acyl-enolates/glossary';
+import { glossary as orgo_u12 } from '../orgo/u12-amines-bio-synthesis/glossary';
 
 export const glossary: GlossaryEntry[] = [
   ...algebraGlossary,
@@ -72,6 +85,7 @@ export const glossary: GlossaryEntry[] = [
   ...calc2Glossary,
   ...chemGlossary,
   ...genchemGlossary,
+  ...orgoGlossary,
   ...linalgGlossary,
   ...algebra_u01,
   ...algebra_u02,
@@ -131,4 +145,16 @@ export const glossary: GlossaryEntry[] = [
   ...genchem_u10,
   ...genchem_u11,
   ...genchem_u12,
+  ...orgo_u01,
+  ...orgo_u02,
+  ...orgo_u03,
+  ...orgo_u04,
+  ...orgo_u05,
+  ...orgo_u06,
+  ...orgo_u07,
+  ...orgo_u08,
+  ...orgo_u09,
+  ...orgo_u10,
+  ...orgo_u11,
+  ...orgo_u12,
 ];

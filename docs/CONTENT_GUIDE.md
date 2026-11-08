@@ -140,6 +140,7 @@ TeX is full of backslashes, so **every backslash must be doubled** in TS source:
     x: [-4, 4], y: [-2, 6],              // window
     xStep: 'pi',                          // optional: ticks at multiples of π/2 (trig!)
     equal: true,                          // optional: same scale on both axes (circles)
+    xReversed: true,                      // optional: high x on the left (IR and NMR spectra)
     functions: [{ expr: 'a*sin(b*x)', label: '$y = a\\sin(bx)$', color: 'blue', dashed?, domain? }],
     parametric: [{ x: 'cos(t)', y: 'sin(t)', t: [0, '2pi'] }],
     polar: [{ expr: '1 + cos(theta)' }],
@@ -168,7 +169,7 @@ TeX is full of backslashes, so **every backslash must be doubled** in TS source:
 
 Every question has a `prompt`, an `explanation` (shown after answering — it must
 **teach the why**, usually by walking through the solution), and optionally `hint`,
-`tex` (display math under the prompt), `graph` (a graph under the prompt) or `code`.
+`tex` (display math under the prompt), `graph` (a graph under the prompt), `figure` (a `figure` block — e.g. a structure to name or a reaction to complete) or `code`.
 
 - `mcq` — 3–5 options, exactly one `correct: true` (or `multi: true`). **Every option gets
   a `why`.** Distractors must be the answers students *actually* get from common mistakes

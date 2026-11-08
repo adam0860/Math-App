@@ -56,6 +56,14 @@ const courseMeta = {
     description:
       'University general chemistry: electronic structure and bonding theory, aqueous reactions and redox, thermochemistry, gases, liquids, solids and solutions, kinetics, equilibrium, acid–base and solubility equilibria, thermodynamics, electrochemistry, and nuclear and transition-metal chemistry.',
   },
+  orgo: {
+    exportName: 'orgoCourse',
+    title: 'Organic Chemistry',
+    short: 'Orgo',
+    subtitle: 'Structure, mechanism and synthesis — the full two-semester course',
+    description:
+      'University organic chemistry: drawing and naming molecules, acids and bases, conformations and stereochemistry, substitution and elimination, alkenes and alkynes, alcohols and ethers, spectroscopy, aromatic chemistry, carbonyl and enolate chemistry, amines and biomolecules, and multistep synthesis.',
+  },
   linalg: {
     exportName: 'linalgCourse',
     title: 'Linear Algebra',

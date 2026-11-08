@@ -352,5 +352,71 @@
         ["gchem-radioactive-decay", "Radioactivity and Nuclear Equations"],
         ["gchem-nuclear-energy", "Decay Kinetics, Binding Energy, Fission and Fusion"],
         ["gchem-coordination", "Transition Metals and Coordination Compounds"] ] }
+  ],
+  "orgo": [
+    {"dir": "u01-structure", "id": "ochem-u01-structure", "icon": "🧩", "title": "Structure, Bonding and Drawing Molecules", "description": "Reading and drawing bond-line structures, resonance and curved-arrow notation, and the functional groups that organize the rest of the course.",
+      "lessons": [
+        ["ochem-bond-line", "Bond-Line Structures and Formal Charge"],
+        ["ochem-resonance-arrows", "Resonance and Curved Arrows"],
+        ["ochem-functional-groups", "Functional Groups and Intermolecular Forces"] ] },
+    {"dir": "u02-acids-bases", "id": "ochem-u02-acids-bases", "icon": "⚗️", "title": "Acids and Bases in Organic Chemistry", "description": "Organic acids and bases, using pKa to predict equilibria, and the structural factors that make a proton acidic.",
+      "lessons": [
+        ["ochem-pka", "Organic Acids, Bases and pKa"],
+        ["ochem-acidity-factors", "What Makes an Acid Strong: Atom, Resonance, Induction, Orbital"] ] },
+    {"dir": "u03-alkanes", "id": "ochem-u03-alkanes", "icon": "🔗", "title": "Alkanes and Conformations", "description": "Naming alkanes and cycloalkanes, rotation about single bonds and Newman projections, and the chair conformations of cyclohexane.",
+      "lessons": [
+        ["ochem-nomenclature", "Naming Alkanes and Cycloalkanes"],
+        ["ochem-conformations", "Conformations and Newman Projections"],
+        ["ochem-cyclohexane", "Cyclohexane Chairs and Ring Strain"] ] },
+    {"dir": "u04-stereochemistry", "id": "ochem-u04-stereochemistry", "icon": "🪞", "title": "Stereochemistry", "description": "Chirality and enantiomers, R/S configuration, and diastereomers, meso compounds, Fischer projections and optical activity.",
+      "lessons": [
+        ["ochem-chirality", "Chirality and Enantiomers"],
+        ["ochem-r-s", "Assigning R and S"],
+        ["ochem-diastereomers", "Diastereomers, Meso Compounds and Optical Activity"] ] },
+    {"dir": "u05-substitution-elimination", "id": "ochem-u05-substitution-elimination", "icon": "🎯", "title": "Substitution and Elimination", "description": "How mechanisms work, the SN2 and SN1 reactions, E2 and E1 eliminations, and predicting which one wins.",
+      "lessons": [
+        ["ochem-mechanism-basics", "Nucleophiles, Electrophiles and Energy Diagrams"],
+        ["ochem-sn2", "The SN2 Reaction"],
+        ["ochem-sn1", "The SN1 Reaction and Carbocations"],
+        ["ochem-elimination", "E2, E1 and Substitution versus Elimination"] ] },
+    {"dir": "u06-alkenes-alkynes", "id": "ochem-u06-alkenes-alkynes", "icon": "🧷", "title": "Alkenes and Alkynes", "description": "Alkene structure and stability, electrophilic additions and their regio- and stereochemistry, oxidations and reductions, and the chemistry of alkynes.",
+      "lessons": [
+        ["ochem-alkene-structure", "Alkene Structure, Naming and Stability"],
+        ["ochem-alkene-addition", "Electrophilic Addition: HX and Hydration"],
+        ["ochem-alkene-reactions", "Halogenation, Hydroboration, Oxidation and Hydrogenation"],
+        ["ochem-alkynes", "Alkynes"] ] },
+    {"dir": "u07-radicals-alcohols-ethers", "id": "ochem-u07-radicals-alcohols-ethers", "icon": "🍷", "title": "Radicals, Alcohols and Ethers", "description": "Radical halogenation and its selectivity, the preparation and reactions of alcohols, and ethers and epoxides.",
+      "lessons": [
+        ["ochem-radicals", "Radical Reactions"],
+        ["ochem-alcohols", "Alcohols: Preparation and Reactions"],
+        ["ochem-ethers-epoxides", "Ethers and Epoxides"] ] },
+    {"dir": "u08-spectroscopy", "id": "ochem-u08-spectroscopy", "icon": "📡", "title": "Spectroscopy and Structure Determination", "description": "Mass spectrometry, infrared spectroscopy, proton and carbon-13 NMR, and solving structures from combined spectra.",
+      "lessons": [
+        ["ochem-mass-spec", "Mass Spectrometry"],
+        ["ochem-ir", "Infrared Spectroscopy"],
+        ["ochem-h-nmr", "Proton NMR Spectroscopy"],
+        ["ochem-c-nmr-structure", "Carbon-13 NMR and Solving Structures"] ] },
+    {"dir": "u09-aromatic", "id": "ochem-u09-aromatic", "icon": "⬡", "title": "Conjugation and Aromaticity", "description": "Conjugated dienes and the Diels–Alder reaction, aromaticity and Hückel's rule, electrophilic aromatic substitution, and directing effects.",
+      "lessons": [
+        ["ochem-conjugated-dienes", "Conjugated Dienes and the Diels–Alder Reaction"],
+        ["ochem-aromaticity", "Aromaticity and Hückel's Rule"],
+        ["ochem-eas", "Electrophilic Aromatic Substitution"],
+        ["ochem-directing-effects", "Substituent Effects and Aromatic Synthesis"] ] },
+    {"dir": "u10-aldehydes-ketones", "id": "ochem-u10-aldehydes-ketones", "icon": "💎", "title": "Aldehydes and Ketones", "description": "Nucleophilic addition to the carbonyl group, hydride and organometallic reagents, and acetals, imines and the Wittig reaction.",
+      "lessons": [
+        ["ochem-carbonyl-addition", "Nucleophilic Addition to Aldehydes and Ketones"],
+        ["ochem-organometallics", "Hydride Reductions and Grignard Reagents"],
+        ["ochem-acetals-imines", "Acetals, Imines and the Wittig Reaction"] ] },
+    {"dir": "u11-acyl-enolates", "id": "ochem-u11-acyl-enolates", "icon": "🧬", "title": "Carboxylic Acid Derivatives and Enolates", "description": "Carboxylic acids and nucleophilic acyl substitution, esters and amides, enols and enolates, and the aldol and Claisen reactions.",
+      "lessons": [
+        ["ochem-carboxylic-acids", "Carboxylic Acids and Their Derivatives"],
+        ["ochem-acyl-substitution", "Nucleophilic Acyl Substitution"],
+        ["ochem-enolates", "Enols, Enolates and Alpha Substitution"],
+        ["ochem-aldol-claisen", "Aldol and Claisen Condensations"] ] },
+    {"dir": "u12-amines-bio-synthesis", "id": "ochem-u12-amines-bio-synthesis", "icon": "🧠", "title": "Amines, Biomolecules and Synthesis", "description": "Amines, the organic chemistry of carbohydrates and proteins, and planning multistep syntheses with retrosynthesis.",
+      "lessons": [
+        ["ochem-amines", "Amines"],
+        ["ochem-biomolecules", "Carbohydrates, Amino Acids and Proteins"],
+        ["ochem-retrosynthesis", "Retrosynthesis and Multistep Synthesis"] ] }
   ]
 }
