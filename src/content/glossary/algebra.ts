@@ -299,7 +299,7 @@ export const algebraGlossary: GlossaryEntry[] = [
     category: 'Expressions',
     short: "One of the parts of a sum: in $4x^2 - 3x + 7$ the terms are $4x^2$, $-3x$ and $7$.",
     long: "Terms are separated by $+$ and $-$ signs at the top level of an expression (not inside parentheses). Each term is a product of a [[coefficient|coefficient]] and variables; a term with no variable, like $7$, is a constant term.\n\nThe sign belongs to the term that follows it. In $5 - 2x$, the terms are $5$ and $-2x$; this is why rewriting as $5 + (-2x)$ lets you reorder safely.\n\nPitfall: you can only cancel *factors*, never terms. In $\\tfrac{x + 6}{x + 2}$ there is nothing to cancel, because $x$ is a term, not a factor, of the numerator. In $\\tfrac{3(x + 2)}{x + 2}$ the factor $(x + 2)$ cancels (for $x \\ne -2$).",
-    tex: '4x^2 \;-\; 3x \;+\; 7 \\quad \\text{has terms } 4x^2,\\ -3x,\\ 7',
+    tex: '4x^2 \\;-\\; 3x \\;+\\; 7 \\quad \\text{has terms } 4x^2,\\ -3x,\\ 7',
     see: ['coefficient', 'like-terms', 'monomial', 'polynomial'],
   },
   {

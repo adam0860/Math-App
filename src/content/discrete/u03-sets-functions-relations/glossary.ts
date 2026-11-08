@@ -107,7 +107,7 @@ export const glossary: GlossaryEntry[] = [
     category: 'Functions',
     short: '$f: A \\to B$ is surjective when every $b \\in B$ is an output: the range equals the codomain.',
     long: 'To prove surjectivity, take an arbitrary $b \\in B$, solve $f(a) = b$, and check that the solution lies in the domain. Whether a function is onto depends on the codomain: $x \\mapsto x^2$ is onto $[0, \\infty)$ but not onto $\\mathbb{R}$, and $n \\mapsto 3n + 5$ is onto as a map $\\mathbb{R} \\to \\mathbb{R}$ but not as a map $\\mathbb{Z} \\to \\mathbb{Z}$.',
-    tex: '\\forall b \\in B\; \\exists a \\in A:\; f(a) = b',
+    tex: '\\forall b \\in B\\; \\exists a \\in A:\\; f(a) = b',
     see: ['dm-injection', 'dm-bijection', 'codomain'],
   },
   {
@@ -195,7 +195,7 @@ export const glossary: GlossaryEntry[] = [
     category: 'Relations',
     short: '$R$ on $A$ is reflexive if $a \\mathrel{R} a$ for every $a \\in A$: a loop at every vertex, all 1s on the matrix diagonal.',
     long: 'Examples: $=$, $\\le$, $\\subseteq$, divisibility. Non-examples: $<$ and "is a parent of". A relation with **no** loops at all is *irreflexive*; "not reflexive" only means at least one loop is missing.',
-    tex: '\\forall a \\in A:\; a \\mathrel{R} a',
+    tex: '\\forall a \\in A:\\; a \\mathrel{R} a',
     see: ['dm-relation', 'dm-symmetric-relation', 'dm-equivalence-relation'],
   },
   {

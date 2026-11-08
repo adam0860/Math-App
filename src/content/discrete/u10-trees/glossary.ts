@@ -56,7 +56,7 @@ export const glossary: GlossaryEntry[] = [
     category: 'Trees',
     short: 'A binary tree with operators at internal nodes and operands at leaves. Its preorder, inorder and postorder traversals give prefix, infix and postfix notation.',
     long: 'Prefix and postfix (reverse Polish) notation need no parentheses. A postfix expression is evaluated left to right with a stack: push numbers; an operator pops two values (the second popped is the left operand) and pushes the result.',
-    tex: '(3 + 4) \\times (5 - 2) \;\\leftrightarrow\; 3\\ 4\\ +\\ 5\\ 2\\ -\\ \\times',
+    tex: '(3 + 4) \\times (5 - 2) \\;\\leftrightarrow\\; 3\\ 4\\ +\\ 5\\ 2\\ -\\ \\times',
     see: ['dm-tree-traversal'],
   },
   {

@@ -21,7 +21,7 @@ export const glossary: GlossaryEntry[] = [
     category: 'Inverse Trig',
     short: 'Replacing an angle by the coterminal angle in a standard interval, usually $(-\\pi, \\pi]$ or $[0, 2\\pi)$, by adding or subtracting multiples of $2\\pi$.',
     long: 'Games wrap angle differences into $(-\\pi, \\pi]$ so that an object turning toward a target always takes the shorter way around. A compact trick is `atan2(sin(d), cos(d))`, which returns the angle coterminal with `d` in $(-\\pi, \\pi]$.',
-    tex: '-\\tfrac{3\\pi}{2} \;\\mapsto\; -\\tfrac{3\\pi}{2} + 2\\pi = \\tfrac{\\pi}{2}',
+    tex: '-\\tfrac{3\\pi}{2} \\;\\mapsto\\; -\\tfrac{3\\pi}{2} + 2\\pi = \\tfrac{\\pi}{2}',
     example: 'double wrapAngle(double d) {\n    return std::atan2(std::sin(d), std::cos(d));  // result in (-pi, pi]\n}',
     exampleLang: 'cpp',
     see: ['atan2', 'coterminal-angles'],
