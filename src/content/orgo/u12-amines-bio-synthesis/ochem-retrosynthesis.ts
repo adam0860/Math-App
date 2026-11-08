@@ -299,7 +299,7 @@ export const lesson: Lesson = {
       answer: '100*0.92*0.65*0.88*0.95',
       answerTex: '50.0\\%',
       tolerance: 0.05,
-      explanation: '$0.92 \\times 0.65 = 0.598$; $\\times 0.88 = 0.526$; $\\times 0.95 = 0.500$. Overall: $50.0\\%$. The 65% step alone halves the material that the other three steps lose only a quarter of; that is the step to optimize.',
+      explanation: '$0.92 \\times 0.65 = 0.598$; $\\times 0.88 = 0.526$; $\\times 0.95 = 0.500$. Overall: $50.0\\%$. The 65% step alone loses 35% of the material, more than the other three steps combined (together they keep 77%); that is the step to optimize.',
     },
     // ------------------------------------------------------------------ 13
     {
