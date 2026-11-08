@@ -178,7 +178,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'why',
           title: 'Why BFS distances are correct',
-          text: 'Claim: BFS dequeues all vertices at distance $k$ before any at distance $k + 1$, and labels each with its true distance. By induction on $k$. For $k = 0$ only $s$ is labeled $0$. Suppose it holds up to $k$. A vertex $v$ at true distance $k + 1$ has a neighbour $u$ at distance $k$ on some shortest path; when BFS dequeues $u$ it labels $v$ with $k + 1$ unless $v$ was labeled earlier — and an earlier label would have come from a vertex at distance $< k$, giving $v$ distance $\\le k$, a contradiction. Labels can never be too small either, since every label is the length of an actual walk the search followed.',
+          text: 'Claim: BFS dequeues all vertices at distance $k$ before any at distance $k + 1$, and labels each with its true distance. By induction on $k$. For $k = 0$ only $s$ is labeled $0$. Suppose it holds up to $k$. A vertex $v$ at true distance $k + 1$ has a neighbour $u$ at distance $k$ on some shortest path; when BFS dequeues $u$ it labels $v$ with $k + 1$ unless $v$ was labeled earlier — and an earlier label would have come from a vertex dequeued before $u$, hence at distance $\\le k$, so that label is at most $k + 1$ as well. Labels can never be too small either, since every label is the length of an actual walk the search followed.',
         },
         {
           type: 'callout',
