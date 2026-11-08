@@ -169,7 +169,7 @@ TeX is full of backslashes, so **every backslash must be doubled** in TS source:
 
 Every question has a `prompt`, an `explanation` (shown after answering — it must
 **teach the why**, usually by walking through the solution), and optionally `hint`,
-`tex` (display math under the prompt), `graph` (a graph under the prompt) or `code`.
+`tex` (display math under the prompt), `graph` (a graph under the prompt), `figure` (a `figure` block — e.g. a structure to name or a reaction to complete) or `code`.
 
 - `mcq` — 3–5 options, exactly one `correct: true` (or `multi: true`). **Every option gets
   a `why`.** Distractors must be the answers students *actually* get from common mistakes

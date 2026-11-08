@@ -393,6 +393,10 @@ function checkQuestion(where: string, q: QuestionStep, stats: LessonStats) {
     stats.graphs++;
     checkGraph(where + ' graph', q.graph);
   }
+  if (q.figure) {
+    stats.graphs++;
+    checkFigure(where + ' figure', q.figure);
+  }
   switch (q.kind) {
     case 'mcq': {
       if (q.options.length < 3) err(where, 'mcq needs at least 3 options');

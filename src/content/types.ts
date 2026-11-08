@@ -210,6 +210,8 @@ interface QuestionBase {
   tex?: string;
   /** Optional graph shown with the prompt. */
   graph?: GraphBlock;
+  /** Optional diagram shown with the prompt (a structure to name, a reaction to complete…). */
+  figure?: FigureBlock;
   /** Optional code shown with the prompt. */
   code?: string;
   lang?: CodeLang;
