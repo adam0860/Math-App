@@ -59,6 +59,9 @@ export const achievements: Achievement[] = [
   { id: 'equilibrium-reached', icon: '⚖️', title: 'Equilibrium Reached', description: 'Finish the Chemical Equilibrium unit.', test: unitDone('gchem-u08-equilibrium') },
   { id: 'voltage', icon: '🔋', title: 'Full Charge', description: 'Finish the Electrochemistry unit.', test: unitDone('gchem-u11-electrochemistry') },
   { id: 'genchem-graduate', icon: '🥼', title: 'General Chemistry Graduate', description: 'Complete the entire General Chemistry course.', test: courseDone('genchem') },
+  { id: 'mirror-image', icon: '🪞', title: 'Mirror Image', description: 'Finish the Stereochemistry unit.', test: unitDone('ochem-u04-stereochemistry') },
+  { id: 'arrow-pusher', icon: '🎯', title: 'Arrow Pusher', description: 'Finish the Substitution and Elimination unit.', test: unitDone('ochem-u05-substitution-elimination') },
+  { id: 'orgo-graduate', icon: '🧪', title: 'Organic Chemistry Graduate', description: 'Complete the entire Organic Chemistry course — you survived orgo.', test: courseDone('orgo') },
   { id: 'calc2-graduate', icon: '🏆', title: 'Calculus II Graduate', description: 'Complete the entire Calculus II course.', test: courseDone('calc2') },
   {
     id: 'night-owl',

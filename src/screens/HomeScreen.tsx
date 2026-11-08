@@ -257,6 +257,7 @@ function Onboarding() {
               ['linalg', 'I want the math behind graphics and games', 'Start with Linear Algebra'],
               ['chem', 'I’m here for chemistry', 'Start with Chemistry Foundations'],
               ['genchem', 'I’ve had high school chemistry', 'Start with General Chemistry'],
+              ['orgo', 'I’ve finished General Chemistry', 'Start with Organic Chemistry'],
             ] as const
           ).map(([id, title, sub]) => (
             <button key={id} type="button" className={`choice${path === id ? ' on' : ''}`} onClick={() => setPath(id)}>
