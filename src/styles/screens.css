@@ -1793,3 +1793,21 @@
   background: color-mix(in srgb, var(--orgo-1) 16%, transparent);
   color: color-mix(in srgb, var(--orgo-1) 70%, var(--text));
 }
+
+.continue-card.course-discrete {
+  background: linear-gradient(140deg, color-mix(in srgb, var(--discrete-1) 12%, var(--surface)), var(--surface) 60%);
+}
+.course-card.course-discrete {
+  background: linear-gradient(135deg, #2e1065, #6d28d9 50%, #4338ca);
+}
+.course-tab.on.course-discrete {
+  background: color-mix(in srgb, var(--discrete-1) 15%, transparent);
+  color: color-mix(in srgb, var(--discrete-1) 65%, var(--text));
+}
+.course-hero.course-discrete {
+  background: linear-gradient(135deg, #1e1b4b, #5b21b6 50%, #3730a3);
+}
+.sheet-card.course-discrete .sheet-badge {
+  background: color-mix(in srgb, var(--discrete-1) 16%, transparent);
+  color: color-mix(in srgb, var(--discrete-1) 70%, var(--text));
+}

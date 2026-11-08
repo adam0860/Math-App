@@ -255,6 +255,7 @@ function Onboarding() {
               ['calc1', 'I know algebra and trig', 'Start with Calculus I'],
               ['calc2', 'I’ve finished Calculus I', 'Start with Calculus II'],
               ['linalg', 'I want the math behind graphics and games', 'Start with Linear Algebra'],
+              ['discrete', 'I’m studying computer science', 'Start with Discrete Math'],
               ['chem', 'I’m here for chemistry', 'Start with Chemistry Foundations'],
               ['genchem', 'I’ve had high school chemistry', 'Start with General Chemistry'],
               ['orgo', 'I’ve finished General Chemistry', 'Start with Organic Chemistry'],

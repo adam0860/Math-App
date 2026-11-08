@@ -1,0 +1,13 @@
+import type { Lesson } from '../../types';
+
+// STUB — replace this whole file with the finished lesson.
+export const lesson: Lesson = {
+  id: "dm-modeling-recurrences",
+  title: "Modeling with Recurrence Relations",
+  summary: 'This lesson is being written.',
+  minutes: 10,
+  objectives: [],
+  steps: [{ kind: 'concept', title: "Modeling with Recurrence Relations", blocks: [{ type: 'p', text: 'Coming soon.' }] }],
+  takeaways: [],
+  reading: [],
+};

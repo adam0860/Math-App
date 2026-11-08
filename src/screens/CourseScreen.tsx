@@ -309,4 +309,5 @@ const FINISH: Record<CourseId, string> = {
   chem: 'Finish line: you’ll be ready for college General Chemistry.',
   genchem: 'Finish line: you’ll be ready for Organic Chemistry.',
   orgo: 'Finish line: you’ll be ready for biochemistry and upper-level chemistry.',
+  discrete: 'Finish line: you’ll be ready for data structures, algorithms and theory of computation.',
 };
