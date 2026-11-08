@@ -202,5 +202,155 @@
         ["calc2-functions-as-series", "Representing Functions as Power Series"],
         ["calc2-taylor-series", "Taylor and Maclaurin Series"],
         ["calc2-taylor-applications", "Applications of Taylor Polynomials"] ] }
+  ],
+  "linalg": [
+    {"dir": "u01-vectors", "id": "la-u01-vectors", "icon": "➡️", "title": "Vectors", "description": "Vectors in Rⁿ, linear combinations and span, the dot product, and the cross product — the building blocks of every position, velocity and direction in a game.",
+      "lessons": [
+        ["la-vectors-rn", "Vectors in Rⁿ"],
+        ["la-linear-combinations", "Linear Combinations and Span"],
+        ["la-dot-product", "The Dot Product: Length, Angle and Projection"],
+        ["la-cross-product", "The Cross Product"] ] },
+    {"dir": "u02-systems", "id": "la-u02-systems", "icon": "🧩", "title": "Linear Systems", "description": "Systems of linear equations, row reduction to echelon form, describing every solution with free variables, and the matrix equation Ax = b.",
+      "lessons": [
+        ["la-linear-systems", "Systems of Linear Equations and Augmented Matrices"],
+        ["la-row-reduction", "Row Reduction and Echelon Forms"],
+        ["la-solution-sets", "Solution Sets and Parametric Vector Form"],
+        ["la-matrix-equation", "The Matrix Equation Ax = b"] ] },
+    {"dir": "u03-transformations", "id": "la-u03-transformations", "icon": "🔄", "title": "Independence and Linear Transformations", "description": "Linear independence, functions that preserve vector arithmetic, the standard matrix of a transformation, and the rotations, scales, shears and reflections of 2D and 3D graphics.",
+      "lessons": [
+        ["la-linear-independence", "Linear Independence"],
+        ["la-linear-transformations", "Linear Transformations"],
+        ["la-standard-matrix", "The Matrix of a Linear Transformation"],
+        ["la-geometric-transforms", "Rotations, Scales, Shears and Reflections"] ] },
+    {"dir": "u04-matrix-algebra", "id": "la-u04-matrix-algebra", "icon": "🔲", "title": "Matrix Algebra", "description": "Matrix multiplication as composition, inverses, the Invertible Matrix Theorem, and the 4×4 homogeneous matrices every game engine uses.",
+      "lessons": [
+        ["la-matrix-operations", "Matrix Operations and Multiplication"],
+        ["la-matrix-inverse", "The Inverse of a Matrix"],
+        ["la-invertible-matrix-theorem", "The Invertible Matrix Theorem"],
+        ["la-homogeneous-coordinates", "Homogeneous Coordinates and Game Transforms"] ] },
+    {"dir": "u05-determinants", "id": "la-u05-determinants", "icon": "📦", "title": "Determinants", "description": "Computing determinants by cofactor expansion and row reduction, their algebraic properties, and what they mean geometrically: signed area, volume and orientation.",
+      "lessons": [
+        ["la-determinants", "Computing Determinants"],
+        ["la-determinant-properties", "Properties of Determinants"],
+        ["la-determinant-geometry", "Determinants as Area, Volume and Orientation"] ] },
+    {"dir": "u06-vector-spaces", "id": "la-u06-vector-spaces", "icon": "🌌", "title": "Vector Spaces", "description": "Abstract vector spaces and subspaces, null and column spaces, bases and dimension, rank, and changing coordinates between bases.",
+      "lessons": [
+        ["la-subspaces", "Vector Spaces and Subspaces"],
+        ["la-null-column-space", "Null Space and Column Space"],
+        ["la-basis-dimension", "Basis and Dimension"],
+        ["la-rank", "Rank and the Rank–Nullity Theorem"],
+        ["la-change-of-basis", "Coordinates and Change of Basis"] ] },
+    {"dir": "u07-eigen", "id": "la-u07-eigen", "icon": "🎯", "title": "Eigenvalues and Eigenvectors", "description": "Directions a matrix only stretches, the characteristic equation, diagonalization, and long-run behavior of dynamical systems and Markov chains.",
+      "lessons": [
+        ["la-eigenvalues", "Eigenvectors and Eigenvalues"],
+        ["la-characteristic-equation", "The Characteristic Equation"],
+        ["la-diagonalization", "Diagonalization"],
+        ["la-eigen-applications", "Dynamical Systems and Markov Chains"] ] },
+    {"dir": "u08-orthogonality", "id": "la-u08-orthogonality", "icon": "📐", "title": "Orthogonality and Least Squares", "description": "Orthogonal sets and projections, Gram–Schmidt and QR, least-squares fitting, and symmetric matrices and the singular value decomposition.",
+      "lessons": [
+        ["la-orthogonal-projections", "Orthogonal Sets and Projections"],
+        ["la-gram-schmidt", "Gram–Schmidt and QR Factorization"],
+        ["la-least-squares", "Least-Squares Problems"],
+        ["la-svd", "Symmetric Matrices and the SVD"] ] }
+  ],
+  "chem": [
+    {"dir": "u01-matter-measurement", "id": "chem-u01-matter-measurement", "icon": "⚖️", "title": "Matter and Measurement", "description": "What chemistry studies, states and classes of matter, physical and chemical change, and the measuring toolkit: SI units, significant figures and dimensional analysis.",
+      "lessons": [
+        ["chem-matter", "Matter, Its States and Its Changes"],
+        ["chem-measurement", "Measurement, Units and Significant Figures"],
+        ["chem-dimensional-analysis", "Dimensional Analysis and Density"] ] },
+    {"dir": "u02-atoms-periodic-table", "id": "chem-u02-atoms-periodic-table", "icon": "⚛️", "title": "Atoms and the Periodic Table", "description": "Protons, neutrons and electrons, isotopes and average atomic mass, how electrons are arranged, and the patterns of the periodic table.",
+      "lessons": [
+        ["chem-atomic-structure", "Atomic Structure and Isotopes"],
+        ["chem-electron-arrangement", "Electron Arrangement and Valence Electrons"],
+        ["chem-periodic-trends", "The Periodic Table and Its Trends"] ] },
+    {"dir": "u03-bonding", "id": "chem-u03-bonding", "icon": "🔗", "title": "Bonding and Compounds", "description": "Why atoms bond, ionic compounds and their formulas and names, covalent molecules and Lewis structures, and molecular shape and polarity.",
+      "lessons": [
+        ["chem-ionic-compounds", "Ions and Ionic Compounds"],
+        ["chem-covalent-lewis", "Covalent Bonds and Lewis Structures"],
+        ["chem-shape-polarity", "Molecular Shape and Polarity"] ] },
+    {"dir": "u04-mole", "id": "chem-u04-mole", "icon": "🧪", "title": "Reactions, the Mole and Stoichiometry", "description": "Writing and balancing chemical equations, the main reaction types, counting particles with the mole, and calculating how much reacts and forms.",
+      "lessons": [
+        ["chem-chemical-equations", "Chemical Equations and Reaction Types"],
+        ["chem-mole", "The Mole and Molar Mass"],
+        ["chem-formulas-composition", "Percent Composition and Empirical Formulas"],
+        ["chem-stoichiometry", "Stoichiometry, Limiting Reactants and Yield"] ] },
+    {"dir": "u05-solutions-gases-acids", "id": "chem-u05-solutions-gases-acids", "icon": "💧", "title": "Solutions, Gases, and Acids and Bases", "description": "Concentration and dilution, the gas laws and the ideal gas law, and a first look at acids, bases and pH.",
+      "lessons": [
+        ["chem-solutions", "Solutions, Molarity and Dilution"],
+        ["chem-gas-laws", "The Gas Laws"],
+        ["chem-acids-bases", "Acids, Bases and pH"] ] }
+  ],
+  "genchem": [
+    {"dir": "u01-quantum", "id": "gchem-u01-quantum", "icon": "⚡", "title": "Electronic Structure", "description": "Light and the photon, the quantum-mechanical atom, quantum numbers and orbital shapes, and how electron configurations explain magnetism and periodic properties.",
+      "lessons": [
+        ["gchem-light-photons", "Light, Photons and Atomic Spectra"],
+        ["gchem-quantum-model", "The Quantum-Mechanical Atom"],
+        ["gchem-quantum-numbers", "Quantum Numbers and Orbitals"],
+        ["gchem-configurations-properties", "Configurations, Magnetism and Periodic Properties"] ] },
+    {"dir": "u02-bonding-theory", "id": "gchem-u02-bonding-theory", "icon": "🧬", "title": "Bonding Theory", "description": "Lattice energy, formal charge and resonance, bond enthalpies, VSEPR for expanded octets, hybridization, and molecular orbital theory.",
+      "lessons": [
+        ["gchem-ionic-lattice", "Ionic Bonding and Lattice Energy"],
+        ["gchem-lewis-advanced", "Formal Charge, Resonance and Bond Enthalpy"],
+        ["gchem-vsepr-advanced", "VSEPR for Five and Six Electron Groups"],
+        ["gchem-hybridization", "Valence Bond Theory and Hybridization"],
+        ["gchem-mo-theory", "Molecular Orbital Theory"] ] },
+    {"dir": "u03-aqueous-reactions", "id": "gchem-u03-aqueous-reactions", "icon": "🌊", "title": "Reactions in Aqueous Solution", "description": "Electrolytes and net ionic equations, acid–base reactions and titration calculations, and oxidation–reduction with half-reaction balancing.",
+      "lessons": [
+        ["gchem-aqueous-ionic", "Electrolytes, Precipitation and Net Ionic Equations"],
+        ["gchem-acid-base-titration", "Acid–Base Reactions and Titrations"],
+        ["gchem-redox", "Oxidation States and Redox Reactions"],
+        ["gchem-balancing-redox", "Balancing Redox by Half-Reactions"] ] },
+    {"dir": "u04-thermochemistry", "id": "gchem-u04-thermochemistry", "icon": "🔥", "title": "Thermochemistry", "description": "Energy, heat and work, calorimetry, enthalpy and Hess's law, and standard enthalpies of formation.",
+      "lessons": [
+        ["gchem-energy-heat-work", "Energy, Heat and Work"],
+        ["gchem-calorimetry", "Calorimetry"],
+        ["gchem-enthalpy-hess", "Enthalpy and Hess's Law"],
+        ["gchem-formation-enthalpy", "Standard Enthalpies of Formation"] ] },
+    {"dir": "u05-gases-states", "id": "gchem-u05-gases-states", "icon": "💨", "title": "Gases, Liquids and Solids", "description": "Gas mixtures and partial pressures, the kinetic-molecular theory and molecular speeds, real gases, intermolecular forces and vapor pressure, and solids and phase diagrams.",
+      "lessons": [
+        ["gchem-gas-mixtures", "Gas Stoichiometry and Partial Pressures"],
+        ["gchem-kinetic-theory", "Kinetic-Molecular Theory, Speeds and Effusion"],
+        ["gchem-real-gases", "Real Gases"],
+        ["gchem-liquids-vapor-pressure", "Intermolecular Forces, Liquids and Vapor Pressure"],
+        ["gchem-solids-phase-diagrams", "Solids and Phase Diagrams"] ] },
+    {"dir": "u06-solutions", "id": "gchem-u06-solutions", "icon": "🧂", "title": "Properties of Solutions", "description": "The solution process and what controls solubility, concentration units, and colligative properties.",
+      "lessons": [
+        ["gchem-solution-process", "The Solution Process and Solubility"],
+        ["gchem-concentration-units", "Concentration Units"],
+        ["gchem-colligative", "Colligative Properties"] ] },
+    {"dir": "u07-kinetics", "id": "gchem-u07-kinetics", "icon": "⏱️", "title": "Chemical Kinetics", "description": "Reaction rates and rate laws, integrated rate laws and half-life, the Arrhenius equation, and mechanisms and catalysis.",
+      "lessons": [
+        ["gchem-rates-rate-laws", "Reaction Rates and Rate Laws"],
+        ["gchem-integrated-rate-laws", "Integrated Rate Laws and Half-Life"],
+        ["gchem-arrhenius", "Collision Theory and the Arrhenius Equation"],
+        ["gchem-mechanisms-catalysis", "Reaction Mechanisms and Catalysis"] ] },
+    {"dir": "u08-equilibrium", "id": "gchem-u08-equilibrium", "icon": "⚖️", "title": "Chemical Equilibrium", "description": "The equilibrium constant, the reaction quotient and Le Châtelier's principle, and solving equilibrium problems with ICE tables.",
+      "lessons": [
+        ["gchem-equilibrium-constant", "The Equilibrium Constant"],
+        ["gchem-le-chatelier", "The Reaction Quotient and Le Châtelier's Principle"],
+        ["gchem-ice-tables", "Solving Equilibrium Problems"] ] },
+    {"dir": "u09-acid-base-equilibria", "id": "gchem-u09-acid-base-equilibria", "icon": "🧪", "title": "Acid–Base and Solubility Equilibria", "description": "Weak acids and bases, salts and polyprotic acids, buffers, titration curves and indicators, and solubility equilibria.",
+      "lessons": [
+        ["gchem-weak-acids-bases", "Weak Acids, Weak Bases, Ka and Kb"],
+        ["gchem-salts-polyprotic", "Acid–Base Properties of Salts and Polyprotic Acids"],
+        ["gchem-buffers", "Buffers"],
+        ["gchem-titration-curves", "Titration Curves and Indicators"],
+        ["gchem-solubility-equilibria", "Solubility Equilibria and Ksp"] ] },
+    {"dir": "u10-thermodynamics", "id": "gchem-u10-thermodynamics", "icon": "🌀", "title": "Thermodynamics", "description": "Entropy and the second law, Gibbs free energy and spontaneity, and how free energy is tied to the equilibrium constant.",
+      "lessons": [
+        ["gchem-entropy", "Entropy and the Second Law"],
+        ["gchem-gibbs-free-energy", "Gibbs Free Energy"],
+        ["gchem-free-energy-equilibrium", "Free Energy and Equilibrium"] ] },
+    {"dir": "u11-electrochemistry", "id": "gchem-u11-electrochemistry", "icon": "🔋", "title": "Electrochemistry", "description": "Galvanic cells and standard reduction potentials, cell potential, free energy and the Nernst equation, and batteries, corrosion and electrolysis.",
+      "lessons": [
+        ["gchem-galvanic-cells", "Galvanic Cells and Standard Potentials"],
+        ["gchem-nernst", "Cell Potential, Free Energy and the Nernst Equation"],
+        ["gchem-batteries-electrolysis", "Batteries, Corrosion and Electrolysis"] ] },
+    {"dir": "u12-nuclear-transition", "id": "gchem-u12-nuclear-transition", "icon": "☢️", "title": "Nuclear Chemistry and Transition Metals", "description": "Radioactive decay and nuclear equations, decay kinetics and dating, binding energy, and transition metals and coordination compounds.",
+      "lessons": [
+        ["gchem-radioactive-decay", "Radioactivity and Nuclear Equations"],
+        ["gchem-nuclear-energy", "Decay Kinetics, Binding Energy, Fission and Fusion"],
+        ["gchem-coordination", "Transition Metals and Coordination Compounds"] ] }
   ]
 }

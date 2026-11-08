@@ -15,7 +15,7 @@ import { Icon } from '../components/Icon';
 import { Inline, RichText } from '../components/RichText';
 import { Tex } from '../components/Tex';
 import { highlightLines } from '../lib/highlight';
-import { cleanAnswer, equivalent, numericListMatches, numericMatches, previewTex } from '../lib/mathexpr';
+import { cleanAnswer, equivalent, evalConst, expandSciNotation, numericListMatches, numericMatches, previewTex } from '../lib/mathexpr';
 import { shuffled, shuffledNotIdentity } from '../lib/random';
 import { useSettings } from '../lib/store';
 import { sfx } from '../lib/sound';
@@ -558,7 +558,9 @@ function MathInput({
   unit,
   placeholder,
   keys,
+  sci = false,
 }: {
+  sci?: boolean;
   value: string;
   onChange: (v: string) => void;
   revealed: boolean;
@@ -569,7 +571,7 @@ function MathInput({
   keys: typeof KEYS;
 }) {
   const input = useRef<HTMLInputElement>(null);
-  const preview = useMemo(() => previewTex(value), [value]);
+  const preview = useMemo(() => previewTex(sci ? expandSciNotation(value) : value), [value, sci]);
   const insert = (text: string) => {
     const el = input.current;
     if (!el) return;
@@ -644,9 +646,21 @@ function answerTexOf(q: NumericQuestion | ExprQuestion): string {
   return a.map((x) => previewTex(x) ?? x).join(',\\; ');
 }
 
+/** Show the scientific-notation tip when an answer is very small or very large. */
+function needsSci(q: NumericQuestion): boolean {
+  const vals = (Array.isArray(q.answer) ? q.answer : [q.answer]).map((a) => {
+    try {
+      return Math.abs(evalConst(a));
+    } catch {
+      return 1;
+    }
+  });
+  return vals.some((v) => v !== 0 && (v < 1e-3 || v >= 1e5));
+}
+
 function Numeric({ q, revealed, onReady, ref }: QProps<NumericQuestion>) {
   const [value, setValue] = useState('');
-  useEffect(() => onReady(value.trim() !== '' && previewTex(cleanAnswer(value).split(/,|;|\bor\b/)[0] || ' ') !== null), [value, onReady]);
+  useEffect(() => onReady(value.trim() !== '' && previewTex(expandSciNotation(cleanAnswer(value).split(/,|;|\bor\b/)[0] || ' ')) !== null), [value, onReady]);
   const check = () =>
     Array.isArray(q.answer)
       ? numericListMatches(value, q.answer, { tolerance: q.tolerance, minDecimals: q.minDecimals })
@@ -665,6 +679,7 @@ function Numeric({ q, revealed, onReady, ref }: QProps<NumericQuestion>) {
         unit={q.unit}
         placeholder={multi ? 'Answers separated by commas' : 'Your answer'}
         keys={KEYS.filter((k) => k.insert !== 'x')}
+        sci
       />
       {revealed && !right && (
         <div className="answer-reveal">
@@ -673,7 +688,11 @@ function Numeric({ q, revealed, onReady, ref }: QProps<NumericQuestion>) {
       )}
       {!revealed && (
         <div className="fill-help">
-          {multi ? `Enter all ${(q.answer as string[]).length} values, separated by commas, in any order. ` : ''}Exact forms like 3/4 or sqrt(3)/2 work; decimals need at least {q.minDecimals ?? 2} places.
+          {multi ? `Enter all ${(q.answer as string[]).length} values, separated by commas, in any order. ` : ''}
+          {q.tolerance !== undefined
+            ? 'Type a decimal'
+            : `Exact forms like 3/4 or sqrt(3)/2 work; decimals need at least ${q.minDecimals ?? 2} places`}
+          {needsSci(q) ? '. Scientific notation: 6.02e23 or 6.02*10^23.' : '.'}
         </div>
       )}
     </div>

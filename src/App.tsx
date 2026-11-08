@@ -159,8 +159,8 @@ function Sidebar({ active }: { active: string }) {
           <CourseGlyph course="calc1" size={34} />
         </span>
         <span className="brand-text">
-          <b>Math Forge</b>
-          <small>Algebra → Calculus</small>
+          <b>STEM Forge</b>
+          <small>Math &amp; Chemistry</small>
         </span>
       </button>
       <nav className="side-nav">

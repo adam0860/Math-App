@@ -447,3 +447,19 @@ a {
   transition-duration: 0.001ms !important;
   scroll-behavior: auto !important;
 }
+
+.bar.course-linalg .bar-fill {
+  background: linear-gradient(90deg, var(--linalg-1), var(--linalg-2));
+}
+
+.bar.course-chem .bar-fill {
+  background: linear-gradient(90deg, var(--chem-1), var(--chem-2));
+}
+
+.bar.course-genchem .bar-fill {
+  background: linear-gradient(90deg, var(--genchem-1), var(--genchem-2));
+}
+
+.bar.course-orgo .bar-fill {
+  background: linear-gradient(90deg, var(--orgo-1), var(--orgo-2));
+}

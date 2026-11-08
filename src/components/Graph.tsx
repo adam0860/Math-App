@@ -46,7 +46,19 @@ function niceStep(range: number): number {
 
 function fmtTick(v: number): string {
   if (Math.abs(v) < 1e-9) return '0';
-  const s = Math.abs(v) >= 1000 || Math.abs(v) < 0.01 ? v.toExponential(0) : String(Math.round(v * 1000) / 1000);
+  const a = Math.abs(v);
+  let s: string;
+  if (a >= 1e6 || a < 0.01) {
+    // Very large or small: scientific, with as many digits as the tick needs (2.5×10⁻³).
+    const [m, e] = v.toExponential().split('e');
+    const mant = String(Math.round(Number(m) * 1000) / 1000);
+    s = `${mant}×10${String(Number(e)).replace(/-/g, '⁻').replace(/\d/g, (d) => '⁰¹²³⁴⁵⁶⁷⁸⁹'[Number(d)])}`;
+  } else if (a >= 1000) {
+    // 1,000 – 999,999: plain digits with thousands separators (1,250 kJ/mol).
+    s = (Math.round(v * 1000) / 1000).toLocaleString('en-US');
+  } else {
+    s = String(Math.round(v * 1000) / 1000);
+  }
   return s.replace('-', '−');
 }
 

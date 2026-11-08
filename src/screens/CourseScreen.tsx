@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { courses, getCourse, isStub, lessonsOf, type LessonLocation } from '../content';
-import type { CourseId } from '../content/types';
+import { COURSE_PREREQ, type CourseId } from '../content/types';
 import { Icon } from '../components/Icon';
 import { Modal } from '../components/Modal';
 import { Inline } from '../components/RichText';
@@ -30,9 +30,12 @@ export function CourseScreen({ courseId }: { courseId: string }) {
   const currentRef = useRef<HTMLButtonElement>(null);
   const next = nextLessonId(p, course.id);
   const prog = courseProgress(p, course.id);
-  const courseIndex = courses.findIndex((c) => c.id === course.id);
-  const prevCourse = courseIndex > 0 ? courses[courseIndex - 1] : null;
+  const prereqId = COURSE_PREREQ[course.id];
+  const prevCourse = prereqId ? (getCourse(prereqId) ?? null) : null;
   const prevProg = prevCourse ? courseProgress(p, prevCourse.id) : null;
+  const isChem = CHEM_COURSES.includes(course.id);
+  const subjectCourses = courses.filter((c) => CHEM_COURSES.includes(c.id) === isChem);
+  const courseNumber = subjectCourses.findIndex((c) => c.id === course.id) + 1;
   const all = useMemo(() => lessonsOf(course.id), [course.id]);
   const totalMinutes = all.reduce((s, l) => s + l.lesson.minutes, 0);
 
@@ -64,7 +67,9 @@ export function CourseScreen({ courseId }: { courseId: string }) {
 
       <header className={`course-hero course-${course.id}`}>
         <div className="course-hero-text">
-          <div className="eyebrow">Course {courseIndex + 1}</div>
+          <div className="eyebrow">
+            {isChem ? 'Chemistry' : 'Math'} · Course {courseNumber}
+          </div>
           <h1>{course.title}</h1>
           <p>{course.subtitle}</p>
           <div className="hero-meta">
@@ -293,9 +298,15 @@ function LessonSheet({ loc, onClose, progress: p, freeNav }: { loc: LessonLocati
   );
 }
 
+const CHEM_COURSES: CourseId[] = ['chem', 'genchem', 'orgo'];
+
 const FINISH: Record<CourseId, string> = {
   algebra: 'Finish line: you’ll be ready for Trigonometry and Calculus.',
   trig: 'Finish line: you’ll be ready for Calculus I — and for 3D rotations.',
   calc1: 'Finish line: you’ll be ready for Calculus II.',
   calc2: 'Finish line: you’ll be ready for Linear Algebra, Discrete Math and beyond.',
+  linalg: 'Finish line: you’ll be ready for computer graphics, machine learning and numerical methods.',
+  chem: 'Finish line: you’ll be ready for college General Chemistry.',
+  genchem: 'Finish line: you’ll be ready for Organic Chemistry.',
+  orgo: 'Finish line: you’ll be ready for biochemistry and upper-level chemistry.',
 };

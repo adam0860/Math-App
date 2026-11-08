@@ -180,6 +180,23 @@ function BlockView({ block: b }: { block: Block }) {
           ))}
         </ol>
       );
+    case 'figure':
+      return (
+        <figure className="figure">
+          <div
+            className="figure-svg"
+            role="img"
+            aria-label={b.alt}
+            style={{ maxWidth: b.maxWidth ?? 520 }}
+            dangerouslySetInnerHTML={{ __html: b.svg }}
+          />
+          {b.caption && (
+            <figcaption>
+              <RichText text={b.caption} />
+            </figcaption>
+          )}
+        </figure>
+      );
     case 'definition':
       return (
         <div className="definition">

@@ -1721,3 +1721,75 @@
   content-visibility: auto;
   contain-intrinsic-size: auto 480px;
 }
+
+.continue-card.course-linalg {
+  background: linear-gradient(140deg, color-mix(in srgb, var(--linalg-1) 12%, var(--surface)), var(--surface) 60%);
+}
+.course-card.course-linalg {
+  background: linear-gradient(135deg, #064e3b, #059669 50%, #0d9488);
+}
+.course-tab.on.course-linalg {
+  background: color-mix(in srgb, var(--linalg-1) 15%, transparent);
+  color: color-mix(in srgb, var(--linalg-1) 65%, var(--text));
+}
+.course-hero.course-linalg {
+  background: linear-gradient(135deg, #022c22, #047857 50%, #0f766e);
+}
+.sheet-card.course-linalg .sheet-badge {
+  background: color-mix(in srgb, var(--linalg-1) 16%, transparent);
+  color: color-mix(in srgb, var(--linalg-1) 70%, var(--text));
+}
+
+.continue-card.course-chem {
+  background: linear-gradient(140deg, color-mix(in srgb, var(--chem-1) 12%, var(--surface)), var(--surface) 60%);
+}
+.course-card.course-chem {
+  background: linear-gradient(135deg, #0c4a6e, #0284c7 50%, #0891b2);
+}
+.course-tab.on.course-chem {
+  background: color-mix(in srgb, var(--chem-1) 15%, transparent);
+  color: color-mix(in srgb, var(--chem-1) 65%, var(--text));
+}
+.course-hero.course-chem {
+  background: linear-gradient(135deg, #082f49, #0369a1 50%, #0e7490);
+}
+.sheet-card.course-chem .sheet-badge {
+  background: color-mix(in srgb, var(--chem-1) 16%, transparent);
+  color: color-mix(in srgb, var(--chem-1) 70%, var(--text));
+}
+
+.continue-card.course-genchem {
+  background: linear-gradient(140deg, color-mix(in srgb, var(--genchem-1) 12%, var(--surface)), var(--surface) 60%);
+}
+.course-card.course-genchem {
+  background: linear-gradient(135deg, #831843, #db2777 50%, #c026d3);
+}
+.course-tab.on.course-genchem {
+  background: color-mix(in srgb, var(--genchem-1) 15%, transparent);
+  color: color-mix(in srgb, var(--genchem-1) 65%, var(--text));
+}
+.course-hero.course-genchem {
+  background: linear-gradient(135deg, #500724, #be185d 50%, #a21caf);
+}
+.sheet-card.course-genchem .sheet-badge {
+  background: color-mix(in srgb, var(--genchem-1) 16%, transparent);
+  color: color-mix(in srgb, var(--genchem-1) 70%, var(--text));
+}
+
+.continue-card.course-orgo {
+  background: linear-gradient(140deg, color-mix(in srgb, var(--orgo-1) 12%, var(--surface)), var(--surface) 60%);
+}
+.course-card.course-orgo {
+  background: linear-gradient(135deg, #713f12, #ca8a04 50%, #ea580c);
+}
+.course-tab.on.course-orgo {
+  background: color-mix(in srgb, var(--orgo-1) 15%, transparent);
+  color: color-mix(in srgb, var(--orgo-1) 65%, var(--text));
+}
+.course-hero.course-orgo {
+  background: linear-gradient(135deg, #422006, #a16207 50%, #c2410c);
+}
+.sheet-card.course-orgo .sheet-badge {
+  background: color-mix(in srgb, var(--orgo-1) 16%, transparent);
+  color: color-mix(in srgb, var(--orgo-1) 70%, var(--text));
+}
