@@ -199,6 +199,7 @@ export const lesson: Lesson = {
       hint: 'Law of total probability with three cases.',
       label: '$P =$',
       answer: '9/200',
+          minDecimals: 3,
       explanation: '$P(\\text{drop}) = 0.02 \\cdot 0.5 + 0.05 \\cdot 0.3 + 0.10 \\cdot 0.2 = 0.010 + 0.015 + 0.020 = 0.045 = 9/200$. The three enemy types partition the spawns, so the law applies. Note that the answer lies between the smallest and largest drop rates, as a weighted average must.',
     },
     // ------------------------------------------------------------------ 8

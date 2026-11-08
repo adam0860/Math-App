@@ -401,7 +401,7 @@ expected damage per hit: 125.0`,
           annotations: [
             { lines: 8, text: 'Take the top $53$ bits of a 64-bit random number and scale by $2^{-53}$: a uniform double in $[0, 1)$ with every value equally spaced.' },
             { lines: '11-18', text: 'Weighted selection: the interval $[0, 1)$ is cut into pieces of length $0.60, 0.30, 0.09, 0.01$, and $u$ lands in each with exactly that probability.' },
-            { lines: '25-29', text: 'Sample averages approach $E[X] = 49$, but slowly: with $\\sigma \\approx 110$, a million kills still leave an error around $\\sigma/\\sqrt{10^6} \\approx 0.11$.' },
+            { lines: '26-30', text: 'Sample averages approach $E[X] = 49$, but slowly: with $\\sigma \\approx 110$, a million kills still leave an error around $\\sigma/\\sqrt{10^6} \\approx 0.11$.' },
           ],
         },
       ],
@@ -487,8 +487,8 @@ BCA     5               1
 CAB     4               1
 CBA     4               1`,
           annotations: [
-            { lines: '12-21', text: 'Instead of calling a random number generator, loop over **every** possible sequence of choices. Each is equally likely, so the counts are exact probabilities (out of $27$).' },
-            { lines: '24-30', text: 'Fisher–Yates has $3 \\cdot 2 = 6$ paths, one per permutation.' },
+            { lines: '12-20', text: 'Instead of calling a random number generator, loop over **every** possible sequence of choices. Each is equally likely, so the counts are exact probabilities (out of $27$).' },
+            { lines: '23-29', text: 'Fisher–Yates has $3 \\cdot 2 = 6$ paths, one per permutation.' },
           ],
         },
         {
