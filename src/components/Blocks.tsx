@@ -257,7 +257,8 @@ function Derivation({ title, steps, result }: { title?: string; steps: Derivatio
     <figure className="derivation">
       <div className="deriv-head">
         <span className="deriv-title">
-          <Icon name="edit" size={15} /> {title ? <Inline text={title} /> : 'Worked example'}
+          <Icon name="edit" size={15} />
+          <span className="deriv-title-text">{title ? <Inline text={title} /> : 'Worked example'}</span>
         </span>
         {hasWhy && (
           <button

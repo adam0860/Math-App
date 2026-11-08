@@ -87,8 +87,17 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  min-width: 0;
   font-weight: 750;
   font-size: 0.9rem;
+}
+.deriv-title > svg {
+  flex: none;
+}
+/* One flex item for the whole title, so inline math doesn't split it into columns. */
+.deriv-title-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .deriv-toggle {
   font-size: 0.78rem;
