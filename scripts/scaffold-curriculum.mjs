@@ -64,6 +64,14 @@ const courseMeta = {
     description:
       'University organic chemistry: drawing and naming molecules, acids and bases, conformations and stereochemistry, substitution and elimination, alkenes and alkynes, alcohols and ethers, spectroscopy, aromatic chemistry, carbonyl and enolate chemistry, amines and biomolecules, and multistep synthesis.',
   },
+  discrete: {
+    exportName: 'discreteCourse',
+    title: 'Discrete Mathematics',
+    short: 'Discrete',
+    subtitle: 'Logic, proofs, counting and graphs — the math of computer science',
+    description:
+      'The discrete mathematics behind computer science: logic and proofs, sets, functions and relations, number theory and cryptography, counting and probability, algorithms and big-O, recurrences, graphs and trees, and Boolean algebra, automata and computability.',
+  },
   linalg: {
     exportName: 'linalgCourse',
     title: 'Linear Algebra',

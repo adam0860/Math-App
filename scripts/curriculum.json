@@ -418,5 +418,67 @@
         ["ochem-amines", "Amines"],
         ["ochem-biomolecules", "Carbohydrates, Amino Acids and Proteins"],
         ["ochem-retrosynthesis", "Retrosynthesis and Multistep Synthesis"] ] }
+  ],
+  "discrete": [
+    {"dir": "u01-logic", "id": "dm-u01-logic", "icon": "🧠", "title": "Logic", "description": "Propositions and connectives, truth tables and logical equivalence, predicates and quantifiers, and the rules of inference that every proof is built from.",
+      "lessons": [
+        ["dm-propositional-logic", "Propositions and Logical Connectives"],
+        ["dm-logical-equivalence", "Truth Tables and Logical Equivalence"],
+        ["dm-quantifiers", "Predicates and Quantifiers"],
+        ["dm-rules-of-inference", "Rules of Inference"] ] },
+    {"dir": "u02-proofs", "id": "dm-u02-proofs", "icon": "✍️", "title": "Proofs", "description": "Direct proof and proof by contrapositive, contradiction and cases, mathematical induction, and strong induction.",
+      "lessons": [
+        ["dm-direct-proof", "Direct Proof and Proof by Contrapositive"],
+        ["dm-contradiction-cases", "Proof by Contradiction and by Cases"],
+        ["dm-induction", "Mathematical Induction"],
+        ["dm-strong-induction", "Strong Induction and Well-Ordering"] ] },
+    {"dir": "u03-sets-functions-relations", "id": "dm-u03-sets-functions-relations", "icon": "🔵", "title": "Sets, Functions and Relations", "description": "Sets and set operations, functions and cardinality, relations and their properties, and equivalence relations and partial orders.",
+      "lessons": [
+        ["dm-sets", "Sets and Set Operations"],
+        ["dm-functions", "Functions, Bijections and Cardinality"],
+        ["dm-relations", "Relations and Their Properties"],
+        ["dm-equivalence-orders", "Equivalence Relations and Partial Orders"] ] },
+    {"dir": "u04-number-theory", "id": "dm-u04-number-theory", "icon": "🔐", "title": "Number Theory and Cryptography", "description": "Divisibility and modular arithmetic, primes and the Euclidean algorithm, modular inverses and the Chinese remainder theorem, and RSA, hashing and pseudorandom numbers.",
+      "lessons": [
+        ["dm-modular-arithmetic", "Divisibility and Modular Arithmetic"],
+        ["dm-primes-gcd", "Primes, GCD and the Euclidean Algorithm"],
+        ["dm-inverses-crt", "Modular Inverses and the Chinese Remainder Theorem"],
+        ["dm-cryptography", "RSA, Hashing and Pseudorandom Numbers"] ] },
+    {"dir": "u05-counting", "id": "dm-u05-counting", "icon": "🎲", "title": "Counting", "description": "The product and sum rules and the pigeonhole principle, permutations and combinations, the binomial theorem, and inclusion–exclusion and combinations with repetition.",
+      "lessons": [
+        ["dm-counting-rules", "The Product Rule, Sum Rule and Pigeonhole Principle"],
+        ["dm-permutations-combinations", "Permutations and Combinations"],
+        ["dm-binomial-theorem", "The Binomial Theorem and Pascal's Triangle"],
+        ["dm-inclusion-exclusion", "Inclusion–Exclusion and Distributing Objects"] ] },
+    {"dir": "u06-probability", "id": "dm-u06-probability", "icon": "🃏", "title": "Discrete Probability", "description": "Probability on finite sample spaces, conditional probability and Bayes' theorem, and random variables and expected value.",
+      "lessons": [
+        ["dm-probability", "Probability and Sample Spaces"],
+        ["dm-conditional-bayes", "Conditional Probability, Independence and Bayes' Theorem"],
+        ["dm-expected-value", "Random Variables, Expected Value and Variance"] ] },
+    {"dir": "u07-algorithms", "id": "dm-u07-algorithms", "icon": "⚙️", "title": "Algorithms and Complexity", "description": "Growth of functions and big-O, analyzing the running time of algorithms, and divide-and-conquer with the master theorem.",
+      "lessons": [
+        ["dm-big-o", "Growth of Functions and Big-O"],
+        ["dm-algorithm-analysis", "Analyzing Algorithms"],
+        ["dm-divide-conquer", "Divide and Conquer and the Master Theorem"] ] },
+    {"dir": "u08-recurrences", "id": "dm-u08-recurrences", "icon": "🔁", "title": "Recurrence Relations", "description": "Modeling problems with recurrences, and solving linear recurrences with characteristic equations and generating functions.",
+      "lessons": [
+        ["dm-modeling-recurrences", "Modeling with Recurrence Relations"],
+        ["dm-solving-recurrences", "Solving Linear Recurrences and Generating Functions"] ] },
+    {"dir": "u09-graphs", "id": "dm-u09-graphs", "icon": "🕸️", "title": "Graphs", "description": "Graph terminology and representations, connectivity and Euler and Hamilton paths, shortest paths, and planarity and coloring.",
+      "lessons": [
+        ["dm-graph-basics", "Graphs, Terminology and Representations"],
+        ["dm-connectivity-paths", "Connectivity, Euler and Hamilton Paths"],
+        ["dm-shortest-paths", "Shortest Paths: BFS, Dijkstra and A*"],
+        ["dm-planarity-coloring", "Planar Graphs and Graph Coloring"] ] },
+    {"dir": "u10-trees", "id": "dm-u10-trees", "icon": "🌳", "title": "Trees", "description": "Properties of trees, traversals and binary search trees, and minimum spanning trees.",
+      "lessons": [
+        ["dm-trees", "Trees and Their Properties"],
+        ["dm-traversals-bst", "Tree Traversals and Binary Search Trees"],
+        ["dm-spanning-trees", "Spanning Trees and Minimum Spanning Trees"] ] },
+    {"dir": "u11-computation", "id": "dm-u11-computation", "icon": "💻", "title": "Boolean Algebra and Computation", "description": "Boolean functions and logic gates, finite-state machines and regular expressions, and grammars, Turing machines and the limits of computation.",
+      "lessons": [
+        ["dm-boolean-algebra", "Boolean Algebra and Logic Gates"],
+        ["dm-finite-state-machines", "Finite-State Machines and Regular Expressions"],
+        ["dm-computability", "Grammars, Turing Machines and Computability"] ] }
   ]
 }

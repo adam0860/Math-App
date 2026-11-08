@@ -46,7 +46,7 @@ const definedIds = new Set(glossary.map((g) => g.id));
 const resolvable = (id: string) => definedIds.has(id) || (partial && masterIds.has(id));
 
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-const PREFIX: Record<string, string> = { algebra: 'alg-', trig: 'trig-', calc1: 'calc1-', calc2: 'calc2-', linalg: 'la-', chem: 'chem-', genchem: 'gchem-', orgo: 'ochem-' };
+const PREFIX: Record<string, string> = { algebra: 'alg-', trig: 'trig-', calc1: 'calc1-', calc2: 'calc2-', linalg: 'la-', chem: 'chem-', genchem: 'gchem-', orgo: 'ochem-', discrete: 'dm-' };
 
 // ----------------------------------------------------------------------- TeX
 function checkTex(where: string, tex: string, display = false) {
@@ -624,6 +624,27 @@ function checkGlossary() {
   });
 }
 if (!partial || glossaryOnly) checkGlossary();
+
+// ---------------------------------------------------- source-level TeX check
+// In a TS string '\\;' is TeX's thin space, but a single '\;' (or '\,', '\!')
+// is just ';' at runtime — the backslash silently disappears and a stray
+// semicolon shows up in the rendered formula. Only visible in the source.
+{
+  const { readdirSync, readFileSync, statSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const walk = (dir: string): string[] =>
+    readdirSync(dir).flatMap((f) => {
+      const p = join(dir, f);
+      return statSync(p).isDirectory() ? walk(p) : p.endsWith('.ts') ? [p] : [];
+    });
+  for (const file of walk('src/content')) {
+    readFileSync(file, 'utf8')
+      .split('\n')
+      .forEach((line, i) => {
+        if (/(?<!\\)\\[;,!]/.test(line)) err(`${file}:${i + 1}`, 'single backslash before ; , or ! in a string — write \\\\; (TeX spacing) so the backslash survives');
+      });
+  }
+}
 
 // --------------------------------------------------------------------- report
 if (loadProblems.length)

@@ -10,7 +10,7 @@ It is a sibling of C++ Forge and shares its engine.
 
 ![STEM Forge lesson with an interactive Taylor series graph](docs/screenshot-lesson.png)
 
-- **Eight complete courses (264 lessons)**
+- **Nine complete courses (302 lessons)**
   - **College Algebra:** 10 units — numbers and exponents, polynomials and factoring,
     equations and inequalities, lines, systems and matrices, quadratics and complex
     numbers, functions, polynomial and rational functions, exponentials and logarithms,
@@ -24,6 +24,10 @@ It is a sibling of C++ Forge and shares its engine.
   - **Calculus II:** 6 units — volumes, arc length and work, every integration technique,
     numerical integration, differential equations and Euler's method, parametric and
     polar calculus, sequences and series, and Taylor series.
+  - **Discrete Mathematics:** 11 units — logic, proofs and induction, sets, functions and
+    relations, number theory and RSA, counting, probability, algorithms and big-O,
+    recurrences, graphs (BFS, Dijkstra, A*), trees, and Boolean algebra, automata and
+    computability — with runnable C++ in most lessons.
   - **Linear Algebra:** 8 units — vectors, dot and cross products, linear systems and row
     reduction, linear independence and transformations (rotations, shears, reflections),
     matrix algebra and the 4×4 homogeneous matrices game engines use, determinants, vector
@@ -136,7 +140,7 @@ A single React + TypeScript codebase (built with Vite) runs everywhere:
 src/
   content/            all course content as typed data (see docs/CONTENT_GUIDE.md)
     types.ts          the content model: lessons, blocks, graphs, questions, glossary, formula sheets
-    algebra/ trig/ calc1/ calc2/ linalg/ chem/ genchem/ orgo/   one folder per unit: one file per lesson + unit glossary
+    algebra/ trig/ calc1/ calc2/ linalg/ discrete/ chem/ genchem/ orgo/   one folder per unit: one file per lesson + unit glossary
     glossary/ cheatsheets/
   components/         KaTeX rendering, interactive graphs, derivations, rich text, code blocks…
   questions/          the seven interactive question types

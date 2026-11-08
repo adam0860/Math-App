@@ -463,3 +463,7 @@ a {
 .bar.course-orgo .bar-fill {
   background: linear-gradient(90deg, var(--orgo-1), var(--orgo-2));
 }
+
+.bar.course-discrete .bar-fill {
+  background: linear-gradient(90deg, var(--discrete-1), var(--discrete-2));
+}

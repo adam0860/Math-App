@@ -6,6 +6,7 @@ import { calc2Glossary } from './calc2';
 import { chemGlossary } from './chem';
 import { genchemGlossary } from './genchem';
 import { orgoGlossary } from './orgo';
+import { discreteGlossary } from './discrete';
 import { linalgGlossary } from './linalg';
 import { glossary as algebra_u01 } from '../algebra/u01-foundations/glossary';
 import { glossary as algebra_u02 } from '../algebra/u02-polynomials/glossary';
@@ -77,6 +78,17 @@ import { glossary as orgo_u09 } from '../orgo/u09-aromatic/glossary';
 import { glossary as orgo_u10 } from '../orgo/u10-aldehydes-ketones/glossary';
 import { glossary as orgo_u11 } from '../orgo/u11-acyl-enolates/glossary';
 import { glossary as orgo_u12 } from '../orgo/u12-amines-bio-synthesis/glossary';
+import { glossary as discrete_u01 } from '../discrete/u01-logic/glossary';
+import { glossary as discrete_u02 } from '../discrete/u02-proofs/glossary';
+import { glossary as discrete_u03 } from '../discrete/u03-sets-functions-relations/glossary';
+import { glossary as discrete_u04 } from '../discrete/u04-number-theory/glossary';
+import { glossary as discrete_u05 } from '../discrete/u05-counting/glossary';
+import { glossary as discrete_u06 } from '../discrete/u06-probability/glossary';
+import { glossary as discrete_u07 } from '../discrete/u07-algorithms/glossary';
+import { glossary as discrete_u08 } from '../discrete/u08-recurrences/glossary';
+import { glossary as discrete_u09 } from '../discrete/u09-graphs/glossary';
+import { glossary as discrete_u10 } from '../discrete/u10-trees/glossary';
+import { glossary as discrete_u11 } from '../discrete/u11-computation/glossary';
 
 export const glossary: GlossaryEntry[] = [
   ...algebraGlossary,
@@ -86,6 +98,7 @@ export const glossary: GlossaryEntry[] = [
   ...chemGlossary,
   ...genchemGlossary,
   ...orgoGlossary,
+  ...discreteGlossary,
   ...linalgGlossary,
   ...algebra_u01,
   ...algebra_u02,
@@ -157,4 +170,15 @@ export const glossary: GlossaryEntry[] = [
   ...orgo_u10,
   ...orgo_u11,
   ...orgo_u12,
+  ...discrete_u01,
+  ...discrete_u02,
+  ...discrete_u03,
+  ...discrete_u04,
+  ...discrete_u05,
+  ...discrete_u06,
+  ...discrete_u07,
+  ...discrete_u08,
+  ...discrete_u09,
+  ...discrete_u10,
+  ...discrete_u11,
 ];

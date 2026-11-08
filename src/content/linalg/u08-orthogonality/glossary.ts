@@ -20,7 +20,7 @@ export const glossary: GlossaryEntry[] = [
     course: 'linalg',
     category: 'Orthogonality',
     short: 'In a least-squares fit, the matrix $X$ with one row per data point and one column per model parameter, so that the model reads $X\\boldsymbol{\\beta} = \\mathbf{y}$.',
-    long: 'For the line $y = \\beta_0 + \\beta_1 x$ each row is $[\\,1 \;\; x_i\\,]$; for a parabola it is $[\\,1 \;\; x_i \;\; x_i^2\\,]$. Any model that is linear in its parameters has a design matrix, even if it curves in $x$. The best-fit parameters solve the normal equations $X^{T}X\\boldsymbol{\\beta} = X^{T}\\mathbf{y}$.',
+    long: 'For the line $y = \\beta_0 + \\beta_1 x$ each row is $[\\,1 \\;\\; x_i\\,]$; for a parabola it is $[\\,1 \\;\\; x_i \\;\\; x_i^2\\,]$. Any model that is linear in its parameters has a design matrix, even if it curves in $x$. The best-fit parameters solve the normal equations $X^{T}X\\boldsymbol{\\beta} = X^{T}\\mathbf{y}$.',
     tex: 'X = \\begin{bmatrix} 1 & x_1 \\\\ \\vdots & \\vdots \\\\ 1 & x_m \\end{bmatrix}',
     see: ['least-squares-solution', 'normal-equations'],
   },
