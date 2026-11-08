@@ -136,7 +136,7 @@ export const lesson: Lesson = {
           type: 'figure',
           svg: FIG.ez,
           alt: 'Three alkenes. (Z)-but-2-ene with both methyls up. (E)-but-2-ene with one methyl up-left and one down-right. (Z)-2-chlorobut-2-ene with a methyl up on the left carbon and chlorine up on the right carbon, so the main-chain methyls are on opposite sides.',
-          caption: 'For but-2-ene, Z = cis and E = trans. But in 2-chlorobut-2-ene chlorine outranks the methyl on C3, so the isomer whose main-chain carbons are trans is **Z**.',
+          caption: 'For but-2-ene, Z = cis and E = trans. But in 2-chlorobut-2-ene chlorine outranks the methyl (C1) that shares C2 with it, so the isomer whose main-chain carbons are trans is **Z**.',
         },
         {
           type: 'derivation',

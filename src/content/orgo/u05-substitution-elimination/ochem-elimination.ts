@@ -242,7 +242,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'why',
           title: 'Why heat favours elimination',
-          text: 'Compare the products: substitution turns two species into two ($\\ce{R+ + ROH -> ROR + H+}$), while elimination turns one cation into two particles plus the base\'s conjugate acid, so elimination has the larger positive $\\Delta S$. In $\\Delta G = \\Delta H - T\\Delta S$ the entropy term grows with temperature, so heating shifts SN1/E1 mixtures toward E1, and SN2/E2 mixtures toward E2. "Heat" over the arrow is a hint to draw an alkene.',
+          text: 'Compare the overall reactions: substitution turns two species into two ($\\ce{R-X + Nu- -> R-Nu + X-}$), while elimination turns two into three (the alkene, the base\'s conjugate acid and $\\ce{X-}$), so elimination has the larger positive $\\Delta S$. In $\\Delta G = \\Delta H - T\\Delta S$ the entropy term grows with temperature, so heating shifts SN1/E1 mixtures toward E1, and SN2/E2 mixtures toward E2. "Heat" over the arrow is a hint to draw an alkene.',
         },
         {
           type: 'callout',
