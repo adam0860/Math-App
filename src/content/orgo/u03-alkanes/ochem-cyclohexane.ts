@@ -19,7 +19,7 @@ export const lesson: Lesson = {
     'Calculate ring strain from heats of combustion per $\\ce{CH2}$ and explain the angle, torsional and steric strain of small rings',
     'Draw a chair cyclohexane and identify every axial and equatorial position, including which ones point up',
     'Predict the result of a ring flip and explain the equatorial preference through 1,3-diaxial interactions',
-    'Convert A-values into equilibrium constants and percentages with $K = e^{\\Delta G/RT}$',
+    'Convert A-values into equilibrium constants and percentages with $K = e^{A/RT}$',
     'Decide which chair of a cis or trans disubstituted cyclohexane is preferred, and estimate the energy difference',
   ],
   steps: [
@@ -148,7 +148,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'p',
-          text: 'Cyclohexane can also adopt a **boat**, reached on the way between chairs. The boat has four eclipsed C–C bonds and two "flagpole" hydrogens that bump across the ring, so it sits about 29 kJ/mol above the chair. Twisting it slightly gives the twist-boat, about 23 kJ/mol above the chair, a shallow minimum that is barely populated at room temperature.',
+          text: 'Cyclohexane can also adopt a **boat**, reached on the way between chairs. The boat has two fully eclipsed C–C bonds (four eclipsed H–H pairs) and two "flagpole" hydrogens that bump across the ring, so it sits about 29 kJ/mol above the chair. Twisting it slightly gives the twist-boat, about 23 kJ/mol above the chair, a shallow minimum that is barely populated at room temperature.',
         },
         {
           type: 'figure',
