@@ -6,6 +6,7 @@ import { calc2Glossary } from './calc2';
 import { chemGlossary } from './chem';
 import { genchemGlossary } from './genchem';
 import { orgoGlossary } from './orgo';
+import { statsGlossary } from './stats';
 import { discreteGlossary } from './discrete';
 import { linalgGlossary } from './linalg';
 import { glossary as algebra_u01 } from '../algebra/u01-foundations/glossary';
@@ -89,6 +90,17 @@ import { glossary as discrete_u08 } from '../discrete/u08-recurrences/glossary';
 import { glossary as discrete_u09 } from '../discrete/u09-graphs/glossary';
 import { glossary as discrete_u10 } from '../discrete/u10-trees/glossary';
 import { glossary as discrete_u11 } from '../discrete/u11-computation/glossary';
+import { glossary as stats_u01 } from '../stats/u01-describing-data/glossary';
+import { glossary as stats_u02 } from '../stats/u02-probability-review/glossary';
+import { glossary as stats_u03 } from '../stats/u03-discrete-rv/glossary';
+import { glossary as stats_u04 } from '../stats/u04-continuous-rv/glossary';
+import { glossary as stats_u05 } from '../stats/u05-joint/glossary';
+import { glossary as stats_u06 } from '../stats/u06-limit-theorems/glossary';
+import { glossary as stats_u07 } from '../stats/u07-estimation/glossary';
+import { glossary as stats_u08 } from '../stats/u08-hypothesis-testing/glossary';
+import { glossary as stats_u09 } from '../stats/u09-categorical-resampling/glossary';
+import { glossary as stats_u10 } from '../stats/u10-regression/glossary';
+import { glossary as stats_u11 } from '../stats/u11-stats-computing/glossary';
 
 export const glossary: GlossaryEntry[] = [
   ...algebraGlossary,
@@ -98,6 +110,7 @@ export const glossary: GlossaryEntry[] = [
   ...chemGlossary,
   ...genchemGlossary,
   ...orgoGlossary,
+  ...statsGlossary,
   ...discreteGlossary,
   ...linalgGlossary,
   ...algebra_u01,
@@ -181,4 +194,15 @@ export const glossary: GlossaryEntry[] = [
   ...discrete_u09,
   ...discrete_u10,
   ...discrete_u11,
+  ...stats_u01,
+  ...stats_u02,
+  ...stats_u03,
+  ...stats_u04,
+  ...stats_u05,
+  ...stats_u06,
+  ...stats_u07,
+  ...stats_u08,
+  ...stats_u09,
+  ...stats_u10,
+  ...stats_u11,
 ];

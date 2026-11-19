@@ -1,0 +1,58 @@
+import type { GlossaryEntry } from '../../types';
+
+// Glossary terms introduced by this unit that are NOT in scripts/glossary-master.ts.
+export const glossary: GlossaryEntry[] = [
+  {
+    id: 'stat-markov-inequality',
+    term: "Markov's Inequality",
+    course: 'stats',
+    category: 'Limit Theorems',
+    short: 'For a nonnegative random variable $X$ and any $a > 0$, $P(X \\ge a) \\le E[X]/a$. It bounds a tail using only the mean.',
+    long: 'Proof: $a\\,\\mathbf{1}[X \\ge a] \\le X$ for every outcome; take expectations. The bound is tight for some two-point distributions but usually very loose. Applied to $(X - \\mu)^2$ it gives Chebyshev\'s inequality; applied to $e^{tX}$ it gives the exponentially small Chernoff bounds used in algorithm analysis.',
+    tex: 'P(X \\ge a) \\le \\frac{E[X]}{a}',
+    see: ['stat-chebyshev-inequality', 'dm-expected-value'],
+  },
+  {
+    id: 'stat-chebyshev-inequality',
+    term: "Chebyshev's Inequality",
+    aliases: ['Chebyshev bound'],
+    course: 'stats',
+    category: 'Limit Theorems',
+    short: 'For any random variable with mean $\\mu$ and finite variance $\\sigma^2$, $P(|X - \\mu| \\ge k\\sigma) \\le 1/k^2$: at least $75\\%$ of the probability lies within $2\\sigma$ of the mean and $88.9\\%$ within $3\\sigma$.',
+    long: 'It is Markov\'s inequality applied to $(X - \\mu)^2$. Because it holds for every distribution it is often far from the truth (for a normal distribution, $P(|Z| \\ge 3) \\approx 0.003$ versus the bound $0.111$), but it is exactly what is needed to prove the weak law of large numbers.',
+    tex: 'P\\big(|X - \\mu| \\ge \\varepsilon\\big) \\le \\frac{\\sigma^2}{\\varepsilon^2}',
+    see: ['stat-markov-inequality', 'stat-law-of-large-numbers', 'dm-variance'],
+  },
+  {
+    id: 'stat-law-of-large-numbers',
+    term: 'Law of Large Numbers',
+    aliases: ['LLN', 'weak law of large numbers', 'strong law of large numbers', 'convergence in probability'],
+    course: 'stats',
+    category: 'Limit Theorems',
+    short: 'The sample mean $\\bar{X}_n$ of i.i.d. variables with mean $\\mu$ converges to $\\mu$: for every $\\varepsilon > 0$, $P(|\\bar{X}_n - \\mu| \\ge \\varepsilon) \\to 0$ (weak law; "convergence in probability").',
+    long: 'With finite variance it follows from Chebyshev: $P(|\\bar{X}_n - \\mu| \\ge \\varepsilon) \\le \\sigma^2/(n\\varepsilon^2)$. The strong law says the sequence of averages converges with probability $1$. Neither law says the sum $S_n$ approaches $n\\mu$ (the gap grows like $\\sqrt{n}$), and neither works without a finite mean (Cauchy). Convergence happens by dilution, not compensation — the gambler\'s fallacy is a misreading of this law.',
+    tex: '\\bar{X}_n = \\frac{X_1 + \\cdots + X_n}{n} \\ \\to\\ \\mu',
+    see: ['stat-chebyshev-inequality', 'stat-central-limit-theorem', 'dm-monte-carlo'],
+  },
+  {
+    id: 'stat-monte-carlo-integration',
+    term: 'Monte Carlo Integration',
+    course: 'stats',
+    category: 'Limit Theorems',
+    short: 'Estimating $\\int_a^b g(x)\\,dx = (b - a)\\,E[g(U)]$, $U \\sim U(a, b)$, by the average $\\frac{b - a}{n}\\sum g(U_i)$ of random samples. The error is about $(b - a)\\sigma_g/\\sqrt{n}$.',
+    long: 'The law of large numbers makes the estimate converge, and the $1/\\sqrt{n}$ error rate does not depend on the dimension of the integral — which is why Monte Carlo dominates high-dimensional problems such as path-traced rendering. Each extra correct digit costs $100$ times more samples, so variance reduction (antithetic variates, importance sampling, control variates) matters.',
+    tex: '\\int_a^b g(x)\\,dx \\approx \\frac{b - a}{n}\\sum_{i=1}^{n} g(U_i)',
+    see: ['dm-monte-carlo', 'stat-law-of-large-numbers', 'definite-integral'],
+  },
+  {
+    id: 'stat-central-limit-theorem',
+    term: 'Central Limit Theorem',
+    aliases: ['CLT'],
+    course: 'stats',
+    category: 'Limit Theorems',
+    short: 'If $X_1, \\dots, X_n$ are i.i.d. with mean $\\mu$ and finite variance $\\sigma^2$, the standardized sum $\\frac{S_n - n\\mu}{\\sigma\\sqrt{n}}$ converges in distribution to $N(0, 1)$: for large $n$, $\\bar{X} \\approx N(\\mu, \\sigma^2/n)$.',
+    long: 'It explains why bell curves are everywhere (totals of many small independent effects) and why normal-based confidence intervals and tests work for averages of non-normal data. How large $n$ must be depends on the population: symmetric distributions converge fast, skewed ones slowly (skewness shrinks like $1/\\sqrt{n}$), and without a finite variance it fails.',
+    tex: '\\frac{S_n - n\\mu}{\\sigma\\sqrt{n}} \\xrightarrow{d} N(0, 1)',
+    see: ['stat-law-of-large-numbers', 'stat-continuity-correction', 'stat-convolution'],
+  },
+];

@@ -46,7 +46,7 @@ const definedIds = new Set(glossary.map((g) => g.id));
 const resolvable = (id: string) => definedIds.has(id) || (partial && masterIds.has(id));
 
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-const PREFIX: Record<string, string> = { algebra: 'alg-', trig: 'trig-', calc1: 'calc1-', calc2: 'calc2-', linalg: 'la-', chem: 'chem-', genchem: 'gchem-', orgo: 'ochem-', discrete: 'dm-' };
+const PREFIX: Record<string, string> = { algebra: 'alg-', trig: 'trig-', calc1: 'calc1-', calc2: 'calc2-', linalg: 'la-', chem: 'chem-', genchem: 'gchem-', orgo: 'ochem-', discrete: 'dm-', stats: 'stat-' };
 
 // ----------------------------------------------------------------------- TeX
 function checkTex(where: string, tex: string, display = false) {
@@ -612,6 +612,13 @@ function checkGlossary() {
     if (sheetIds.has(s.id)) err(w, 'duplicate sheet id');
     sheetIds.add(s.id);
     if (!s.sections.length) err(w, 'no sections');
+    // Descriptions and section titles render inside buttons/links, so math is fine but glossary links are not.
+    checkInline(w + ' description', s.description);
+    if (/\[\[/.test(s.description)) err(w, 'description: no [[glossary]] links (it is shown inside a button)');
+    s.sections.forEach((sec) => {
+      checkInline(`${w} › ${sec.title} (title)`, sec.title);
+      if (/\[\[/.test(sec.title)) err(w, `section title "${sec.title}": no [[glossary]] links (shown inside a link)`);
+    });
     s.sections.forEach((sec) =>
       sec.items.forEach((it, i) => {
         const iw = `${w} › ${sec.title}[${i}]`;
@@ -641,6 +648,8 @@ if (!partial || glossaryOnly) checkGlossary();
     readFileSync(file, 'utf8')
       .split('\n')
       .forEach((line, i) => {
+        if (/\bfrom\s+['"](node:|fs['"]|path['"])|\brequire\(/.test(line))
+          err(`${file}:${i + 1}`, 'content files run in the browser — no Node imports (node:fs, path, require); inline the data instead');
         if (/(?<!\\)\\[;,!]/.test(line)) err(`${file}:${i + 1}`, 'single backslash before ; , or ! in a string — write \\\\; (TeX spacing) so the backslash survives');
       });
   }

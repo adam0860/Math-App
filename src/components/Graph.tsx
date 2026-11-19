@@ -44,6 +44,15 @@ function niceStep(range: number): number {
   return (m < 1.5 ? 1 : m < 3.5 ? 2 : m < 7.5 ? 5 : 10) * p;
 }
 
+/** Decimals a slider value needs so every step is distinguishable (step 0.005 → 3, 0.25 → 2, 1 → 0). */
+function sliderDecimals(step?: number): number {
+  if (!step || step >= 1) return step ? 0 : 2;
+  const s = String(step);
+  const m = /e-(\d+)$/.exec(s);
+  if (m) return Math.min(8, Number(m[1]) + (s.split('e')[0].split('.')[1]?.length ?? 0));
+  return Math.min(8, s.split('.')[1]?.length ?? 2);
+}
+
 function fmtTick(v: number): string {
   if (Math.abs(v) < 1e-9) return '0';
   const a = Math.abs(v);
@@ -439,7 +448,7 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
                 value={params[s.name]}
                 onChange={(e) => setParams((p) => ({ ...p, [s.name]: Number(e.target.value) }))}
               />
-              <span className="graph-slider-val">{fmtNum(params[s.name], 2)}</span>
+              <span className="graph-slider-val">{fmtNum(params[s.name], sliderDecimals(s.step))}</span>
             </label>
           ))}
         </div>

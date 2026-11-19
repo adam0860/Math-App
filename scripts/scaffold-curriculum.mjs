@@ -64,6 +64,14 @@ const courseMeta = {
     description:
       'University organic chemistry: drawing and naming molecules, acids and bases, conformations and stereochemistry, substitution and elimination, alkenes and alkynes, alcohols and ethers, spectroscopy, aromatic chemistry, carbonyl and enolate chemistry, amines and biomolecules, and multistep synthesis.',
   },
+  stats: {
+    exportName: 'statsCourse',
+    title: 'Probability and Statistics',
+    short: 'Stats',
+    subtitle: 'From data and distributions to inference, regression and A/B tests',
+    description:
+      'Calculus-based probability and statistics for computer science: describing data, discrete and continuous random variables, the normal distribution, joint distributions, the central limit theorem, estimation and confidence intervals, hypothesis testing and A/B tests, chi-square and the bootstrap, regression, Bayesian inference, and simulation.',
+  },
   discrete: {
     exportName: 'discreteCourse',
     title: 'Discrete Mathematics',

@@ -480,5 +480,59 @@
         ["dm-boolean-algebra", "Boolean Algebra and Logic Gates"],
         ["dm-finite-state-machines", "Finite-State Machines and Regular Expressions"],
         ["dm-computability", "Grammars, Turing Machines and Computability"] ] }
+  ],
+  "stats": [
+    {"dir": "u01-describing-data", "id": "stat-u01-describing-data", "icon": "📊", "title": "Describing Data", "description": "Kinds of data and how they're collected, summarizing data with center and spread, and visualizing distributions honestly.",
+      "lessons": [
+        ["stat-data-sampling", "Data, Variables and Sampling"],
+        ["stat-summaries", "Center, Spread and the Five-Number Summary"],
+        ["stat-visualizing", "Visualizing Data"] ] },
+    {"dir": "u02-probability-review", "id": "stat-u02-probability-review", "icon": "🎲", "title": "Probability Toolkit", "description": "The probability rules and Bayes' theorem revisited for statistics, and thinking about probability with simulation.",
+      "lessons": [
+        ["stat-probability-rules", "Probability Rules Revisited"],
+        ["stat-bayes-practice", "Bayes' Theorem in Practice"] ] },
+    {"dir": "u03-discrete-rv", "id": "stat-u03-discrete-rv", "icon": "🔢", "title": "Discrete Random Variables", "description": "Probability mass functions, expectation and variance rules, the binomial family, and the Poisson distribution.",
+      "lessons": [
+        ["stat-discrete-rv", "Random Variables, PMFs and CDFs"],
+        ["stat-binomial-family", "Binomial, Geometric and Hypergeometric Distributions"],
+        ["stat-poisson", "The Poisson Distribution"] ] },
+    {"dir": "u04-continuous-rv", "id": "stat-u04-continuous-rv", "icon": "📈", "title": "Continuous Random Variables", "description": "Density functions and expectation with calculus, the uniform and exponential distributions, and the normal distribution.",
+      "lessons": [
+        ["stat-continuous-rv", "Densities, CDFs and Expectation by Integration"],
+        ["stat-uniform-exponential", "Uniform and Exponential Distributions"],
+        ["stat-normal", "The Normal Distribution"] ] },
+    {"dir": "u05-joint", "id": "stat-u05-joint", "icon": "🔗", "title": "Joint Distributions", "description": "Joint, marginal and conditional distributions, covariance and correlation, and sums of random variables.",
+      "lessons": [
+        ["stat-joint", "Joint and Marginal Distributions"],
+        ["stat-covariance", "Covariance and Correlation"],
+        ["stat-sums", "Sums and Linear Combinations of Random Variables"] ] },
+    {"dir": "u06-limit-theorems", "id": "stat-u06-limit-theorems", "icon": "🎯", "title": "Limit Theorems", "description": "The law of large numbers, the central limit theorem, and normal approximations.",
+      "lessons": [
+        ["stat-lln", "The Law of Large Numbers"],
+        ["stat-clt", "The Central Limit Theorem and Normal Approximations"] ] },
+    {"dir": "u07-estimation", "id": "stat-u07-estimation", "icon": "📏", "title": "Estimation", "description": "Sampling distributions and standard error, point estimators and maximum likelihood, and confidence intervals.",
+      "lessons": [
+        ["stat-sampling-distributions", "Sampling Distributions and Standard Error"],
+        ["stat-point-estimation", "Point Estimation and Maximum Likelihood"],
+        ["stat-confidence-intervals", "Confidence Intervals"] ] },
+    {"dir": "u08-hypothesis-testing", "id": "stat-u08-hypothesis-testing", "icon": "⚖️", "title": "Hypothesis Testing", "description": "The logic of significance tests and p-values, t-tests and tests for proportions, and A/B testing done right.",
+      "lessons": [
+        ["stat-testing-logic", "Hypotheses, p-Values and Errors"],
+        ["stat-t-tests", "t-Tests and Tests for Proportions"],
+        ["stat-ab-testing", "A/B Testing, Power and Multiple Comparisons"] ] },
+    {"dir": "u09-categorical-resampling", "id": "stat-u09-categorical-resampling", "icon": "🧮", "title": "Categorical Data and Resampling", "description": "Chi-square tests for categorical data, and nonparametric methods, permutation tests and the bootstrap.",
+      "lessons": [
+        ["stat-chi-square", "Chi-Square Tests"],
+        ["stat-bootstrap", "Nonparametric Methods, Permutation Tests and the Bootstrap"] ] },
+    {"dir": "u10-regression", "id": "stat-u10-regression", "icon": "📉", "title": "Regression", "description": "Correlation and least-squares lines, inference and diagnostics for regression, and multiple and logistic regression.",
+      "lessons": [
+        ["stat-linear-regression", "Simple Linear Regression"],
+        ["stat-regression-inference", "Inference and Diagnostics for Regression"],
+        ["stat-multiple-regression", "Multiple and Logistic Regression"] ] },
+    {"dir": "u11-stats-computing", "id": "stat-u11-stats-computing", "icon": "🖥️", "title": "Statistics for Computing", "description": "Bayesian inference, simulation and random-variate generation, and statistics in games and machine learning.",
+      "lessons": [
+        ["stat-bayesian", "Bayesian Inference"],
+        ["stat-simulation", "Simulation and Generating Random Variables"],
+        ["stat-games-ml", "Statistics in Games and Machine Learning"] ] }
   ]
 }

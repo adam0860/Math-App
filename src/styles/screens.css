@@ -1811,3 +1811,21 @@
   background: color-mix(in srgb, var(--discrete-1) 16%, transparent);
   color: color-mix(in srgb, var(--discrete-1) 70%, var(--text));
 }
+
+.continue-card.course-stats {
+  background: linear-gradient(140deg, color-mix(in srgb, var(--stats-1) 12%, var(--surface)), var(--surface) 60%);
+}
+.course-card.course-stats {
+  background: linear-gradient(135deg, #042f2e, #0f766e 50%, #0e7490);
+}
+.course-tab.on.course-stats {
+  background: color-mix(in srgb, var(--stats-1) 15%, transparent);
+  color: color-mix(in srgb, var(--stats-1) 65%, var(--text));
+}
+.course-hero.course-stats {
+  background: linear-gradient(135deg, #022c22, #115e59 50%, #155e75);
+}
+.sheet-card.course-stats .sheet-badge {
+  background: color-mix(in srgb, var(--stats-1) 16%, transparent);
+  color: color-mix(in srgb, var(--stats-1) 70%, var(--text));
+}

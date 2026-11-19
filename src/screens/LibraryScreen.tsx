@@ -186,7 +186,9 @@ function SheetGrid() {
           <button key={s.id} type="button" className={`sheet-card course-${s.course}`} onClick={() => navigate(`/sheet/${s.id}`)}>
             <span className="sheet-icon">{s.icon}</span>
             <b>{s.title}</b>
-            <span className="muted">{s.description}</span>
+            <span className="muted">
+              <Inline text={s.description} />
+            </span>
             <span className="sheet-badge">{courseLabel(s.course)}</span>
           </button>
         ))}
@@ -360,7 +362,9 @@ export function CheatSheetScreen({ id }: { id: string }) {
       <h1 className="detail-title">
         <span className="title-emoji">{s.icon}</span> {s.title}
       </h1>
-      <p className="detail-lead">{s.description}</p>
+      <p className="detail-lead">
+        <Inline text={s.description} />
+      </p>
       <nav className="toc">
         {s.sections.map((sec, i) => (
           <a
@@ -371,13 +375,15 @@ export function CheatSheetScreen({ id }: { id: string }) {
               document.getElementById(`sec-${i}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }}
           >
-            {sec.title}
+            <Inline text={sec.title} />
           </a>
         ))}
       </nav>
       {s.sections.map((sec, i) => (
         <section key={i} className="cs-section" id={`sec-${i}`}>
-          <h2>{sec.title}</h2>
+          <h2>
+            <Inline text={sec.title} />
+          </h2>
           <div className="cs-items">
             {sec.items.map((it, j) => (
               <div key={j} className="cs-item">

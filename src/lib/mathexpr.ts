@@ -10,6 +10,8 @@
  * constants pi π e, functions sin cos tan sec csc cot arcsin arccos arctan
  * (asin…), sinh cosh tanh, ln, log (base 10), log_b(x), sqrt √ cbrt, abs, exp,
  * floor, ceil, root(x, n). Unicode − × · ÷ ² ³ θ are normalised.
+ * Statistics: gamma(x), lgamma(x), erf(x), normpdf(z), normcdf(z) (standard
+ * normal Φ), invnorm(p) (Φ⁻¹); nCr/nPr and n! also work for large n.
  */
 
 export type Node =
@@ -50,8 +52,14 @@ const FUNCS: Record<string, { arity: number; f: (...a: number[]) => number }> = 
   atan2: { arity: 2, f: Math.atan2 },
   min: { arity: 2, f: Math.min },
   max: { arity: 2, f: Math.max },
-  nCr: { arity: 2, f: (n, r) => factorial(n) / (factorial(r) * factorial(n - r)) },
-  nPr: { arity: 2, f: (n, r) => factorial(n) / factorial(n - r) },
+  nCr: { arity: 2, f: (n, r) => choose(n, r) },
+  nPr: { arity: 2, f: (n, r) => (Number.isInteger(n) && Number.isInteger(r) && r >= 0 && r <= n ? Math.round(Math.exp(lgamma(n + 1) - lgamma(n - r + 1))) || factorial(n) / factorial(n - r) : NaN) },
+  gamma: { arity: 1, f: (x) => gamma(x) },
+  lgamma: { arity: 1, f: (x) => lgamma(x) },
+  erf: { arity: 1, f: (x) => erf(x) },
+  normpdf: { arity: 1, f: (z) => Math.exp((-z * z) / 2) / Math.sqrt(2 * Math.PI) },
+  normcdf: { arity: 1, f: (z) => 0.5 * (1 + erf(z / Math.SQRT2)) },
+  invnorm: { arity: 1, f: (p) => invNorm(p) },
 };
 const ALIASES: Record<string, string> = { asin: 'arcsin', acos: 'arccos', atan: 'arctan', arcsine: 'arcsin', arccosine: 'arccos' };
 const CONSTS: Record<string, number> = { pi: Math.PI, e: Math.E };
@@ -64,10 +72,90 @@ function nthRoot(x: number, n: number) {
   return Math.pow(x, 1 / n);
 }
 function factorial(n: number): number {
-  if (!Number.isInteger(n) || n < 0 || n > 170) return NaN;
-  let r = 1;
-  for (let i = 2; i <= n; i++) r *= i;
-  return r;
+  if (Number.isInteger(n)) {
+    if (n < 0 || n > 170) return NaN;
+    let r = 1;
+    for (let i = 2; i <= n; i++) r *= i;
+    return r;
+  }
+  return n > -1 ? gamma(n + 1) : NaN; // continuous n! = Γ(n+1), so graphs of x! are smooth
+}
+
+// Lanczos approximation (g = 7, n = 9): ~15 significant digits.
+const LANCZOS = [
+  0.99999999999980993, 676.5203681218851, -1259.1392167224028, 771.32342877765313, -176.61502916214059,
+  12.507343278686905, -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7,
+];
+function lgamma(x: number): number {
+  if (x < 0.5) return Math.log(Math.PI / Math.abs(Math.sin(Math.PI * x))) - lgamma(1 - x);
+  x -= 1;
+  let a = LANCZOS[0];
+  const t = x + 7.5;
+  for (let i = 1; i < 9; i++) a += LANCZOS[i] / (x + i);
+  return 0.5 * Math.log(2 * Math.PI) + (x + 0.5) * Math.log(t) - t + Math.log(a);
+}
+function gamma(x: number): number {
+  if (Number.isInteger(x) && x <= 0) return NaN;
+  if (x < 0.5) return Math.PI / (Math.sin(Math.PI * x) * gamma(1 - x));
+  if (Number.isInteger(x) && x <= 171) return factorial(x - 1);
+  return Math.exp(lgamma(x));
+}
+function choose(n: number, r: number): number {
+  if (!Number.isInteger(n) || !Number.isInteger(r) || r < 0 || r > n) return Number.isInteger(r) && r > n && n >= 0 ? 0 : NaN;
+  if (n <= 170) return factorial(n) / (factorial(r) * factorial(n - r));
+  const v = Math.exp(lgamma(n + 1) - lgamma(r + 1) - lgamma(n - r + 1));
+  return v < 2 ** 53 ? Math.round(v) : v;
+}
+// erf: Maclaurin series for |x| < 2.5, erfc continued fraction beyond (~1e-15 relative).
+function erf(x: number): number {
+  const ax = Math.abs(x);
+  if (ax < 2.5) {
+    // Maclaurin series: converges fast here.
+    let sum = x, term = x;
+    for (let n = 1; n < 100; n++) {
+      term *= (-x * x) / n;
+      const add = term / (2 * n + 1);
+      sum += add;
+      if (Math.abs(add) < 1e-17 * Math.abs(sum)) break;
+    }
+    return (2 / Math.sqrt(Math.PI)) * sum;
+  }
+  // erfc continued fraction (Lentz) for large |x|.
+  let f = ax, C = ax, D = 0;
+  for (let n = 1; n < 200; n++) {
+    const an = n / 2;
+    D = ax + an * D;
+    D = D === 0 ? 1e-300 : 1 / D;
+    C = ax + an / C;
+    const delta = C * D;
+    f *= delta;
+    if (Math.abs(delta - 1) < 1e-16) break;
+  }
+  const erfc = Math.exp(-ax * ax) / (f * Math.sqrt(Math.PI));
+  return x >= 0 ? 1 - erfc : erfc - 1;
+}
+// Inverse standard normal CDF (Acklam's rational approximation + one Halley step): ~1e-15.
+function invNorm(p: number): number {
+  if (!(p > 0 && p < 1)) return p === 0 ? -Infinity : p === 1 ? Infinity : NaN;
+  const a = [-39.69683028665376, 220.9460984245205, -275.9285104469687, 138.357751867269, -30.66479806614716, 2.506628277459239];
+  const b = [-54.47609879822406, 161.5858368580409, -155.6989798598866, 66.80131188771972, -13.28068155288572];
+  const c = [-0.007784894002430293, -0.3223964580411365, -2.400758277161838, -2.549732539343734, 4.374664141464968, 2.938163982698783];
+  const d = [0.007784695709041462, 0.3224671290700398, 2.445134137142996, 3.754408661907416];
+  const pl = 0.02425;
+  let x: number;
+  if (p < pl) {
+    const q = Math.sqrt(-2 * Math.log(p));
+    x = (((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) / ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1);
+  } else if (p <= 1 - pl) {
+    const q = p - 0.5, r = q * q;
+    x = ((((((a[0] * r + a[1]) * r + a[2]) * r + a[3]) * r + a[4]) * r + a[5]) * q) / (((((b[0] * r + b[1]) * r + b[2]) * r + b[3]) * r + b[4]) * r + 1);
+  } else {
+    const q = Math.sqrt(-2 * Math.log(1 - p));
+    x = -(((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) / ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1);
+  }
+  const e = 0.5 * (1 + erf(x / Math.SQRT2)) - p;
+  const u = e * Math.sqrt(2 * Math.PI) * Math.exp((x * x) / 2);
+  return x - u / (1 + (x * u) / 2);
 }
 
 export class ParseError extends Error {}
@@ -432,6 +520,7 @@ const TEX_FN: Record<string, string> = {
   sin: '\\sin', cos: '\\cos', tan: '\\tan', sec: '\\sec', csc: '\\csc', cot: '\\cot',
   arcsin: '\\arcsin', arccos: '\\arccos', arctan: '\\arctan', sinh: '\\sinh', cosh: '\\cosh', tanh: '\\tanh',
   ln: '\\ln', log: '\\log', exp: '\\exp',
+  gamma: '\\Gamma', lgamma: '\\ln\\Gamma', erf: '\\operatorname{erf}', normcdf: '\\Phi', normpdf: '\\varphi', invnorm: '\\Phi^{-1}',
 };
 const TEX_VAR: Record<string, string> = { pi: '\\pi', theta: '\\theta', alpha: '\\alpha', beta: '\\beta', phi: '\\phi', omega: '\\omega', lambda: '\\lambda', mu: '\\mu', sigma: '\\sigma', tau: '\\tau', rho: '\\rho' };
 
