@@ -30,7 +30,7 @@ export const calc3CheatSheets: CheatSheet[] = [
       {
         title: 'Cross product and triple product',
         items: [
-          { label: '[[cross-product|Cross product]]', tex: '\\begin{aligned} \\vec{a} \\times \\vec{b} &= \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ a_1 & a_2 & a_3 \\\\ b_1 & b_2 & b_3 \\end{vmatrix} \\\\ &= \\langle a_2b_3 - a_3b_2,\\ a_3b_1 - a_1b_3,\\ a_1b_2 - a_2b_1 \\rangle \\end{aligned}' },
+          { label: '[[cross-product|Cross product]]', tex: '\\begin{aligned} \\vec{a} \\times \\vec{b} &= \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ a_1 & a_2 & a_3 \\\\ b_1 & b_2 & b_3 \\end{vmatrix} \\\\ &= \\langle a_2b_3 - a_3b_2,\\ a_3b_1 - a_1b_3, \\\\ &\\qquad\\ a_1b_2 - a_2b_1 \\rangle \\end{aligned}' },
           { label: 'Length = parallelogram area', tex: '|\\vec{a} \\times \\vec{b}| = |\\vec{a}|\\,|\\vec{b}|\\sin\\theta = \\text{area}', text: 'Perpendicular to both ([[right-hand-rule]]); $\\vec{b} \\times \\vec{a} = -\\vec{a} \\times \\vec{b}$; zero exactly when the vectors are parallel; not associative. Triangle $PQR$ has area $\\frac{1}{2}|\\overrightarrow{PQ} \\times \\overrightarrow{PR}|$.' },
           { label: 'Unit vectors', tex: '\\mathbf{i} \\times \\mathbf{j} = \\mathbf{k}, \\quad \\mathbf{j} \\times \\mathbf{k} = \\mathbf{i}, \\quad \\mathbf{k} \\times \\mathbf{i} = \\mathbf{j}' },
           { label: '[[la-scalar-triple-product|Scalar triple product]]', tex: '\\vec{a} \\cdot (\\vec{b} \\times \\vec{c}) = \\det\\begin{bmatrix} a_1 & a_2 & a_3 \\\\ b_1 & b_2 & b_3 \\\\ c_1 & c_2 & c_3 \\end{bmatrix}', text: 'Its absolute value is the volume of the parallelepiped; it is $0$ exactly when the vectors are coplanar.' },

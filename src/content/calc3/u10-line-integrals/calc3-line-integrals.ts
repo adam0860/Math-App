@@ -150,6 +150,12 @@ export const lesson: Lesson = {
           result: 'The line integral of $\\vec{F}$ along $C$ is $\\int_C \\vec{F} \\cdot d\\vec{r} = \\int_a^b \\vec{F}(\\vec{r}(t)) \\cdot \\vec{r}\\,\'(t)\\,dt$, where $d\\vec{r} = \\vec{r}\\,\'(t)\\,dt$.',
         },
         {
+          type: 'callout',
+          variant: 'why',
+          title: 'Why only the tangential component counts',
+          text: 'Split the force at a point into a part along the motion, $(\\vec{F} \\cdot \\vec{T})\\vec{T}$, and a part perpendicular to it. The perpendicular part can bend the path (like the tension in a string swinging a ball) but cannot speed the object up or slow it down, so it does no work. That is why the integrand is the dot product $\\vec{F} \\cdot \\vec{T}$, and why its sign tells you whether the field helps (positive) or resists (negative) the motion.',
+        },
+        {
           type: 'graph',
           x: [-0.3, 1.6],
           y: [-0.3, 1.6],
@@ -299,15 +305,14 @@ export const lesson: Lesson = {
           y: [-1.5, 1.5],
           z: [0, 6.3],
           view: { azimuth: 30, elevation: 15 },
-          field: { x: '-y', y: 'x', z: 'z/3', n: 4, color: 'gray' },
           curves: [{ x: 'cos(t)', y: 'sin(t)', z: 't', t: [0, '2pi'], color: 'blue', label: 'helix $\\langle \\cos t, \\sin t, t \\rangle$' }],
           vectors: [
-            { from: ['cos(s)', 'sin(s)', 's'], to: ['cos(s) - 0.5sin(s)', 'sin(s) + 0.5cos(s)', 's + 0.5s/3'], color: 'red', label: 'F (scaled)' },
+            { from: ['cos(s)', 'sin(s)', 's'], to: ['cos(s) - 0.3sin(s)', 'sin(s) + 0.3cos(s)', 's + 0.3s'], color: 'red', label: 'F' },
             { from: ['cos(s)', 'sin(s)', 's'], to: ['cos(s) - 0.5sin(s)', 'sin(s) + 0.5cos(s)', 's + 0.5'], color: 'green', label: 'r′' },
           ],
           sliders: [{ name: 's', min: 0, max: 6.28, step: 0.02, value: 2, label: '$t$', play: true }],
           readouts: [{ label: '$\\vec{F} \\cdot \\vec{r}\\,\' = 1 + t =$', expr: '1 + s', digits: 3 }],
-          caption: 'The field $\\vec{F} = \\langle -y, x, z \\rangle$ (arrows drawn with the vertical part scaled down to fit) along one turn of the helix. Horizontally the field swirls with the helix; vertically it pushes up harder the higher you go, so $\\vec{F} \\cdot \\vec{r}\\,\' = 1 + t$ keeps growing.',
+          caption: 'The field $\\vec{F} = \\langle -y, x, z \\rangle$ along one turn of the helix, with $\\vec{F}$ (red, at $0.3$ of its length) and the velocity $\\vec{r}\\,\'$ (green, at half its length) at the moving point. Horizontally the field swirls with the helix; vertically it pushes up harder the higher you go, so $\\vec{F} \\cdot \\vec{r}\\,\' = 1 + t$ keeps growing.',
         },
         {
           type: 'derivation',

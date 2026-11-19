@@ -291,7 +291,7 @@ export const lesson: Lesson = {
           y: [-2.5, 2.5],
           equal: true,
           height: 320,
-          field: { x: '-y/(x^2 + y^2)', y: 'x/(x^2 + y^2)', n: 15 },
+          field: { x: '-y/(x^2 + y^2)', y: 'x/(x^2 + y^2)', n: 15, normalize: true },
           parametric: [
             { x: 'cos(t)', y: 'sin(t)', t: [0, 's'], color: 'blue', label: 'loop around the origin (traced so far)' },
             { x: '3 + cos(t)', y: 'sin(t)', t: [0, '2pi'], color: 'green', label: 'loop not around the origin' },
@@ -302,7 +302,7 @@ export const lesson: Lesson = {
           ],
           sliders: [{ name: 's', min: 0.01, max: 6.28, step: 0.01, value: 4, label: 'angle traced $\\theta$', play: true }],
           readouts: [{ label: 'work so far $\\int \\vec{F} \\cdot d\\vec{r} = \\theta =$', expr: 's', digits: 3 }],
-          caption: 'Press play. Along the unit circle the accumulated work equals the angle swept, reaching $2\\pi$ after one lap. The green loop does not enclose the hole, and around it the work is $0$: in any region that avoids a whole ray from the origin, $\\vec{F}$ is conservative.',
+          caption: 'Arrows show direction only (the strength is $\\tfrac{1}{r}$, huge near the hole). Press play. Along the unit circle the accumulated work equals the angle swept, reaching $2\\pi$ after one lap. The green loop does not enclose the hole, and around it the work is $0$: in any region that avoids a whole ray from the origin, $\\vec{F}$ is conservative.',
         },
         {
           type: 'callout',

@@ -250,7 +250,7 @@ export const lesson: Lesson = {
           segments: [{ from: ['e^k', 'q e^(-k)'], to: ['e^k + 0.3e^k', 'q e^(-k) - 0.3q e^(-k)'], color: 'red', arrow: true, label: 'F' }],
           sliders: [
             { name: 'q', min: 0.2, max: 3, step: 0.05, value: 1, label: 'starting height $y_0$ at $x_0 = 1$' },
-            { name: 'k', min: -1.4, max: 1.35, step: 0.01, value: -1.4, label: 'time $t$', play: true },
+            { name: 'k', min: -1.4, max: 1.35, step: 0.01, value: 0, label: 'time $t$', play: true },
           ],
           readouts: [{ label: '$x(t)\\,y(t) =$', expr: '(e^k)(q e^(-k))', digits: 3 }],
           caption: 'Press play: the red particle rides the flow line of $\\langle x, -y \\rangle$ that passes through $(1, y_0)$, and its velocity arrow is always tangent to the path. The product $xy$ never changes.',

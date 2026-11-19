@@ -106,6 +106,31 @@ export function Plot3D({ g, compact }: { g: Plot3DBlock; compact?: boolean }) {
     const inBox = (p: V3) =>
       p.every(Number.isFinite) && p[0] >= x0 - tol && p[0] <= x1 + tol && p[1] >= y0 - tol && p[1] <= y1 + tol && p[2] >= z0 - tol && p[2] <= z1 + tol;
 
+    // Sutherland–Hodgman clipping of a polygon against the six faces of the box.
+    const clipToBox = (poly: V3[]): V3[] => {
+      const planes: [number, number, 1 | -1][] = [
+        [0, x0, 1], [0, x1, -1], [1, y0, 1], [1, y1, -1], [2, z0, 1], [2, z1, -1],
+      ];
+      let out = poly;
+      for (const [axis, bound, sign] of planes) {
+        if (out.length === 0) break;
+        const inp = out;
+        out = [];
+        const inside = (p: V3) => sign * (p[axis] - bound) >= -tol;
+        for (let k = 0; k < inp.length; k++) {
+          const A = inp[k];
+          const B = inp[(k + 1) % inp.length];
+          const ai = inside(A), bi = inside(B);
+          if (ai) out.push(A);
+          if (ai !== bi) {
+            const t = (bound - A[axis]) / (B[axis] - A[axis]);
+            out.push([A[0] + (B[0] - A[0]) * t, A[1] + (B[1] - A[1]) * t, A[2] + (B[2] - A[2]) * t]);
+          }
+        }
+      }
+      return out;
+    };
+
     const items: Item[] = [];
     const labels: Label[] = [];
     const res = Math.max(6, Math.min(50, Math.round(g.resolution ?? 26)));
@@ -114,8 +139,15 @@ export function Plot3D({ g, compact }: { g: Plot3DBlock; compact?: boolean }) {
       for (let i = 0; i < grid.length - 1; i++) {
         for (let j = 0; j < grid[i].length - 1; j++) {
           const q = [grid[i][j], grid[i + 1][j], grid[i + 1][j + 1], grid[i][j + 1]];
-          if (!q.every(inBox)) continue;
-          const P = q.map(proj);
+          if (!q.every((p) => p.every(Number.isFinite))) continue;
+          // Clip the quad to the box so surfaces end cleanly at its walls. A quad that spans far
+          // more than the box (next to a pole) is dropped instead of drawn as a wall.
+          const zs = q.map((p) => p[2]);
+          const zlo = Math.min(...zs), zhi = Math.max(...zs);
+          if (zhi - zlo > 3 * (z1 - z0) || (zlo < z0 && zhi > z1)) continue;
+          const poly = q.every(inBox) ? q : clipToBox(q);
+          if (poly.length < 3) continue;
+          const P = poly.map(proj);
           const n0 = norm(q[0]), n1 = norm(q[1]), n3 = norm(q[3]), n2 = norm(q[2]);
           const u: V3 = [n2[0] - n0[0], n2[1] - n0[1], n2[2] - n0[2]];
           const v: V3 = [n3[0] - n1[0], n3[1] - n1[1], n3[2] - n1[2]];
@@ -125,7 +157,7 @@ export function Plot3D({ g, compact }: { g: Plot3DBlock; compact?: boolean }) {
           items.push({
             kind: 'face',
             pts: P.map((p) => [p[0], p[1]] as [number, number]),
-            depth: (P[0][2] + P[1][2] + P[2][2] + P[3][2]) / 4,
+            depth: P.reduce((acc, p) => acc + p[2], 0) / P.length,
             color,
             alpha: opacity * (0.38 + 0.55 * b),
           });
