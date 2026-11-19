@@ -479,3 +479,7 @@ a {
 .bar.course-calc3 .bar-fill {
   background: linear-gradient(90deg, var(--calc3-1), var(--calc3-2));
 }
+
+.bar.course-dsa .bar-fill {
+  background: linear-gradient(90deg, var(--dsa-1), var(--dsa-2));
+}

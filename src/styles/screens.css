@@ -1897,3 +1897,25 @@
   background: color-mix(in srgb, var(--orgo-1) 16%, transparent);
   color: color-mix(in srgb, var(--orgo-1) 65%, var(--text));
 }
+
+.continue-card.course-dsa {
+  background: linear-gradient(140deg, color-mix(in srgb, var(--dsa-1) 12%, var(--surface)), var(--surface) 60%);
+}
+.course-card.course-dsa {
+  background: linear-gradient(135deg, #1a2e05, #3f6212 50%, #0f766e);
+}
+.course-tab.on.course-dsa {
+  background: color-mix(in srgb, var(--dsa-1) 15%, transparent);
+  color: color-mix(in srgb, var(--dsa-1) 65%, var(--text));
+}
+.course-hero.course-dsa {
+  background: linear-gradient(135deg, #1a2e05, #365314 50%, #115e59);
+}
+.sheet-card.course-dsa .sheet-badge {
+  background: color-mix(in srgb, var(--dsa-1) 16%, transparent);
+  color: color-mix(in srgb, var(--dsa-1) 70%, var(--text));
+}
+.course-badge.dsa {
+  background: color-mix(in srgb, var(--dsa-1) 16%, transparent);
+  color: color-mix(in srgb, var(--dsa-1) 65%, var(--text));
+}

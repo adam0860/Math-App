@@ -71,6 +71,8 @@ export const achievements: Achievement[] = [
   { id: 'phys1-graduate', icon: '🚀', title: 'Physics I Graduate', description: 'Complete the entire Physics I: Mechanics course.', test: courseDone('phys1') },
   { id: 'gradient-master', icon: '🧭', title: 'Steepest Ascent', description: 'Finish the Gradient unit of Calculus III.', test: unitDone('calc3-u05-gradient') },
   { id: 'calc3-graduate', icon: '🌐', title: 'Calculus III Graduate', description: 'Complete the entire Calculus III course.', test: courseDone('calc3') },
+  { id: 'pathfinder', icon: '🧭', title: 'Pathfinder', description: 'Finish the Shortest Paths and Pathfinding unit.', test: unitDone('dsa-u09-shortest-paths') },
+  { id: 'dsa-graduate', icon: '🏗️', title: 'DSA Graduate', description: 'Complete the entire Data Structures and Algorithms course.', test: courseDone('dsa') },
   { id: 'calc2-graduate', icon: '🏆', title: 'Calculus II Graduate', description: 'Complete the entire Calculus II course.', test: courseDone('calc2') },
   {
     id: 'night-owl',

@@ -9,6 +9,7 @@ import { genchemGlossary } from './genchem';
 import { orgoGlossary } from './orgo';
 import { statsGlossary } from './stats';
 import { phys1Glossary } from './phys1';
+import { dsaGlossary } from './dsa';
 import { discreteGlossary } from './discrete';
 import { linalgGlossary } from './linalg';
 import { glossary as algebra_u01 } from '../algebra/u01-foundations/glossary';
@@ -128,6 +129,19 @@ import { glossary as calc3_u10 } from '../calc3/u10-line-integrals/glossary';
 import { glossary as calc3_u11 } from '../calc3/u11-greens-theorem/glossary';
 import { glossary as calc3_u12 } from '../calc3/u12-surface-integrals/glossary';
 import { glossary as calc3_u13 } from '../calc3/u13-stokes-divergence/glossary';
+import { glossary as dsa_u01 } from '../dsa/u01-foundations/glossary';
+import { glossary as dsa_u02 } from '../dsa/u02-linear/glossary';
+import { glossary as dsa_u03 } from '../dsa/u03-hashing/glossary';
+import { glossary as dsa_u04 } from '../dsa/u04-sorting/glossary';
+import { glossary as dsa_u05 } from '../dsa/u05-searching/glossary';
+import { glossary as dsa_u06 } from '../dsa/u06-trees/glossary';
+import { glossary as dsa_u07 } from '../dsa/u07-heaps-tries/glossary';
+import { glossary as dsa_u08 } from '../dsa/u08-graphs/glossary';
+import { glossary as dsa_u09 } from '../dsa/u09-shortest-paths/glossary';
+import { glossary as dsa_u10 } from '../dsa/u10-greedy/glossary';
+import { glossary as dsa_u11 } from '../dsa/u11-dynamic-programming/glossary';
+import { glossary as dsa_u12 } from '../dsa/u12-advanced/glossary';
+import { glossary as dsa_u13 } from '../dsa/u13-game-structures/glossary';
 
 export const glossary: GlossaryEntry[] = [
   ...algebraGlossary,
@@ -140,6 +154,7 @@ export const glossary: GlossaryEntry[] = [
   ...orgoGlossary,
   ...statsGlossary,
   ...phys1Glossary,
+  ...dsaGlossary,
   ...discreteGlossary,
   ...linalgGlossary,
   ...algebra_u01,
@@ -259,4 +274,17 @@ export const glossary: GlossaryEntry[] = [
   ...calc3_u11,
   ...calc3_u12,
   ...calc3_u13,
+  ...dsa_u01,
+  ...dsa_u02,
+  ...dsa_u03,
+  ...dsa_u04,
+  ...dsa_u05,
+  ...dsa_u06,
+  ...dsa_u07,
+  ...dsa_u08,
+  ...dsa_u09,
+  ...dsa_u10,
+  ...dsa_u11,
+  ...dsa_u12,
+  ...dsa_u13,
 ];

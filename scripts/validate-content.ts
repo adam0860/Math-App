@@ -46,7 +46,7 @@ const definedIds = new Set(glossary.map((g) => g.id));
 const resolvable = (id: string) => definedIds.has(id) || (partial && masterIds.has(id));
 
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-const PREFIX: Record<string, string> = { algebra: 'alg-', trig: 'trig-', calc1: 'calc1-', calc2: 'calc2-', calc3: 'calc3-', linalg: 'la-', chem: 'chem-', genchem: 'gchem-', orgo: 'ochem-', discrete: 'dm-', stats: 'stat-', phys1: 'phys-' };
+const PREFIX: Record<string, string> = { algebra: 'alg-', trig: 'trig-', calc1: 'calc1-', calc2: 'calc2-', calc3: 'calc3-', linalg: 'la-', chem: 'chem-', genchem: 'gchem-', orgo: 'ochem-', discrete: 'dm-', stats: 'stat-', dsa: 'dsa-', phys1: 'phys-' };
 
 // ----------------------------------------------------------------------- TeX
 function checkTex(where: string, tex: string, display = false) {

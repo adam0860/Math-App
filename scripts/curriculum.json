@@ -657,5 +657,67 @@
         ["calc3-stokes-theorem", "Stokes' Theorem"],
         ["calc3-divergence-theorem", "The Divergence Theorem"],
         ["calc3-vector-calculus-applications", "Vector Calculus in Physics, Fluids and Graphics"] ] }
+  ],
+  "dsa": [
+    {"dir": "u01-foundations", "id": "dsa-u01-foundations", "icon": "📐", "title": "Foundations", "description": "Analyzing algorithms in practice — asymptotics, amortized cost and the memory hierarchy — then arrays and dynamic arrays, and recursion.",
+      "lessons": [
+        ["dsa-analysis", "Analyzing Algorithms in Practice"],
+        ["dsa-arrays-memory", "Arrays, Dynamic Arrays and Memory"],
+        ["dsa-recursion", "Recursion and the Call Stack"] ] },
+    {"dir": "u02-linear", "id": "dsa-u02-linear", "icon": "🔗", "title": "Linear Structures", "description": "Linked lists, stacks, queues, deques and ring buffers, and choosing the right standard container.",
+      "lessons": [
+        ["dsa-linked-lists", "Linked Lists"],
+        ["dsa-stacks-queues", "Stacks, Queues and Ring Buffers"],
+        ["dsa-stl-containers", "Choosing a Container"] ] },
+    {"dir": "u03-hashing", "id": "dsa-u03-hashing", "icon": "#️⃣", "title": "Hashing", "description": "Hash functions and hash tables with chaining and open addressing, then hashing in practice: Bloom filters and spatial hashing.",
+      "lessons": [
+        ["dsa-hash-tables", "Hash Tables"],
+        ["dsa-hashing-applications", "Hashing in Practice"] ] },
+    {"dir": "u04-sorting", "id": "dsa-u04-sorting", "icon": "📶", "title": "Sorting", "description": "Elementary sorts and invariants, merge sort and quicksort, and the comparison lower bound with counting and radix sort.",
+      "lessons": [
+        ["dsa-elementary-sorts", "Elementary Sorts"],
+        ["dsa-merge-quick", "Merge Sort and Quicksort"],
+        ["dsa-linear-sorts", "The Lower Bound and Linear-Time Sorts"] ] },
+    {"dir": "u05-searching", "id": "dsa-u05-searching", "icon": "🔍", "title": "Searching and Array Techniques", "description": "Binary search and its variants, then two pointers, sliding windows and prefix sums.",
+      "lessons": [
+        ["dsa-binary-search", "Binary Search"],
+        ["dsa-array-techniques", "Two Pointers, Sliding Windows and Prefix Sums"] ] },
+    {"dir": "u06-trees", "id": "dsa-u06-trees", "icon": "🌳", "title": "Trees and Search Trees", "description": "Binary trees and traversals, binary search tree operations, and self-balancing trees.",
+      "lessons": [
+        ["dsa-binary-trees", "Binary Trees and Traversals"],
+        ["dsa-bst", "Binary Search Trees"],
+        ["dsa-balanced-trees", "Balanced Search Trees"] ] },
+    {"dir": "u07-heaps-tries", "id": "dsa-u07-heaps-tries", "icon": "⛰️", "title": "Heaps, Tries and Range Trees", "description": "Binary heaps and priority queues, then tries, segment trees and Fenwick trees.",
+      "lessons": [
+        ["dsa-heaps", "Heaps and Priority Queues"],
+        ["dsa-tries-range-trees", "Tries, Segment Trees and Fenwick Trees"] ] },
+    {"dir": "u08-graphs", "id": "dsa-u08-graphs", "icon": "🕸️", "title": "Graph Algorithms", "description": "Graph representations with BFS and DFS, topological sort and strongly connected components, and union–find.",
+      "lessons": [
+        ["dsa-graph-traversal", "Graph Representations, BFS and DFS"],
+        ["dsa-dfs-applications", "Topological Sort, Cycles and Components"],
+        ["dsa-union-find", "Union–Find"] ] },
+    {"dir": "u09-shortest-paths", "id": "dsa-u09-shortest-paths", "icon": "🗺️", "title": "Shortest Paths and Pathfinding", "description": "Dijkstra's algorithm, Bellman–Ford and Floyd–Warshall, and A* pathfinding for games.",
+      "lessons": [
+        ["dsa-dijkstra", "Dijkstra's Algorithm"],
+        ["dsa-bellman-ford-floyd", "Bellman–Ford and Floyd–Warshall"],
+        ["dsa-astar", "A* and Game Pathfinding"] ] },
+    {"dir": "u10-greedy", "id": "dsa-u10-greedy", "icon": "🪙", "title": "Greedy Algorithms", "description": "The greedy method with exchange arguments, Huffman coding, and minimum spanning trees with Prim and Kruskal.",
+      "lessons": [
+        ["dsa-greedy", "Greedy Algorithms and Huffman Coding"],
+        ["dsa-mst", "Minimum Spanning Trees"] ] },
+    {"dir": "u11-dynamic-programming", "id": "dsa-u11-dynamic-programming", "icon": "🧩", "title": "Dynamic Programming", "description": "Memoization and tabulation, DP on sequences (LIS, LCS, edit distance), and knapsack and grid problems.",
+      "lessons": [
+        ["dsa-dp-fundamentals", "Dynamic Programming Fundamentals"],
+        ["dsa-dp-sequences", "DP on Sequences and Strings"],
+        ["dsa-dp-knapsack", "Knapsack, Grids and DP on Trees"] ] },
+    {"dir": "u12-advanced", "id": "dsa-u12-advanced", "icon": "♟️", "title": "Backtracking, Strings and Hard Problems", "description": "Backtracking and branch and bound, string searching with KMP and rolling hashes, and NP-completeness with practical ways around it.",
+      "lessons": [
+        ["dsa-backtracking", "Backtracking and Branch and Bound"],
+        ["dsa-string-algorithms", "String Algorithms"],
+        ["dsa-np-completeness", "NP-Completeness and Coping with Hard Problems"] ] },
+    {"dir": "u13-game-structures", "id": "dsa-u13-game-structures", "icon": "🎮", "title": "Data Structures for Games", "description": "Spatial partitioning (grids, quadtrees, BVHs, k-d trees) and engine data structures: ECS, pools, free lists and generational handles.",
+      "lessons": [
+        ["dsa-spatial-structures", "Spatial Data Structures"],
+        ["dsa-engine-structures", "Data Structures in Game Engines"] ] }
   ]
 }
