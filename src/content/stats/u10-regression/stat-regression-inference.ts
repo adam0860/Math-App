@@ -258,8 +258,7 @@ SD of b1:   0.00881  (theory sigma/sqrt(Sxx) = 0.00880)
       kind: 'order',
       prompt: 'Put the steps of a $t$ test for the slope in order.',
       lines: [
-        'State $H_0: \\beta_1 = 0$ and $H_a: \\beta_1 \\ne 0$',
-        'Fit the least-squares line and check the residual plot',
+        'State $H_0: \\beta_1 = 0$ and $H_a: \\beta_1 \\ne 0$, fit the least-squares line and check the residual plot',
         'Compute $s = \\sqrt{\\operatorname{SSE}/(n-2)}$ and $\\operatorname{SE}(b_1) = s/\\sqrt{S_{xx}}$',
         'Compute $t = b_1/\\operatorname{SE}(b_1)$',
         'Find the p-value from $t_{n-2}$ and state the conclusion in context',

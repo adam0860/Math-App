@@ -538,7 +538,7 @@ successes: 1383 (an even split expects 1067, always-best 1400)`,
           annotations: [
             { lines: '28-29', text: 'Three store offers that convert at $4\\%$, $5\\%$ and $7\\%$. The algorithm only ever sees successes and failures.' },
             { lines: '33-38', text: 'Thompson\'s rule: one posterior draw per arm, play the argmax.' },
-            { lines: '40-41', text: 'The conjugate update from earlier: one addition.' },
+            { lines: '41-42', text: 'The conjugate update from earlier: one addition.' },
           ],
         },
         {
