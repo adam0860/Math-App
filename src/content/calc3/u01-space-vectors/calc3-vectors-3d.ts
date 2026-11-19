@@ -139,7 +139,7 @@ export const lesson: Lesson = {
             { from: [0, 0, 0], to: ['2cos(s)', '2sin(s)', 1], label: 'b', color: 'red' },
           ],
           curves: [{ x: '2cos(t)', y: '2sin(t)', z: '1', t: [0, '2pi'], color: 'gray', dashed: true }],
-          sliders: [{ name: 's', min: 0, max: 6.28, step: 0.02, value: 0.5, label: 'turn $\\vec{b}$', play: true, loop: true, speed: 0.8 }],
+          sliders: [{ name: 's', min: 0, max: 6.28, step: 0.02, value: 2, label: 'turn $\\vec{b}$', play: true, loop: true, speed: 0.8 }],
           readouts: [
             { label: '$\\vec{a} \\cdot \\vec{b} =$', expr: '2cos(s) + 4sin(s) + 2' },
             { label: '$\\theta$ (degrees) $=$', expr: 'arccos((2cos(s) + 4sin(s) + 2)/(3sqrt(5)))*180/pi', digits: 1 },
@@ -569,7 +569,7 @@ eye (-3, -1, 0): n.(E - A) = -3.4641 -> cull`,
       title: 'Khan Academy — Multivariable calculus',
       url: 'https://www.khanacademy.org/math/multivariable-calculus',
       source: 'khan',
-      note: 'The "thinking about multivariable functions" unit opens with short videos on vectors and the cross product in 3D.',
+      note: 'The "thinking about multivariable functions" unit visualizes functions, vector fields and transformations in 3D; the dot and cross products themselves are covered in Khan Academy\'s linear algebra course.',
     },
     {
       title: 'Wikipedia — Back-face culling',
