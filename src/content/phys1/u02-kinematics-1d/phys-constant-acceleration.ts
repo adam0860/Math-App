@@ -416,7 +416,7 @@ export const lesson: Lesson = {
             { name: 's', min: 0, max: 1.25, step: 0.005, value: 0, label: 'time $t$ (s)', play: true, speed: 0.4 },
             { name: 'h', min: 0.5, max: 3, step: 0.1, value: 2, label: 'apex height $h$ (m)' },
             { name: 'k', min: 0.2, max: 0.6, step: 0.01, value: 0.4, label: 'time to apex $t_h$ (s)' },
-            { name: 'm', min: 1, max: 3, step: 0.1, value: 1, label: 'fall gravity multiplier' },
+            { name: 'm', min: 1, max: 3, step: 0.1, value: 2, label: 'fall gravity multiplier' },
           ],
           readouts: [
             { label: '$g = 2h/t_h^2$ (m/s²):', expr: '2h/k^2', digits: 1 },

@@ -85,7 +85,7 @@ export const lesson: Lesson = {
         { type: 'math', tex: 'x = R(\\theta - \\sin\\theta), \\qquad y = R(1 - \\cos\\theta)' },
         {
           type: 'graph',
-          x: [-0.6, 7.2],
+          x: [-0.6, 7.6],
           y: [-0.6, 3.2],
           equal: true,
           parametric: [
@@ -94,7 +94,7 @@ export const lesson: Lesson = {
             { x: 's + cos(t)', y: '1 + sin(t)', t: [0, '2pi'], color: 'blue' },
           ],
           segments: [
-            { from: [-0.6, 0], to: [7.2, 0], color: 'gray' },
+            { from: [-0.6, 0], to: [7.6, 0], color: 'gray' },
             { from: ['s', 1], to: ['s - sin(s)', '1 - cos(s)'], color: 'blue' },
             { from: ['s', 1], to: ['s + sin(s)', '1 + cos(s)'], color: 'blue' },
             { from: ['s', 1], to: ['s - cos(s)', '1 + sin(s)'], color: 'blue' },

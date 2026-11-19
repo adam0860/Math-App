@@ -185,6 +185,12 @@ export const lesson: Lesson = {
           result: 'The center of mass moves like a single particle of mass $M$ acted on by the net **external** force alone. Internal forces, however violent, cannot move it.',
         },
         {
+          type: 'callout',
+          variant: 'why',
+          title: 'Why internal forces cannot move the center of mass',
+          text: 'Every internal force has a third-law partner, equal and opposite, acting on another part of the same system. In the sum $\\sum_i \\vec F_{\\text{on } i}$ each pair adds to zero, so only forces from outside survive. You cannot lift yourself by your bootstraps, and an astronaut floating in the middle of a cabin cannot reach a wall by flailing: their limbs move, but their CM stays put.',
+        },
+        {
           type: 'p',
           text: 'Throw a wrench, a rifle or a dumbbell spinning through the air. Each part follows a complicated looping path, but gravity is the only external force, so the CM follows the same parabola a thrown ball would. Press play.',
         },
@@ -347,7 +353,8 @@ export const lesson: Lesson = {
           type: 'derivation',
           title: 'A stage with $u = 3.0\\,\\text{km/s}$ and mass ratio 8',
           steps: [
-            { tex: '\\Delta v = (3.0\\,\\text{km/s})\\ln 8 = 3.0 \\times 2.079 = 6.24\\,\\text{km/s}', why: 'Rocket equation. $\\ln 8 = 3\\ln 2$.' },
+            { tex: '\\Delta v = (3.0\\,\\text{km/s})\\ln 8', why: 'Rocket equation with $M_i/M_f = 8$, starting from rest in deep space.' },
+            { tex: '= 3.0 \\times 2.079\\,\\text{km/s} = 6.24\\,\\text{km/s}', why: '$\\ln 8 = 3\\ln 2 \\approx 2.079$.' },
           ],
           result: 'Even with seven-eighths of the launch mass as fuel, one stage falls short of orbit.',
         },

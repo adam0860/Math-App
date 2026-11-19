@@ -14,7 +14,7 @@ const BYI = `((10 - ${DM})*sin${TH})`;
 
 // Atwood graph: masses p (left) and q (right), kg. Acceleration of the left mass downward: A.
 const AA = '((p - q)*9.8/(p + q))';
-const AM = `min(s, sqrt(8/abs(${AA})))`;
+const AM = `min(s, sqrt(6/abs(${AA})))`;
 const Y1 = `(5 - 0.5*${AA}*${AM}^2)`;
 const Y2 = `(5 + 0.5*${AA}*${AM}^2)`;
 const TT = '(2p*q*9.8/(p + q))';
