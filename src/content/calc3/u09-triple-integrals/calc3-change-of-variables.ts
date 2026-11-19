@@ -205,7 +205,7 @@ export const lesson: Lesson = {
     // ------------------------------------------------------------------ 7
     {
       kind: 'error',
-      prompt: 'A student evaluates $\\iint_R (x + y)\\,dA$, where $R$ is the square bounded by the lines $x + y = 0$, $x + y = 2$, $x - y = 0$ and $x - y = 4$. Tap the first line that is wrong.',
+      prompt: 'A student evaluates $\\iint_R (x + y)\\,dA$, where $R$ is the rectangle bounded by the lines $x + y = 0$, $x + y = 2$, $x - y = 0$ and $x - y = 4$. Tap the first line that is wrong.',
       lines: [
         'Let $u = x + y$, $v = x - y$. Then $R$ becomes $S$: $0 \\le u \\le 2$, $0 \\le v \\le 4$.',
         '$\\dfrac{\\partial(u, v)}{\\partial(x, y)} = \\det\\begin{bmatrix} 1 & 1 \\\\ 1 & -1 \\end{bmatrix} = -2$',
@@ -400,11 +400,11 @@ uniform r = sqrt(u): 0.2495 of the samples`,
       lines: [
         'Choose $u$ and $v$ so that the boundary of $R$ or the integrand becomes simple',
         'Translate every boundary curve of $R$ to find $S$, and compute $\\left|\\frac{\\partial(x, y)}{\\partial(u, v)}\\right|$ (a reciprocal if you differentiated $u$, $v$ with respect to $x$, $y$)',
+        'Sanity-check the setup: with $f = 1$, the integral over $S$ of the Jacobian should match the area of $R$',
         'Rewrite $f$ in terms of $u$ and $v$, multiply by the absolute Jacobian, and integrate over $S$',
-        'Sanity-check: with $f = 1$, the area of $S$ times the Jacobian should match the area of $R$',
       ],
       distractors: ['Replace $dx\\,dy$ by $du\\,dv$'],
-      explanation: 'The choice of variables drives everything else, so it comes first. Then find the new region and the scale factor (independent calculations, so they share a step), and only then assemble and integrate. A quick area check at the end catches a missing or inverted Jacobian. The distractor drops the Jacobian, the error that turns $\\tfrac{3}{4}(e - e^{-1})$ into a wrong number.',
+      explanation: 'The choice of variables drives everything else, so it comes first. Then find the new region and the scale factor (independent calculations, so they share a step), then check the setup with $f = 1$ (the area of $R$) before you build the real integral: that quick check catches a missing or inverted Jacobian before it costs you the whole computation. Only then assemble and integrate. The distractor drops the Jacobian, the error that turns $\\tfrac{3}{4}(e - e^{-1})$ into a wrong number.',
     },
   ],
   takeaways: [
@@ -419,7 +419,7 @@ uniform r = sqrt(u): 0.2495 of the samples`,
       title: 'OpenStax Calculus Volume 3 — 5.7 Change of Variables in Multiple Integrals',
       url: 'https://openstax.org/details/books/calculus-volume-3',
       source: 'openstax',
-      note: 'Section 5.7 works through the trapezoid example and several other regions where the right substitution makes the integral easy.',
+      note: 'Section 5.7 works through several regions where the right substitution makes the integral easy.',
     },
     {
       title: 'MIT OCW 18.02SC Multivariable Calculus',

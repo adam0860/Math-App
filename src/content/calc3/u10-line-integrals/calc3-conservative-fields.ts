@@ -432,7 +432,7 @@ vortex, circle around (3, 0)  : 0.0000
       title: 'MIT OCW 18.02SC Multivariable Calculus',
       url: 'https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/',
       source: 'other',
-      note: 'Unit 4 sessions on gradient fields and path independence, including the $\\frac{\\langle -y, x \\rangle}{x^2 + y^2}$ example in recitation.',
+      note: 'Unit 3 sessions on gradient fields and path independence, including the $\\frac{\\langle -y, x \\rangle}{x^2 + y^2}$ example in recitation.',
     },
     {
       title: "Paul's Online Notes — Calculus III",

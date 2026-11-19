@@ -49,7 +49,7 @@ export const glossary: GlossaryEntry[] = [
   {
     id: 'calc3-conservative-field',
     term: 'Conservative Vector Field',
-    aliases: ['conservative field', 'conservative vector fields', 'irrotational field'],
+    aliases: ['conservative field', 'conservative vector fields'],
     course: 'calc3',
     category: 'Vector Calculus',
     short: 'A vector field that is the gradient of a scalar function: $\\vec{F} = \\nabla f$. Its line integrals depend only on the endpoints, and its circulation around every closed curve is $0$.',
