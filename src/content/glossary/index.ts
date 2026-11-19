@@ -3,6 +3,7 @@ import { algebraGlossary } from './algebra';
 import { trigGlossary } from './trig';
 import { calc1Glossary } from './calc1';
 import { calc2Glossary } from './calc2';
+import { calc3Glossary } from './calc3';
 import { chemGlossary } from './chem';
 import { genchemGlossary } from './genchem';
 import { orgoGlossary } from './orgo';
@@ -114,12 +115,26 @@ import { glossary as phys1_u09 } from '../phys1/u09-gravitation/glossary';
 import { glossary as phys1_u10 } from '../phys1/u10-oscillations/glossary';
 import { glossary as phys1_u11 } from '../phys1/u11-waves/glossary';
 import { glossary as phys1_u12 } from '../phys1/u12-game-physics/glossary';
+import { glossary as calc3_u01 } from '../calc3/u01-space-vectors/glossary';
+import { glossary as calc3_u02 } from '../calc3/u02-surfaces/glossary';
+import { glossary as calc3_u03 } from '../calc3/u03-vector-functions/glossary';
+import { glossary as calc3_u04 } from '../calc3/u04-partial-derivatives/glossary';
+import { glossary as calc3_u05 } from '../calc3/u05-gradient/glossary';
+import { glossary as calc3_u06 } from '../calc3/u06-optimization/glossary';
+import { glossary as calc3_u07 } from '../calc3/u07-double-integrals/glossary';
+import { glossary as calc3_u08 } from '../calc3/u08-double-applications/glossary';
+import { glossary as calc3_u09 } from '../calc3/u09-triple-integrals/glossary';
+import { glossary as calc3_u10 } from '../calc3/u10-line-integrals/glossary';
+import { glossary as calc3_u11 } from '../calc3/u11-greens-theorem/glossary';
+import { glossary as calc3_u12 } from '../calc3/u12-surface-integrals/glossary';
+import { glossary as calc3_u13 } from '../calc3/u13-stokes-divergence/glossary';
 
 export const glossary: GlossaryEntry[] = [
   ...algebraGlossary,
   ...trigGlossary,
   ...calc1Glossary,
   ...calc2Glossary,
+  ...calc3Glossary,
   ...chemGlossary,
   ...genchemGlossary,
   ...orgoGlossary,
@@ -231,4 +246,17 @@ export const glossary: GlossaryEntry[] = [
   ...phys1_u10,
   ...phys1_u11,
   ...phys1_u12,
+  ...calc3_u01,
+  ...calc3_u02,
+  ...calc3_u03,
+  ...calc3_u04,
+  ...calc3_u05,
+  ...calc3_u06,
+  ...calc3_u07,
+  ...calc3_u08,
+  ...calc3_u09,
+  ...calc3_u10,
+  ...calc3_u11,
+  ...calc3_u12,
+  ...calc3_u13,
 ];

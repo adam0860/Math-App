@@ -25,7 +25,7 @@ src/content/
 ```
 
 Courses: `algebra` (lesson ids `alg-…`), `trig` (`trig-…`), `calc1` (`calc1-…`),
-`calc2` (`calc2-…`), `linalg` (`la-…`), `discrete` (`dm-…`), `stats` (`stat-…`), `phys1` (`phys-…`), `chem` (`chem-…`), `genchem` (`gchem-…`), `orgo` (`ochem-…`). Every lesson file already exists as a **stub**. Replace the whole stub
+`calc2` (`calc2-…`), `calc3` (`calc3-…`), `linalg` (`la-…`), `discrete` (`dm-…`), `stats` (`stat-…`), `phys1` (`phys-…`), `chem` (`chem-…`), `genchem` (`gchem-…`), `orgo` (`ochem-…`). Every lesson file already exists as a **stub**. Replace the whole stub
 with the finished lesson. Keep the lesson `id` exactly as in the stub. You may refine the
 title slightly. The full outline is in `scripts/curriculum.json` — read the neighbouring
 lessons' titles so you don't duplicate topics owned by another lesson, and so you know what
@@ -144,6 +144,8 @@ TeX is full of backslashes, so **every backslash must be doubled** in TS source:
     functions: [{ expr: 'a*sin(b*x)', label: '$y = a\\sin(bx)$', color: 'blue', dashed?, domain? }],
     parametric: [{ x: 'cos(t)', y: 'sin(t)', t: [0, '2pi'] }],
     polar: [{ expr: '1 + cos(theta)' }],
+    implicit: [{ expr: 'x^2 - y^2', levels: [-2, 0, 2], label? }],  // level curves / contour map, f(x, y) = c
+    field: { x: '-y', y: 'x', n?: 13, normalize?: false },           // 2D vector field arrows
     points: [{ x: 1, y: 'a', label: '(1, a)', open?: true }],
     segments: [{ from: [0, 0], to: ['cos(a)', 'sin(a)'], arrow: true, dashed?, label? }],
     vlines: [{ x: 2, label: 'x = 2' }], hlines: [{ y: 0.5 }],      // dashed reference lines
@@ -170,6 +172,28 @@ TeX is full of backslashes, so **every backslash must be doubled** in TS source:
   labels are inline text (use `$…$`). Default colors cycle blue, red, green, purple…;
   graph background is neutral, colors: blue red green purple orange teal gray.
   Pick windows that show the interesting features; check asymptotes look right.
+- `plot3d` — a rotatable 3D plot (drag sideways to turn it; ⟳ spins it). Use it for
+  surfaces, space curves, gradients and vector fields:
+  ```ts
+  {
+    type: 'plot3d',
+    x: [-2, 2], y: [-2, 2], z: [-4, 4],    // the box; surfaces are clipped to the z-range
+    equal?: true,                          // same scale on all axes (spheres look round)
+    surfaces: [{ expr: 'x^2 - y^2', label?, color?, opacity?: 0.85, xDomain?, yDomain? }],   // z = f(x, y)
+    parametricSurfaces: [{ x: 'cos(u)sin(v)', y: 'sin(u)sin(v)', z: 'cos(v)', u: [0, '2pi'], v: [0, 'pi'] }],
+    curves: [{ x: 'cos(t)', y: 'sin(t)', z: 't/4', t: [0, '4pi'], label? }],                  // space curves
+    points: [{ x: 'a', y: 0, z: 'a^2', label: 'P' }],
+    vectors: [{ from: [0, 0, 0], to: [1, 2, 'a'], label: 'v' }],                              // arrows
+    field: { x: '-y', y: 'x', z: '0', n?: 5 },     // 3D vector field (x, y, z available)
+    contours: [-2, 0, 2],                          // level curves of the first surface, on the floor
+    resolution?: 26, view?: { azimuth: 30, elevation: 25 },
+    sliders, readouts, caption,                    // as for graphs (slider names not x, y, z, t, u, v, e)
+  }
+  ```
+  A surface z = f(x, y) is drawn only where it lies inside the box, so its edge looks
+  ragged where it leaves the z-range; for a clean edge (a paraboloid cut off at a height,
+  a disk, a hemisphere) use a `parametricSurfaces` entry in polar form, e.g.
+  `x: 'u cos(v)', y: 'u sin(v)', z: 'u^2'`. Questions can show one with the `plot3d` field.
 
 ## 7. Questions
 

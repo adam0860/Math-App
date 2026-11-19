@@ -40,6 +40,14 @@ const courseMeta = {
     description:
       'Volumes and work, the full toolkit of integration techniques, numerical methods, differential equations, parametric and polar calculus, and sequences, series, and Taylor series.',
   },
+  calc3: {
+    exportName: 'calc3Course',
+    title: 'Calculus III',
+    short: 'Calc III',
+    subtitle: 'Multivariable and vector calculus: surfaces, gradients and flux',
+    description:
+      'Calculus in three dimensions: vectors, lines, planes and surfaces, vector-valued functions and curvature, partial derivatives, gradients and optimization (including gradient descent), double and triple integrals with polar, cylindrical and spherical coordinates, vector fields, line and surface integrals, and the theorems of Green, Stokes and Gauss.',
+  },
   chem: {
     exportName: 'chemCourse',
     title: 'Chemistry Foundations',

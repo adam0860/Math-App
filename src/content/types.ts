@@ -20,7 +20,7 @@
  * Paragraph breaks inside a single string: use "\n\n".
  */
 
-export type CourseId = 'algebra' | 'trig' | 'calc1' | 'calc2' | 'linalg' | 'discrete' | 'stats' | 'phys1' | 'chem' | 'genchem' | 'orgo';
+export type CourseId = 'algebra' | 'trig' | 'calc1' | 'calc2' | 'calc3' | 'linalg' | 'discrete' | 'stats' | 'phys1' | 'chem' | 'genchem' | 'orgo';
 
 export type CodeLang = 'cpp' | 'text' | 'shell' | 'csharp' | 'ini' | 'json' | 'cmake';
 
@@ -434,6 +434,7 @@ export const COURSE_PREREQ: Partial<Record<CourseId, CourseId>> = {
   trig: 'algebra',
   calc1: 'trig',
   calc2: 'calc1',
+  calc3: 'calc2',
   linalg: 'calc2',
   genchem: 'chem',
   orgo: 'genchem',
