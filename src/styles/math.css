@@ -714,5 +714,8 @@ p .tex-display {
   right: 8px;
 }
 .p3-hint {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.85em;
   color: var(--text-3);
 }

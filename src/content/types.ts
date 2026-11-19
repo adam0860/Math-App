@@ -179,7 +179,7 @@ export interface Plot3DBlock {
   view?: { azimuth?: number; elevation?: number };
   sliders?: GraphBlock['sliders'];
   readouts?: GraphBlock['readouts'];
-  /** Height in px at full width (default 340). */
+  /** Height in px at full width (default 360). */
   height?: number;
 }
 

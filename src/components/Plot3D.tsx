@@ -72,7 +72,7 @@ export function Plot3D({ g, compact }: { g: Plot3DBlock; compact?: boolean }) {
     return () => cancelAnimationFrame(raf);
   }, [spin]);
 
-  const H = g.height ?? (compact ? 280 : 340);
+  const H = g.height ?? (compact ? 300 : 360);
   const [x0, x1] = g.x;
   const [y0, y1] = g.y;
   const [z0, z1] = g.z;
@@ -87,8 +87,10 @@ export function Plot3D({ g, compact }: { g: Plot3DBlock; compact?: boolean }) {
     const a = -(90 + az) * DEG;
     const e = el * DEG;
     const ca = Math.cos(a), sa = Math.sin(a), ce = Math.cos(e), se = Math.sin(e);
-    const R = Math.hypot(rx * kx, ry * ky, rz * kz);
-    const scale = (Math.min(W, H) / 2 / R) * 0.94;
+    // Fit the box at any azimuth: its horizontal reach is the xy half-diagonal; the vertical reach depends on the tilt.
+    const Rxy = Math.hypot(rx * kx, ry * ky);
+    const Rv = rz * kz * Math.abs(ce) + Rxy * Math.abs(se);
+    const scale = Math.min((W / 2 - 24) / Rxy, (H / 2 - 22) / Rv);
     // Project a data point: screen x, screen y, depth (larger = farther).
     const proj = (p: V3): [number, number, number] => {
       const [nx, ny, nz] = norm(p);
@@ -317,7 +319,6 @@ export function Plot3D({ g, compact }: { g: Plot3DBlock; compact?: boolean }) {
     tick([x1, y0, z0], fmt(x1));
     tick([x0, y1, z0], fmt(y1));
     tick([x0, y0, z1], fmt(z1));
-    tick([x0, y0, z0], `(${fmt(x0)}, ${fmt(y0)}, ${fmt(z0)})`);
 
     items.sort((p, q) => q.depth - p.depth);
     return { items, labels, legend };
@@ -413,7 +414,7 @@ export function Plot3D({ g, compact }: { g: Plot3DBlock; compact?: boolean }) {
       <Readouts readouts={g.readouts} env={env} />
       <figcaption>
         {g.caption && <Inline text={g.caption} />}
-        <span className="p3-hint">{g.caption ? ' ' : ''}Drag sideways to turn it.</span>
+        <span className="p3-hint">Drag sideways to turn it.</span>
       </figcaption>
     </figure>
   );
