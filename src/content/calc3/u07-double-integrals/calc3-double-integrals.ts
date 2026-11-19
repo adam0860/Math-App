@@ -319,7 +319,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'p',
-          text: 'This is the continuous version of a very familiar computation. The average elevation of a terrain tile stored as a heightmap is the mean of its samples, and the mean of samples taken at cell centers is exactly the midpoint rule divided by the area. Military mapping software does this when it reports the mean elevation of a grid square; a game does it when it levels a building site.',
+          text: 'This is the continuous version of a very familiar computation. The average elevation of a terrain tile stored as a heightmap is the mean of its samples, and the mean of samples taken at cell centers is exactly the midpoint rule divided by the area. Mapping software can do this when it reports the mean elevation of a grid square; a game does it when it levels a building site.',
         },
         {
           type: 'code',

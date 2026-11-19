@@ -310,7 +310,7 @@ export const lesson: Lesson = {
             { from: ['cos(s)', 'sin(s)', 's'], to: ['cos(s) - 0.3sin(s)', 'sin(s) + 0.3cos(s)', 's + 0.3s'], color: 'red', label: 'F' },
             { from: ['cos(s)', 'sin(s)', 's'], to: ['cos(s) - 0.5sin(s)', 'sin(s) + 0.5cos(s)', 's + 0.5'], color: 'green', label: 'r′' },
           ],
-          sliders: [{ name: 's', min: 0, max: 6.28, step: 0.02, value: 2, label: '$t$', play: true }],
+          sliders: [{ name: 's', min: 0, max: 6.28, step: 0.02, value: 5, label: '$t$', play: true }],
           readouts: [{ label: '$\\vec{F} \\cdot \\vec{r}\\,\' = 1 + t =$', expr: '1 + s', digits: 3 }],
           caption: 'The field $\\vec{F} = \\langle -y, x, z \\rangle$ along one turn of the helix, with $\\vec{F}$ (red, at $0.3$ of its length) and the velocity $\\vec{r}\\,\'$ (green, at half its length) at the moving point. Horizontally the field swirls with the helix; vertically it pushes up harder the higher you go, so $\\vec{F} \\cdot \\vec{r}\\,\' = 1 + t$ keeps growing.',
         },
