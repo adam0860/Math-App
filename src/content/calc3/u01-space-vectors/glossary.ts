@@ -1,4 +1,65 @@
 import type { GlossaryEntry } from '../../types';
 
 // Glossary terms introduced by this unit that are NOT in scripts/glossary-master.ts.
-export const glossary: GlossaryEntry[] = [];
+export const glossary: GlossaryEntry[] = [
+  {
+    id: 'calc3-octant',
+    term: 'Octant',
+    course: 'calc3',
+    category: 'Space Geometry',
+    short: 'One of the eight regions into which the three coordinate planes divide space, one for each choice of signs of $x$, $y$ and $z$.',
+    long: 'The **first octant** is where $x > 0$, $y > 0$ and $z > 0$. The other seven are usually described by their signs rather than numbered, e.g. "the octant where $x < 0$, $y > 0$, $z < 0$".',
+    tex: '\\text{first octant: } x > 0,\\ y > 0,\\ z > 0',
+    see: ['calc3-sphere-equation'],
+  },
+  {
+    id: 'calc3-sphere-equation',
+    term: 'Equation of a Sphere',
+    aliases: ['sphere', 'standard equation of a sphere'],
+    course: 'calc3',
+    category: 'Space Geometry',
+    short: 'The sphere with center $(h, k, l)$ and radius $r$ is the set of points at distance $r$ from the center: $(x - h)^2 + (y - k)^2 + (z - l)^2 = r^2$.',
+    long: 'It is the 3D distance formula squared. An expanded equation $x^2 + y^2 + z^2 + Dx + Ey + Fz + G = 0$ is put in this form by completing the square in each variable. If the right side comes out $0$ the "sphere" is a single point; if negative, there are no points at all. The solid **ball** is the inequality $(x - h)^2 + (y - k)^2 + (z - l)^2 \\le r^2$.',
+    tex: '(x - h)^2 + (y - k)^2 + (z - l)^2 = r^2',
+    see: ['distance-formula'],
+  },
+  {
+    id: 'calc3-direction-vector',
+    term: 'Direction Vector (of a Line)',
+    course: 'calc3',
+    category: 'Lines and Planes',
+    short: 'A nonzero vector $\\vec{v}$ parallel to a line. With a point $\\vec{r}_0$ on the line it gives the vector equation $\\vec{r}(t) = \\vec{r}_0 + t\\vec{v}$.',
+    long: 'Any nonzero multiple of $\\vec{v}$ is also a direction vector of the same line. Two lines are parallel exactly when their direction vectors are scalar multiples of each other. In a ray tracer the ray $\\vec{o} + t\\vec{d}$, $t \\ge 0$, is half of such a line.',
+    tex: '\\vec{r}(t) = \\vec{r}_0 + t\\,\\vec{v}',
+    see: ['calc3-skew-lines', 'calc3-normal-vector'],
+  },
+  {
+    id: 'calc3-symmetric-equations',
+    term: 'Symmetric Equations (of a Line)',
+    course: 'calc3',
+    category: 'Lines and Planes',
+    short: 'The equations obtained by solving each parametric equation of a line for $t$ and setting the results equal: $\\frac{x - x_0}{a} = \\frac{y - y_0}{b} = \\frac{z - z_0}{c}$.',
+    long: 'They need every component of the direction vector $\\langle a, b, c \\rangle$ to be nonzero. If, say, $a = 0$, write $x = x_0$ separately and keep $\\frac{y - y_0}{b} = \\frac{z - z_0}{c}$.',
+    tex: '\\frac{x - x_0}{a} = \\frac{y - y_0}{b} = \\frac{z - z_0}{c}',
+    see: ['calc3-direction-vector'],
+  },
+  {
+    id: 'calc3-skew-lines',
+    term: 'Skew Lines',
+    course: 'calc3',
+    category: 'Lines and Planes',
+    short: 'Two lines in space that are not parallel and do not intersect. They cannot lie in a common plane.',
+    long: 'Skew lines exist only in three or more dimensions. The shortest distance between them is measured along the common perpendicular, whose direction is $\\vec{v}_1 \\times \\vec{v}_2$: $d = \\dfrac{|(\\vec{P_2} - \\vec{P_1}) \\cdot (\\vec{v}_1 \\times \\vec{v}_2)|}{|\\vec{v}_1 \\times \\vec{v}_2|}$.',
+    see: ['calc3-direction-vector', 'cross-product'],
+  },
+  {
+    id: 'calc3-normal-vector',
+    term: 'Normal Vector (of a Plane)',
+    course: 'calc3',
+    category: 'Lines and Planes',
+    short: 'A nonzero vector $\\vec{n}$ perpendicular to every vector lying in a plane. A plane is determined by one point and a normal: $\\vec{n} \\cdot (\\vec{r} - \\vec{r}_0) = 0$.',
+    long: 'The coefficients of $ax + by + cz = d$ are a normal vector: $\\vec{n} = \\langle a, b, c \\rangle$. A plane through three points has normal $\\overrightarrow{PQ} \\times \\overrightarrow{PR}$. In graphics the same vector is the face normal used for lighting and culling (see [[la-surface-normal]]).',
+    tex: 'a(x - x_0) + b(y - y_0) + c(z - z_0) = 0',
+    see: ['la-surface-normal', 'cross-product', 'calc3-direction-vector'],
+  },
+];
