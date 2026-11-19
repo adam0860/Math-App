@@ -107,6 +107,14 @@ export interface GraphBlock {
   parametric?: { x: string; y: string; t: [NumOrExpr, NumOrExpr]; label?: string; color?: GraphColor; dashed?: boolean }[];
   /** Polar curves r = f(theta) for theta in `theta` (default [0, 2π]). Use `theta` (or `t`) in expr. */
   polar?: { expr: string; theta?: [NumOrExpr, NumOrExpr]; label?: string; color?: GraphColor; dashed?: boolean }[];
+  /**
+   * Implicit curves / level curves: the set where `expr` (in x and y) equals each value in
+   * `levels` (default [0]). `x^2 + y^2 - 4` draws a circle; `x^2 - y^2` with levels [-2, 0, 2]
+   * draws a contour map. Levels may use slider names.
+   */
+  implicit?: { expr: string; levels?: NumOrExpr[]; label?: string; color?: GraphColor; dashed?: boolean }[];
+  /** A 2D vector field ⟨P(x, y), Q(x, y)⟩ drawn as arrows on an n × n grid (default n = 13). */
+  field?: { x: string; y: string; n?: number; color?: GraphColor; normalize?: boolean; scale?: number };
   points?: { x: NumOrExpr; y: NumOrExpr; label?: string; color?: GraphColor; open?: boolean }[];
   segments?: { from: [NumOrExpr, NumOrExpr]; to: [NumOrExpr, NumOrExpr]; color?: GraphColor; dashed?: boolean; arrow?: boolean; label?: string }[];
   /** Vertical / horizontal reference lines (asymptotes, x = a). */
@@ -139,6 +147,42 @@ export interface GraphBlock {
   height?: number;
 }
 
+/**
+ * A rotatable 3D plot (drag sideways to turn it). Coordinates: x, y horizontal, z up.
+ * Expressions use calculator syntax and may use the plot's slider names.
+ */
+export interface Plot3DBlock {
+  type: 'plot3d';
+  caption?: string;
+  /** The box shown. Surfaces are clipped to the z-range. */
+  x: [number, number];
+  y: [number, number];
+  z: [number, number];
+  /** Keep one unit the same length on all three axes (default: each axis fills the cube). */
+  equal?: boolean;
+  /** Surfaces z = f(x, y), optionally only over part of the box. */
+  surfaces?: { expr: string; label?: string; color?: GraphColor; opacity?: number; xDomain?: [NumOrExpr, NumOrExpr]; yDomain?: [NumOrExpr, NumOrExpr] }[];
+  /** Parametric surfaces r(u, v) = (x, y, z) — spheres, cylinders, cones, tori. Use `u` and `v`. */
+  parametricSurfaces?: { x: string; y: string; z: string; u: [NumOrExpr, NumOrExpr]; v: [NumOrExpr, NumOrExpr]; label?: string; color?: GraphColor; opacity?: number }[];
+  /** Space curves r(t) = (x, y, z). Use `t`. */
+  curves?: { x: string; y: string; z: string; t: [NumOrExpr, NumOrExpr]; label?: string; color?: GraphColor; dashed?: boolean }[];
+  points?: { x: NumOrExpr; y: NumOrExpr; z: NumOrExpr; label?: string; color?: GraphColor }[];
+  /** Arrows from `from` to `to` (vectors, normals, gradients, tangent vectors). */
+  vectors?: { from: [NumOrExpr, NumOrExpr, NumOrExpr]; to: [NumOrExpr, NumOrExpr, NumOrExpr]; label?: string; color?: GraphColor }[];
+  /** 3D vector field ⟨P, Q, R⟩ in x, y, z drawn as arrows on an n × n × n grid (default n = 5). */
+  field?: { x: string; y: string; z: string; n?: number; color?: GraphColor };
+  /** Draw level curves of the first surface on the floor of the box at these heights. */
+  contours?: NumOrExpr[];
+  /** Mesh cells per side for surfaces (default 26, max 50). */
+  resolution?: number;
+  /** Initial view, degrees: azimuth turns about the z-axis, elevation tilts toward looking down. */
+  view?: { azimuth?: number; elevation?: number };
+  sliders?: GraphBlock['sliders'];
+  readouts?: GraphBlock['readouts'];
+  /** Height in px at full width (default 340). */
+  height?: number;
+}
+
 export type CalloutVariant =
   | 'why' // explains the reasoning behind a rule, definition or method
   | 'tip' // practical advice
@@ -157,6 +201,7 @@ export type Block =
   /** Worked example: one line per step, each with a tappable reason. */
   | { type: 'derivation'; title?: string; steps: DerivationStep[]; result?: string }
   | GraphBlock
+  | Plot3DBlock
   | CodeBlock
   | { type: 'callout'; variant: CalloutVariant; title?: string; text: string }
   | { type: 'list'; ordered?: boolean; items: string[] }
@@ -223,6 +268,8 @@ interface QuestionBase {
   tex?: string;
   /** Optional graph shown with the prompt. */
   graph?: GraphBlock;
+  /** A rotatable 3D plot under the prompt. */
+  plot3d?: Plot3DBlock;
   /** Optional diagram shown with the prompt (a structure to name, a reaction to complete…). */
   figure?: FigureBlock;
   /** Optional code shown with the prompt. */

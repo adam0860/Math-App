@@ -19,7 +19,7 @@
  */
 import katex from 'katex';
 import 'katex/contrib/mhchem';
-import type { Block, FigureBlock, GraphBlock, Lesson, Step, QuestionStep, GlossaryEntry, ReadingRef, NumOrExpr } from '../src/content/types';
+import type { Block, FigureBlock, GraphBlock, Plot3DBlock, Lesson, Step, QuestionStep, GlossaryEntry, ReadingRef, NumOrExpr } from '../src/content/types';
 import { compile, equivalent, evalConst, parse, variablesOf, type Env } from '../src/lib/mathexpr';
 import { MATH_GLOSSARY_IDS } from './glossary-master';
 import { loadContent } from './load-content';
@@ -195,6 +195,34 @@ function checkGraph(where: string, g: GraphBlock) {
     c.theta?.forEach((d) => num(w + ' theta', d));
     checkExpr(w, c.expr, ['theta', 't', ...names]);
   });
+  g.implicit?.forEach((c, i) => {
+    drawables++;
+    const w = `${where} implicit[${i}]`;
+    if (c.label) checkInline(w + ' label', c.label);
+    c.levels?.forEach((l) => num(w + ' level', l));
+    const f = checkExpr(w, c.expr, ['x', 'y', ...names]);
+    if (f) {
+      // The curve must actually appear: the expression minus some level changes sign in the window.
+      const levels = (c.levels ?? [0]).map((l) => (typeof l === 'number' ? l : (checkExpr(w, l, names)?.(params) ?? NaN)));
+      let found = false;
+      for (const lev of levels) {
+        let pos = false, neg = false;
+        for (let a = 0; a <= 40 && !(pos && neg); a++)
+          for (let b = 0; b <= 40; b++) {
+            const v = f({ ...params, x: x0 + ((x1 - x0) * a) / 40, y: y0 + ((y1 - y0) * b) / 40 }) - lev;
+            if (v > 0) pos = true;
+            else if (v < 0) neg = true;
+          }
+        if (pos && neg) found = true;
+      }
+      if (!found) err(w, `implicit curve "${c.expr}" never reaches its level(s) inside the window`);
+    }
+  });
+  if (g.field) {
+    drawables++;
+    checkExpr(`${where} field.x`, g.field.x, ['x', 'y', ...names]);
+    checkExpr(`${where} field.y`, g.field.y, ['x', 'y', ...names]);
+  }
   g.points?.forEach((p, i) => {
     drawables++;
     num(`${where} points[${i}].x`, p.x, true);
@@ -234,6 +262,80 @@ function checkGraph(where: string, g: GraphBlock) {
     num(w, r.expr);
   });
   if (drawables === 0) err(where, 'graph draws nothing (add functions, parametric, polar, points or segments)');
+}
+
+function checkPlot3D(where: string, g: Plot3DBlock) {
+  const ok = (r?: [number, number]) => !!r && r[1] > r[0];
+  if (!ok(g.x) || !ok(g.y) || !ok(g.z)) {
+    err(where, 'plot3d needs x, y and z ranges [min, max] with min < max');
+    return;
+  }
+  if (g.caption) checkInline(where + ' caption', g.caption);
+  const params: Env = {};
+  for (const s of g.sliders ?? []) {
+    if (!/^[a-zA-Z]$/.test(s.name) || ['x', 'y', 'z', 't', 'u', 'v', 'e'].includes(s.name))
+      err(where, `slider name "${s.name}" must be a single letter other than x, y, z, t, u, v, e`);
+    if (!(s.max > s.min) || s.value < s.min || s.value > s.max) err(where, `slider ${s.name} needs min < value < max`);
+    if (s.label) checkInline(where + ' slider label', s.label);
+    params[s.name] = s.value;
+  }
+  const names = Object.keys(params);
+  const num = (w: string, v: NumOrExpr | undefined) => {
+    if (v === undefined || typeof v === 'number') return;
+    const f = checkExpr(w, v, names);
+    if (f && !Number.isFinite(f(params))) err(w, `"${v}" is not a finite number`);
+  };
+  const [x0, x1] = g.x, [y0, y1] = g.y, [z0, z1] = g.z;
+  let drawables = 0;
+  g.surfaces?.forEach((s, i) => {
+    drawables++;
+    const w = `${where} surfaces[${i}]`;
+    if (s.label) checkInline(w + ' label', s.label);
+    [...(s.xDomain ?? []), ...(s.yDomain ?? [])].forEach((d) => num(w + ' domain', d));
+    const f = checkExpr(w, s.expr, ['x', 'y', ...names]);
+    if (f) {
+      let inside = 0;
+      for (let a = 0; a <= 20; a++)
+        for (let b = 0; b <= 20; b++) {
+          const z = f({ ...params, x: x0 + ((x1 - x0) * a) / 20, y: y0 + ((y1 - y0) * b) / 20 });
+          if (Number.isFinite(z) && z >= z0 && z <= z1) inside++;
+        }
+      if (inside === 0) err(w, `surface "${s.expr}" never lies inside the z-range [${z0}, ${z1}]`);
+    }
+  });
+  g.parametricSurfaces?.forEach((s, i) => {
+    drawables++;
+    const w = `${where} parametricSurfaces[${i}]`;
+    if (s.label) checkInline(w + ' label', s.label);
+    [...s.u, ...s.v].forEach((d) => num(w + ' range', d));
+    [s.x, s.y, s.z].forEach((e) => checkExpr(w, e, ['u', 'v', ...names]));
+  });
+  g.curves?.forEach((c, i) => {
+    drawables++;
+    const w = `${where} curves[${i}]`;
+    if (c.label) checkInline(w + ' label', c.label);
+    c.t.forEach((d) => num(w + ' t', d));
+    [c.x, c.y, c.z].forEach((e) => checkExpr(w, e, ['t', ...names]));
+  });
+  g.points?.forEach((p, i) => {
+    drawables++;
+    [p.x, p.y, p.z].forEach((v) => num(`${where} points[${i}]`, v));
+  });
+  g.vectors?.forEach((v, i) => {
+    drawables++;
+    [...v.from, ...v.to].forEach((c) => num(`${where} vectors[${i}]`, c));
+  });
+  if (g.field) {
+    drawables++;
+    [g.field.x, g.field.y, g.field.z].forEach((e) => checkExpr(`${where} field`, e, ['x', 'y', 'z', ...names]));
+  }
+  g.contours?.forEach((c) => num(`${where} contours`, c));
+  if (g.contours?.length && !g.surfaces?.length) err(where, 'contours need a surface (they are level curves of the first surface)');
+  g.readouts?.forEach((r, i) => {
+    checkInline(`${where} readouts[${i}] label`, r.label);
+    num(`${where} readouts[${i}]`, r.expr);
+  });
+  if (drawables === 0) err(where, 'plot3d draws nothing (add surfaces, parametricSurfaces, curves, points, vectors or field)');
 }
 
 // --------------------------------------------------------------------- blocks
@@ -310,6 +412,10 @@ function checkBlocks(where: string, blocks: Block[], stats: LessonStats) {
       case 'figure':
         stats.graphs++;
         checkFigure(w, b);
+        break;
+      case 'plot3d':
+        stats.graphs++;
+        checkPlot3D(w, b);
         break;
       case 'theorem':
         checkInline(w + ' name', b.name);
@@ -396,6 +502,10 @@ function checkQuestion(where: string, q: QuestionStep, stats: LessonStats) {
   if (q.figure) {
     stats.graphs++;
     checkFigure(where + ' figure', q.figure);
+  }
+  if (q.plot3d) {
+    stats.graphs++;
+    checkPlot3D(where + ' plot3d', q.plot3d);
   }
   switch (q.kind) {
     case 'mcq': {
