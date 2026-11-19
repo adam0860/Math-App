@@ -416,8 +416,7 @@ int main() {
       kind: 'order',
       prompt: 'Put the steps for solving a constant-$\\alpha$ rotation problem in order.',
       lines: [
-        'Choose a positive sense of rotation and list $\\omega_0$, $\\omega$, $\\alpha$, $\\Delta\\theta$, $t$ (known and unknown)',
-        'Convert every angle to radians and every rate to rad/s or rad/s²',
+        'Choose a positive sense of rotation, list $\\omega_0$, $\\omega$, $\\alpha$, $\\Delta\\theta$, $t$ (known and unknown), and convert every angle to radians and every rate to rad/s or rad/s²',
         'Pick the constant-$\\alpha$ equation that contains your unknown and no other unknown',
         'Solve symbolically, then substitute numbers',
         'Convert the answer to the requested units (rev, rpm) and check its sign and size',

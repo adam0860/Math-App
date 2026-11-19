@@ -20,7 +20,7 @@ export const glossary: GlossaryEntry[] = [
     course: 'phys1',
     category: 'Rotation',
     short: 'The rotational analog of momentum. For a particle about a point, $\\vec{L} = \\vec{r} \\times \\vec{p}$; for a rigid body about a fixed axis, $L = I\\omega$. Units kg·m²/s.',
-    long: 'It changes only under external torque: $\\sum\\vec{\\tau}_{\\text{ext}} = d\\vec{L}/dt$. Its value depends on the reference point. A particle moving in a straight line has constant angular momentum $mvd$ about any point, where $d$ is the distance from the point to the line.',
+    long: 'It changes only under external torque: $\\sum\\vec{\\tau}_{\\text{ext}} = d\\vec{L}/dt$. Its value depends on the reference point. A particle moving in a straight line at constant velocity has constant angular momentum $mvd$ about any point, where $d$ is the distance from the point to the line.',
     tex: '\\vec{L} = \\vec{r} \\times \\vec{p}, \\qquad L = I\\omega, \\qquad \\sum\\vec{\\tau} = \\frac{d\\vec{L}}{dt}',
     see: ['cross-product', 'phys-conservation-of-angular-momentum', 'phys-moment-of-inertia'],
   },
