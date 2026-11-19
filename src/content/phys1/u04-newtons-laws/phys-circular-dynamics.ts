@@ -335,7 +335,7 @@ export const lesson: Lesson = {
             { label: 'speed (m/s):', expr: `sqrt(9.8*2sin${CTH}*tan${CTH})` },
             { label: 'tension $T/mg$:', expr: `1/cos${CTH}` },
           ],
-          caption: 'A $2.0\\,\\text{m}$ conical pendulum seen slightly from above, in real time. Press ▶, then raise $\\theta$: the bob speeds up, the period shrinks toward zero and the tension climbs steeply near $90^\\circ$. At small angles the period approaches $2\\pi\\sqrt{L/g} = 2.84\\,\\text{s}$, the ordinary pendulum\'s period, which the oscillations unit derives.',
+          caption: 'A $2.0\\,\\text{m}$ conical pendulum seen slightly from above, in real time. Press ▶, then raise $\\theta$: the bob speeds up, the period shrinks toward zero and the tension climbs steeply near $90^\\circ$. At small angles the period approaches $2\\pi\\sqrt{L/g} = 2.84\\,\\text{s}$, the period of an ordinary [[phys-simple-pendulum|simple pendulum]], which the oscillations unit derives.',
         },
       ],
     },
@@ -465,8 +465,7 @@ int main() {
       kind: 'order',
       prompt: 'Order the steps for finding the design speed of a banked curve.',
       lines: [
-        'Draw the free-body diagram: weight $mg$ down, normal force $n$ perpendicular to the road',
-        'Choose a horizontal axis toward the center of the turn and a vertical axis',
+        'Draw the free-body diagram (weight $mg$ down, normal force $n$ perpendicular to the road) with a horizontal axis toward the center of the turn and a vertical axis',
         'Write $n\\cos\\theta = mg$ and $n\\sin\\theta = mv^2/r$',
         'Divide to eliminate $n$ and $m$: $\\tan\\theta = v^2/(rg)$',
         'Solve $v = \\sqrt{rg\\tan\\theta}$ and check that $\\theta \\to 0$ gives $v \\to 0$',

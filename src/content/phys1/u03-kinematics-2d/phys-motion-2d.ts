@@ -253,7 +253,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'p',
-          text: 'The horizontal launch gives the blue ball a constant $v_x$, which affects only where it lands. Gravity acts only on $v_y$, and both balls start with $v_y = 0$, so both have $y(t) = 20 - 4.9t^2$ and land together. This is the most useful idea in the whole unit: projectile motion in the next lesson is just "constant velocity along $x$" plus "free fall along $y$".',
+          text: 'The horizontal launch gives the blue ball a constant $v_x$, which affects only where it lands. Gravity acts only on $v_y$, and both balls start with $v_y = 0$, so both have $y(t) = 20 - 4.9t^2$ and land together. This is the most useful idea in the whole unit: projectile motion in the next lesson is just "constant velocity along $x$" plus "[[phys-free-fall|free fall]] along $y$".',
         },
         {
           type: 'callout',

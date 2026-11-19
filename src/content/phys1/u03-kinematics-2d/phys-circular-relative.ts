@@ -171,7 +171,7 @@ export const lesson: Lesson = {
           type: 'theorem',
           name: 'Nonuniform circular motion',
           tex: '\\vec{a} = \\underbrace{\\frac{dv}{dt}\\,\\hat{T}}_{\\text{tangential}} + \\underbrace{\\frac{v^2}{R}\\,\\hat{N}}_{\\text{centripetal}}, \\qquad |\\vec{a}| = \\sqrt{a_t^2 + a_c^2}',
-          text: '$\\hat{N}$ points to the center. With angular acceleration $\\alpha = d\\omega/dt$, the tangential part is $a_t = R\\alpha$; the rotation unit picks this up.',
+          text: '$\\hat{N}$ points to the center. With [[phys-angular-acceleration|angular acceleration]] $\\alpha = d\\omega/dt$, the tangential part is $a_t = R\\alpha$; the rotation unit picks this up.',
         },
         {
           type: 'graph',
@@ -437,9 +437,9 @@ int main() {
           output: `intercept after 1.264 s, aim 46.53 deg
 projectile at (32.41, 27.53), target at (32.41, 27.53)`,
           annotations: [
-            { lines: '20-34', text: 'The quadratic from the derivation. The linear special case handles a projectile exactly as fast as the target.' },
-            { lines: '41-42', text: 'Relative position and **relative velocity**: the whole problem becomes "stationary shooter, moving target".' },
-            { lines: '46-48', text: 'Back to the ground frame: the projectile\'s ground velocity is its muzzle velocity plus the shooter\'s velocity. The final check confirms both objects reach the same point.' },
+            { lines: '18-32', text: 'The quadratic from the derivation. The linear special case handles a projectile exactly as fast as the target.' },
+            { lines: '39-40', text: 'Relative position and **relative velocity**: the whole problem becomes "stationary shooter, moving target".' },
+            { lines: '45-47', text: 'Back to the ground frame: the projectile\'s ground velocity is its muzzle velocity plus the shooter\'s velocity. The final check confirms both objects reach the same point.' },
           ],
         },
       ],

@@ -173,7 +173,7 @@ export const glossary: GlossaryEntry[] = [
     course: 'phys1',
     category: 'Dynamics',
     short: 'The friction force between surfaces sliding relative to each other: $f_k = \\mu_k n$, opposite the relative sliding velocity, roughly independent of speed and contact area.',
-    long: 'Usually $\\mu_k < \\mu_s$, which is why a stuck object lurches once it starts to move, and why anti-lock brakes (which keep tires rolling, so static friction acts) stop a car sooner than a locked-wheel skid.',
+    long: 'Usually $\\mu_k < \\mu_s$, which is why a stuck object lurches once it starts to move, and why anti-lock brakes (which keep tires rolling, so static friction acts) usually stop a car sooner than a locked-wheel skid on paved roads.',
     tex: 'f_k = \\mu_k n',
     see: ['phys-static-friction', 'phys-coefficient-of-friction'],
   },

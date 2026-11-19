@@ -59,7 +59,7 @@ export const lesson: Lesson = {
           type: 'figure',
           svg: PULL_SVG,
           alt: 'Left: a crate on a floor pulled by a rope at angle theta above the horizontal. Right: its free-body diagram as a dot with a green normal force n pointing up, a purple weight mg pointing down which is longer than n, and a red tension T at angle theta above horizontal, with x and y axes.',
-          caption: 'Three contacts and long-range forces: the floor (normal force; friction too, if the floor is rough), the rope (tension) and the Earth (weight). The normal force is shorter than $mg$: the rope supplies part of the upward support.',
+          caption: 'Two contacts and one long-range force: the floor (normal force; friction too, if the floor is rough), the rope (tension) and the Earth (weight). The normal force is shorter than $mg$: the rope supplies part of the upward support.',
           maxWidth: 470,
         },
         {
@@ -113,8 +113,8 @@ export const lesson: Lesson = {
           title: 'A frictionless incline',
           steps: [
             { tex: '\\sum F_y = n - mg\\cos\\theta = 0 \\implies n = mg\\cos\\theta', why: 'No acceleration perpendicular to the surface.' },
-            { tex: '\\sum F_x = mg\\sin\\theta = m a_x \\implies a_x = g\\sin\\theta', why: 'Taking $+x$ down the slope; the normal force has no component along it.' },
-            { tex: '\\theta \\to 0: a \\to 0,\\ n \\to mg; \\qquad \\theta \\to 90^\\circ: a \\to g,\\ n \\to 0', why: 'Limiting cases: a flat floor and free fall down a vertical wall. Both make sense, which is a good sign that sine and cosine are in the right places.' },
+            { tex: '\\sum F_x = mg\\sin\\theta = m a_x \\implies a_x = g\\sin\\theta', why: 'Taking $+x$ down the slope (the opposite of the figure\'s axis, which is fine: choose whichever makes the acceleration positive); the normal force has no component along it.' },
+            { tex: '\\theta \\to 0: a \\to 0,\\ n \\to mg; \\qquad \\theta \\to 90^\\circ: a \\to g,\\ n \\to 0', why: 'Limiting cases: a flat floor and [[phys-free-fall|free fall]] down a vertical wall. Both make sense, which is a good sign that sine and cosine are in the right places.' },
           ],
           result: 'The mass cancels again: every frictionless block slides down a $25^\\circ$ ramp at $g\\sin 25^\\circ = 4.14\\,\\text{m/s}^2$.',
         },
@@ -421,8 +421,7 @@ slope 50.0 deg: normal force  503.9 N, slide accel  7.51 m/s^2, too steep: slide
       kind: 'order',
       prompt: 'Order the steps for finding the acceleration and tension of an Atwood machine.',
       lines: [
-        'Draw a separate free-body diagram for each mass: tension up, weight down',
-        'Choose a positive direction for each mass that follows the rope (down for the heavier, up for the lighter)',
+        'Draw a separate free-body diagram for each mass (tension up, weight down) and choose a positive direction for each that follows the rope (down for the heavier, up for the lighter)',
         'Write $m_1 g - T = m_1 a$ and $T - m_2 g = m_2 a$ with the same $a$',
         'Add the equations to eliminate $T$ and solve for $a$',
         'Substitute $a$ back into either equation to find $T$',
