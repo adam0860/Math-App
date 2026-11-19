@@ -10,6 +10,7 @@ const GLYPHS: Record<CourseId, { from: string; to: string; shape: 'hex' | 'circl
   chem: { from: '#38bdf8', to: '#0369a1', shape: 'flask', text: 'H₂O', size: 15 },
   genchem: { from: '#f472b6', to: '#be185d', shape: 'flask', text: 'mol', size: 16, italic: true },
   orgo: { from: '#facc15', to: '#c2410c', shape: 'hex', text: 'C–H', size: 18 },
+  stats: { from: '#2dd4bf', to: '#0e7490', shape: 'square', text: 'μσ', size: 20, italic: true },
   discrete: { from: '#a78bfa', to: '#4338ca', shape: 'circle', text: '∀∃', size: 20 },
 };
 

@@ -65,6 +65,8 @@ export const achievements: Achievement[] = [
   { id: 'qed', icon: '∎', title: 'Q.E.D.', description: 'Finish the Proofs unit.', test: unitDone('dm-u02-proofs') },
   { id: 'pathfinder', icon: '🕸️', title: 'Pathfinder', description: 'Finish the Graphs unit.', test: unitDone('dm-u09-graphs') },
   { id: 'discrete-graduate', icon: '🧮', title: 'Discrete Math Graduate', description: 'Complete the entire Discrete Mathematics course.', test: courseDone('discrete') },
+  { id: 'significant', icon: '⚖️', title: 'Statistically Significant', description: 'Finish the Hypothesis Testing unit.', test: unitDone('stat-u08-hypothesis-testing') },
+  { id: 'stats-graduate', icon: '📊', title: 'Statistics Graduate', description: 'Complete the entire Probability and Statistics course.', test: courseDone('stats') },
   { id: 'calc2-graduate', icon: '🏆', title: 'Calculus II Graduate', description: 'Complete the entire Calculus II course.', test: courseDone('calc2') },
   {
     id: 'night-owl',

@@ -467,3 +467,7 @@ a {
 .bar.course-discrete .bar-fill {
   background: linear-gradient(90deg, var(--discrete-1), var(--discrete-2));
 }
+
+.bar.course-stats .bar-fill {
+  background: linear-gradient(90deg, var(--stats-1), var(--stats-2));
+}
