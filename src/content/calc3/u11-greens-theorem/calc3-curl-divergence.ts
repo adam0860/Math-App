@@ -252,9 +252,9 @@ export const lesson: Lesson = {
       prompt: 'A student computes the curl of $\\vec F = \\langle x^2 y,\\ y z^2,\\ xyz \\rangle$. Tap the first line that is wrong.',
       lines: [
         '$\\nabla\\times\\vec F = \\langle R_y - Q_z,\\ -(R_x - P_z),\\ Q_x - P_y \\rangle$',
-        '$\\mathbf{i}$: $R_y - Q_z = xz - 2yz$',
-        '$\\mathbf{j}$: $R_x - P_z = yz - 0 = yz$',
-        '$\\mathbf{k}$: $Q_x - P_y = 0 - x^2 = -x^2$',
+        '$\\mathbf{i}$-component $= R_y - Q_z = xz - 2yz$',
+        '$\\mathbf{j}$-component $= R_x - P_z = yz - 0 = yz$',
+        '$\\mathbf{k}$-component $= Q_x - P_y = 0 - x^2 = -x^2$',
         'So $\\nabla\\times\\vec F = \\langle xz - 2yz,\\ yz,\\ -x^2 \\rangle$.',
       ],
       errorLines: [3],
