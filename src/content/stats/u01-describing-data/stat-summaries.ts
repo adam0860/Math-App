@@ -55,7 +55,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'why',
           title: 'The mean is a balance point',
-          text: 'The deviations from the mean always sum to zero: $\\sum (x_i - \\bar{x}) = \\sum x_i - n\\bar{x} = n\\bar{x} - n\\bar{x} = 0$. Put equal weights at the data values on a ruler and it balances at $\\bar{x}$. Here the hitch sits $30$ ms to the right, and that long lever arm is balanced by ten small deviations to the left ($-6, -5, \\dots, +1$). Far-out values have huge leverage, which is exactly why one hitch drags the mean.',
+          text: 'The deviations from the mean always sum to zero: $\\sum (x_i - \\bar{x}) = \\sum x_i - n\\bar{x} = n\\bar{x} - n\\bar{x} = 0$. Put equal weights at the data values on a ruler and it balances at $\\bar{x}$. Here the hitch sits $30$ ms to the right, and that long lever arm is balanced by ten small deviations ($-6, -5, \\dots, +1$), nearly all of them to the left. Far-out values have huge leverage, which is exactly why one hitch drags the mean.',
         },
       ],
     },

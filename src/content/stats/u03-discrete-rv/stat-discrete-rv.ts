@@ -197,7 +197,7 @@ export const lesson: Lesson = {
       label: '$E[2^X] =$',
       answer: '3.7',
       tolerance: 0.005,
-      explanation: '$E[2^X] = 1(0.1) + 2(0.4) + 4(0.3) + 8(0.2) = 0.1 + 0.8 + 1.2 + 1.6 = 3.7$. Compare $2^{E[X]} = 2^{1.6} \\approx 3.03$: plugging in the mean underestimates by about $20\\%$, because $2^x$ curves upward and rewards the high values disproportionately.',
+      explanation: '$E[2^X] = 1(0.1) + 2(0.4) + 4(0.3) + 8(0.2) = 0.1 + 0.8 + 1.2 + 1.6 = 3.7$. Compare $2^{E[X]} = 2^{1.6} \\approx 3.03$: plugging in the mean underestimates by about $18\\%$, because $2^x$ curves upward and rewards the high values disproportionately.',
     },
     // ------------------------------------------------------------------ 7
     {

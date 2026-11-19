@@ -402,10 +402,9 @@ export const lesson: Lesson = {
       kind: 'order',
       prompt: 'Order the steps for approximating a binomial probability $P(X \\ge k)$ with the normal distribution.',
       lines: [
-        'Check that $np \\ge 10$ and $n(1-p) \\ge 10$',
-        'Compute $\\mu = np$ and $\\sigma = \\sqrt{np(1-p)}$',
+        'Check that $np \\ge 10$ and $n(1-p) \\ge 10$, and compute $\\mu = np$ and $\\sigma = \\sqrt{np(1-p)}$',
         'Apply the continuity correction: $P(X \\ge k) \\approx P(Y \\ge k - 0.5)$',
-        'Standardize: $z = (k - 0.5 - \\mu)/\\sigma$',
+        'Standardize the corrected boundary: $z = (k - 0.5 - \\mu)/\\sigma$',
         'Answer $1 - \\Phi(z)$',
       ],
       distractors: ['Apply the continuity correction: $P(X \\ge k) \\approx P(Y \\ge k + 0.5)$'],

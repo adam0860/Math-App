@@ -165,7 +165,7 @@ int main() {
  8   0.0081      0.0081`,
           annotations: [
             { lines: '18-20', text: 'One simulated minute: $1000$ Bernoulli trials with $p = 0.003$, i.e. one draw from $\\text{Bin}(1000, 0.003)$.' },
-            { lines: 31, text: 'Compute the Poisson PMF by the ratio $p_X(k+1)/p_X(k) = \\lambda/(k+1)$ — no factorials, so no overflow even for large $k$.' },
+            { lines: 32, text: 'Compute the Poisson PMF by the ratio $p_X(k+1)/p_X(k) = \\lambda/(k+1)$ — no factorials, so no overflow even for large $k$.' },
           ],
         },
       ],
