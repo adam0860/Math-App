@@ -157,7 +157,9 @@ TeX is full of backslashes, so **every backslash must be doubled** in TS source:
   ```
   Expressions use **calculator syntax** (not TeX): `x^2 - 3x + 2`, `2sin(x - pi/4)`,
   `sqrt(x)`, `cbrt(x)`, `e^(-x)`, `exp(x)`, `ln(x)`, `log(x)` (base 10), `log_2(x)`,
-  `abs(x)`, `arcsin(x)`, `arctan(x)`, `sec(x)`, `floor(x)`, `x!`. Implicit multiplication
+  `abs(x)`, `arcsin(x)`, `arctan(x)`, `sec(x)`, `floor(x)`, `x!`, `nCr(n, k)`, and for
+  statistics `normpdf(z)`, `normcdf(z)` (Φ), `invnorm(p)` (Φ⁻¹), `erf(x)`, `gamma(x)`,
+  `lgamma(x)` (these work in answers too). Implicit multiplication
   works (`3x`, `2pi`, `x(x+1)`). Slider names are single letters (not x, y, t, e) and can
   be used in every expression and coordinate. Point/segment **labels are plain text**
   (unicode fine: "(π/2, 1)", "θ"); function `label`s, captions, slider labels and readout
