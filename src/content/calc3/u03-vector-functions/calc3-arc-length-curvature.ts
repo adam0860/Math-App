@@ -360,7 +360,7 @@ export const lesson: Lesson = {
             },
             {
               type: 'p',
-              text: 'A plane curve has $\\tau = 0$ ($\\vec B$ is constant). The helix $\\langle a\\cos t, a\\sin t, bt \\rangle$ has constant $\\tau = \\frac{b}{a^2 + b^2}$. A remarkable theorem says that $\\kappa(s)$ and $\\tau(s)$ determine the curve completely, up to where you place it and how you rotate it.',
+              text: 'A plane curve has $\\tau = 0$ ($\\vec B$ is constant). The helix $\\langle a\\cos t, a\\sin t, bt \\rangle$ has constant $\\tau = \\frac{b}{a^2 + b^2}$. A remarkable theorem says that $\\kappa(s) > 0$ and $\\tau(s)$ determine the curve completely, up to where you place it and how you rotate it.',
             },
           ],
         },

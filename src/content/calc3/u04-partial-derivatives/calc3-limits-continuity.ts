@@ -116,7 +116,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'why',
           title: 'Why this function depends only on direction',
-          text: 'Write $x = r\\cos\\theta$ and $y = r\\sin\\theta$. Then $\\frac{xy}{x^2 + y^2} = \\frac{r^2\\cos\\theta\\sin\\theta}{r^2} = \\frac12\\sin 2\\theta$: the $r$ cancels completely. The function only sees the **direction** $\\theta$ of the point, never its distance. In code terms, it is the product of the two components of `normalize(v)`, and normalizing a vector has no sensible value as $\\vec v \\to \\vec 0$: that is the same reason `normalize(vec3(0))` returns NaN in a shader.',
+          text: 'Write $x = r\\cos\\theta$ and $y = r\\sin\\theta$. Then $\\frac{xy}{x^2 + y^2} = \\frac{r^2\\cos\\theta\\sin\\theta}{r^2} = \\frac12\\sin 2\\theta$: the $r$ cancels completely. The function only sees the **direction** $\\theta$ of the point, never its distance. In code terms, it is the product of the two components of `normalize(v)`, and normalizing a vector has no sensible value as $\\vec v \\to \\vec 0$: that is the same reason `normalize(vec3(0))` is undefined in a shader (typically NaN).',
         },
       ],
     },

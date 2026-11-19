@@ -351,7 +351,7 @@ target (2.5, 1.0):
           type: 'callout',
           variant: 'code',
           title: 'Raymarching with level surfaces',
-          text: 'Shader demos and some games draw whole scenes from SDFs (see Inigo Quilez\'s catalog of distance functions). To render a pixel, march along the camera ray: at the current point, the value $d(\\vec p)$ says how far you can safely step without hitting anything, so step exactly that far and repeat until $d \\approx 0$, which means you have reached the level surface. The surface normal for lighting will come from the gradient of $d$, two lessons from now.',
+          text: 'Shader demos and some games draw whole scenes from SDFs (see Inigo Quilez\'s catalog of distance functions). To render a pixel, march along the camera ray: at the current point, the value $d(\\vec p)$ says how far you can safely step without hitting anything, so step exactly that far and repeat until $d \\approx 0$, which means you have reached the level surface. The surface normal for lighting will come from the gradient of $d$, in the next unit.',
         },
       ],
     },

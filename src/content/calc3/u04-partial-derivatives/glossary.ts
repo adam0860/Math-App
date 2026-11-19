@@ -139,7 +139,7 @@ export const glossary: GlossaryEntry[] = [
     course: 'calc3',
     category: 'Partial Derivatives',
     short: 'The PDE $u_{xx} + u_{yy} = 0$ (or $u_{xx} + u_{yy} + u_{zz} = 0$ in space). Its solutions are called harmonic functions.',
-    long: 'Harmonic functions describe steady-state temperatures, electrostatic and gravitational potentials in empty space, and ideal fluid flow. Each value equals the average of the values around it, so a harmonic function has no local maxima or minima inside its domain. Examples: $x^2 - y^2$, $x^3 - 3xy^2$, $e^x\\sin y$.',
+    long: 'Harmonic functions describe steady-state temperatures, electrostatic and gravitational potentials in empty space, and ideal fluid flow. Each value equals the average of the values around it, so a nonconstant harmonic function has no local maxima or minima inside its domain. Examples: $x^2 - y^2$, $x^3 - 3xy^2$, $e^x\\sin y$.',
     tex: '\\frac{\\partial^2 u}{\\partial x^2} + \\frac{\\partial^2 u}{\\partial y^2} = 0',
     see: ['calc3-pde', 'calc3-heat-equation'],
   },
