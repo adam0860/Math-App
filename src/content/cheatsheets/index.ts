@@ -3,6 +3,7 @@ import { algebraCheatSheets } from './algebra';
 import { trigCheatSheets } from './trig';
 import { calc1CheatSheets } from './calc1';
 import { calc2CheatSheets } from './calc2';
+import { calc3CheatSheets } from './calc3';
 import { chemCheatSheets } from './chem';
 import { genchemCheatSheets } from './genchem';
 import { orgoCheatSheets } from './orgo';
@@ -11,4 +12,4 @@ import { phys1CheatSheets } from './phys1';
 import { discreteCheatSheets } from './discrete';
 import { linalgCheatSheets } from './linalg';
 
-export const cheatSheets: CheatSheet[] = [...algebraCheatSheets, ...trigCheatSheets, ...calc1CheatSheets, ...calc2CheatSheets, ...chemCheatSheets, ...genchemCheatSheets, ...orgoCheatSheets, ...statsCheatSheets, ...phys1CheatSheets, ...discreteCheatSheets, ...linalgCheatSheets];
+export const cheatSheets: CheatSheet[] = [...algebraCheatSheets, ...trigCheatSheets, ...calc1CheatSheets, ...calc2CheatSheets, ...calc3CheatSheets, ...chemCheatSheets, ...genchemCheatSheets, ...orgoCheatSheets, ...statsCheatSheets, ...phys1CheatSheets, ...discreteCheatSheets, ...linalgCheatSheets];

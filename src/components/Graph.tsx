@@ -1,7 +1,10 @@
-import { useEffect, useId, useMemo, useRef, useState, type PointerEvent } from 'react';
+import { useId, useMemo, useRef, useState, type PointerEvent } from 'react';
 import type { GraphBlock, GraphColor, NumOrExpr } from '../content/types';
 import { compileExpr, type Env } from '../lib/mathexpr';
 import { Inline } from './RichText';
+import { Readouts, SliderPanel, fmtNum, useSliders } from './Sliders';
+
+export { fmtNum };
 
 /*
  * Interactive SVG plotter for lesson graphs: function / parametric / polar
@@ -44,15 +47,6 @@ function niceStep(range: number): number {
   return (m < 1.5 ? 1 : m < 3.5 ? 2 : m < 7.5 ? 5 : 10) * p;
 }
 
-/** Decimals a slider value needs so every step is distinguishable (step 0.005 → 3, 0.25 → 2, 1 → 0). */
-function sliderDecimals(step?: number): number {
-  if (!step || step >= 1) return step ? 0 : 2;
-  const s = String(step);
-  const m = /e-(\d+)$/.exec(s);
-  if (m) return Math.min(8, Number(m[1]) + (s.split('e')[0].split('.')[1]?.length ?? 0));
-  return Math.min(8, s.split('.')[1]?.length ?? 2);
-}
-
 function fmtTick(v: number): string {
   if (Math.abs(v) < 1e-9) return '0';
   const a = Math.abs(v);
@@ -80,53 +74,11 @@ function piLabel(k: number): string {
   return `${sign}${a === 1 ? '' : a}π/2`;
 }
 
-export function fmtNum(v: number, digits = 3): string {
-  if (!Number.isFinite(v)) return 'undefined';
-  const r = Math.round(v * Math.pow(10, digits)) / Math.pow(10, digits);
-  return (Object.is(r, -0) ? 0 : r).toString().replace('-', '−');
-}
-
 export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
   const uid = useId().replace(/[^a-zA-Z0-9_-]/g, '');
-  const [params, setParams] = useState<Record<string, number>>(() => Object.fromEntries((g.sliders ?? []).map((s) => [s.name, s.value])));
+  const sliderState = useSliders(g.sliders);
+  const { params } = sliderState;
   const [hover, setHover] = useState<number | null>(null);
-  const [playing, setPlaying] = useState<string | null>(null);
-  const paramsRef = useRef(params);
-  paramsRef.current = params;
-
-  // ▶ on a slider: sweep its value upward in real time (stop at max, or wrap with `loop`).
-  useEffect(() => {
-    if (!playing) return;
-    const s = g.sliders?.find((x) => x.name === playing);
-    if (!s || !(s.max > s.min)) return;
-    const span = s.max - s.min;
-    const speed = s.speed && s.speed > 0 ? s.speed : span / 4;
-    let v = paramsRef.current[s.name];
-    if (!(v < s.max - span * 1e-6)) v = s.min;
-    let last = performance.now();
-    let raf = 0;
-    const tick = (now: number) => {
-      const dt = Math.min(0.1, Math.max(0, (now - last) / 1000));
-      last = now;
-      v += speed * dt;
-      let done = false;
-      if (v >= s.max) {
-        if (s.loop) v = s.min + ((v - s.max) % span);
-        else {
-          v = s.max;
-          done = true;
-        }
-      }
-      const nv = v;
-      setParams((p) => ({ ...p, [s.name]: nv }));
-      if (done) setPlaying(null);
-      else raf = requestAnimationFrame(tick);
-    };
-    const start = v;
-    setParams((p) => ({ ...p, [s.name]: start }));
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [playing, g.sliders]);
   const svgRef = useRef<SVGSVGElement>(null);
   const env: Env = params;
 
@@ -199,9 +151,140 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
       }
       polyline(pts, c.color ?? COLORS[(i + 2) % COLORS.length], c.dashed, `r${i}`);
     });
+    // Implicit / level curves by marching squares.
+    (g.implicit ?? []).forEach((c, i) => {
+      const f = fn(c.expr, ['x', 'y']);
+      if (!f) return;
+      const levels = (c.levels ?? [0]).map((l) => num(l, env)).filter(Number.isFinite);
+      const NX = 150;
+      const NY = Math.max(20, Math.round((NX * H) / W));
+      const vals: number[] = new Array((NX + 1) * (NY + 1));
+      for (let j = 0; j <= NY; j++) {
+        const y = y0 + ((y1 - y0) * j) / NY;
+        for (let k = 0; k <= NX; k++) vals[j * (NX + 1) + k] = f({ ...env, x: x0 + ((x1 - x0) * k) / NX, y });
+      }
+      const X = (k: number) => sx(x0 + ((x1 - x0) * k) / NX);
+      const Y = (j: number) => sy(y0 + ((y1 - y0) * j) / NY);
+      levels.forEach((lev, li) => {
+        const segs: [number, number, number, number][] = [];
+        for (let j = 0; j < NY; j++) {
+          for (let k = 0; k < NX; k++) {
+            const v00 = vals[j * (NX + 1) + k] - lev;
+            const v10 = vals[j * (NX + 1) + k + 1] - lev;
+            const v01 = vals[(j + 1) * (NX + 1) + k] - lev;
+            const v11 = vals[(j + 1) * (NX + 1) + k + 1] - lev;
+            if (![v00, v10, v01, v11].every(Number.isFinite)) continue;
+            // Crossing points in grid coordinates (k, j).
+            const pts: [number, number][] = [];
+            const edge = (a: number, b: number, ka: number, ja: number, kb: number, jb: number) => {
+              if ((a < 0) !== (b < 0)) {
+                const t = a / (a - b);
+                pts.push([ka + (kb - ka) * t, ja + (jb - ja) * t]);
+              }
+            };
+            edge(v00, v10, k, j, k + 1, j);
+            edge(v10, v11, k + 1, j, k + 1, j + 1);
+            edge(v11, v01, k + 1, j + 1, k, j + 1);
+            edge(v01, v00, k, j + 1, k, j);
+            const span = Math.max(Math.abs(v00), Math.abs(v10), Math.abs(v01), Math.abs(v11));
+            for (let q = 0; q + 1 < pts.length; q += 2) {
+              const [ka, ja] = pts[q];
+              const [kb, jb] = pts[q + 1];
+              // A sign change across a pole (1/x, tan) is not a crossing: the midpoint stays far from the level.
+              const mid = f({ ...env, x: x0 + ((x1 - x0) * (ka + kb)) / 2 / NX, y: y0 + ((y1 - y0) * (ja + jb)) / 2 / NY }) - lev;
+              if (!Number.isFinite(mid) || Math.abs(mid) > span) continue;
+              segs.push([X(ka), Y(ja), X(kb), Y(jb)]);
+            }
+          }
+        }
+        // Stitch the cell pieces into continuous polylines (so dashes and joins render properly).
+        const key = (x: number, y: number) => `${Math.round(x * 20)},${Math.round(y * 20)}`;
+        const ends = new Map<string, number[]>();
+        segs.forEach((s, si) => {
+          for (const k2 of [key(s[0], s[1]), key(s[2], s[3])]) {
+            const arr = ends.get(k2);
+            if (arr) arr.push(si);
+            else ends.set(k2, [si]);
+          }
+        });
+        const used = new Uint8Array(segs.length);
+        let d = '';
+        const walk = (x: number, y: number, out: [number, number][]) => {
+          for (;;) {
+            const cand = (ends.get(key(x, y)) ?? []).find((si) => !used[si]);
+            if (cand === undefined) return;
+            used[cand] = 1;
+            const s = segs[cand];
+            const forward = key(s[0], s[1]) === key(x, y);
+            [x, y] = forward ? [s[2], s[3]] : [s[0], s[1]];
+            out.push([x, y]);
+          }
+        };
+        segs.forEach((s, si) => {
+          if (used[si]) return;
+          used[si] = 1;
+          const fwd: [number, number][] = [[s[2], s[3]]];
+          walk(s[2], s[3], fwd);
+          const back: [number, number][] = [];
+          walk(s[0], s[1], back);
+          const line = [...back.reverse(), [s[0], s[1]] as [number, number], ...fwd];
+          d += line.map(([px, py], q) => `${q ? 'L' : 'M'}${px.toFixed(2)},${py.toFixed(2)}`).join('');
+        });
+        if (d) paths.push({ d, color: c.color ?? COLORS[(i + 3) % COLORS.length], dashed: c.dashed, key: `i${i}-${li}` });
+      });
+    });
     return paths;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [g, params, H]);
+
+  const fieldArrows = useMemo(() => {
+    const F = g.field;
+    if (!F) return [];
+    const fp = fn(F.x, ['x', 'y']);
+    const fq = fn(F.y, ['x', 'y']);
+    if (!fp || !fq) return [];
+    const n = Math.max(3, Math.min(30, Math.round(F.n ?? 13)));
+    const cw = W / n;
+    const ch = H / Math.max(3, Math.round((n * H) / W));
+    const ny = Math.round(H / ch);
+    const raw: { X: number; Y: number; u: number; v: number }[] = [];
+    for (let j = 0; j < ny; j++) {
+      for (let k = 0; k < n; k++) {
+        const X = (k + 0.5) * cw;
+        const Y = (j + 0.5) * ch;
+        const x = x0 + (X / W) * (x1 - x0);
+        const y = y1 - (Y / H) * (y1 - y0);
+        const P = fp({ ...env, x, y });
+        const Q = fq({ ...env, x, y });
+        if (!Number.isFinite(P) || !Number.isFinite(Q)) continue;
+        // Screen-space direction (y flips; respect unequal axis scales).
+        const u = (P * W) / (x1 - x0);
+        const v = (-Q * H) / (y1 - y0);
+        raw.push({ X, Y, u, v });
+      }
+    }
+    const cell = Math.min(cw, ch) * 0.85;
+    // Scale by the 90th-percentile length so one huge arrow near a singularity doesn't
+    // shrink all the others; longer arrows are capped at one cell.
+    const lens = raw.map(({ u, v }) => Math.hypot(u, v)).sort((p, q) => p - q);
+    const ref = lens.length ? lens[Math.min(lens.length - 1, Math.floor(lens.length * 0.9))] : 0;
+    const k = (F.scale ?? 1) * (ref > 0 ? cell / ref : 0);
+    return raw
+      .map(({ X, Y, u, v }) => {
+        const L = Math.hypot(u, v);
+        if (L < 1e-12) return null;
+        const len = F.normalize ? cell * (F.scale ?? 1) * 0.8 : Math.min(L * k, cell * (F.scale ?? 1));
+        if (len < 1.5) return null;
+        const dx = (u / L) * len, dy = (v / L) * len;
+        const ax = X - dx / 2, ay = Y - dy / 2, bx = X + dx / 2, by = Y + dy / 2;
+        const h = Math.min(7, len * 0.45), ang = Math.atan2(dy, dx);
+        const p1 = [bx - h * Math.cos(ang - 0.45), by - h * Math.sin(ang - 0.45)];
+        const p2 = [bx - h * Math.cos(ang + 0.45), by - h * Math.sin(ang + 0.45)];
+        return `M${ax.toFixed(1)},${ay.toFixed(1)}L${bx.toFixed(1)},${by.toFixed(1)}M${p1[0].toFixed(1)},${p1[1].toFixed(1)}L${bx.toFixed(1)},${by.toFixed(1)}L${p2[0].toFixed(1)},${p2[1].toFixed(1)}`;
+      })
+      .filter((d): d is string => !!d);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [g.field, params, H]);
 
   const xStep = g.xStep === 'pi' ? Math.PI / 2 : (g.xStep ?? niceStep(x1 - x0));
   const yStep = g.yStep ?? (g.equal && g.xStep !== 'pi' ? xStep : niceStep(y1 - y0));
@@ -326,6 +409,7 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
     ...(g.functions ?? []).map((f, i) => ({ label: f.label, color: f.color ?? COLORS[i % COLORS.length], dashed: f.dashed })),
     ...(g.parametric ?? []).map((c, i) => ({ label: c.label, color: c.color ?? COLORS[(i + 1) % COLORS.length], dashed: c.dashed })),
     ...(g.polar ?? []).map((c, i) => ({ label: c.label, color: c.color ?? COLORS[(i + 2) % COLORS.length], dashed: c.dashed })),
+    ...(g.implicit ?? []).map((c, i) => ({ label: c.label, color: c.color ?? COLORS[(i + 3) % COLORS.length], dashed: c.dashed })),
   ].filter((l) => l.label);
 
   const clip = `gclip-${uid}`;
@@ -413,6 +497,7 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
                 </g>
               );
             })}
+            {fieldArrows.length > 0 && <path d={fieldArrows.join('')} className={`g-field c-${g.field?.color ?? 'gray'}`} />}
             {drawn.map((p) => (
               <path key={p.key} d={p.d} className={`g-curve c-${p.color}${p.dashed ? ' dashed' : ''}`} />
             ))}
@@ -481,60 +566,8 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
           ))}
         </div>
       )}
-      {(g.sliders?.length ?? 0) > 0 && (
-        <div className="graph-sliders">
-          {g.sliders!.map((s) => (
-            <label key={s.name} className={`graph-slider${s.play ? ' has-play' : ''}`}>
-              <span className="graph-slider-name">
-                <Inline text={s.label ?? `$${s.name}$`} />
-              </span>
-              <input
-                type="range"
-                min={s.min}
-                max={s.max}
-                step={s.step ?? (s.max - s.min) / 100}
-                value={params[s.name]}
-                onChange={(e) => {
-                  if (playing) setPlaying(null);
-                  setParams((p) => ({ ...p, [s.name]: Number(e.target.value) }));
-                }}
-              />
-              <span className="graph-slider-val">{fmtNum(params[s.name], sliderDecimals(s.step))}</span>
-              {s.play && (
-                <button
-                  type="button"
-                  className={`graph-play${playing === s.name ? ' on' : ''}`}
-                  aria-label={playing === s.name ? 'Pause' : 'Play'}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setPlaying((cur) => (cur === s.name ? null : s.name));
-                  }}
-                >
-                  {playing === s.name ? (
-                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
-                      <rect x="3" y="2.5" width="3.6" height="11" rx="1" fill="currentColor" />
-                      <rect x="9.4" y="2.5" width="3.6" height="11" rx="1" fill="currentColor" />
-                    </svg>
-                  ) : (
-                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
-                      <path d="M4 2.5 L13.5 8 L4 13.5 Z" fill="currentColor" />
-                    </svg>
-                  )}
-                </button>
-              )}
-            </label>
-          ))}
-        </div>
-      )}
-      {(g.readouts?.length ?? 0) > 0 && (
-        <div className="graph-readouts">
-          {g.readouts!.map((r, i) => (
-            <span key={i} className="graph-readout">
-              <Inline text={r.label} /> <b>{fmtNum(num(r.expr, env), r.digits ?? 3)}</b>
-            </span>
-          ))}
-        </div>
-      )}
+      <SliderPanel sliders={g.sliders} state={sliderState} />
+      <Readouts readouts={g.readouts} env={env} />
       {g.caption && (
         <figcaption>
           <Inline text={g.caption} />

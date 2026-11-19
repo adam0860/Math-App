@@ -6,6 +6,7 @@ const GLYPHS: Record<CourseId, { from: string; to: string; shape: 'hex' | 'circl
   trig: { from: '#2dd4bf', to: '#0f766e', shape: 'circle', text: 'θ', size: 28, italic: true },
   calc1: { from: '#a78bfa', to: '#6d28d9', shape: 'square', text: 'f′', size: 25, italic: true },
   calc2: { from: '#fb923c', to: '#db2777', shape: 'drop', text: '∫', size: 32 },
+  calc3: { from: '#818cf8', to: '#0e7490', shape: 'circle', text: '∇', size: 30 },
   linalg: { from: '#34d399', to: '#047857', shape: 'hex', text: 'Ax', size: 24, italic: true },
   chem: { from: '#38bdf8', to: '#0369a1', shape: 'flask', text: 'H₂O', size: 15 },
   genchem: { from: '#f472b6', to: '#be185d', shape: 'flask', text: 'mol', size: 16, italic: true },

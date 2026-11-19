@@ -12,6 +12,7 @@ import type {
 import { Blocks } from '../components/Blocks';
 import { CodeBlock, Tokens } from '../components/CodeBlock';
 import { Graph } from '../components/Graph';
+import { Plot3D } from '../components/Plot3D';
 import { Icon } from '../components/Icon';
 import { Inline, RichText } from '../components/RichText';
 import { Tex } from '../components/Tex';
@@ -83,6 +84,7 @@ export function QuestionView({
       {q.tex && <Tex tex={q.tex} display className="q-tex" />}
       {q.figure && <Blocks blocks={[q.figure]} />}
       {q.graph && <Graph g={q.graph} compact />}
+      {q.plot3d && <Plot3D g={q.plot3d} compact />}
       {q.code && <CodeBlock code={q.code} lang={q.lang} compact />}
       {q.kind === 'mcq' && <Mcq q={q} revealed={revealed} onReady={onReady} seed={seed} ref={ref} />}
       {q.kind === 'truefalse' && <TrueFalse q={q} revealed={revealed} onReady={onReady} seed={seed} ref={ref} />}

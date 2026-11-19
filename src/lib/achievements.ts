@@ -69,6 +69,8 @@ export const achievements: Achievement[] = [
   { id: 'stats-graduate', icon: '📊', title: 'Statistics Graduate', description: 'Complete the entire Probability and Statistics course.', test: courseDone('stats') },
   { id: 'energy-conserved', icon: '🎢', title: 'Energy Conserved', description: 'Finish the Work and Energy unit.', test: unitDone('phys-u05-work-energy') },
   { id: 'phys1-graduate', icon: '🚀', title: 'Physics I Graduate', description: 'Complete the entire Physics I: Mechanics course.', test: courseDone('phys1') },
+  { id: 'gradient-master', icon: '🧭', title: 'Steepest Ascent', description: 'Finish the Gradient unit of Calculus III.', test: unitDone('calc3-u05-gradient') },
+  { id: 'calc3-graduate', icon: '🌐', title: 'Calculus III Graduate', description: 'Complete the entire Calculus III course.', test: courseDone('calc3') },
   { id: 'calc2-graduate', icon: '🏆', title: 'Calculus II Graduate', description: 'Complete the entire Calculus II course.', test: courseDone('calc2') },
   {
     id: 'night-owl',

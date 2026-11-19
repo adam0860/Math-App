@@ -594,5 +594,68 @@
       "lessons": [
         ["phys-numerical-integration", "Integrating Motion in Code"],
         ["phys-collision-response", "Collisions and Rigid Bodies in Code"] ] }
+  ],
+  "calc3": [
+    {"dir": "u01-space-vectors", "id": "calc3-u01-space-vectors", "icon": "🧊", "title": "Vectors and Geometry of Space", "description": "Three-dimensional coordinates, vectors with the dot and cross products, and equations of lines and planes.",
+      "lessons": [
+        ["calc3-3d-coordinates", "Three-Dimensional Coordinates"],
+        ["calc3-vectors-3d", "Vectors, Dot and Cross Products in Space"],
+        ["calc3-lines-planes", "Lines and Planes"] ] },
+    {"dir": "u02-surfaces", "id": "calc3-u02-surfaces", "icon": "🥚", "title": "Surfaces and Coordinate Systems", "description": "Cylinders and quadric surfaces, and cylindrical and spherical coordinates.",
+      "lessons": [
+        ["calc3-quadric-surfaces", "Cylinders and Quadric Surfaces"],
+        ["calc3-cylindrical-spherical", "Cylindrical and Spherical Coordinates"] ] },
+    {"dir": "u03-vector-functions", "id": "calc3-u03-vector-functions", "icon": "🌀", "title": "Vector-Valued Functions", "description": "Space curves and their calculus, arc length and curvature with the TNB frame, and motion in space.",
+      "lessons": [
+        ["calc3-vector-functions", "Space Curves and Their Derivatives"],
+        ["calc3-arc-length-curvature", "Arc Length, Curvature and the TNB Frame"],
+        ["calc3-motion-in-space", "Motion in Space"] ] },
+    {"dir": "u04-partial-derivatives", "id": "calc3-u04-partial-derivatives", "icon": "🗺️", "title": "Functions of Several Variables", "description": "Graphs and level curves, limits and continuity in two variables, and partial derivatives.",
+      "lessons": [
+        ["calc3-functions-several-variables", "Functions of Several Variables"],
+        ["calc3-limits-continuity", "Limits and Continuity"],
+        ["calc3-partial-derivatives", "Partial Derivatives"] ] },
+    {"dir": "u05-gradient", "id": "calc3-u05-gradient", "icon": "🧭", "title": "Linearization, the Chain Rule and the Gradient", "description": "Tangent planes and linear approximation, the multivariable chain rule, and directional derivatives with the gradient.",
+      "lessons": [
+        ["calc3-tangent-planes", "Tangent Planes and Linear Approximation"],
+        ["calc3-chain-rule", "The Multivariable Chain Rule"],
+        ["calc3-gradient", "Directional Derivatives and the Gradient"] ] },
+    {"dir": "u06-optimization", "id": "calc3-u06-optimization", "icon": "⛰️", "title": "Optimization", "description": "Local and absolute extrema with the second-derivative test, Lagrange multipliers, and gradient descent for machine learning and games.",
+      "lessons": [
+        ["calc3-extrema", "Maximum and Minimum Values"],
+        ["calc3-lagrange-multipliers", "Lagrange Multipliers"],
+        ["calc3-gradient-descent", "Gradient Descent and Numerical Optimization"] ] },
+    {"dir": "u07-double-integrals", "id": "calc3-u07-double-integrals", "icon": "🧱", "title": "Double Integrals", "description": "Double integrals over rectangles and general regions, reversing the order of integration, and double integrals in polar coordinates.",
+      "lessons": [
+        ["calc3-double-integrals", "Double Integrals over Rectangles"],
+        ["calc3-general-regions", "Double Integrals over General Regions"],
+        ["calc3-polar-integrals", "Double Integrals in Polar Coordinates"] ] },
+    {"dir": "u08-double-applications", "id": "calc3-u08-double-applications", "icon": "⚖️", "title": "Applications of Double Integrals", "description": "Mass, center of mass, moments of inertia and probability with double integrals, and surface area.",
+      "lessons": [
+        ["calc3-double-integral-applications", "Mass, Moments and Probability"],
+        ["calc3-surface-area", "Surface Area"] ] },
+    {"dir": "u09-triple-integrals", "id": "calc3-u09-triple-integrals", "icon": "📦", "title": "Triple Integrals and Change of Variables", "description": "Triple integrals, triple integrals in cylindrical and spherical coordinates, and general changes of variables with the Jacobian.",
+      "lessons": [
+        ["calc3-triple-integrals", "Triple Integrals"],
+        ["calc3-triple-cylindrical-spherical", "Triple Integrals in Cylindrical and Spherical Coordinates"],
+        ["calc3-change-of-variables", "Change of Variables and the Jacobian"] ] },
+    {"dir": "u10-line-integrals", "id": "calc3-u10-line-integrals", "icon": "🌬️", "title": "Vector Fields and Line Integrals", "description": "Vector fields, line integrals of scalar functions and vector fields, and conservative fields with the fundamental theorem for line integrals.",
+      "lessons": [
+        ["calc3-vector-fields", "Vector Fields"],
+        ["calc3-line-integrals", "Line Integrals"],
+        ["calc3-conservative-fields", "Conservative Fields and the Fundamental Theorem"] ] },
+    {"dir": "u11-greens-theorem", "id": "calc3-u11-greens-theorem", "icon": "🔄", "title": "Green's Theorem, Curl and Divergence", "description": "Green's theorem in the plane, and curl and divergence as measures of rotation and expansion.",
+      "lessons": [
+        ["calc3-greens-theorem", "Green's Theorem"],
+        ["calc3-curl-divergence", "Curl and Divergence"] ] },
+    {"dir": "u12-surface-integrals", "id": "calc3-u12-surface-integrals", "icon": "🫧", "title": "Surface Integrals", "description": "Parametric surfaces and their areas, and surface integrals of scalar functions and flux of vector fields.",
+      "lessons": [
+        ["calc3-parametric-surfaces", "Parametric Surfaces"],
+        ["calc3-surface-integrals", "Surface Integrals and Flux"] ] },
+    {"dir": "u13-stokes-divergence", "id": "calc3-u13-stokes-divergence", "icon": "🌊", "title": "Stokes' and Divergence Theorems", "description": "Stokes' theorem, the divergence theorem, and how vector calculus drives physics, fluids and graphics.",
+      "lessons": [
+        ["calc3-stokes-theorem", "Stokes' Theorem"],
+        ["calc3-divergence-theorem", "The Divergence Theorem"],
+        ["calc3-vector-calculus-applications", "Vector Calculus in Physics, Fluids and Graphics"] ] }
   ]
 }

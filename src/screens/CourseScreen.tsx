@@ -304,6 +304,7 @@ const FINISH: Record<CourseId, string> = {
   algebra: 'Finish line: you’ll be ready for Trigonometry and Calculus.',
   trig: 'Finish line: you’ll be ready for Calculus I — and for 3D rotations.',
   calc1: 'Finish line: you’ll be ready for Calculus II.',
+  calc3: 'Finish line: you’ll be fluent in the math of 3D graphics, physics engines and machine learning, and ready for differential equations and Physics II.',
   calc2: 'Finish line: you’ll be ready for Linear Algebra, Discrete Math and beyond.',
   linalg: 'Finish line: you’ll be ready for computer graphics, machine learning and numerical methods.',
   chem: 'Finish line: you’ll be ready for college General Chemistry.',

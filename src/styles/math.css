@@ -295,6 +295,13 @@
   fill: var(--surface) !important;
   stroke-width: 2.5;
 }
+.g-field {
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.85;
+}
 .g-area {
   opacity: 0.22;
   stroke: none;
@@ -358,12 +365,15 @@
 }
 .graph-slider {
   display: grid;
-  grid-template-columns: minmax(28px, auto) 1fr 52px;
+  grid-template-columns: minmax(28px, auto) minmax(96px, 1fr) 52px;
   align-items: center;
   gap: 12px;
 }
 .graph-slider.has-play {
-  grid-template-columns: minmax(28px, auto) 1fr 52px 32px;
+  grid-template-columns: minmax(28px, auto) minmax(96px, 1fr) 52px 32px;
+}
+.graph-slider-name {
+  min-width: 0;
 }
 .graph-play {
   display: grid;
@@ -415,6 +425,7 @@
 .g-curve[class*='c-'],
 .g-line[class*='c-'],
 .g-seg[class*='c-'],
+.g-field[class*='c-'],
 .g-ref[class*='c-'] {
   fill: none;
 }
@@ -655,3 +666,59 @@ p .tex-display {
 .figure-svg .s-orange { stroke: var(--g-orange); } .figure-svg .f-orange { fill: var(--g-orange); } .figure-svg text.t-orange, .figure-svg .t-orange { fill: var(--g-orange); }
 .figure-svg .s-teal { stroke: var(--g-teal); } .figure-svg .f-teal { fill: var(--g-teal); } .figure-svg text.t-teal, .figure-svg .t-teal { fill: var(--g-teal); }
 .figure-svg .s-gray { stroke: var(--g-gray); } .figure-svg .f-gray { fill: var(--g-gray); } .figure-svg text.t-gray, .figure-svg .t-gray { fill: var(--g-gray); }
+
+/* ---------------------------------------------------------------- 3D plots */
+.p3-svg {
+  cursor: grab;
+}
+.p3-svg:active {
+  cursor: grabbing;
+}
+.p3-face {
+  stroke: var(--text);
+  stroke-opacity: 0.16;
+  stroke-width: 0.6;
+  stroke-linejoin: round;
+}
+.p3-line {
+  fill: none;
+  stroke-linecap: round;
+}
+.p3-line.dashed {
+  stroke-dasharray: 6 5;
+}
+.p3-box {
+  stroke: var(--border-strong, var(--border));
+}
+.p3-axis {
+  stroke: var(--text-3);
+}
+.p3-arrow line {
+  stroke-linecap: round;
+}
+.p3-arrow path {
+  stroke: none;
+}
+.p3-axis-label {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 650;
+  fill: var(--text-2);
+}
+.p3-tick {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 11px;
+  fill: var(--text-3);
+}
+.p3-controls {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.p3-hint {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.85em;
+  color: var(--text-3);
+}

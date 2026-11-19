@@ -1847,3 +1847,53 @@
   background: color-mix(in srgb, var(--phys1-1) 16%, transparent);
   color: color-mix(in srgb, var(--phys1-1) 70%, var(--text));
 }
+
+.continue-card.course-calc3 {
+  background: linear-gradient(140deg, color-mix(in srgb, var(--calc3-1) 12%, var(--surface)), var(--surface) 60%);
+}
+.course-card.course-calc3 {
+  background: linear-gradient(135deg, #1e1b4b, #4338ca 50%, #0e7490);
+}
+.course-tab.on.course-calc3 {
+  background: color-mix(in srgb, var(--calc3-1) 15%, transparent);
+  color: color-mix(in srgb, var(--calc3-1) 65%, var(--text));
+}
+.course-hero.course-calc3 {
+  background: linear-gradient(135deg, #1e1b4b, #3730a3 50%, #155e75);
+}
+.sheet-card.course-calc3 .sheet-badge {
+  background: color-mix(in srgb, var(--calc3-1) 16%, transparent);
+  color: color-mix(in srgb, var(--calc3-1) 70%, var(--text));
+}
+.course-badge.calc3 {
+  background: color-mix(in srgb, var(--calc3-1) 16%, transparent);
+  color: color-mix(in srgb, var(--calc3-1) 65%, var(--text));
+}
+.course-badge.linalg {
+  background: color-mix(in srgb, var(--linalg-1) 16%, transparent);
+  color: color-mix(in srgb, var(--linalg-1) 65%, var(--text));
+}
+.course-badge.discrete {
+  background: color-mix(in srgb, var(--discrete-1) 16%, transparent);
+  color: color-mix(in srgb, var(--discrete-1) 65%, var(--text));
+}
+.course-badge.stats {
+  background: color-mix(in srgb, var(--stats-1) 16%, transparent);
+  color: color-mix(in srgb, var(--stats-1) 65%, var(--text));
+}
+.course-badge.phys1 {
+  background: color-mix(in srgb, var(--phys1-1) 16%, transparent);
+  color: color-mix(in srgb, var(--phys1-1) 65%, var(--text));
+}
+.course-badge.chem {
+  background: color-mix(in srgb, var(--chem-1) 16%, transparent);
+  color: color-mix(in srgb, var(--chem-1) 65%, var(--text));
+}
+.course-badge.genchem {
+  background: color-mix(in srgb, var(--genchem-1) 16%, transparent);
+  color: color-mix(in srgb, var(--genchem-1) 65%, var(--text));
+}
+.course-badge.orgo {
+  background: color-mix(in srgb, var(--orgo-1) 16%, transparent);
+  color: color-mix(in srgb, var(--orgo-1) 65%, var(--text));
+}
