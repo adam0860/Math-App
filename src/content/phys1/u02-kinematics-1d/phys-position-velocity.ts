@@ -189,7 +189,7 @@ export const lesson: Lesson = {
         {
           type: 'graph',
           x: [-0.8, 3.3],
-          y: [-1, 14],
+          y: [-1, 18.5],
           functions: [{ expr: X('x'), label: '$x(t)$', color: 'blue', domain: [0, 3.2] }],
           tangents: [{ expr: X('x'), at: 's', color: 'orange' }],
           segments: [
