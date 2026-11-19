@@ -72,7 +72,7 @@ export const lesson: Lesson = {
       blocks: [
         {
           type: 'p',
-          text: 'Picture a balloon in a flowing gas. The [[calc3-flux|flux]] of the velocity field out through the balloon\'s skin tells you how much gas leaves per second, minus how much comes in. If more leaves than enters, gas must be appearing inside: something is a source. Last unit you met the local version of this idea: the [[calc3-divergence|divergence]] $\\operatorname{div}\\vec F = P_x + Q_y + R_z$ is net outflow **per unit volume** at a point. The divergence theorem adds up those local sources.',
+          text: 'Picture a balloon in a flowing gas. The [[calc3-flux|flux]] of the velocity field out through the balloon\'s skin tells you how much gas leaves per second, minus how much comes in. If more leaves than enters, gas must be appearing inside: something is a source. In Unit 11 you met the local version of this idea: the [[calc3-divergence|divergence]] $\\operatorname{div}\\vec F = P_x + Q_y + R_z$ is net outflow **per unit volume** at a point. The divergence theorem adds up those local sources.',
         },
         {
           type: 'p',
@@ -573,7 +573,7 @@ cube centered at (3, 0, 0):        0.0000
       title: 'MIT OCW 18.02SC Multivariable Calculus',
       url: 'https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/',
       source: 'other',
-      note: 'Unit 5 covers the divergence theorem with recitation videos and problem sets, including the physical interpretation of divergence.',
+      note: 'Unit 4 (Part B) covers the divergence theorem with recitation videos and problem sets, including the physical interpretation of divergence.',
     },
     {
       title: '3Blue1Brown',

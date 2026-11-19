@@ -404,7 +404,7 @@ hit (-0.6340, 0.0000, 0.7733) in 13 steps  n = (-0.6340, 0.0000, 0.7733)  diffus
       blocks: [
         {
           type: 'p',
-          text: 'Lighting depends on the normal, not on where the triangles are. A [[calc3-normal-map|normal map]] exploits that: it stores a normal per texel of a texture, so a flat wall made of two triangles can be lit as if it were covered in bricks and mortar. The normals usually come from a height map $h(x, y)$, and you already know the formula: the upward normal of the graph $z = h(x, y)$ is $\\langle -h_x, -h_y, 1 \\rangle$, the vector from the flux lesson, normalized.',
+          text: 'Lighting depends on the normal, not on where the triangles are. A [[calc3-normal-map|normal map]] exploits that: it stores a normal per texel of a texture, so a flat wall made of two triangles can be lit as if it were covered in bricks and mortar. The normals are often baked from a detailed high-polygon model, or computed from a height map $h(x, y)$, and you already know the formula: the upward normal of the graph $z = h(x, y)$ is $\\langle -h_x, -h_y, 1 \\rangle$, the vector from the flux lesson, normalized.',
         },
         {
           type: 'plot3d',
@@ -435,7 +435,7 @@ hit (-0.6340, 0.0000, 0.7733) in 13 steps  n = (-0.6340, 0.0000, 0.7733)  diffus
         {
           type: 'list',
           items: [
-            'Baking tools compute $h_x$ and $h_y$ with finite differences of neighboring texels, the same central differences as everywhere in this course.',
+            'Height-to-normal tools compute $h_x$ and $h_y$ with finite differences of neighboring texels, typically the same central differences as everywhere in this course.',
             'A flat region has $\\vec n = \\langle 0, 0, 1 \\rangle$, stored as $(128, 128, 255)$: that is why tangent-space normal maps look mostly light blue.',
             'The normal is in **tangent space**: relative to the surface\'s own tangent vectors and normal (the $\\vec r_u$, $\\vec r_v$ and $\\vec r_u\\times\\vec r_v$ of a parametric surface), so the same map works on a curved, moving mesh.',
           ],
@@ -477,7 +477,7 @@ hit (-0.6340, 0.0000, 0.7733) in 13 steps  n = (-0.6340, 0.0000, 0.7733)  diffus
             { tex: '\\nabla^2 p = \\nabla\\cdot\\vec w', why: 'A **Poisson equation** for $p$: the right side is known from the current velocity.' },
             { tex: '\\vec u = \\vec w - \\nabla p', why: 'Subtract the gradient. By construction $\\nabla\\cdot\\vec u = \\nabla\\cdot\\vec w - \\nabla^2 p = 0$.' },
           ],
-          result: 'The expensive part is solving the Poisson equation on the grid, with Jacobi or Gauss–Seidel sweeps, multigrid or conjugate gradients. That one linear solve is usually most of a fluid solver\'s frame time.',
+          result: 'The expensive part is solving the Poisson equation on the grid, with Jacobi or Gauss–Seidel sweeps, multigrid or conjugate gradients. That one linear solve is often the most expensive part of a fluid solver\'s frame time.',
         },
         {
           type: 'graph',

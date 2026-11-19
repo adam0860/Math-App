@@ -69,7 +69,7 @@ export const glossary: GlossaryEntry[] = [
   {
     id: 'calc3-generalized-stokes',
     term: 'Generalized Stokes Theorem',
-    aliases: ['general Stokes theorem', 'Stokes–Cartan theorem', 'fundamental theorem of vector calculus'],
+    aliases: ['general Stokes theorem', 'Stokes–Cartan theorem', 'fundamental theorem of multivariate calculus'],
     course: 'calc3',
     category: 'Vector Calculus',
     short: 'The single statement $\\int_{\\partial\\Omega} \\omega = \\int_{\\Omega} d\\omega$ behind the fundamental theorem of calculus, the gradient theorem, Green\'s, Stokes\' and the divergence theorem: integrating a derivative over a region equals integrating the original over the region\'s boundary.',
@@ -125,7 +125,7 @@ export const glossary: GlossaryEntry[] = [
     aliases: ['normal mapping', 'bump map', 'tangent-space normal map'],
     course: 'calc3',
     category: 'Vector Calculus',
-    short: 'A texture that stores a surface normal per texel, so a flat low-polygon surface is lit as if it had fine bumps. Each normal is usually computed from a height map $h$ as the unit vector along $\\langle -h_x, -h_y, 1 \\rangle$.',
+    short: 'A texture that stores a surface normal per texel, so a flat low-polygon surface is lit as if it had fine bumps. Each normal is often computed from a height map $h$ as the unit vector along $\\langle -h_x, -h_y, 1 \\rangle$.',
     long: 'The normal of a graph $z = h(x, y)$ is $\\langle -h_x, -h_y, 1 \\rangle$, the same vector used for upward flux. Tools compute $h_x$ and $h_y$ with finite differences and pack the unit normal\'s components from $[-1, 1]$ into color channels in $[0, 1]$, which is why tangent-space normal maps look mostly light blue.',
     see: ['calc3-tangent-plane', 'calc3-gradient', 'la-surface-normal'],
   },

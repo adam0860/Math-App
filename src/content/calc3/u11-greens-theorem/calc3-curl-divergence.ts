@@ -183,7 +183,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'why',
           title: 'Why "per unit volume"',
-          text: 'Divergence is the limit of outflow divided by size: $\\operatorname{div}\\vec F(P_0) = \\lim \\frac{1}{\\operatorname{vol}(B)}\\iint_{\\partial B} \\vec F\\cdot\\vec n\\,dS$ as a small ball $B$ shrinks to $P_0$. (In the plane: outflow across a small circle divided by its area.) The derivative form $P_x + Q_y + R_z$ is what that limit equals when you shrink a box: the net flow through each pair of opposite faces is a difference quotient. The divergence theorem, two lessons ahead, turns this local statement into a global one.',
+          text: 'Divergence is the limit of outflow divided by size: $\\operatorname{div}\\vec F(P_0) = \\lim \\frac{1}{\\operatorname{vol}(B)}\\iint_{\\partial B} \\vec F\\cdot\\vec n\\,dS$ as a small ball $B$ shrinks to $P_0$. (In the plane: outflow across a small circle divided by its area.) The derivative form $P_x + Q_y + R_z$ is what that limit equals when you shrink a box: the net flow through each pair of opposite faces is a difference quotient. The divergence theorem, in Unit 13, turns this local statement into a global one.',
         },
       ],
     },

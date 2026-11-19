@@ -406,7 +406,7 @@ r/|r|^3,   a = 5, N = 1000: 12.5664
       title: 'MIT OCW 18.02SC Multivariable Calculus',
       url: 'https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/',
       source: 'other',
-      note: 'Unit 5 develops flux in space with lecture videos and practice problems, building toward the divergence theorem.',
+      note: 'Unit 4 (Part B) develops flux in space with lecture videos and practice problems, building toward the divergence theorem.',
     },
   ],
 };

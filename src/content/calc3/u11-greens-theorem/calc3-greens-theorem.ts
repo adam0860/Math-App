@@ -519,7 +519,7 @@ pi                : 3.1416`,
       title: 'MIT OCW 18.02SC Multivariable Calculus',
       url: 'https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/',
       source: 'other',
-      note: 'Unit 4 has recitation videos and problem sets on Green\'s theorem, including the fields with a singularity at the origin.',
+      note: 'Unit 3 (Part C) has recitation videos and problem sets on Green\'s theorem, including the fields with a singularity at the origin.',
     },
   ],
 };

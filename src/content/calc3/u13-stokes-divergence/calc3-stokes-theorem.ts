@@ -62,7 +62,7 @@ export const lesson: Lesson = {
       blocks: [
         {
           type: 'p',
-          text: 'Green\'s theorem says that for a flat region $D$ with positively oriented boundary $C$, the circulation of $\\vec F = \\langle P, Q \\rangle$ around $C$ equals the total "spin" inside: $\\oint_C \\vec F\\cdot d\\vec r = \\iint_D (Q_x - P_y)\\,dA$. Last unit you rewrote the integrand as $(\\operatorname{curl}\\vec F)\\cdot\\mathbf{k}$: the component of the [[calc3-curl|curl]] along the normal of the flat region.',
+          text: 'Green\'s theorem says that for a flat region $D$ with positively oriented boundary $C$, the circulation of $\\vec F = \\langle P, Q \\rangle$ around $C$ equals the total "spin" inside: $\\oint_C \\vec F\\cdot d\\vec r = \\iint_D (Q_x - P_y)\\,dA$. In Unit 11 you rewrote the integrand as $(\\operatorname{curl}\\vec F)\\cdot\\mathbf{k}$: the component of the [[calc3-curl|curl]] along the normal of the flat region.',
         },
         {
           type: 'p',
@@ -365,7 +365,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'warning',
           title: 'The hypotheses matter: a field with a hole',
-          text: 'The vortex $\\vec F = \\dfrac{\\langle -y, x, 0 \\rangle}{x^2 + y^2}$ has $\\operatorname{curl}\\vec F = \\vec 0$ wherever it is defined, yet its circulation around the unit circle in the $xy$-plane is $2\\pi$. No contradiction: $\\vec F$ is undefined on the whole $z$-axis, and **every** surface bounded by that circle has to cross the $z$-axis (the circle is linked with it, like two links of a chain). So no surface satisfies the hypothesis "$\\vec F$ is smooth on an open region containing $S$". In the last lesson this field returns as the magnetic field around a wire.',
+          text: 'The vortex $\\vec F = \\dfrac{\\langle -y, x, 0 \\rangle}{x^2 + y^2}$ has $\\operatorname{curl}\\vec F = \\vec 0$ wherever it is defined, yet its circulation around the unit circle in the $xy$-plane is $2\\pi$. No contradiction: $\\vec F$ is undefined on the whole $z$-axis, and **every** surface bounded by that circle has to cross the $z$-axis (the circle is linked with it, like two links of a chain). So no surface satisfies the hypothesis "$\\vec F$ is smooth on an open region containing $S$". In the final lesson of this unit this field returns as the magnetic field around a wire.',
         },
       ],
     },
@@ -399,7 +399,7 @@ export const lesson: Lesson = {
       blocks: [
         {
           type: 'p',
-          text: 'Last unit you met the curl as a paddle wheel. Stokes\' theorem makes that picture exact. Let $S_a$ be a small disk of radius $a$ centered at a point $P_0$, with unit normal $\\vec n$, and $C_a$ its boundary circle. Because $\\operatorname{curl}\\vec F$ is continuous, it is nearly constant on the tiny disk, so',
+          text: 'In Unit 11 you met the curl as a paddle wheel. Stokes\' theorem makes that picture exact. Let $S_a$ be a small disk of radius $a$ centered at a point $P_0$, with unit normal $\\vec n$, and $C_a$ its boundary circle. Because $\\operatorname{curl}\\vec F$ is continuous, it is nearly constant on the tiny disk, so',
         },
         {
           type: 'math',
