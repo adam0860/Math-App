@@ -221,7 +221,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'code',
           title: 'Velocity from frame data',
-          text: 'A game or a telemetry log rarely has a formula for $x(t)$; it has positions sampled each frame. The velocity estimate is a difference quotient with $\\Delta t$ equal to the frame time: `v = (x_now - x_prev) / dt`. That is a secant slope standing in for the tangent slope. The **central** difference `(x_next - x_prev) / (2 * dt)` is noticeably more accurate when you can afford to look one frame ahead, which is why replay and animation tools use it.',
+          text: 'A game or a telemetry log rarely has a formula for $x(t)$; it has positions sampled each frame. The velocity estimate is a difference quotient with $\\Delta t$ equal to the frame time: `v = (x_now - x_prev) / dt`. That is a secant slope standing in for the tangent slope. The **central** difference `(x_next - x_prev) / (2 * dt)` is noticeably more accurate when you can afford to look one frame ahead, so offline tools that have the whole recording (replays, telemetry analysis) can use it.',
         },
       ],
     },

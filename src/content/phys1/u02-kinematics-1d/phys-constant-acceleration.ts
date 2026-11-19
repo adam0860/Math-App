@@ -206,8 +206,7 @@ export const lesson: Lesson = {
       kind: 'order',
       prompt: 'Put the problem-solving steps in order.',
       lines: [
-        'Sketch the situation and label knowns and unknowns',
-        'Choose an origin and a positive direction',
+        'Sketch the situation, label knowns and unknowns, and choose an origin and a positive direction',
         'Decide whether the acceleration is constant',
         'Choose an equation and solve it symbolically for the unknown',
         'Substitute numbers with units',
