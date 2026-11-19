@@ -22,7 +22,7 @@ export const phys1CheatSheets: CheatSheet[] = [
           },
           {
             label: '[[dimensional-analysis|Dimensional analysis]]',
-            tex: '[v] = \\mathsf{L}\\,\\mathsf{T}^{-1}, \\quad [a] = \\mathsf{L}\\,\\mathsf{T}^{-2}, \\quad [F] = \\mathsf{M}\\,\\mathsf{L}\\,\\mathsf{T}^{-2}, \\quad [E] = \\mathsf{M}\\,\\mathsf{L}^2\\,\\mathsf{T}^{-2}',
+            tex: '\\begin{aligned} &[v] = \\mathsf{L}\\,\\mathsf{T}^{-1}, \\quad [a] = \\mathsf{L}\\,\\mathsf{T}^{-2} \\\\ &[F] = \\mathsf{M}\\,\\mathsf{L}\\,\\mathsf{T}^{-2}, \\quad [E] = \\mathsf{M}\\,\\mathsf{L}^2\\,\\mathsf{T}^{-2} \\end{aligned}',
             text: 'Both sides of an equation, and every term in a sum, must have the same dimensions. Arguments of $\\sin$, $\\exp$ and $\\ln$ must be dimensionless.',
           },
           {
@@ -48,7 +48,7 @@ export const phys1CheatSheets: CheatSheet[] = [
             label: '[[unit-vector|Unit vectors]]',
             tex: '\\vec{A} = A_x\\hat{\\imath} + A_y\\hat{\\jmath} + A_z\\hat{k}, \\qquad \\hat{A} = \\frac{\\vec{A}}{A}',
           },
-          { label: 'Adding vectors', tex: '\\vec{R} = \\vec{A} + \\vec{B} \\iff R_x = A_x + B_x,\\ R_y = A_y + B_y,\\ R_z = A_z + B_z' },
+          { label: 'Adding vectors', tex: '\\begin{aligned} &\\vec{R} = \\vec{A} + \\vec{B} \\iff \\\\ &R_x = A_x + B_x, \\ \\ R_y = A_y + B_y \\\\ &R_z = A_z + B_z \\end{aligned}' },
         ],
       },
       {
@@ -65,10 +65,10 @@ export const phys1CheatSheets: CheatSheet[] = [
           },
           {
             label: '[[cross-product|Cross product]]',
-            tex: '\\vec{A} \\times \\vec{B} = (A_yB_z - A_zB_y)\\hat{\\imath} + (A_zB_x - A_xB_z)\\hat{\\jmath} + (A_xB_y - A_yB_x)\\hat{k}',
+            tex: '\\begin{aligned} \\vec{A} \\times \\vec{B} = {}&(A_yB_z - A_zB_y)\\hat{\\imath} \\\\ {}+{}&(A_zB_x - A_xB_z)\\hat{\\jmath} \\\\ {}+{}&(A_xB_y - A_yB_x)\\hat{k} \\end{aligned}',
             text: 'Magnitude $AB\\sin\\phi$, direction by the right-hand rule, $\\vec{B} \\times \\vec{A} = -\\vec{A} \\times \\vec{B}$. Used for torque $\\vec{\\tau} = \\vec{r} \\times \\vec{F}$ and angular momentum $\\vec{L} = \\vec{r} \\times \\vec{p}$.',
           },
-          { label: 'Unit-vector products', tex: '\\hat{\\imath} \\times \\hat{\\jmath} = \\hat{k}, \\quad \\hat{\\jmath} \\times \\hat{k} = \\hat{\\imath}, \\quad \\hat{k} \\times \\hat{\\imath} = \\hat{\\jmath}, \\quad \\hat{\\imath}\\cdot\\hat{\\imath} = 1,\\ \\hat{\\imath}\\cdot\\hat{\\jmath} = 0' },
+          { label: 'Unit-vector products', tex: '\\begin{aligned} &\\hat{\\imath} \\times \\hat{\\jmath} = \\hat{k}, \\quad \\hat{\\jmath} \\times \\hat{k} = \\hat{\\imath}, \\quad \\hat{k} \\times \\hat{\\imath} = \\hat{\\jmath} \\\\ &\\hat{\\imath}\\cdot\\hat{\\imath} = 1, \\quad \\hat{\\imath}\\cdot\\hat{\\jmath} = 0 \\end{aligned}' },
         ],
       },
     ],
@@ -91,7 +91,7 @@ export const phys1CheatSheets: CheatSheet[] = [
           },
           {
             label: 'Going back by integration',
-            tex: 'v_x(t) = v_{0x} + \\int_0^t a_x\\,dt\', \\qquad x(t) = x_0 + \\int_0^t v_x\\,dt\'',
+            tex: '\\begin{aligned} v_x(t) &= v_{0x} + \\int_0^t a_x\\,dt\' \\\\ x(t) &= x_0 + \\int_0^t v_x\\,dt\' \\end{aligned}',
             text: 'Displacement is the signed area under the $v_x(t)$ graph.',
           },
           { label: '[[phys-average-velocity|Average velocity]]', tex: 'v_{\\text{avg},x} = \\frac{\\Delta x}{\\Delta t}, \\qquad \\vec{v}_{\\text{avg}} = \\frac{\\Delta\\vec{r}}{\\Delta t}' },
@@ -117,12 +117,12 @@ export const phys1CheatSheets: CheatSheet[] = [
         items: [
           {
             label: '[[projectile-motion|Position]]',
-            tex: 'x = x_0 + (v_0\\cos\\theta)\\,t, \\qquad y = y_0 + (v_0\\sin\\theta)\\,t - \\tfrac12 gt^2',
+            tex: '\\begin{aligned} x &= x_0 + (v_0\\cos\\theta)\\,t \\\\ y &= y_0 + (v_0\\sin\\theta)\\,t - \\tfrac12 gt^2 \\end{aligned}',
             text: 'Horizontal: constant velocity. Vertical: free fall. Same $t$ in both.',
           },
           {
             label: 'Level ground: [[phys-horizontal-range|range]], height, time',
-            tex: 'R = \\frac{v_0^2\\sin 2\\theta}{g}, \\qquad H = \\frac{v_0^2\\sin^2\\theta}{2g}, \\qquad t_{\\text{flight}} = \\frac{2v_0\\sin\\theta}{g}',
+            tex: '\\begin{aligned} &R = \\frac{v_0^2\\sin 2\\theta}{g}, \\qquad H = \\frac{v_0^2\\sin^2\\theta}{2g} \\\\ &t_{\\text{flight}} = \\frac{2v_0\\sin\\theta}{g} \\end{aligned}',
             text: 'Maximum range at $45^\\circ$; complementary angles give equal ranges. Real trajectories with drag fall short and come down steeper.',
           },
           { label: 'Path', tex: 'y = x\\tan\\theta - \\frac{g\\,x^2}{2v_0^2\\cos^2\\theta}', text: 'A parabola (launch from the origin).' },
@@ -162,7 +162,7 @@ export const phys1CheatSheets: CheatSheet[] = [
         title: 'The laws',
         items: [
           { label: '[[phys-newtons-first-law|First law]]', text: 'If $\\sum\\vec{F} = \\vec{0}$, the velocity is constant (in an inertial frame). No force is needed to **keep** something moving.' },
-          { label: '[[phys-newtons-second-law|Second law]]', tex: '\\sum\\vec{F} = m\\vec{a} \\iff \\sum F_x = ma_x,\\ \\sum F_y = ma_y' },
+          { label: '[[phys-newtons-second-law|Second law]]', tex: '\\begin{aligned} &\\textstyle\\sum\\vec{F} = m\\vec{a} \\iff \\\\ &\\textstyle\\sum F_x = ma_x, \\ \\sum F_y = ma_y \\end{aligned}' },
           {
             label: '[[phys-newtons-third-law|Third law]]',
             tex: '\\vec{F}_{A \\text{ on } B} = -\\vec{F}_{B \\text{ on } A}',
@@ -195,7 +195,7 @@ export const phys1CheatSheets: CheatSheet[] = [
           },
           {
             label: 'Linear drag $F = -bv$, falling from rest',
-            tex: 'v(t) = v_t\\left(1 - e^{-t/\\tau}\\right), \\qquad v_t = \\frac{mg}{b}, \\quad \\tau = \\frac{m}{b}',
+            tex: '\\begin{aligned} &v(t) = v_t\\left(1 - e^{-t/\\tau}\\right) \\\\ &v_t = \\frac{mg}{b}, \\quad \\tau = \\frac{m}{b} \\end{aligned}',
           },
         ],
       },
@@ -236,7 +236,7 @@ export const phys1CheatSheets: CheatSheet[] = [
         items: [
           {
             label: '[[work|Work]]',
-            tex: 'W = \\int_{\\vec{r}_i}^{\\vec{r}_f} \\vec{F}\\cdot d\\vec{r}, \\qquad W = Fd\\cos\\phi \\ \\text{(constant force)}',
+            tex: '\\begin{aligned} &W = \\int_{\\vec{r}_i}^{\\vec{r}_f} \\vec{F}\\cdot d\\vec{r} \\\\ &W = Fd\\cos\\phi \\ \\text{(constant force)} \\end{aligned}',
             text: 'Positive when the force has a component along the motion; zero for forces perpendicular to it (normal force on a level path, centripetal force).',
           },
           { label: 'Spring ([[hookes-law|Hooke\'s law]])', tex: 'F_x = -kx, \\qquad W_{\\text{spring}} = \\tfrac12 kx_i^2 - \\tfrac12 kx_f^2' },
@@ -318,7 +318,7 @@ export const phys1CheatSheets: CheatSheet[] = [
           },
           {
             label: '[[phys-elastic-collision|Elastic]], 1D',
-            tex: 'v_1\' = \\frac{m_1 - m_2}{m_1 + m_2}v_1 + \\frac{2m_2}{m_1 + m_2}v_2, \\qquad v_2\' = \\frac{2m_1}{m_1 + m_2}v_1 + \\frac{m_2 - m_1}{m_1 + m_2}v_2',
+            tex: '\\begin{aligned} v_1\' &= \\frac{m_1 - m_2}{m_1 + m_2}v_1 + \\frac{2m_2}{m_1 + m_2}v_2 \\\\ v_2\' &= \\frac{2m_1}{m_1 + m_2}v_1 + \\frac{m_2 - m_1}{m_1 + m_2}v_2 \\end{aligned}',
             text: 'Equal masses swap velocities. Kinetic energy is conserved.',
           },
           {
@@ -354,12 +354,12 @@ export const phys1CheatSheets: CheatSheet[] = [
         items: [
           {
             label: '[[phys-angular-velocity|Angular velocity]] and [[phys-angular-acceleration|acceleration]]',
-            tex: '\\theta = \\frac{s}{r}, \\quad \\omega = \\frac{d\\theta}{dt}, \\quad \\alpha = \\frac{d\\omega}{dt}; \\qquad v = r\\omega, \\quad a_t = r\\alpha, \\quad a_c = r\\omega^2',
+            tex: '\\begin{aligned} &\\theta = \\frac{s}{r}, \\quad \\omega = \\frac{d\\theta}{dt}, \\quad \\alpha = \\frac{d\\omega}{dt} \\\\ &v = r\\omega, \\quad a_t = r\\alpha, \\quad a_c = r\\omega^2 \\end{aligned}',
             text: 'Angles in [[radian|radians]].',
           },
           {
             label: 'Constant $\\alpha$',
-            tex: '\\omega = \\omega_0 + \\alpha t, \\quad \\theta = \\theta_0 + \\omega_0t + \\tfrac12\\alpha t^2, \\quad \\omega^2 = \\omega_0^2 + 2\\alpha\\,\\Delta\\theta',
+            tex: '\\begin{aligned} \\omega &= \\omega_0 + \\alpha t \\\\ \\theta &= \\theta_0 + \\omega_0t + \\tfrac12\\alpha t^2 \\\\ \\omega^2 &= \\omega_0^2 + 2\\alpha\\,\\Delta\\theta \\end{aligned}',
           },
         ],
       },
@@ -387,7 +387,7 @@ export const phys1CheatSheets: CheatSheet[] = [
           { label: 'Rotational work and power', tex: 'W = \\int \\tau\\,d\\theta, \\qquad P = \\tau\\omega' },
           {
             label: '[[phys-rolling-without-slipping|Rolling without slipping]]',
-            tex: 'v_{\\text{cm}} = R\\omega, \\quad K = \\tfrac12 Mv_{\\text{cm}}^2 + \\tfrac12 I_{\\text{cm}}\\omega^2, \\quad a_{\\text{incline}} = \\frac{g\\sin\\theta}{1 + I_{\\text{cm}}/MR^2}',
+            tex: '\\begin{aligned} &v_{\\text{cm}} = R\\omega, \\quad K = \\tfrac12 Mv_{\\text{cm}}^2 + \\tfrac12 I_{\\text{cm}}\\omega^2 \\\\ &a_{\\text{incline}} = \\frac{g\\sin\\theta}{1 + I_{\\text{cm}}/MR^2} \\end{aligned}',
             text: 'The contact point is momentarily at rest; static friction does no work.',
           },
         ],
@@ -397,7 +397,7 @@ export const phys1CheatSheets: CheatSheet[] = [
         items: [
           {
             label: '[[phys-angular-momentum|Angular momentum]]',
-            tex: '\\vec{L} = \\vec{r} \\times \\vec{p}, \\qquad L = I\\omega \\ \\text{(rigid body, fixed axis)}, \\qquad \\sum\\vec{\\tau}_{\\text{ext}} = \\frac{d\\vec{L}}{dt}',
+            tex: '\\begin{aligned} &\\vec{L} = \\vec{r} \\times \\vec{p}, \\qquad \\textstyle\\sum\\vec{\\tau}_{\\text{ext}} = \\dfrac{d\\vec{L}}{dt} \\\\ &L = I\\omega \\ \\text{(rigid body, fixed axis)} \\end{aligned}',
           },
           {
             label: '[[phys-conservation-of-angular-momentum|Conservation]]',
@@ -427,7 +427,7 @@ export const phys1CheatSheets: CheatSheet[] = [
         items: [
           {
             label: '[[phys-newtons-law-of-gravitation|Universal gravitation]]',
-            tex: 'F = \\frac{Gm_1m_2}{r^2}, \\qquad G = 6.674 \\times 10^{-11}\\,\\text{N}\\cdot\\text{m}^2/\\text{kg}^2',
+            tex: '\\begin{aligned} &F = \\frac{Gm_1m_2}{r^2} \\\\ &G = 6.674 \\times 10^{-11}\\,\\text{N}\\cdot\\text{m}^2/\\text{kg}^2 \\end{aligned}',
           },
           { label: 'Surface [[phys-gravitational-field|gravity]]', tex: 'g = \\frac{GM}{R^2}' },
           {
@@ -437,7 +437,7 @@ export const phys1CheatSheets: CheatSheet[] = [
           },
           {
             label: 'Circular [[phys-orbital-speed|orbit]]',
-            tex: 'v = \\sqrt{\\frac{GM}{r}}, \\qquad T^2 = \\frac{4\\pi^2}{GM}\\,r^3, \\qquad E = -\\frac{GMm}{2r}',
+            tex: '\\begin{aligned} &v = \\sqrt{\\frac{GM}{r}}, \\qquad T^2 = \\frac{4\\pi^2}{GM}\\,r^3 \\\\ &E = -\\frac{GMm}{2r} \\end{aligned}',
           },
           { label: 'Elliptical orbit energy', tex: 'E = -\\frac{GMm}{2a}', text: '$a$ is the [[phys-semi-major-axis|semi-major axis]]; Kepler\'s third law holds with $r \\to a$.' },
           { label: '[[phys-escape-speed|Escape speed]]', tex: 'v_{\\text{esc}} = \\sqrt{\\frac{2GM}{R}}' },
@@ -452,9 +452,9 @@ export const phys1CheatSheets: CheatSheet[] = [
         items: [
           {
             label: '[[phys-simple-harmonic-motion|SHM]]',
-            tex: '\\frac{d^2x}{dt^2} = -\\omega^2x \\implies x = A\\cos(\\omega t + \\phi), \\qquad \\omega = \\sqrt{\\frac{k}{m}} = 2\\pi f = \\frac{2\\pi}{T}',
+            tex: '\\begin{aligned} &\\frac{d^2x}{dt^2} = -\\omega^2x \\implies x = A\\cos(\\omega t + \\phi) \\\\ &\\omega = \\sqrt{\\frac{k}{m}} = 2\\pi f = \\frac{2\\pi}{T} \\end{aligned}',
           },
-          { label: 'Velocity and acceleration', tex: 'v_{\\max} = \\omega A, \\qquad a_{\\max} = \\omega^2A, \\qquad v = \\pm\\omega\\sqrt{A^2 - x^2}' },
+          { label: 'Velocity and acceleration', tex: '\\begin{aligned} &v_{\\max} = \\omega A, \\qquad a_{\\max} = \\omega^2A \\\\ &v = \\pm\\omega\\sqrt{A^2 - x^2} \\end{aligned}' },
           { label: 'Energy', tex: 'E = \\tfrac12 kA^2 = \\tfrac12 mv^2 + \\tfrac12 kx^2' },
           {
             label: '[[phys-simple-pendulum|Simple]] and [[phys-physical-pendulum|physical]] pendulum (small angles)',
@@ -468,7 +468,7 @@ export const phys1CheatSheets: CheatSheet[] = [
         items: [
           {
             label: '[[damped-oscillation|Damped oscillator]]',
-            tex: 'm\\ddot{x} + b\\dot{x} + kx = 0 \\implies x = Ae^{-bt/2m}\\cos(\\omega_dt + \\phi), \\quad \\omega_d = \\sqrt{\\omega_0^2 - \\left(\\frac{b}{2m}\\right)^2}',
+            tex: '\\begin{aligned} &m\\ddot{x} + b\\dot{x} + kx = 0 \\\\ &x = Ae^{-bt/2m}\\cos(\\omega_dt + \\phi) \\\\ &\\omega_d = \\sqrt{\\omega_0^2 - \\left(\\frac{b}{2m}\\right)^2} \\end{aligned}',
             text: '[[phys-critical-damping|Critical damping]] at $b = 2\\sqrt{km}$: fastest return without overshoot (door closers, camera springs).',
           },
           {
@@ -493,7 +493,7 @@ export const phys1CheatSheets: CheatSheet[] = [
         items: [
           {
             label: 'Sinusoidal wave',
-            tex: 'y(x, t) = A\\sin(kx - \\omega t + \\phi), \\qquad k = \\frac{2\\pi}{\\lambda}, \\quad \\omega = 2\\pi f, \\quad v = f\\lambda = \\frac{\\omega}{k}',
+            tex: '\\begin{aligned} &y(x, t) = A\\sin(kx - \\omega t + \\phi) \\\\ &k = \\frac{2\\pi}{\\lambda}, \\quad \\omega = 2\\pi f, \\quad v = f\\lambda = \\frac{\\omega}{k} \\end{aligned}',
             text: '$kx - \\omega t$ moves toward $+x$; $kx + \\omega t$ toward $-x$. [[phys-wave-number|Wave number]] $k$ in rad/m.',
           },
           { label: 'Speed on a string', tex: 'v = \\sqrt{\\frac{F_T}{\\mu}}', text: '[[phys-linear-mass-density|Linear density]] $\\mu = m/L$. The medium sets $v$; the source sets $f$.' },
@@ -508,12 +508,12 @@ export const phys1CheatSheets: CheatSheet[] = [
           { label: '[[phys-standing-wave|Standing wave]]', tex: 'y = 2A\\sin(kx)\\cos(\\omega t)', text: '[[phys-node-antinode|Nodes]] $\\lambda/2$ apart.' },
           {
             label: '[[phys-harmonic|Harmonics]]',
-            tex: 'f_n = n\\,\\frac{v}{2L} \\ (\\text{string, open pipe}), \\qquad f_n = n\\,\\frac{v}{4L},\\ n \\text{ odd} \\ (\\text{closed pipe})',
+            tex: '\\begin{aligned} &f_n = n\\,\\frac{v}{2L} \\ \\ (\\text{string, open pipe}) \\\\ &f_n = n\\,\\frac{v}{4L},\\ n \\text{ odd} \\ \\ (\\text{closed pipe}) \\end{aligned}',
           },
           { label: 'Speed of sound', tex: 'v = \\sqrt{\\frac{B}{\\rho}}, \\qquad v_{\\text{air}} \\approx 343\\,\\text{m/s at } 20\\,^{\\circ}\\text{C}' },
           {
             label: 'Intensity and [[phys-sound-intensity-level|decibels]]',
-            tex: 'I = \\frac{P}{4\\pi r^2}, \\qquad \\beta = 10\\log_{10}\\frac{I}{I_0}\\ \\text{dB}, \\quad I_0 = 10^{-12}\\,\\text{W/m}^2',
+            tex: '\\begin{aligned} &I = \\frac{P}{4\\pi r^2}, \\qquad \\beta = 10\\log_{10}\\frac{I}{I_0}\\ \\text{dB} \\\\ &I_0 = 10^{-12}\\,\\text{W/m}^2 \\end{aligned}',
             text: '$\\times 10$ intensity: $+10\\,\\text{dB}$. Double the distance: $-6\\,\\text{dB}$. Audio gain: $10^{\\text{dB}/20}$.',
           },
           { label: '[[phys-beats|Beats]]', tex: 'f_{\\text{beat}} = |f_1 - f_2|' },
@@ -541,7 +541,7 @@ export const phys1CheatSheets: CheatSheet[] = [
           },
           {
             label: '[[phys-velocity-verlet|Velocity Verlet]]',
-            tex: 'x_{n+1} = x_n + v_nh + \\tfrac12 a_nh^2, \\qquad v_{n+1} = v_n + \\tfrac12(a_n + a_{n+1})h',
+            tex: '\\begin{aligned} x_{n+1} &= x_n + v_nh + \\tfrac12 a_nh^2 \\\\ v_{n+1} &= v_n + \\tfrac12(a_n + a_{n+1})h \\end{aligned}',
             text: 'Second order, symplectic, exact for constant acceleration.',
           },
           {
@@ -551,7 +551,7 @@ export const phys1CheatSheets: CheatSheet[] = [
           },
           {
             label: 'Stability on a spring',
-            tex: '\\omega h < 2 \\ \\text{(semi-implicit Euler, Verlet)}, \\qquad \\omega = \\sqrt{k/m}',
+            tex: '\\begin{aligned} &\\omega h < 2, \\quad \\omega = \\sqrt{k/m} \\\\ &\\text{(semi-implicit Euler, Verlet)} \\end{aligned}',
             text: 'Run physics at a [[phys-fixed-timestep|fixed timestep]] below this limit; substep stiff springs.',
           },
         ],
@@ -561,7 +561,7 @@ export const phys1CheatSheets: CheatSheet[] = [
         items: [
           {
             label: 'Detection',
-            tex: '|\\vec{c}_B - \\vec{c}_A| < r_A + r_B, \\qquad \\text{AABBs: intervals overlap on every axis}',
+            tex: '\\begin{aligned} &\\text{spheres: } |\\vec{c}_B - \\vec{c}_A| < r_A + r_B \\\\ &\\text{AABBs: intervals overlap on every axis} \\end{aligned}',
             text: '[[phys-aabb|AABB]] tests in the [[phys-broad-phase|broad phase]], exact tests in the narrow phase.',
           },
           {

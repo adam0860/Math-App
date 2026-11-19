@@ -265,10 +265,10 @@ export const lesson: Lesson = {
         'Block 1: $m_1 g - T_1 = m_1 a$',
         'Block 2: $m_2 g - T_2 = m_2 a$',
         'Pulley: $(T_2 - T_1)R = \\tfrac12 MR^2 (a/R)$',
-        'Add: $(m_1 + m_2)g = (m_1 + m_2 + \\tfrac12 M)a$',
+        'Add: $(m_1 + m_2)g - 2T_1 = (m_1 + m_2 + \\tfrac12 M)a$',
       ],
       errorLines: [1],
-      explanation: 'Block 1 accelerates **upward**, so with the shared magnitude $a$ its equation must be $T_1 - m_1 g = m_1 a$ (net force up). Writing $m_1 g - T_1$ treats both blocks as falling. With the correct sign, adding gives $(m_2 - m_1)g = (m_1 + m_2 + \\tfrac12 M)a$. The student\'s result would even predict motion when $m_1 = m_2$, which is a red flag.',
+      explanation: 'Block 1 accelerates **upward**, so with the shared magnitude $a$ its equation must be $T_1 - m_1 g = m_1 a$ (net force up). Writing $m_1 g - T_1$ treats both blocks as falling. With the correct sign, adding gives $(m_2 - m_1)g = (m_1 + m_2 + \\tfrac12 M)a$. A red flag in the student\'s work: the tensions refuse to cancel when the three equations are added, leaving a stray $-2T_1$.',
     },
     {
       kind: 'concept',

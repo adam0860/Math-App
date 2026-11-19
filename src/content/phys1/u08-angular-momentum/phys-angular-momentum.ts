@@ -255,7 +255,7 @@ export const lesson: Lesson = {
       tolerance: 0.004,
       unit: 'rad/s',
       label: '$\\omega =$',
-      explanation: '$L_i = mvd = (0.010)(400)(0.80) = 3.2\\,\\text{kg·m}^2/\\text{s}$. After: $I = \\tfrac13(18)(1.0)^2 + (0.010)(0.80)^2 = 6.0064\\,\\text{kg·m}^2$, so $\\omega = 3.2/6.0064 \\approx 0.533\\,\\text{rad/s}$. Using the rod-about-center formula $\\tfrac{1}{12}MW^2$ gives $2.13$; using linear momentum gives nonsense, since the hinge force is huge during the impact. Of the bullet\'s $800\\,\\text{J}$, less than $1\\,\\text{J}$ remains as kinetic energy.',
+      explanation: '$L_i = mvd = (0.010)(400)(0.80) = 3.2\\,\\text{kg·m}^2/\\text{s}$. After: $I = \\tfrac13(18)(1.0)^2 + (0.010)(0.80)^2 = 6.0064\\,\\text{kg·m}^2$, so $\\omega = 3.2/6.0064 \\approx 0.533\\,\\text{rad/s}$. Using the rod-about-center formula $\\tfrac{1}{12}MW^2$ gives $2.12$; using linear momentum gives nonsense, since the hinge force is huge during the impact. Of the bullet\'s $800\\,\\text{J}$, less than $1\\,\\text{J}$ remains as kinetic energy.',
     },
     {
       kind: 'mcq',
