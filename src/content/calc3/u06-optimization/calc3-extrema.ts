@@ -166,7 +166,7 @@ export const lesson: Lesson = {
             { tex: 'x = (x^3)^3 = x^9 \\implies x(x^8 - 1) = 0 \\implies x = 0, \\pm 1', why: 'Substitute the first into the second and factor. Do not divide by $x$: that would lose $x = 0$. The other real roots come from $x^8 = 1$.' },
             { tex: '(0, 0),\\ (1, 1),\\ (-1, -1)', why: 'Recover $y = x^3$ for each $x$.' },
             { tex: 'D = (12x^2)(12y^2) - (-4)^2 = 144x^2y^2 - 16', why: 'Here $f_{xx} = 12x^2$, $f_{yy} = 12y^2$, $f_{xy} = -4$.' },
-            { tex: 'D(0, 0) = -16 < 0: \\text{saddle}; \\quad D(\\pm 1, \\pm 1) = 128 > 0,\\ f_{xx} = 12 > 0: \\text{min}', why: 'Apply the test at each point. Both minima have value $f = 1 + 1 - 4 + 1 = -1$.' },
+            { tex: 'D(0, 0) = -16 < 0: \\text{saddle}; \\quad D(1, 1) = D(-1, -1) = 128 > 0,\\ f_{xx} = 12 > 0: \\text{min}', why: 'Apply the test at each point. Both minima have value $f = 1 + 1 - 4 + 1 = -1$.' },
           ],
           result: 'Saddle at $(0, 0)$; local minima $-1$ at $(1, 1)$ and $(-1, -1)$.',
         },

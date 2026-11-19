@@ -113,7 +113,7 @@ export const lesson: Lesson = {
             { x: 1, y: 0, label: 'min 1', color: 'red' },
             { x: -1, y: 0, label: 'min 1', color: 'red' },
           ],
-          caption: 'The ellipse $c = 1$ touches the circle from inside at $(\\pm 1, 0)$; the ellipse $c = 2$ touches it from outside at $(0, \\pm 1)$. The other ellipses cross the circle, so they contain no extremes.',
+          caption: 'The ellipse $c = 1$ touches the circle from inside at $(\\pm 1, 0)$; the ellipse $c = 2$ touches it from outside at $(0, \\pm 1)$. The ellipse $c = 1.5$ crosses the circle, and $c = 0.5$ and $c = 2.5$ miss it entirely, so none of them marks an extreme.',
         },
         {
           type: 'callout',

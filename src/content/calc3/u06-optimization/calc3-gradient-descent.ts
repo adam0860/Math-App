@@ -462,7 +462,7 @@ Momentum    3020 steps  ->  (1.0000, 1.0000)  f = 0.00000000
 Newton         6 steps  ->  (1.0000, 1.0000)  f = 0.00000000`,
           annotations: [
             { lines: '14-16', text: 'The gradient by hand: $f_x = -2(1 - x) - 400x(y - x^2)$ and $f_y = 200(y - x^2)$.' },
-            { lines: 30, text: 'Plain descent with $\\eta = 0.001$. A larger $\\eta$ diverges: the valley walls are steep, with curvature in the hundreds.' },
+            { lines: 30, text: 'Plain descent with $\\eta = 0.001$. There is little room to raise it: near the minimum the steepest curvature is about $1000$, so the stability limit $\\frac{2}{\\lambda_{\\max}}$ is about $0.002$, and at $\\eta = 0.002$ the run no longer converges.' },
             { lines: '37-38', text: 'Same $\\eta$, plus a velocity with $\\beta = 0.9$. Along the valley floor the steps add up to about $\\frac{1}{1 - 0.9} = 10$ times larger, so momentum needs about a tenth of the steps.' },
             { lines: '45-49', text: 'The Hessian $\\begin{bmatrix} 2 - 400(y - 3x^2) & -400x \\\\ -400x & 200 \\end{bmatrix}$, and the $2 \\times 2$ solve $H\\vec{p} = \\nabla f$ by Cramer\'s rule.' },
           ],
