@@ -437,7 +437,7 @@ Wald interval,   n = 30, p = 0.1:  coverage 0.809
 Wilson interval, n = 30, p = 0.1:  coverage 0.973`,
           annotations: [
             { lines: '8-11', text: 'The [[stat-box-muller|Box–Muller transform]] turns two independent uniforms into a standard normal. Writing it yourself (instead of `std::normal_distribution`) makes the output identical on every compiler.' },
-            { lines: '26-27', text: 'The interval covers $\\mu$ exactly when $|\\bar{x} - \\mu|$ is at most the half-width.' },
+            { lines: '27-28', text: 'The interval covers $\\mu$ exactly when $|\\bar{x} - \\mu|$ is at most the half-width.' },
             { lines: '40-42', text: 'Wilson: center pulled toward $\\frac{1}{2}$, half-width from the formula on the previous card.' },
           ],
         },
