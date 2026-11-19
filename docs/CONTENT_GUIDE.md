@@ -25,7 +25,7 @@ src/content/
 ```
 
 Courses: `algebra` (lesson ids `alg-…`), `trig` (`trig-…`), `calc1` (`calc1-…`),
-`calc2` (`calc2-…`), `linalg` (`la-…`), `chem` (`chem-…`), `genchem` (`gchem-…`), `orgo` (`ochem-…`). Every lesson file already exists as a **stub**. Replace the whole stub
+`calc2` (`calc2-…`), `linalg` (`la-…`), `discrete` (`dm-…`), `stats` (`stat-…`), `phys1` (`phys-…`), `chem` (`chem-…`), `genchem` (`gchem-…`), `orgo` (`ochem-…`). Every lesson file already exists as a **stub**. Replace the whole stub
 with the finished lesson. Keep the lesson `id` exactly as in the stub. You may refine the
 title slightly. The full outline is in `scripts/curriculum.json` — read the neighbouring
 lessons' titles so you don't duplicate topics owned by another lesson, and so you know what
