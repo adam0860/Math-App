@@ -641,6 +641,8 @@ if (!partial || glossaryOnly) checkGlossary();
     readFileSync(file, 'utf8')
       .split('\n')
       .forEach((line, i) => {
+        if (/\bfrom\s+['"](node:|fs['"]|path['"])|\brequire\(/.test(line))
+          err(`${file}:${i + 1}`, 'content files run in the browser — no Node imports (node:fs, path, require); inline the data instead');
         if (/(?<!\\)\\[;,!]/.test(line)) err(`${file}:${i + 1}`, 'single backslash before ; , or ! in a string — write \\\\; (TeX spacing) so the backslash survives');
       });
   }
