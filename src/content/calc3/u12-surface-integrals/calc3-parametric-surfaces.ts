@@ -285,6 +285,7 @@ export const lesson: Lesson = {
       answer: '4sqrt(2)pi',
       answerTex: '4\\sqrt{2}\\,\\pi \\approx 17.77',
       plot3d: {
+        type: 'plot3d',
         x: [-2.2, 2.2],
         y: [-2.2, 2.2],
         z: [0, 2.2],
