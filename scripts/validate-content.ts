@@ -612,6 +612,13 @@ function checkGlossary() {
     if (sheetIds.has(s.id)) err(w, 'duplicate sheet id');
     sheetIds.add(s.id);
     if (!s.sections.length) err(w, 'no sections');
+    // Descriptions and section titles render inside buttons/links, so math is fine but glossary links are not.
+    checkInline(w + ' description', s.description);
+    if (/\[\[/.test(s.description)) err(w, 'description: no [[glossary]] links (it is shown inside a button)');
+    s.sections.forEach((sec) => {
+      checkInline(`${w} › ${sec.title} (title)`, sec.title);
+      if (/\[\[/.test(sec.title)) err(w, `section title "${sec.title}": no [[glossary]] links (shown inside a link)`);
+    });
     s.sections.forEach((sec) =>
       sec.items.forEach((it, i) => {
         const iw = `${w} › ${sec.title}[${i}]`;

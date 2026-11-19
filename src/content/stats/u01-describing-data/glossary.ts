@@ -23,7 +23,7 @@ export const glossary: GlossaryEntry[] = [
   },
   {
     id: 'stat-parameter',
-    term: 'Parameter',
+    term: 'Parameter (Statistics)',
     course: 'stats',
     category: 'Data and Sampling',
     short: 'A number describing a population, such as the population mean $\\mu$, standard deviation $\\sigma$ or proportion $p$. Fixed, but usually unknown.',
@@ -206,7 +206,7 @@ export const glossary: GlossaryEntry[] = [
   },
   {
     id: 'stat-range',
-    term: 'Range',
+    term: 'Range (Statistics)',
     course: 'stats',
     category: 'Descriptive Statistics',
     short: 'The largest value minus the smallest. Simple, but it depends only on the two most extreme values, so it is very sensitive to outliers.',
