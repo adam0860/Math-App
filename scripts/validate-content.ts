@@ -321,6 +321,10 @@ function checkPlot3D(where: string, g: Plot3DBlock) {
     drawables++;
     [p.x, p.y, p.z].forEach((v) => num(`${where} points[${i}]`, v));
   });
+  g.segments?.forEach((v, i) => {
+    drawables++;
+    [...v.from, ...v.to].forEach((c) => num(`${where} segments[${i}]`, c));
+  });
   g.vectors?.forEach((v, i) => {
     drawables++;
     [...v.from, ...v.to].forEach((c) => num(`${where} vectors[${i}]`, c));

@@ -167,12 +167,16 @@ export interface Plot3DBlock {
   /** Space curves r(t) = (x, y, z). Use `t`. */
   curves?: { x: string; y: string; z: string; t: [NumOrExpr, NumOrExpr]; label?: string; color?: GraphColor; dashed?: boolean }[];
   points?: { x: NumOrExpr; y: NumOrExpr; z: NumOrExpr; label?: string; color?: GraphColor }[];
+  /** Straight segments (no arrowhead): polylines, edges of boxes, projections onto the floor. */
+  segments?: { from: [NumOrExpr, NumOrExpr, NumOrExpr]; to: [NumOrExpr, NumOrExpr, NumOrExpr]; color?: GraphColor; dashed?: boolean }[];
   /** Arrows from `from` to `to` (vectors, normals, gradients, tangent vectors). */
   vectors?: { from: [NumOrExpr, NumOrExpr, NumOrExpr]; to: [NumOrExpr, NumOrExpr, NumOrExpr]; label?: string; color?: GraphColor }[];
   /** 3D vector field ⟨P, Q, R⟩ in x, y, z drawn as arrows on an n × n × n grid (default n = 5). */
   field?: { x: string; y: string; z: string; n?: number; color?: GraphColor };
   /** Draw level curves of the first surface on the floor of the box at these heights. */
   contours?: NumOrExpr[];
+  /** Color of the floor contours (default purple). */
+  contourColor?: GraphColor;
   /** Mesh cells per side for surfaces (default 26, max 50). */
   resolution?: number;
   /** Initial view, degrees: azimuth turns about the z-axis, elevation tilts toward looking down. */

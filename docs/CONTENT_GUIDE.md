@@ -184,8 +184,9 @@ TeX is full of backslashes, so **every backslash must be doubled** in TS source:
     curves: [{ x: 'cos(t)', y: 'sin(t)', z: 't/4', t: [0, '4pi'], label? }],                  // space curves
     points: [{ x: 'a', y: 0, z: 'a^2', label: 'P' }],
     vectors: [{ from: [0, 0, 0], to: [1, 2, 'a'], label: 'v' }],                              // arrows
+    segments: [{ from: [0, 0, 0], to: ['a', 0, 0], dashed?: true, color? }],                 // plain line segments
     field: { x: '-y', y: 'x', z: '0', n?: 5 },     // 3D vector field (x, y, z available)
-    contours: [-2, 0, 2],                          // level curves of the first surface, on the floor
+    contours: [-2, 0, 2], contourColor?: 'purple', // level curves of the first surface, on the floor
     resolution?: 26, view?: { azimuth: 30, elevation: 25 },
     sliders, readouts, caption,                    // as for graphs (slider names not x, y, z, t, u, v, e)
   }

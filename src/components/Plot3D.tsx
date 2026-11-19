@@ -231,7 +231,7 @@ export function Plot3D({ g, compact }: { g: Plot3DBlock; compact?: boolean }) {
                 pts.push(at(ia + (ib - ia) * t, ja + (jb - ja) * t));
               }
             }
-            for (let k = 0; k + 1 < pts.length; k += 2) pushLine(pts[k], pts[k + 1], 'purple', 1.8);
+            for (let k = 0; k + 1 < pts.length; k += 2) pushLine(pts[k], pts[k + 1], g.contourColor ?? 'purple', 1.8);
           }
         }
       });
@@ -241,6 +241,13 @@ export function Plot3D({ g, compact }: { g: Plot3DBlock; compact?: boolean }) {
       const P = proj(p), Q = proj(q);
       items.push({ kind: 'arrow', a: [P[0], P[1]], b: [Q[0], Q[1]], depth: Math.min(P[2], Q[2]) - 1e-3, color, width });
     };
+
+    (g.segments ?? []).forEach((sg) => {
+      const p = sg.from.map((c) => num(c, env)) as V3;
+      const q = sg.to.map((c) => num(c, env)) as V3;
+      if (![...p, ...q].every(Number.isFinite)) return;
+      pushLine(p, q, sg.color ?? 'gray', 2.4, sg.dashed);
+    });
 
     (g.vectors ?? []).forEach((v) => {
       const p = v.from.map((c) => num(c, env)) as V3;
