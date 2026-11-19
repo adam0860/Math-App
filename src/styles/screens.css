@@ -1829,3 +1829,21 @@
   background: color-mix(in srgb, var(--stats-1) 16%, transparent);
   color: color-mix(in srgb, var(--stats-1) 70%, var(--text));
 }
+
+.continue-card.course-phys1 {
+  background: linear-gradient(140deg, color-mix(in srgb, var(--phys1-1) 12%, var(--surface)), var(--surface) 60%);
+}
+.course-card.course-phys1 {
+  background: linear-gradient(135deg, #450a0a, #991b1b 50%, #c2410c);
+}
+.course-tab.on.course-phys1 {
+  background: color-mix(in srgb, var(--phys1-1) 15%, transparent);
+  color: color-mix(in srgb, var(--phys1-1) 65%, var(--text));
+}
+.course-hero.course-phys1 {
+  background: linear-gradient(135deg, #3f0a0a, #7f1d1d 50%, #9a3412);
+}
+.sheet-card.course-phys1 .sheet-badge {
+  background: color-mix(in srgb, var(--phys1-1) 16%, transparent);
+  color: color-mix(in srgb, var(--phys1-1) 70%, var(--text));
+}

@@ -362,6 +362,26 @@
   align-items: center;
   gap: 12px;
 }
+.graph-slider.has-play {
+  grid-template-columns: minmax(28px, auto) 1fr 52px 32px;
+}
+.graph-play {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--border, color-mix(in srgb, var(--text) 18%, transparent));
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--accent);
+  cursor: pointer;
+}
+.graph-play.on {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
 .graph-slider input[type='range'] {
   width: 100%;
   accent-color: var(--accent);

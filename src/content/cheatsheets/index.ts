@@ -7,7 +7,8 @@ import { chemCheatSheets } from './chem';
 import { genchemCheatSheets } from './genchem';
 import { orgoCheatSheets } from './orgo';
 import { statsCheatSheets } from './stats';
+import { phys1CheatSheets } from './phys1';
 import { discreteCheatSheets } from './discrete';
 import { linalgCheatSheets } from './linalg';
 
-export const cheatSheets: CheatSheet[] = [...algebraCheatSheets, ...trigCheatSheets, ...calc1CheatSheets, ...calc2CheatSheets, ...chemCheatSheets, ...genchemCheatSheets, ...orgoCheatSheets, ...statsCheatSheets, ...discreteCheatSheets, ...linalgCheatSheets];
+export const cheatSheets: CheatSheet[] = [...algebraCheatSheets, ...trigCheatSheets, ...calc1CheatSheets, ...calc2CheatSheets, ...chemCheatSheets, ...genchemCheatSheets, ...orgoCheatSheets, ...statsCheatSheets, ...phys1CheatSheets, ...discreteCheatSheets, ...linalgCheatSheets];

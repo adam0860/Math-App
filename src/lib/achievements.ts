@@ -67,6 +67,8 @@ export const achievements: Achievement[] = [
   { id: 'discrete-graduate', icon: '🧮', title: 'Discrete Math Graduate', description: 'Complete the entire Discrete Mathematics course.', test: courseDone('discrete') },
   { id: 'significant', icon: '⚖️', title: 'Statistically Significant', description: 'Finish the Hypothesis Testing unit.', test: unitDone('stat-u08-hypothesis-testing') },
   { id: 'stats-graduate', icon: '📊', title: 'Statistics Graduate', description: 'Complete the entire Probability and Statistics course.', test: courseDone('stats') },
+  { id: 'energy-conserved', icon: '🎢', title: 'Energy Conserved', description: 'Finish the Work and Energy unit.', test: unitDone('phys-u05-work-energy') },
+  { id: 'phys1-graduate', icon: '🚀', title: 'Physics I Graduate', description: 'Complete the entire Physics I: Mechanics course.', test: courseDone('phys1') },
   { id: 'calc2-graduate', icon: '🏆', title: 'Calculus II Graduate', description: 'Complete the entire Calculus II course.', test: courseDone('calc2') },
   {
     id: 'night-owl',

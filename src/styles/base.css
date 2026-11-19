@@ -471,3 +471,7 @@ a {
 .bar.course-stats .bar-fill {
   background: linear-gradient(90deg, var(--stats-1), var(--stats-2));
 }
+
+.bar.course-phys1 .bar-fill {
+  background: linear-gradient(90deg, var(--phys1-1), var(--phys1-2));
+}

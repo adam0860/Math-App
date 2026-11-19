@@ -72,6 +72,14 @@ const courseMeta = {
     description:
       'Calculus-based probability and statistics for computer science: describing data, discrete and continuous random variables, the normal distribution, joint distributions, the central limit theorem, estimation and confidence intervals, hypothesis testing and A/B tests, chi-square and the bootstrap, regression, Bayesian inference, and simulation.',
   },
+  phys1: {
+    exportName: 'phys1Course',
+    title: 'Physics I: Mechanics',
+    short: 'Physics I',
+    subtitle: 'Calculus-based mechanics: motion, forces, energy, rotation and waves',
+    description:
+      'The first semester of calculus-based university physics: kinematics with derivatives and integrals, Newton’s laws, work and energy, momentum and collisions, rotation and angular momentum, gravitation and orbits, oscillations, waves and sound, and how game engines simulate all of it.',
+  },
   discrete: {
     exportName: 'discreteCourse',
     title: 'Discrete Mathematics',

@@ -20,7 +20,7 @@
  * Paragraph breaks inside a single string: use "\n\n".
  */
 
-export type CourseId = 'algebra' | 'trig' | 'calc1' | 'calc2' | 'linalg' | 'discrete' | 'stats' | 'chem' | 'genchem' | 'orgo';
+export type CourseId = 'algebra' | 'trig' | 'calc1' | 'calc2' | 'linalg' | 'discrete' | 'stats' | 'phys1' | 'chem' | 'genchem' | 'orgo';
 
 export type CodeLang = 'cpp' | 'text' | 'shell' | 'csharp' | 'ini' | 'json' | 'cmake';
 
@@ -119,7 +119,20 @@ export interface GraphBlock {
   /** Tangent line to `expr` at x = `at` (slope found numerically). Optional secant through `at` and `to`. */
   tangents?: { expr: string; at: NumOrExpr; secantTo?: NumOrExpr; color?: GraphColor; label?: string }[];
   /** Interactive parameters shown as sliders under the graph. */
-  sliders?: { name: string; min: number; max: number; step?: number; value: number; label?: string }[];
+  sliders?: {
+    name: string;
+    min: number;
+    max: number;
+    step?: number;
+    value: number;
+    label?: string;
+    /** Show a ▶ button that sweeps the slider upward over time (a time slider becomes an animation). */
+    play?: boolean;
+    /** Units per second while playing (default: the whole range in 4 s). */
+    speed?: number;
+    /** Wrap back to `min` at the end instead of stopping. */
+    loop?: boolean;
+  }[];
   /** Live readouts under the graph, e.g. { label: 'slope', expr: '2a' } (inline TeX allowed in label). */
   readouts?: { label: string; expr: string; digits?: number }[];
   /** Height in px at full width (default 300). */
@@ -379,6 +392,7 @@ export const COURSE_PREREQ: Partial<Record<CourseId, CourseId>> = {
   orgo: 'genchem',
   discrete: 'algebra',
   stats: 'calc2',
+  phys1: 'calc1',
 };
 
 // ---------------------------------------------------------------------------

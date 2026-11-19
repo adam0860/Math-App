@@ -7,6 +7,7 @@ import { chemGlossary } from './chem';
 import { genchemGlossary } from './genchem';
 import { orgoGlossary } from './orgo';
 import { statsGlossary } from './stats';
+import { phys1Glossary } from './phys1';
 import { discreteGlossary } from './discrete';
 import { linalgGlossary } from './linalg';
 import { glossary as algebra_u01 } from '../algebra/u01-foundations/glossary';
@@ -101,6 +102,18 @@ import { glossary as stats_u08 } from '../stats/u08-hypothesis-testing/glossary'
 import { glossary as stats_u09 } from '../stats/u09-categorical-resampling/glossary';
 import { glossary as stats_u10 } from '../stats/u10-regression/glossary';
 import { glossary as stats_u11 } from '../stats/u11-stats-computing/glossary';
+import { glossary as phys1_u01 } from '../phys1/u01-measurement-vectors/glossary';
+import { glossary as phys1_u02 } from '../phys1/u02-kinematics-1d/glossary';
+import { glossary as phys1_u03 } from '../phys1/u03-kinematics-2d/glossary';
+import { glossary as phys1_u04 } from '../phys1/u04-newtons-laws/glossary';
+import { glossary as phys1_u05 } from '../phys1/u05-work-energy/glossary';
+import { glossary as phys1_u06 } from '../phys1/u06-momentum/glossary';
+import { glossary as phys1_u07 } from '../phys1/u07-rotation/glossary';
+import { glossary as phys1_u08 } from '../phys1/u08-angular-momentum/glossary';
+import { glossary as phys1_u09 } from '../phys1/u09-gravitation/glossary';
+import { glossary as phys1_u10 } from '../phys1/u10-oscillations/glossary';
+import { glossary as phys1_u11 } from '../phys1/u11-waves/glossary';
+import { glossary as phys1_u12 } from '../phys1/u12-game-physics/glossary';
 
 export const glossary: GlossaryEntry[] = [
   ...algebraGlossary,
@@ -111,6 +124,7 @@ export const glossary: GlossaryEntry[] = [
   ...genchemGlossary,
   ...orgoGlossary,
   ...statsGlossary,
+  ...phys1Glossary,
   ...discreteGlossary,
   ...linalgGlossary,
   ...algebra_u01,
@@ -205,4 +219,16 @@ export const glossary: GlossaryEntry[] = [
   ...stats_u09,
   ...stats_u10,
   ...stats_u11,
+  ...phys1_u01,
+  ...phys1_u02,
+  ...phys1_u03,
+  ...phys1_u04,
+  ...phys1_u05,
+  ...phys1_u06,
+  ...phys1_u07,
+  ...phys1_u08,
+  ...phys1_u09,
+  ...phys1_u10,
+  ...phys1_u11,
+  ...phys1_u12,
 ];

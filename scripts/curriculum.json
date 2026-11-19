@@ -534,5 +534,65 @@
         ["stat-bayesian", "Bayesian Inference"],
         ["stat-simulation", "Simulation and Generating Random Variables"],
         ["stat-games-ml", "Statistics in Games and Machine Learning"] ] }
+  ],
+  "phys1": [
+    {"dir": "u01-measurement-vectors", "id": "phys-u01-measurement-vectors", "icon": "📏", "title": "Measurement and Vectors", "description": "Units, dimensional analysis and estimation, then vectors as the language of physics: components, the dot product and the cross product.",
+      "lessons": [
+        ["phys-units-dimensions", "Units, Dimensions and Estimation"],
+        ["phys-vectors", "Vectors for Physics"] ] },
+    {"dir": "u02-kinematics-1d", "id": "phys-u02-kinematics-1d", "icon": "🏃", "title": "Motion in One Dimension", "description": "Position, velocity and acceleration as derivatives and integrals, constant-acceleration motion, and free fall.",
+      "lessons": [
+        ["phys-position-velocity", "Position, Velocity and Acceleration"],
+        ["phys-constant-acceleration", "Constant Acceleration"],
+        ["phys-free-fall", "Free Fall and Motion Graphs"] ] },
+    {"dir": "u03-kinematics-2d", "id": "phys-u03-kinematics-2d", "icon": "🎯", "title": "Motion in Two Dimensions", "description": "Position and velocity vectors, projectile motion, uniform circular motion and relative velocity.",
+      "lessons": [
+        ["phys-motion-2d", "Displacement, Velocity and Acceleration Vectors"],
+        ["phys-projectile-motion", "Projectile Motion"],
+        ["phys-circular-relative", "Circular Motion and Relative Velocity"] ] },
+    {"dir": "u04-newtons-laws", "id": "phys-u04-newtons-laws", "icon": "🍎", "title": "Newton's Laws", "description": "Force, mass and Newton's three laws, free-body diagrams, friction and drag, and the dynamics of circular motion.",
+      "lessons": [
+        ["phys-newtons-laws", "Force and Newton's Laws"],
+        ["phys-free-body-diagrams", "Free-Body Diagrams in Action"],
+        ["phys-friction-drag", "Friction, Drag and Terminal Velocity"],
+        ["phys-circular-dynamics", "Dynamics of Circular Motion"] ] },
+    {"dir": "u05-work-energy", "id": "phys-u05-work-energy", "icon": "⚡", "title": "Work and Energy", "description": "Work as an integral, kinetic energy and the work–energy theorem, power, potential energy and conservative forces, and conservation of energy.",
+      "lessons": [
+        ["phys-work", "Work Done by a Force"],
+        ["phys-kinetic-energy", "Kinetic Energy, the Work–Energy Theorem and Power"],
+        ["phys-potential-energy", "Potential Energy and Conservative Forces"],
+        ["phys-energy-conservation", "Conservation of Energy"] ] },
+    {"dir": "u06-momentum", "id": "phys-u06-momentum", "icon": "💥", "title": "Momentum and Collisions", "description": "Momentum and impulse, conservation of momentum in collisions, and the center of mass of systems and extended objects.",
+      "lessons": [
+        ["phys-momentum-impulse", "Momentum and Impulse"],
+        ["phys-collisions", "Collisions"],
+        ["phys-center-of-mass", "Center of Mass and Systems of Particles"] ] },
+    {"dir": "u07-rotation", "id": "phys-u07-rotation", "icon": "🌀", "title": "Rotation", "description": "Angular position, velocity and acceleration, moment of inertia and rotational kinetic energy, and torque with Newton's second law for rotation.",
+      "lessons": [
+        ["phys-rotational-kinematics", "Rotational Kinematics"],
+        ["phys-moment-of-inertia", "Moment of Inertia and Rotational Energy"],
+        ["phys-torque", "Torque and Rotational Dynamics"] ] },
+    {"dir": "u08-angular-momentum", "id": "phys-u08-angular-momentum", "icon": "⚖️", "title": "Rolling, Angular Momentum and Equilibrium", "description": "Rolling without slipping, angular momentum and its conservation, and static equilibrium.",
+      "lessons": [
+        ["phys-rolling", "Rolling Motion"],
+        ["phys-angular-momentum", "Angular Momentum"],
+        ["phys-static-equilibrium", "Static Equilibrium"] ] },
+    {"dir": "u09-gravitation", "id": "phys-u09-gravitation", "icon": "🪐", "title": "Gravitation", "description": "Newton's law of universal gravitation, gravitational fields and potential energy, orbits, escape speed and Kepler's laws.",
+      "lessons": [
+        ["phys-universal-gravitation", "Universal Gravitation"],
+        ["phys-orbits", "Orbits and Kepler's Laws"] ] },
+    {"dir": "u10-oscillations", "id": "phys-u10-oscillations", "icon": "〰️", "title": "Oscillations", "description": "Simple harmonic motion as a differential equation, springs and pendulums, energy in oscillations, and damped and driven oscillators with resonance.",
+      "lessons": [
+        ["phys-simple-harmonic-motion", "Simple Harmonic Motion"],
+        ["phys-pendulums", "Pendulums and Energy in Oscillations"],
+        ["phys-damped-driven", "Damped and Driven Oscillations"] ] },
+    {"dir": "u11-waves", "id": "phys-u11-waves", "icon": "🌊", "title": "Waves and Sound", "description": "Traveling waves and the wave equation, superposition and standing waves, and sound with intensity and the Doppler effect.",
+      "lessons": [
+        ["phys-traveling-waves", "Traveling Waves"],
+        ["phys-standing-waves-sound", "Standing Waves and Sound"] ] },
+    {"dir": "u12-game-physics", "id": "phys-u12-game-physics", "icon": "🎮", "title": "Physics in Game Engines", "description": "Numerical integration of motion (Euler, semi-implicit Euler, Verlet, RK4) and timestep stability, then collision detection and impulse-based collision response.",
+      "lessons": [
+        ["phys-numerical-integration", "Integrating Motion in Code"],
+        ["phys-collision-response", "Collisions and Rigid Bodies in Code"] ] }
   ]
 }
