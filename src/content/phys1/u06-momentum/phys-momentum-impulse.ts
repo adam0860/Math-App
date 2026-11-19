@@ -122,7 +122,7 @@ export const lesson: Lesson = {
             { tex: 'J_x = m(v_f - v_i) = 0.145\\,[50 - (-40)] = 13.1\\,\\text{N}\\cdot\\text{s}', why: 'Impulse–momentum theorem. Reversing direction means the speeds *add*.' },
             { tex: 'F_{\\text{avg}} = \\frac{J_x}{\\Delta t} = \\frac{13.05\\,\\text{N}\\cdot\\text{s}}{1.2 \\times 10^{-3}\\,\\text{s}} \\approx 1.1 \\times 10^{4}\\,\\text{N}', why: 'A typical bat–ball contact lasts about $1.2\\,\\text{ms}$.' },
           ],
-          result: 'For about a millisecond the bat pushes with over a tonne-weight of force, roughly 7000 times the ball\'s own weight. Gravity\'s impulse during the contact is utterly negligible.',
+          result: 'For about a millisecond the bat pushes with over a tonne-weight of force, nearly 8000 times the ball\'s own weight. Gravity\'s impulse during the contact is utterly negligible.',
         },
         {
           type: 'callout',
@@ -158,7 +158,7 @@ export const lesson: Lesson = {
           title: 'A 75 kg driver stopping from 15 m/s (54 km/h)',
           steps: [
             { tex: '|\\Delta p| = (75\\,\\text{kg})(15\\,\\text{m/s}) = 1125\\,\\text{kg}\\cdot\\text{m/s}', why: 'Same for every way of stopping.' },
-            { tex: '\\text{Dashboard, } \\Delta t \\approx 0.010\\,\\text{s}: \\quad F_{\\text{avg}} = \\frac{1125}{0.010} \\approx 1.1 \\times 10^{5}\\,\\text{N}', why: 'A hard surface stops you in about a centimetre: about 150 times body weight.' },
+            { tex: '\\text{Dashboard, } \\Delta t \\approx 0.010\\,\\text{s}: \\quad F_{\\text{avg}} = \\frac{1125}{0.010} \\approx 1.1 \\times 10^{5}\\,\\text{N}', why: 'A hard surface stops you within a few centimetres: about 150 times body weight.' },
             { tex: '\\text{Belt + airbag, } \\Delta t \\approx 0.15\\,\\text{s}: \\quad F_{\\text{avg}} = \\frac{1125}{0.15} = 7.5 \\times 10^{3}\\,\\text{N}', why: 'The belt stretches and the airbag vents gas, so the stop takes 15 times longer: about 10 times body weight, survivable.' },
           ],
           result: 'Same impulse, one-fifteenth of the force. The airbag also spreads that force over a large area of chest and face, lowering the pressure.',

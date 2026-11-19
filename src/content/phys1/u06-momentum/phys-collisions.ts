@@ -445,7 +445,7 @@ neutron on C-12 v1'= -0.846 v2'=  0.154  p:     1.00 ->     1.00  K kept: 100.0%
       kind: 'truefalse',
       prompt: 'In a perfectly inelastic collision, all of the kinetic energy is lost.',
       answer: false,
-      explanation: 'The objects stick together, but the combined object keeps moving with the centre-of-mass velocity, carrying kinetic energy $\\tfrac12(m_1 + m_2)v_{\\text{cm}}^2$. In the rear-end crash, $216\\,\\text{kJ}$ of $225\\,\\text{kJ}$ survived. All of it is lost only if the total momentum was zero to begin with, as in a head-on crash of equal momenta.',
+      explanation: 'The objects stick together, but the combined object keeps moving with the centre-of-mass velocity, carrying kinetic energy $\\tfrac12(m_1 + m_2)v_{\\text{cm}}^2$. In the rear-end crash, $216\\,\\text{kJ}$ of $225\\,\\text{kJ}$ survived. All of it is lost only if the total momentum was zero to begin with, as in a head-on crash of equal and opposite momenta.',
     },
     // ------------------------------------------------------------------ 12
     {

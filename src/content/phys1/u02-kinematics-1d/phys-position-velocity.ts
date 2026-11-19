@@ -547,7 +547,7 @@ exact          v(6) = 0.0000 m/s   x(6) = 36.0000 m`,
         {
           type: 'callout',
           variant: 'exam',
-          text: 'Graph-matching questions are a staple of physics exams and of the Force Concept Inventory. Work slope by slope: for each time interval, read the sign of the slope (and whether it is changing) on the given graph, then sketch the next graph down the chain. Check one area to confirm.',
+          text: 'Graph-matching questions are a staple of physics exams and of research tests such as the Test of Understanding Graphs in Kinematics (TUG-K). Work slope by slope: for each time interval, read the sign of the slope (and whether it is changing) on the given graph, then sketch the next graph down the chain. Check one area to confirm.',
         },
       ],
     },

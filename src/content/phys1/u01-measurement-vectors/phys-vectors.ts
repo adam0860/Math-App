@@ -395,7 +395,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'code',
           title: 'Dot products in game code',
-          text: 'Is the player in front of the guard? Check `dot(forward, toPlayer) > 0`. Inside a $90^\\circ$ view cone? Compare the normalized dot product with $\\cos 45^\\circ$. Sliding along a wall? Remove the velocity\'s component along the wall\'s normal $\\hat{n}$: $\\vec{v}_{\\text{slide}} = \\vec{v} - (\\vec{v} \\cdot \\hat{n})\\,\\hat{n}$, which is the [[vector-projection|vector projection]] at work. The program in the next card does all three.',
+          text: 'Is the player in front of the guard? Check `dot(forward, toPlayer) > 0`. Inside a $90^\\circ$ view cone? Compare the normalized dot product with $\\cos 45^\\circ$. Sliding along a wall? Remove the velocity\'s component along the wall\'s normal $\\hat{n}$: $\\vec{v}_{\\text{slide}} = \\vec{v} - (\\vec{v} \\cdot \\hat{n})\\,\\hat{n}$, which is the [[vector-projection|vector projection]] at work. The program in the cross-product card below does all three.',
         },
       ],
     },

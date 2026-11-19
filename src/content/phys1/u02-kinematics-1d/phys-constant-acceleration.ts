@@ -427,7 +427,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'p',
-          text: 'In code, gravity is applied once per frame. For a **constant** acceleration, the kinematic equation over one frame is exact, so the character reaches the designed height at any frame rate. The simpler Euler updates you will study in the game-physics unit are not exact:',
+          text: 'In code, gravity is applied once per frame. For a **constant** acceleration, the kinematic equation over one frame is exact, so every frame lands exactly on the designed arc, at any frame rate. The simpler Euler updates you will study in the game-physics unit are not exact:',
         },
         {
           type: 'code',

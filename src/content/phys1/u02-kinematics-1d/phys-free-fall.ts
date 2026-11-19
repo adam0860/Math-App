@@ -188,7 +188,7 @@ export const lesson: Lesson = {
         {
           type: 'graph',
           x: [-0.6, 2.3],
-          y: [-1, 21.5],
+          y: [-6.5, 21.5],
           functions: [{ expr: '20 - 4.9x^2', label: '$y(t) = 20.0 - 4.9t^2$ (m)', color: 'blue', domain: [0, 'sqrt(40/9.8)'] }],
           tangents: [{ expr: '20 - 4.9x^2', at: 'min(s, sqrt(40/9.8))', color: 'orange' }],
           segments: [
@@ -254,7 +254,7 @@ export const lesson: Lesson = {
         {
           type: 'graph',
           x: [-0.8, 5.3],
-          y: [-3, 33],
+          y: [-11, 33],
           functions: [{ expr: 'w*x - 4.9x^2', label: '$y(t)$ (m)', color: 'blue', domain: [0, '2w/9.8'] }],
           segments: [
             { from: [-0.4, '(w*min(s, 2w/9.8) - 4.9min(s, 2w/9.8)^2)'], to: ['min(s, 2w/9.8)', '(w*min(s, 2w/9.8) - 4.9min(s, 2w/9.8)^2)'], color: 'gray', dashed: true },
@@ -462,9 +462,9 @@ export const lesson: Lesson = {
       blanks: [
         { answers: ['downward-opening parabola'] },
         { answers: ['straight line'] },
-        { answers: ['$-g$'] },
+        { answers: ['$-g$', '$-g$ (downward)'] },
         { answers: ['zero'] },
-        { answers: ['$-g$ (downward)'] },
+        { answers: ['$-g$ (downward)', '$-g$'] },
       ],
       wordBank: ['downward-opening parabola', 'straight line', '$-g$', 'zero', '$-g$ (downward)', 'upward-opening parabola', 'horizontal line', '$+g$', 'zero too'],
       explanation: '$y = v_0t - \\tfrac12gt^2$ is quadratic with a negative leading coefficient: a downward-opening parabola. Its derivative $v_y = v_0 - gt$ is linear with slope $-g$. At the top $v_y = 0$, but the slope of $v_y(t)$, which is the acceleration, is still $-g$. "Zero too" is the misconception this lesson keeps confronting.',

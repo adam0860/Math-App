@@ -220,7 +220,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'history',
           title: 'A \\$125 million unit error',
-          text: 'In 1999 NASA lost the Mars Climate Orbiter. Ground software supplied thruster impulses in pound-force seconds, while the navigation software expected newton-seconds, a factor of about $4.45$. Each small trajectory correction was mis-modeled, and the probe flew far too low into the Martian atmosphere. Every number was computed correctly; the units were not.',
+          text: 'In 1999 NASA lost the Mars Climate Orbiter. Ground software supplied thruster impulses in pound-force seconds, while the navigation software expected newton-seconds, a factor of about $4.45$. The effect of each small thruster firing on the trajectory was underestimated, and the probe flew far too low into the Martian atmosphere. Every number was computed correctly; the units were not.',
         },
         {
           type: 'callout',
@@ -631,7 +631,7 @@ start   10000000 m   moved 0.0000 m   float spacing 1.0000000 m`,
           type: 'callout',
           variant: 'history',
           title: 'Fermi at Trinity',
-          text: 'At the first atomic bomb test in July 1945, Enrico Fermi dropped scraps of paper as the blast wave passed and watched how far they were carried. From that one rough measurement he estimated the yield at about 10 kilotons of TNT. Later analyses put it near 20 kilotons: the right order of magnitude from a handful of paper.',
+          text: 'At the first atomic bomb test in July 1945, Enrico Fermi dropped scraps of paper as the blast wave passed and watched how far they were carried. From that one rough measurement he estimated the yield at about 10 kilotons of TNT. Later analyses put it at roughly 20 to 25 kilotons: the right order of magnitude from a handful of paper.',
         },
         {
           type: 'callout',
