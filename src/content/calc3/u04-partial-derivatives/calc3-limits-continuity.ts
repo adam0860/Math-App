@@ -104,7 +104,7 @@ export const lesson: Lesson = {
           sliders: [{ name: 'm', min: -3, max: 3, step: 0.05, value: 1, label: 'slope $m$', play: true }],
           readouts: [{ label: 'limit along $y = mx$: $\\dfrac{m}{1 + m^2} =$', expr: 'm/(1 + m^2)' }],
           resolution: 40,
-          view: { azimuth: 35, elevation: 25 },
+          view: { azimuth: 115, elevation: 22 },
           caption: 'The surface is made of horizontal rays: along each line through the origin its height is constant. Turn the red ray with $m$ and it slides up and down the $z$-axis, so near the origin the surface takes every value between $-\\frac12$ and $\\frac12$.',
         },
         {

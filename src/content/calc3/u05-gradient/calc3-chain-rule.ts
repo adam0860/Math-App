@@ -105,7 +105,7 @@ export const lesson: Lesson = {
           type: 'derivation',
           title: 'Find $\\frac{dz}{dt}$ at $t = 0$ for $z = x^2 y + 3xy^4$, $x = \\sin 2t$, $y = \\cos t$',
           steps: [
-            { tex: '\\frac{\\partial z}{\\partial x} = 2xy + 3y^4, \\quad \\frac{\\partial z}{\\partial y} = x^2 + 12xy^3', why: 'Partial derivatives of the outer function.' },
+            { tex: '\\frac{\\partial z}{\\partial x} = 2xy + 3y^4, \\quad \\frac{\\partial z}{\\partial y} = x^2 + 12xy^3', why: '[[calc3-partial-derivative|Partial derivatives]] of the outer function.' },
             { tex: '\\frac{dx}{dt} = 2\\cos 2t, \\quad \\frac{dy}{dt} = -\\sin t', why: 'Derivatives of the inner functions (one-variable chain rule for $\\sin 2t$).' },
             { tex: '\\frac{dz}{dt} = (2xy + 3y^4)(2\\cos 2t) + (x^2 + 12xy^3)(-\\sin t)', why: 'Assemble the chain rule: one product per input variable.' },
             { tex: 't = 0:\\quad x = 0,\\ y = 1', why: 'Find where the point is at the instant you care about.' },

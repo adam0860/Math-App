@@ -24,7 +24,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'p',
-          text: 'You already have the two ingredients. Slicing the surface with the vertical plane $y = b$ gives a curve whose slope at $x = a$ is the partial derivative $f_x(a, b)$. Slicing with $x = a$ gives a curve whose slope is $f_y(a, b)$. Each slice has its own tangent line through the point $P = (a, b, f(a, b))$. Two lines through one point, pointing in different directions, determine exactly one plane.',
+          text: 'You already have the two ingredients. Slicing the surface with the vertical plane $y = b$ gives a curve whose slope at $x = a$ is the [[calc3-partial-derivative|partial derivative]] $f_x(a, b)$. Slicing with $x = a$ gives a curve whose slope is $f_y(a, b)$. Each slice has its own tangent line through the point $P = (a, b, f(a, b))$. Two lines through one point, pointing in different directions, determine exactly one plane.',
         },
         {
           type: 'plot3d',
@@ -82,7 +82,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'p',
-          text: 'Compare it with the tangent line $y = f(a) + f\'(a)(x - a)$: the same pattern, with one slope term per input variable. Reading off the coefficients also hands you a [[la-surface-normal|normal vector]]. Move everything to one side to get $f_x(x - a) + f_y(y - b) - (z - z_0) = 0$, which is a plane with normal $\\vec{n} = \\langle f_x(a, b), f_y(a, b), -1 \\rangle$.',
+          text: 'Compare it with the tangent line $y = f(a) + f\'(a)(x - a)$: the same pattern, with one slope term per input variable. Reading off the coefficients also hands you a [[calc3-normal-vector|normal vector]]. Move everything to one side to get $f_x(x - a) + f_y(y - b) - (z - z_0) = 0$, which is a plane with normal $\\vec{n} = \\langle f_x(a, b), f_y(a, b), -1 \\rangle$.',
         },
         {
           type: 'derivation',
@@ -259,7 +259,7 @@ d = 0.025  f = 0.999068  L = 1.000000  error = 0.000932`,
         {
           type: 'callout',
           variant: 'exam',
-          text: 'Polynomials, exponentials, sines and cosines, and sums, products and compositions of them, have continuous partial derivatives wherever they are defined, so they are differentiable there. Exam questions about non-differentiability almost always use a piecewise function with a special value at the origin, like the one above. Check a few paths into the point: $y = 0$, $x = 0$, $y = x$, $y = x^2$.',
+          text: 'Polynomials, exponentials, sines and cosines, and sums, products and compositions of them, have continuous partial derivatives wherever they are defined, so they are differentiable there. Exam questions about non-differentiability almost always use a piecewise function with a special value at the origin, like the one above. Check a few paths into the point, as in the [[calc3-two-path-test]]: $y = 0$, $x = 0$, $y = x$, $y = x^2$.',
         },
       ],
     },

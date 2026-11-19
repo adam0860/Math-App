@@ -24,7 +24,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'p',
-          text: 'Picture the problem: maximize $f(x, y) = 3x + 4y$ subject to $x^2 + y^2 = 25$. The level curves of $f$ are parallel lines $3x + 4y = c$. You must stay on the circle. Slide a point around the circle and watch which level line passes through it.',
+          text: 'Picture the problem: maximize $f(x, y) = 3x + 4y$ subject to $x^2 + y^2 = 25$. The [[calc3-level-curve|level curves]] of $f$ are parallel lines $3x + 4y = c$. You must stay on the circle. Slide a point around the circle and watch which level line passes through it.',
         },
         {
           type: 'graph',
@@ -273,7 +273,7 @@ export const lesson: Lesson = {
           curves: [{ x: 'cos(t)', y: 'sin(t)', z: '1 - cos(t) + sin(t)', t: [0, '2pi'], color: 'red', label: 'intersection curve $C$' }],
           points: [{ x: -0.3714, y: 0.9285, z: 2.2999, label: 'max', color: 'orange' }],
           vectors: [{ from: [-0.3714, 0.9285, 2.2999], to: [-0.1714, 1.3285, 2.8999], color: 'orange', label: '∇f' }],
-          view: { azimuth: 135, elevation: 25 },
+          view: { azimuth: 15, elevation: 22 },
           caption: 'The plane slices the cylinder in a tilted ellipse $C$. On $C$, $f = x + 2y + 3z$ is largest at the orange point, where $\\nabla f = \\langle 1, 2, 3 \\rangle$ is perpendicular to $C$.',
         },
         {

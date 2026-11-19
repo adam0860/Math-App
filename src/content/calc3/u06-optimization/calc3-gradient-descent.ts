@@ -338,7 +338,7 @@ export const lesson: Lesson = {
           type: 'plot3d',
           x: [-1.6, 1.6],
           y: [-1.2, 1.2],
-          z: [-0.4, 0.9],
+          z: [-0.3, 1.1],
           surfaces: [{ expr: 'x^4/4 - x^2/2 + y^2/2', color: 'blue', opacity: 0.55, label: '$f = \\frac{x^4}{4} - \\frac{x^2}{2} + \\frac{y^2}{2}$' }],
           contours: [-0.2, -0.1, 0, 0.2, 0.4],
           points: [
@@ -346,7 +346,7 @@ export const lesson: Lesson = {
             { x: 1, y: 0, z: -0.25, label: 'min', color: 'green' },
             { x: -1, y: 0, z: -0.25, label: 'min', color: 'green' },
           ],
-          view: { azimuth: 20, elevation: 25 },
+          view: { azimuth: 250, elevation: 22 },
           caption: 'A toy loss landscape: two minima ($f = -\\frac{1}{4}$) separated by a saddle at the origin. The Hessian there is $\\begin{bmatrix} -1 & 0 \\\\ 0 & 1 \\end{bmatrix}$: downhill along $x$, uphill along $y$.',
         },
         {
@@ -356,7 +356,7 @@ export const lesson: Lesson = {
         {
           type: 'graph',
           x: [-0.3, 1.3],
-          y: [-0.15, 1.05],
+          y: [-0.15, 1.15],
           implicit: [{ expr: 'x^4/4 - x^2/2 + y^2/2', levels: [-0.2, -0.1, 0, 0.1, 0.25, 0.45], label: 'contours of $f$', color: 'purple' }],
           segments: polyline(SADDLE_PATH, 'red'),
           points: [

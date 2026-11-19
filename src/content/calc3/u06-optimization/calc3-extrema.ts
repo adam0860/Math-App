@@ -50,7 +50,7 @@ export const lesson: Lesson = {
             { x: -1, y: -1, z: 0, label: 'saddle', color: 'orange' },
           ],
           view: { azimuth: 35, elevation: 28 },
-          caption: 'This surface has four critical points, all with horizontal tangent planes. One is a peak, one a pit, and two are saddles. Drag to turn it and compare with the purple contour map on the floor: closed loops circle the peak and the pit, while at a saddle the contours cross.',
+          caption: 'This surface has four critical points, all with horizontal tangent planes. One is a peak, one a pit, and two are saddles. Drag to turn it and compare with the purple [[calc3-contour-map|contour map]] on the floor: closed loops circle the peak and the pit, while at a saddle the contours cross.',
         },
         {
           type: 'derivation',
@@ -260,13 +260,13 @@ export const lesson: Lesson = {
       kind: 'order',
       prompt: 'Put the steps for finding the absolute extrema of a continuous $f$ on a closed, bounded region $R$ in order.',
       lines: [
-        'Find the critical points of $f$ that lie inside $R$, and evaluate $f$ at each',
-        'Restrict $f$ to each piece of the boundary to get one-variable functions',
-        'Find the extreme values of those one-variable functions, including at the corners',
-        'Compare all the candidate values: the largest is the absolute max, the smallest the absolute min',
+        'Confirm that $f$ is continuous and $R$ is closed and bounded, so the absolute extrema are guaranteed to exist',
+        'List the candidate points: critical points of $f$ inside $R$, plus the one-variable extreme points on each boundary piece and the corners',
+        'Evaluate $f$ at every candidate point',
+        'Compare the values: the largest is the absolute max, the smallest the absolute min',
       ],
       distractors: ['Discard every critical point where $D < 0$ before evaluating anything'],
-      explanation: 'Interior candidates, then boundary candidates (which needs the restriction step before the one-variable optimization), then a single comparison. You do not need the second derivative test at all: saddles are simply never the largest or smallest value, so the comparison handles them automatically.',
+      explanation: 'First make sure the answer exists (the extreme value theorem), then gather every candidate (interior and boundary), then evaluate, then compare. You do not need the second derivative test at all: a saddle is never the largest or smallest value on the region, so the comparison handles it automatically.',
     },
     // ------------------------------------------------------------------ 10
     {

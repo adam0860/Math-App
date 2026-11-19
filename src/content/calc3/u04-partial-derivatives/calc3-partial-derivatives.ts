@@ -303,7 +303,7 @@ normal = (-0.6505, 0.6608, 0.3745)`,
           ],
           resolution: 40,
           view: { azimuth: 30, elevation: 28 },
-          caption: 'In polar form the surface is $z = \\frac{r^2}{4}\\sin 4\\theta$: a "monkey saddle" with four hills and four valleys. It is smooth-looking, but its twist at the origin depends on which way you measure it.',
+          caption: 'In polar form the surface is $z = \\frac{r^2}{4}\\sin 4\\theta$: a saddle with four hills and four valleys around the origin. It is smooth-looking, but its twist at the origin depends on which way you measure it.',
         },
         {
           type: 'derivation',

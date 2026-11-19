@@ -55,17 +55,7 @@ export const glossary: GlossaryEntry[] = [
     short: 'The length of a smooth curve traced once by $\\vec r(t)$, $a \\le t \\le b$: $L = \\int_a^b |\\vec r\\,\'(t)|\\,dt$, the integral of the speed.',
     long: 'It is the limit of the lengths of inscribed polylines, exactly as in the plane. The arc-length function $s(t) = \\int_a^t |\\vec r\\,\'(u)|\\,du$ gives the distance travelled since $t = a$, and $ds/dt = |\\vec r\\,\'(t)|$.',
     tex: 'L = \\int_a^b \\sqrt{f\'(t)^2 + g\'(t)^2 + h\'(t)^2}\\,dt',
-    see: ['arc-length-integral', 'calc3-arc-length-parametrization'],
-  },
-  {
-    id: 'calc3-arc-length-parametrization',
-    term: 'Arc-Length Parametrization',
-    aliases: ['arc-length parameter', 'unit-speed parametrization', 'parametrization by arc length'],
-    course: 'calc3',
-    category: 'Vector Functions',
-    short: 'A description $\\vec r(s)$ of a curve in which the parameter $s$ is the distance travelled along the curve from a starting point; equivalently, $|\\vec r\\,\'(s)| = 1$.',
-    long: 'To find it, compute $s(t) = \\int_a^t |\\vec r\\,\'(u)|\\,du$, solve for $t$ in terms of $s$, and substitute. Geometric quantities such as curvature are defined with respect to $s$ so they do not depend on how fast the curve is traced. Games approximate it with an arc-length lookup table to move objects along splines at constant speed.',
-    see: ['calc3-arc-length-space-curve', 'calc3-curvature', 'bezier-curve'],
+    see: ['arc-length-integral', 'arc-length-parametrization'],
   },
   {
     id: 'calc3-curvature',

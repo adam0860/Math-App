@@ -47,7 +47,7 @@ const coaster: Plot3DBlock = {
     { label: 'curvature $\\kappa =$', expr: kappa, digits: 3 },
     { label: 'radius $1/\\kappa =$', expr: rho, digits: 3 },
   ],
-  view: { azimuth: 30, elevation: 40 },
+  view: { azimuth: 40, elevation: 20 },
   caption: 'A coaster track $\\vec r(t) = \\langle 3\\cos t, 3\\sin t, 0.8\\sin 3t \\rangle$ with its TNB frame: $\\vec T$ (red) forward, $\\vec N$ (blue) toward the inside of the turn, $\\vec B$ (green) completing a right-handed frame. Press ▶: on the hilltops and in the dips $\\vec N$ swings up or down and the osculating circle shrinks, because the track bends hardest there.',
 };
 
@@ -151,7 +151,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'p',
-          text: 'If you can solve $s = s(t)$ for $t$ and substitute, you get the same curve described by distance travelled. This [[calc3-arc-length-parametrization|arc-length parametrization]] is the curve\'s "natural" description: it does not depend on how fast anything moves, so geometric quantities like curvature are defined with it.',
+          text: 'If you can solve $s = s(t)$ for $t$ and substitute, you get the same curve described by distance travelled. This [[arc-length-parametrization]], which you met for plane curves in Calculus II, is the curve\'s "natural" description: it does not depend on how fast anything moves, so geometric quantities like curvature are defined with it.',
         },
         {
           type: 'derivation',

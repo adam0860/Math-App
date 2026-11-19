@@ -11,7 +11,7 @@ export const glossary: GlossaryEntry[] = [
     short: 'The plane that best approximates a surface near a point. For $z = f(x, y)$ at $(a, b)$ it is $z = f(a, b) + f_x(a, b)(x - a) + f_y(a, b)(y - b)$.',
     long: 'It contains the tangent lines of every curve on the surface through the point, in particular the two slice curves whose slopes are $f_x$ and $f_y$. A normal vector is $\\langle f_x, f_y, -1 \\rangle$.\n\nFor a level surface $F(x, y, z) = k$ the tangent plane at $P$ is $\\nabla F(P) \\cdot \\langle x - x_0, y - y_0, z - z_0 \\rangle = 0$: the gradient is the normal. It exists only where the function is differentiable (or, for a level surface, where $\\nabla F \\ne \\vec{0}$).',
     tex: 'z = f(a, b) + f_x(a, b)(x - a) + f_y(a, b)(y - b)',
-    see: ['calc3-differentiable', 'linearization', 'la-surface-normal', 'calc3-gradient'],
+    see: ['calc3-differentiable', 'linearization', 'calc3-normal-vector', 'calc3-gradient', 'calc3-level-surface'],
   },
   {
     id: 'calc3-differentiable',
@@ -76,7 +76,7 @@ export const glossary: GlossaryEntry[] = [
     tex: '\\nabla f(x, y) = \\left\\langle \\frac{\\partial f}{\\partial x}, \\frac{\\partial f}{\\partial y} \\right\\rangle',
     example: '// Central-difference gradient of a 2D function\nVec2 grad(double (*f)(double, double), double x, double y, double h = 1e-5) {\n    return { (f(x + h, y) - f(x - h, y)) / (2 * h),\n             (f(x, y + h) - f(x, y - h)) / (2 * h) };\n}',
     exampleLang: 'cpp',
-    see: ['calc3-directional-derivative', 'calc3-tangent-plane', 'la-surface-normal'],
+    see: ['calc3-directional-derivative', 'calc3-level-curve', 'calc3-tangent-plane', 'la-surface-normal'],
   },
   {
     id: 'calc3-normal-line',

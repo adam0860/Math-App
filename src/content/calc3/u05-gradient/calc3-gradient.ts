@@ -146,7 +146,7 @@ export const lesson: Lesson = {
         {
           type: 'theorem',
           name: 'Steepest ascent',
-          text: 'Let $f$ be differentiable with $\\nabla f(P) \\ne \\vec{0}$. At $P$:\n\n- the **maximum** of $D_{\\vec{u}} f$ is $|\\nabla f(P)|$, reached when $\\vec{u}$ points along $\\nabla f(P)$ ($\\theta = 0$);\n- the **minimum** is $-|\\nabla f(P)|$, in the direction $-\\nabla f(P)$ (steepest descent);\n- $D_{\\vec{u}} f = 0$ when $\\vec{u} \\perp \\nabla f(P)$: walking that way you neither climb nor descend.',
+          text: 'Let $f$ be differentiable with $\\nabla f(P) \\ne \\vec{0}$. At $P$:\n\n- the **maximum** of $D_{\\vec{u}} f$ is $|\\nabla f(P)|$, reached when $\\vec{u}$ points along $\\nabla f(P)$ ($\\theta = 0$);\n- the **minimum** is $-|\\nabla f(P)|$, in the direction $-\\nabla f(P)$ (steepest descent);\n- $D_{\\vec{u}} f = 0$ when $\\vec{u} \\perp \\nabla f(P)$: walking that way you neither climb nor descend, because you are following the [[calc3-level-curve|level curve]] through $P$.',
         },
         {
           type: 'graph',
@@ -180,7 +180,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'analogy',
           title: 'Reading a topographic map',
-          text: 'On a military topographic map the contour lines are level curves of elevation. Where they bunch together, $|\\nabla f|$ is large: steep ground. Water runs straight down the slope along $-\\nabla f$, crossing the contours at right angles, and that is how you trace drainage lines and valleys on the map. A vehicle that cannot climb the steepest grade can still cross the hill by heading off the gradient direction at an angle, so that $|\\nabla f|\\cos\\theta$ is a grade it can handle. That is exactly what a switchback road does.',
+          text: 'On a military topographic map the contour lines are level curves of elevation: the map is a [[calc3-contour-map]]. Where they bunch together, $|\\nabla f|$ is large: steep ground. Water runs straight down the slope along $-\\nabla f$, crossing the contours at right angles, and that is how you trace drainage lines and valleys on the map. A vehicle that cannot climb the steepest grade can still cross the hill by heading off the gradient direction at an angle, so that $|\\nabla f|\\cos\\theta$ is a grade it can handle. That is exactly what a switchback road does.',
         },
       ],
     },
@@ -270,7 +270,7 @@ export const lesson: Lesson = {
       blocks: [
         {
           type: 'p',
-          text: 'The same argument works one dimension up. For $F(x, y, z)$, a level surface $F(x, y, z) = k$ is a surface in space: a sphere, an ellipsoid, the zero set of a game\'s signed distance function. Any curve $\\vec{r}(t)$ on the surface satisfies $F(\\vec{r}(t)) = k$, so the chain rule gives $\\nabla F \\cdot \\vec{r}\\,\'(t) = 0$. The gradient is perpendicular to **every** curve on the surface through $P$, so it is a normal vector to the surface.',
+          text: 'The same argument works one dimension up. For $F(x, y, z)$, a [[calc3-level-surface|level surface]] $F(x, y, z) = k$ is a surface in space: a sphere, an ellipsoid, the zero set of a game\'s signed distance function. Any curve $\\vec{r}(t)$ on the surface satisfies $F(\\vec{r}(t)) = k$, so the chain rule gives $\\nabla F \\cdot \\vec{r}\\,\'(t) = 0$. The gradient is perpendicular to **every** curve on the surface through $P$, so it is a normal vector to the surface.',
         },
         {
           type: 'theorem',
