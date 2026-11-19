@@ -25,7 +25,7 @@ src/content/
 ```
 
 Courses: `algebra` (lesson ids `alg-…`), `trig` (`trig-…`), `calc1` (`calc1-…`),
-`calc2` (`calc2-…`), `linalg` (`la-…`), `chem` (`chem-…`), `genchem` (`gchem-…`), `orgo` (`ochem-…`). Every lesson file already exists as a **stub**. Replace the whole stub
+`calc2` (`calc2-…`), `linalg` (`la-…`), `discrete` (`dm-…`), `stats` (`stat-…`), `phys1` (`phys-…`), `chem` (`chem-…`), `genchem` (`gchem-…`), `orgo` (`ochem-…`). Every lesson file already exists as a **stub**. Replace the whole stub
 with the finished lesson. Keep the lesson `id` exactly as in the stub. You may refine the
 title slightly. The full outline is in `scripts/curriculum.json` — read the neighbouring
 lessons' titles so you don't duplicate topics owned by another lesson, and so you know what
@@ -161,7 +161,11 @@ TeX is full of backslashes, so **every backslash must be doubled** in TS source:
   statistics `normpdf(z)`, `normcdf(z)` (Φ), `invnorm(p)` (Φ⁻¹), `erf(x)`, `gamma(x)`,
   `lgamma(x)` (these work in answers too). Implicit multiplication
   works (`3x`, `2pi`, `x(x+1)`). Slider names are single letters (not x, y, t, e) and can
-  be used in every expression and coordinate. Point/segment **labels are plain text**
+  be used in every expression and coordinate. A slider with `play: true` gets a ▶ button
+  that sweeps it upward in real time (`speed` in units per second, default the whole range
+  in 4 s; `loop: true` wraps around) — use it for a time slider so a projectile flies, a
+  pendulum swings or a wave travels: draw the path as a `parametric` curve (its parameter
+  is `t`) and the object as a `points` entry at `(x(s), y(s))`. Point/segment **labels are plain text**
   (unicode fine: "(π/2, 1)", "θ"); function `label`s, captions, slider labels and readout
   labels are inline text (use `$…$`). Default colors cycle blue, red, green, purple…;
   graph background is neutral, colors: blue red green purple orange teal gray.

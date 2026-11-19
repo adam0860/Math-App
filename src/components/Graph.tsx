@@ -1,4 +1,4 @@
-import { useId, useMemo, useRef, useState, type PointerEvent } from 'react';
+import { useEffect, useId, useMemo, useRef, useState, type PointerEvent } from 'react';
 import type { GraphBlock, GraphColor, NumOrExpr } from '../content/types';
 import { compileExpr, type Env } from '../lib/mathexpr';
 import { Inline } from './RichText';
@@ -90,6 +90,43 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
   const uid = useId().replace(/[^a-zA-Z0-9_-]/g, '');
   const [params, setParams] = useState<Record<string, number>>(() => Object.fromEntries((g.sliders ?? []).map((s) => [s.name, s.value])));
   const [hover, setHover] = useState<number | null>(null);
+  const [playing, setPlaying] = useState<string | null>(null);
+  const paramsRef = useRef(params);
+  paramsRef.current = params;
+
+  // ▶ on a slider: sweep its value upward in real time (stop at max, or wrap with `loop`).
+  useEffect(() => {
+    if (!playing) return;
+    const s = g.sliders?.find((x) => x.name === playing);
+    if (!s || !(s.max > s.min)) return;
+    const span = s.max - s.min;
+    const speed = s.speed && s.speed > 0 ? s.speed : span / 4;
+    let v = paramsRef.current[s.name];
+    if (!(v < s.max - span * 1e-6)) v = s.min;
+    let last = performance.now();
+    let raf = 0;
+    const tick = (now: number) => {
+      const dt = Math.min(0.1, Math.max(0, (now - last) / 1000));
+      last = now;
+      v += speed * dt;
+      let done = false;
+      if (v >= s.max) {
+        if (s.loop) v = s.min + ((v - s.max) % span);
+        else {
+          v = s.max;
+          done = true;
+        }
+      }
+      const nv = v;
+      setParams((p) => ({ ...p, [s.name]: nv }));
+      if (done) setPlaying(null);
+      else raf = requestAnimationFrame(tick);
+    };
+    const start = v;
+    setParams((p) => ({ ...p, [s.name]: start }));
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [playing, g.sliders]);
   const svgRef = useRef<SVGSVGElement>(null);
   const env: Env = params;
 
@@ -222,15 +259,26 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
     if (!f1 || !f2) return null;
     const a = num(ar.from, env);
     const b = num(ar.to, env);
+    if (!Number.isFinite(a) || !Number.isFinite(b)) return null;
     const N = 200;
-    const top: string[] = [];
-    const bottom: string[] = [];
+    // Split into separate polygons wherever either curve is undefined (NaN/∞).
+    const runs: { top: string[]; bottom: string[] }[] = [];
+    let cur: { top: string[]; bottom: string[] } | null = null;
     for (let k = 0; k <= N; k++) {
       const x = a + ((b - a) * k) / N;
-      top.push(`${sx(x).toFixed(2)},${clampY(sy(f1({ ...env, x }))).toFixed(2)}`);
-      bottom.unshift(`${sx(x).toFixed(2)},${clampY(sy(f2({ ...env, x }))).toFixed(2)}`);
+      const y1 = f1({ ...env, x });
+      const y2 = f2({ ...env, x });
+      if (!Number.isFinite(y1) || !Number.isFinite(y2)) {
+        cur = null;
+        continue;
+      }
+      if (!cur) runs.push((cur = { top: [], bottom: [] }));
+      cur.top.push(`${sx(x).toFixed(2)},${clampY(sy(y1)).toFixed(2)}`);
+      cur.bottom.unshift(`${sx(x).toFixed(2)},${clampY(sy(y2)).toFixed(2)}`);
     }
-    return <polygon key={`a${i}`} points={[...top, ...bottom].join(' ')} className={`g-area c-${ar.color ?? 'blue'}`} />;
+    return runs
+      .filter((r) => r.top.length > 1)
+      .map((r, j) => <polygon key={`a${i}-${j}`} points={[...r.top, ...r.bottom].join(' ')} className={`g-area c-${ar.color ?? 'blue'}`} />);
   });
 
   const tangents = (g.tangents ?? []).map((t, i) => {
@@ -436,7 +484,7 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
       {(g.sliders?.length ?? 0) > 0 && (
         <div className="graph-sliders">
           {g.sliders!.map((s) => (
-            <label key={s.name} className="graph-slider">
+            <label key={s.name} className={`graph-slider${s.play ? ' has-play' : ''}`}>
               <span className="graph-slider-name">
                 <Inline text={s.label ?? `$${s.name}$`} />
               </span>
@@ -446,9 +494,34 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
                 max={s.max}
                 step={s.step ?? (s.max - s.min) / 100}
                 value={params[s.name]}
-                onChange={(e) => setParams((p) => ({ ...p, [s.name]: Number(e.target.value) }))}
+                onChange={(e) => {
+                  if (playing) setPlaying(null);
+                  setParams((p) => ({ ...p, [s.name]: Number(e.target.value) }));
+                }}
               />
               <span className="graph-slider-val">{fmtNum(params[s.name], sliderDecimals(s.step))}</span>
+              {s.play && (
+                <button
+                  type="button"
+                  className={`graph-play${playing === s.name ? ' on' : ''}`}
+                  aria-label={playing === s.name ? 'Pause' : 'Play'}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setPlaying((cur) => (cur === s.name ? null : s.name));
+                  }}
+                >
+                  {playing === s.name ? (
+                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                      <rect x="3" y="2.5" width="3.6" height="11" rx="1" fill="currentColor" />
+                      <rect x="9.4" y="2.5" width="3.6" height="11" rx="1" fill="currentColor" />
+                    </svg>
+                  ) : (
+                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                      <path d="M4 2.5 L13.5 8 L4 13.5 Z" fill="currentColor" />
+                    </svg>
+                  )}
+                </button>
+              )}
             </label>
           ))}
         </div>

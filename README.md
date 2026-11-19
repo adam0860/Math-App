@@ -10,7 +10,7 @@ It is a sibling of C++ Forge and shares its engine.
 
 ![STEM Forge lesson with an interactive Taylor series graph](docs/screenshot-lesson.png)
 
-- **Ten complete courses (332 lessons)**
+- **Eleven complete courses (366 lessons)**
   - **College Algebra:** 10 units — numbers and exponents, polynomials and factoring,
     equations and inequalities, lines, systems and matrices, quadratics and complex
     numbers, functions, polynomial and rational functions, exponentials and logarithms,
@@ -33,6 +33,11 @@ It is a sibling of C++ Forge and shares its engine.
     large numbers and central limit theorem, estimation and confidence intervals, hypothesis
     testing and A/B tests, chi-square and the bootstrap, regression, Bayesian inference,
     simulation, and statistics in games and machine learning.
+  - **Physics I: Mechanics:** 12 units — calculus-based: units and vectors, motion in one
+    and two dimensions, Newton's laws, friction and drag, work and energy, momentum and
+    collisions, rotation, angular momentum and equilibrium, gravitation and orbits,
+    oscillations, waves and sound, and how game engines integrate motion and resolve
+    collisions. Graphs animate with ▶ time sliders.
   - **Linear Algebra:** 8 units — vectors, dot and cross products, linear systems and row
     reduction, linear independence and transformations (rotations, shears, reflections),
     matrix algebra and the 4×4 homogeneous matrices game engines use, determinants, vector
@@ -145,7 +150,7 @@ A single React + TypeScript codebase (built with Vite) runs everywhere:
 src/
   content/            all course content as typed data (see docs/CONTENT_GUIDE.md)
     types.ts          the content model: lessons, blocks, graphs, questions, glossary, formula sheets
-    algebra/ trig/ calc1/ calc2/ linalg/ discrete/ stats/ chem/ genchem/ orgo/   one folder per unit: one file per lesson + unit glossary
+    algebra/ trig/ calc1/ calc2/ linalg/ discrete/ stats/ phys1/ chem/ genchem/ orgo/   one folder per unit: one file per lesson + unit glossary
     glossary/ cheatsheets/
   components/         KaTeX rendering, interactive graphs, derivations, rich text, code blocks…
   questions/          the seven interactive question types
