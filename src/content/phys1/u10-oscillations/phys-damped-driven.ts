@@ -372,7 +372,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'graph',
-          x: [0, 15],
+          x: [0, 10],
           y: [-11, 11],
           xStep: 1,
           yStep: 2,
@@ -385,7 +385,7 @@ export const lesson: Lesson = {
           sliders: [
             { name: 'u', min: 0.2, max: 2.5, step: 0.01, value: 1, label: 'driving frequency $\\omega/\\omega_0$' },
             { name: 'q', min: 1, max: 10, step: 0.5, value: 8, label: 'quality factor $Q$' },
-            { name: 's', min: 0, max: 15, step: 0.01, value: 0, label: 'time $t$ (s)', play: true, speed: 3.75 },
+            { name: 's', min: 0, max: 10, step: 0.01, value: 0, label: 'time $t$ (s)', play: true, speed: 2.5 },
           ],
           readouts: [{ label: 'steady amplitude ($\\times F_0/k$):', expr: AMP, digits: 3 }],
           caption: 'An oscillator with natural period $1\\,\\text{s}$, starting at rest, driven from $t = 0$. Press ▶. At resonance the amplitude **builds up** over several cycles toward $QF_0/k$ as the transient dies away. Try $\\omega/\\omega_0 = 0.9$ with high $Q$: the transient and the drive beat against each other before settling.',

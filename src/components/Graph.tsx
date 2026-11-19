@@ -259,15 +259,26 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
     if (!f1 || !f2) return null;
     const a = num(ar.from, env);
     const b = num(ar.to, env);
+    if (!Number.isFinite(a) || !Number.isFinite(b)) return null;
     const N = 200;
-    const top: string[] = [];
-    const bottom: string[] = [];
+    // Split into separate polygons wherever either curve is undefined (NaN/∞).
+    const runs: { top: string[]; bottom: string[] }[] = [];
+    let cur: { top: string[]; bottom: string[] } | null = null;
     for (let k = 0; k <= N; k++) {
       const x = a + ((b - a) * k) / N;
-      top.push(`${sx(x).toFixed(2)},${clampY(sy(f1({ ...env, x }))).toFixed(2)}`);
-      bottom.unshift(`${sx(x).toFixed(2)},${clampY(sy(f2({ ...env, x }))).toFixed(2)}`);
+      const y1 = f1({ ...env, x });
+      const y2 = f2({ ...env, x });
+      if (!Number.isFinite(y1) || !Number.isFinite(y2)) {
+        cur = null;
+        continue;
+      }
+      if (!cur) runs.push((cur = { top: [], bottom: [] }));
+      cur.top.push(`${sx(x).toFixed(2)},${clampY(sy(y1)).toFixed(2)}`);
+      cur.bottom.unshift(`${sx(x).toFixed(2)},${clampY(sy(y2)).toFixed(2)}`);
     }
-    return <polygon key={`a${i}`} points={[...top, ...bottom].join(' ')} className={`g-area c-${ar.color ?? 'blue'}`} />;
+    return runs
+      .filter((r) => r.top.length > 1)
+      .map((r, j) => <polygon key={`a${i}-${j}`} points={[...r.top, ...r.bottom].join(' ')} className={`g-area c-${ar.color ?? 'blue'}`} />);
   });
 
   const tangents = (g.tangents ?? []).map((t, i) => {
