@@ -238,7 +238,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'why',
           title: 'Why more damping can be slower',
-          text: 'Heavy damping means a large force opposing **any** velocity. Near equilibrium the spring force is weak, so the mass can only move as fast as the damper lets it: roughly $v \\approx -kx/b$, which gives $x \\propto e^{-kt/b}$, and that gets slower as $b$ grows. Think of a door closer filled with very thick oil, or a spoon sinking through honey. Engineers aim for critical or slightly underdamped: car suspensions, door closers, galvanometer needles and gun-sight reticle mounts all live near $\\zeta \\approx 0.3$ to $1$.',
+          text: 'Heavy damping means a large force opposing **any** velocity. Near equilibrium the spring force is weak, so the mass can only move as fast as the damper lets it: roughly $v \\approx -kx/b$, which gives $x \\propto e^{-kt/b}$, and that gets slower as $b$ grows. Think of a door closer filled with very thick oil, or a spoon sinking through honey. Engineers aim for critical or slightly underdamped: car suspensions, door closers and galvanometer needles all live near $\\zeta \\approx 0.3$ to $1$.',
         },
       ],
     },
@@ -256,7 +256,7 @@ export const lesson: Lesson = {
       blocks: [
         {
           type: 'p',
-          text: 'Where does the energy go? Differentiate the mechanical energy, exactly as you did for undamped SHM, but now use the damped equation:',
+          text: 'Where does the energy go? Differentiate the [[phys-mechanical-energy|mechanical energy]], exactly as you did for undamped SHM, but now use the damped equation:',
         },
         {
           type: 'derivation',
@@ -286,7 +286,7 @@ export const lesson: Lesson = {
           type: 'table',
           headers: ['Oscillator', 'Typical $Q$ (order of magnitude)'],
           rows: [
-            ['Car suspension (shock absorbers working)', 'about $1$ or less'],
+            ['Car suspension (shock absorbers working)', '$\\sim 1$'],
             ['Child on a swing, not pumping', '$\\sim 10$'],
             ['Guitar string', '$10^2$ to $10^3$'],
             ['Steel tuning fork', '$10^3$ to $10^4$'],
@@ -394,7 +394,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'history',
           title: 'Breaking step on bridges',
-          text: 'Armies have long ordered troops to **break step** when crossing bridges. In 1831 the Broughton Suspension Bridge near Manchester collapsed while a company of soldiers marched across in step, an accident usually blamed on rhythmic loading near the bridge\'s natural frequency. In 2000, London\'s Millennium Bridge had to close days after opening because pedestrians, unconsciously stepping in time with its sway, drove a sideways resonance. (The famous 1940 Tacoma Narrows collapse is a different mechanism, aerodynamic flutter, not simple resonance.)',
+          text: 'Armies have long ordered troops to **break step** when crossing bridges. In 1831 part of the Broughton Suspension Bridge near Manchester gave way while a column of soldiers marched across in step: the rhythmic loading set the deck vibrating, and a badly forged bolt in one of its chains snapped. In 2000, London\'s Millennium Bridge had to close days after opening because pedestrians, unconsciously stepping in time with its sway, drove a sideways resonance. (The famous 1940 Tacoma Narrows collapse is a different mechanism, aerodynamic flutter, not simple resonance.)',
         },
       ],
     },
@@ -504,7 +504,7 @@ int main() {
           type: 'callout',
           variant: 'code',
           title: 'Making it robust',
-          text: 'Two practical rules. First, stability: with semi-implicit Euler keep $\\omega_0\\Delta t$ well below 1, or run the spring on a fixed physics timestep, because a stiff spring on a slow frame can overshoot wildly or explode. Second, frame-rate independence: the critically damped spring has a closed-form solution $(C_1 + C_2t)e^{-\\omega_0t}$, so you can advance it **exactly** by any $\\Delta t$ and get identical motion at 30 or 144 fps. Unity\'s `Mathf.SmoothDamp`, for example, is based on a critically damped spring of this kind. Choose $\\zeta$ slightly below 1 when a tiny overshoot feels lively (a UI pop), and exactly 1 for cameras.',
+          text: 'Two practical rules. First, stability: with semi-implicit Euler keep $\\omega_0\\Delta t$ well below 1, or run the spring on a fixed physics timestep, because a stiff spring on a slow frame can overshoot wildly or explode. Second, frame-rate independence: the critically damped spring has a closed-form solution $(C_1 + C_2t)e^{-\\omega_0t}$, so you can advance it **exactly** by any $\\Delta t$ and get identical motion at 30 or 144 fps. Unity\'s `Mathf.SmoothDamp`, for example, is a spring–damper smoother of this kind that never overshoots (critically damped, with a cheap approximation of the exponential). Choose $\\zeta$ slightly below 1 when a tiny overshoot feels lively (a UI pop), and exactly 1 for cameras.',
         },
       ],
     },

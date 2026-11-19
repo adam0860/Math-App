@@ -54,7 +54,7 @@ export const glossary: GlossaryEntry[] = [
     short: 'The potential energy of two masses a distance $r$ apart, $U(r) = -GMm/r$, with the zero of energy chosen at infinite separation.',
     long: 'It follows from integrating the gravitational force: $U(r) - U(\\infty) = -\\int_{\\infty}^{r} F_r\\,dr$. It is negative at every finite $r$ and increases toward zero as the masses separate. Near a planet\'s surface its change reduces to $mgh$.',
     tex: 'U(r) = -\\frac{GMm}{r}',
-    see: ['phys-newtons-law-of-gravitation', 'phys-escape-speed'],
+    see: ['phys-newtons-law-of-gravitation', 'phys-potential-energy', 'phys-escape-speed'],
   },
   {
     id: 'phys-orbital-speed',
@@ -97,7 +97,7 @@ export const glossary: GlossaryEntry[] = [
     short: '(1) Planets move on ellipses with the Sun at one focus. (2) The line from Sun to planet sweeps out equal areas in equal times. (3) $T^2 = \\frac{4\\pi^2}{GM}a^3$, where $a$ is the semi-major axis.',
     long: 'Kepler found them from Tycho Brahe\'s observations; Newton derived them from the inverse-square law. The second law is conservation of angular momentum, which holds for any central force. In years and astronomical units, the third law for the Sun is simply $T^2 = a^3$.',
     tex: 'T^2 = \\frac{4\\pi^2}{GM}\\,a^3',
-    see: ['phys-semi-major-axis', 'phys-orbital-eccentricity', 'phys-orbital-speed'],
+    see: ['phys-semi-major-axis', 'phys-orbital-eccentricity', 'phys-orbital-speed', 'phys-conservation-of-angular-momentum'],
   },
   {
     id: 'phys-semi-major-axis',

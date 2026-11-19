@@ -65,7 +65,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'note',
           title: 'Same result from torque',
-          text: 'About the pivot, the weight has lever arm $L\\sin\\theta$, so its [[la-torque|torque]] is $\\tau = -mgL\\sin\\theta$, and a point mass at distance $L$ has moment of inertia $I = mL^2$. Then $\\tau = I\\ddot{\\theta}$ gives the same equation. That route is the one that generalizes to rigid bodies later in this lesson.',
+          text: 'About the pivot, the weight has lever arm $L\\sin\\theta$, so its [[la-torque|torque]] is $\\tau = -mgL\\sin\\theta$, and a point mass at distance $L$ has [[phys-moment-of-inertia|moment of inertia]] $I = mL^2$. Then $\\tau = I\\ddot{\\theta}$ gives the same equation. That route is the one that generalizes to rigid bodies later in this lesson.',
         },
         {
           type: 'p',
@@ -243,7 +243,7 @@ export const lesson: Lesson = {
       blocks: [
         {
           type: 'p',
-          text: 'For the mass on a spring, the spring force is conservative with potential energy $U = \\tfrac12 kx^2$ (the [[work]] you do stretching it). So the mechanical energy should be constant. You can prove it straight from the equation of motion:',
+          text: 'For the mass on a spring, the spring force is conservative with [[phys-elastic-potential-energy|potential energy]] $U = \\tfrac12 kx^2$ (the [[work]] you do stretching it). So the [[phys-mechanical-energy|mechanical energy]] should be constant. You can prove it straight from the equation of motion:',
         },
         {
           type: 'derivation',
@@ -377,7 +377,7 @@ export const lesson: Lesson = {
       answerTex: '2\\pi\\sqrt{\\dfrac{2R}{g}}',
       variables: ['R', 'g'],
       domain: [1, 10],
-      explanation: 'The CM is the hoop\'s center, a distance $d = R$ below the nail. Then $T = 2\\pi\\sqrt{\\dfrac{2mR^2}{mgR}} = 2\\pi\\sqrt{\\dfrac{2R}{g}}$. The hoop swings exactly like a simple pendulum of length $2R$, its own diameter. A $0.50\\,\\text{m}$ hoop on a nail has the same period as a one-meter pendulum, about $2.0\\,\\text{s}$.',
+      explanation: 'The CM is the hoop\'s center, a distance $d = R$ below the nail. Then $T = 2\\pi\\sqrt{\\dfrac{2mR^2}{mgR}} = 2\\pi\\sqrt{\\dfrac{2R}{g}}$. The hoop swings exactly like a simple pendulum of length $2R$, its own diameter. A hoop of radius $0.50\\,\\text{m}$ on a nail has the same period as a one-meter pendulum, about $2.0\\,\\text{s}$.',
     },
     // ------------------------------------------------------------------ 11
     {
@@ -415,7 +415,7 @@ export const lesson: Lesson = {
             { label: 'exact $T/T_0$:', expr: agmRatio('d'), digits: 4 },
             { label: 'period of a $1.00\\,\\text{m}$ pendulum (s):', expr: `2.0071*${agmRatio('d')}`, digits: 3 },
           ],
-          caption: 'Horizontal axis: amplitude in degrees. The period is within 1% of $T_0$ up to about $23^\\circ$, but is 7% longer at $60^\\circ$, 18% at $90^\\circ$, and more than doubles near $170^\\circ$. The first correction term (orange) is good to about $60^\\circ$.',
+          caption: 'Horizontal axis: amplitude in degrees. The period is within 1% of $T_0$ up to about $22^\\circ$, but is 7% longer at $60^\\circ$, 18% at $90^\\circ$, and more than doubles near $170^\\circ$. The first correction term (orange) is good to about $60^\\circ$.',
         },
         {
           type: 'p',

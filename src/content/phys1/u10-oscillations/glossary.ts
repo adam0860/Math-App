@@ -65,7 +65,7 @@ export const glossary: GlossaryEntry[] = [
     short: 'A rigid body swinging about a fixed pivot. With moment of inertia $I$ about the pivot and center of mass a distance $d$ from it, small oscillations have $T = 2\\pi\\sqrt{I/(mgd)}$.',
     long: 'It follows from $I\\ddot{\\theta} = -mgd\\sin\\theta$ with $\\sin\\theta \\approx \\theta$. It behaves like a simple pendulum of length $L_{\\text{eq}} = I/(md)$. A uniform rod pivoted at one end has $T = 2\\pi\\sqrt{2L/(3g)}$.',
     tex: 'T = 2\\pi\\sqrt{\\frac{I}{mgd}}',
-    see: ['phys-simple-pendulum', 'la-torque'],
+    see: ['phys-simple-pendulum', 'phys-moment-of-inertia', 'la-torque'],
   },
   {
     id: 'phys-natural-frequency',

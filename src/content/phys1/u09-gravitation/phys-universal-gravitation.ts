@@ -176,7 +176,7 @@ export const lesson: Lesson = {
           steps: [
             { tex: 'r = R_E + h = 6.37 \\times 10^{6} + 0.408 \\times 10^{6} = 6.78 \\times 10^{6}\\,\\text{m}', why: 'Distance from Earth\'s center, not from the ground.' },
             { tex: 'g = g_0\\left(\\frac{R_E}{r}\\right)^2 = 9.80\\left(\\frac{6.37}{6.78}\\right)^2', why: 'The ratio form avoids needing $G$ and $M_E$ separately.' },
-            { tex: '= 8.67\\,\\text{m/s}^2 \\approx 0.88\\,g_0', why: 'Arithmetic.' },
+            { tex: '= 8.65\\,\\text{m/s}^2 \\approx 0.88\\,g_0', why: 'Arithmetic.' },
           ],
           result: 'Gravity at the ISS is still about 88% of its surface value.',
         },
@@ -184,7 +184,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'warning',
           title: '"There is no gravity in space"',
-          text: 'Astronauts float **not** because gravity is gone but because they and their station are falling together. Both have the same acceleration $g = 8.67\\,\\text{m/s}^2$ toward Earth, so the floor never pushes on anyone\'s feet. That is free fall. The station misses the ground because it also moves sideways at about $7.7\\,\\text{km/s}$, as the next lesson shows.',
+          text: 'Astronauts float **not** because gravity is gone but because they and their station are falling together. Both have the same acceleration $g = 8.65\\,\\text{m/s}^2$ toward Earth, so the floor never pushes on anyone\'s feet. That is free fall. The station misses the ground because it also moves sideways at about $7.7\\,\\text{km/s}$, as the next lesson shows.',
         },
         {
           type: 'deepdive',
@@ -310,9 +310,9 @@ x = 0.90 d   g_x = -0.000009 m/s^2
 x = 0.95 d   g_x = +0.010313 m/s^2
 neutral point: 0.9001 d = 345648 km from Earth`,
           annotations: [
-            { lines: '10-20', text: 'The field of each body is $GM/r^2$ times the unit vector $(dx, dy)/r$ that points from $p$ toward the body; the loop adds the vectors.' },
-            { lines: '27-30', text: 'Sample the net field along the Earth–Moon line. It is negative (toward Earth) until very close to the Moon.' },
-            { lines: '31-36', text: 'Bisection: $g_x$ changes sign once between $0.5d$ and $0.99d$, so halving the bracket 60 times pins the zero down to machine precision.' },
+            { lines: '11-22', text: 'The field of each body is $GM/r^2$ times the unit vector $(dx, dy)/r$ that points from $p$ toward the body; the loop adds the vectors.' },
+            { lines: '28-31', text: 'Sample the net field along the Earth–Moon line. It is negative (toward Earth) until very close to the Moon.' },
+            { lines: '32-38', text: 'Bisection: $g_x$ changes sign once between $0.5d$ and $0.99d$, so halving the bracket 60 times pins the zero down to machine precision.' },
           ],
         },
       ],
@@ -426,7 +426,7 @@ neutral point: 0.9001 d = 345648 km from Earth`,
       blocks: [
         {
           type: 'p',
-          text: 'Near the ground you use $U = mgy$, which assumes the force $mg$ is constant. Over large distances it is not, so we go back to the definition of potential energy for a conservative force, $\\Delta U = -W = -\\int F_r\\,dr$, and integrate (see [[work]] by integration). The result is the [[phys-universal-gravitational-potential-energy|universal form of gravitational potential energy]]. The radial component of gravity on $m$ at distance $r$ from $M$ is $F_r = -GMm/r^2$ (negative: it points inward).',
+          text: 'Near the ground you use $U = mgy$, which assumes the force $mg$ is constant. Over large distances it is not, so we go back to the definition of [[phys-potential-energy|potential energy]] for a [[phys-conservative-force|conservative force]], $\\Delta U = -W = -\\int F_r\\,dr$, and integrate (see [[work]] by integration). The result is the [[phys-universal-gravitational-potential-energy|universal form of gravitational potential energy]]. The radial component of gravity on $m$ at distance $r$ from $M$ is $F_r = -GMm/r^2$ (negative: it points inward).',
         },
         {
           type: 'derivation',
