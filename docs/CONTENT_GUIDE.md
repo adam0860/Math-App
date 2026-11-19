@@ -25,7 +25,7 @@ src/content/
 ```
 
 Courses: `algebra` (lesson ids `alg-…`), `trig` (`trig-…`), `calc1` (`calc1-…`),
-`calc2` (`calc2-…`), `calc3` (`calc3-…`), `linalg` (`la-…`), `discrete` (`dm-…`), `stats` (`stat-…`), `phys1` (`phys-…`), `chem` (`chem-…`), `genchem` (`gchem-…`), `orgo` (`ochem-…`). Every lesson file already exists as a **stub**. Replace the whole stub
+`calc2` (`calc2-…`), `calc3` (`calc3-…`), `dsa` (`dsa-…`), `linalg` (`la-…`), `discrete` (`dm-…`), `stats` (`stat-…`), `phys1` (`phys-…`), `chem` (`chem-…`), `genchem` (`gchem-…`), `orgo` (`ochem-…`). Every lesson file already exists as a **stub**. Replace the whole stub
 with the finished lesson. Keep the lesson `id` exactly as in the stub. You may refine the
 title slightly. The full outline is in `scripts/curriculum.json` — read the neighbouring
 lessons' titles so you don't duplicate topics owned by another lesson, and so you know what
@@ -195,6 +195,39 @@ TeX is full of backslashes, so **every backslash must be doubled** in TS source:
   ragged where it leaves the z-range; for a clean edge (a paraboloid cut off at a height,
   a disk, a hemisphere) use a `parametricSurfaces` entry in polar form, e.g.
   `x: 'u cos(v)', y: 'u sin(v)', z: 'u^2'`. Questions can show one with the `plot3d` field.
+- `algo` — a step-through algorithm animation: the learner steps (◀ ▶), scrubs or plays a
+  sequence of frames. Use it to show an algorithm *running*: a sort partitioning, a binary
+  search narrowing, BFS/Dijkstra settling nodes, a heap sifting, a tree rotating.
+  ```ts
+  {
+    type: 'algo',
+    view: 'array',                 // or 'graph' (nodes at fixed positions; trees too)
+    bars?: true,                   // array: draw values as bar heights
+    code?: 'for (int i = 0; …',    // optional listing; frames highlight `lines`
+    interval?: 900,                // ms per frame when playing
+    // graph view only:
+    nodes: [{ id: 'A', x: 60, y: 60, label? }], edges: [{ from: 'A', to: 'B', label?: '4', directed? }],
+    width?: 420, height?: 260,
+    frames: [
+      { note: 'Compare $a[j]$ with the pivot.',            // required, inline markdown + TeX
+        array: [7, 2, 9, 1, 4],                           // array view; carries forward if omitted
+        marks: [{ index: 4, color: 'purple' }],           // colored cells
+        pointers: [{ index: 0, label: 'i' }, { index: 1, label: 'j', color: 'blue' }],
+        dim: [0],                                         // faded cells (outside the active range)
+        lines: [3, 4],                                    // highlighted code lines (1-based)
+        vars: [['comparisons', '3'], ['queue', 'B, C']],  // readouts under the note
+        // graph view:
+        nodeColors: [{ id: 'A', color: 'green' }], nodeNotes: [{ id: 'A', text: 'd=0' }],
+        nodeLabels: [{ id: 'A', label: '42' }], hidden: ['E'],
+        edgeColors: [{ from: 'A', to: 'B', color: 'blue' }] },
+    ],
+  }
+  ```
+  Generate frames with a script that actually runs the algorithm (Python or C++), so every
+  frame is a true state, and keep notes short (one sentence). Only `array` carries forward
+  between frames; marks, pointers, colors and notes are per frame. Color conventions:
+  orange = current/active, blue = being compared or in the frontier, green = done/sorted/settled,
+  red = swapped/rejected, purple = pivot/special, gray = visited.
 
 ## 7. Questions
 

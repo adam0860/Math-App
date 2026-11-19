@@ -3,6 +3,7 @@ import type { Block, CalloutVariant, DerivationStep } from '../content/types';
 import { CodeBlock } from './CodeBlock';
 import { Graph } from './Graph';
 import { Plot3D } from './Plot3D';
+import { Algo } from './Algo';
 import { Icon } from './Icon';
 import { Inline, RichText } from './RichText';
 import { Tex } from './Tex';
@@ -56,6 +57,8 @@ function BlockView({ block: b }: { block: Block }) {
       return <Graph g={b} />;
     case 'plot3d':
       return <Plot3D g={b} />;
+    case 'algo':
+      return <Algo a={b} />;
     case 'theorem':
       return (
         <div className="theorem">

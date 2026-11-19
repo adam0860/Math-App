@@ -187,6 +187,57 @@ export interface Plot3DBlock {
   height?: number;
 }
 
+/**
+ * A step-through algorithm animation: a sequence of frames the learner steps through
+ * (◀ ▶) or plays. Each frame redraws an array (boxes or bars) or a graph/tree, with
+ * colored marks, pointer labels, a note, and optionally highlighted lines of a code
+ * listing shown alongside.
+ */
+export interface AlgoBlock {
+  type: 'algo';
+  caption?: string;
+  /** 'array': boxes (or bars) with indices; 'graph': nodes and edges at fixed positions (trees too). */
+  view: 'array' | 'graph';
+  /** array view: draw values as bar heights instead of boxes (numbers only). */
+  bars?: boolean;
+  /** graph view: node positions in a width × height box (default 420 × 260). */
+  nodes?: { id: string; x: number; y: number; label?: string }[];
+  edges?: { from: string; to: string; label?: string; directed?: boolean }[];
+  width?: number;
+  height?: number;
+  /** Code or pseudocode shown beside the picture; frames highlight lines (1-based). */
+  code?: string;
+  lang?: CodeLang;
+  /** Autoplay speed in ms per frame (default 1000). */
+  interval?: number;
+  frames: AlgoFrame[];
+}
+
+export interface AlgoFrame {
+  /** What happens in this frame (inline markdown + TeX). */
+  note: string;
+  /** array view: the array contents in this frame. Carry it forward by repeating it. */
+  array?: (number | string)[];
+  /** array view: index → color for highlighted cells (compare, swap, pivot, sorted…). */
+  marks?: { index: number; color: GraphColor }[];
+  /** array view: labelled arrows above cells (i, j, lo, hi, mid…). */
+  pointers?: { index: number; label: string; color?: GraphColor }[];
+  /** array view: indices drawn faded (outside the active range). */
+  dim?: number[];
+  /** graph view: node colors, small notes under nodes (distances…), highlighted edges. */
+  nodeColors?: { id: string; color: GraphColor }[];
+  nodeNotes?: { id: string; text: string }[];
+  /** graph view: replace node labels in this frame (e.g. values in a heap). */
+  nodeLabels?: { id: string; label: string }[];
+  /** graph view: hide these nodes in this frame (tree growing as you insert). */
+  hidden?: string[];
+  edgeColors?: { from: string; to: string; color: GraphColor }[];
+  /** Highlighted lines of `code` (1-based). */
+  lines?: number[];
+  /** Small key–value readouts for the frame, e.g. [["comparisons", "7"], ["queue", "B, D"]]. */
+  vars?: [string, string][];
+}
+
 export type CalloutVariant =
   | 'why' // explains the reasoning behind a rule, definition or method
   | 'tip' // practical advice
@@ -206,6 +257,7 @@ export type Block =
   | { type: 'derivation'; title?: string; steps: DerivationStep[]; result?: string }
   | GraphBlock
   | Plot3DBlock
+  | AlgoBlock
   | CodeBlock
   | { type: 'callout'; variant: CalloutVariant; title?: string; text: string }
   | { type: 'list'; ordered?: boolean; items: string[] }

@@ -722,3 +722,162 @@ p .tex-display {
   font-size: 0.85em;
   color: var(--text-3);
 }
+
+/* ------------------------------------------------- algorithm step-through */
+.algo-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: Inter, system-ui, sans-serif;
+}
+.algo-cell {
+  stroke-width: 1.6;
+}
+.algo-cell:not([class*='c-']) {
+  fill: var(--surface);
+  stroke: var(--border-strong, var(--text-3));
+}
+.algo-cell[class*='c-'] {
+  fill-opacity: 0.22;
+  stroke-width: 2.6;
+}
+.algo-bar:not([class*='c-']) {
+  fill: var(--g-gray);
+  stroke: none;
+  fill-opacity: 0.35;
+}
+.algo-bar[class*='c-'] {
+  fill-opacity: 0.55;
+  stroke-width: 2;
+}
+.algo-val {
+  fill: var(--text);
+  font-weight: 700;
+  font-family: var(--font-code);
+}
+.algo-idx {
+  fill: var(--text-3);
+  font-size: 11px;
+  font-family: var(--font-code);
+}
+.algo-ptr text {
+  font-size: 13px;
+  font-weight: 750;
+  font-family: var(--font-code);
+}
+.algo-edge line {
+  stroke: var(--text-3);
+}
+.algo-edge.on line {
+  stroke: currentColor;
+}
+.algo-edge.on[class*='c-'] line {
+  stroke: inherit;
+}
+.algo-head {
+  fill: var(--text-3);
+}
+.algo-elabel {
+  font-size: 12.5px;
+  font-weight: 650;
+  fill: var(--text-2);
+}
+.algo-node {
+  stroke-width: 1.8;
+}
+.algo-node:not([class*='c-']) {
+  fill: var(--surface);
+  stroke: var(--text-2);
+}
+.algo-node[class*='c-'] {
+  fill-opacity: 0.25;
+  stroke-width: 2.8;
+}
+.algo-nlabel {
+  fill: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+}
+.algo-note {
+  fill: var(--text-2);
+  font-size: 12px;
+  font-weight: 650;
+  font-family: var(--font-code);
+}
+.algo-note-line {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 8px 4px 2px;
+  min-height: 3.2em;
+  line-height: 1.45;
+}
+.algo-count {
+  flex: none;
+  font-family: var(--font-code);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-3);
+  min-width: 3.2em;
+}
+.algo-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 2px;
+}
+.algo-btn {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--border, color-mix(in srgb, var(--text) 18%, transparent));
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--accent);
+  cursor: pointer;
+  flex: none;
+}
+.algo-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.algo-btn.play.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.algo-scrub {
+  flex: 1;
+  min-width: 60px;
+  accent-color: var(--accent);
+}
+.algo-code {
+  margin-top: 6px;
+  font-size: 13px;
+  overflow-x: auto;
+}
+.algo-code .code {
+  padding: 8px 0;
+}
+.algo-line {
+  display: flex;
+  padding: 0 12px 0 0;
+  border-left: 3px solid transparent;
+}
+.algo-line.hl {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  border-left-color: var(--accent);
+}
+.algo-ln {
+  flex: none;
+  width: 2.6em;
+  padding-right: 0.8em;
+  text-align: right;
+  color: var(--code-ln);
+  user-select: none;
+}
+.algo-src {
+  white-space: pre;
+}
