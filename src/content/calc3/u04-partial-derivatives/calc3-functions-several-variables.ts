@@ -54,7 +54,7 @@ export const lesson: Lesson = {
           areas: [{ expr: '5', expr2: 'x^2', from: -2.24, to: 2.24, color: 'blue' }],
           points: [
             { x: 0, y: 2, label: '(0, 2): g = ln 2' },
-            { x: 1.5, y: 1, label: '(1.5, 1): undefined', open: true, color: 'red' },
+            { x: -1.5, y: 1, label: '(−1.5, 1): undefined', open: true, color: 'red' },
           ],
           caption: 'The domain of $g(x, y) = \\ln(y - x^2)$ is the shaded region above the parabola. The dashed boundary is not included, because $\\ln 0$ is undefined.',
         },
@@ -173,12 +173,16 @@ export const lesson: Lesson = {
           x: [-3, 3],
           y: [-3, 3],
           equal: true,
-          implicit: [{ expr: HILLS, levels: [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75], color: 'purple' }],
+          implicit: [
+            { expr: HILLS, levels: [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75], color: 'purple' },
+            { expr: HILLS, levels: [0.7772], color: 'orange', dashed: true, label: 'contour through the pass' },
+          ],
           points: [
             { x: 1, y: -0.5, label: 'summit (≈3.0)' },
             { x: -1, y: 1, label: 'summit (≈2.0)' },
+            { x: -0.131, y: 0.348, label: 'pass (≈0.78)', color: 'orange' },
           ],
-          caption: 'The same terrain as a contour map (interval $0.25$). Contours bunch together on steep slopes and spread apart on gentle ones. Between the two summits the contours pinch into a figure-eight shape: a **saddle** (a mountain pass).',
+          caption: 'The same terrain as a contour map (interval $0.25$). Contours bunch together on steep slopes and spread apart on gentle ones. Between the summits they pinch into a waist: a **saddle** (a mountain pass). The dashed contour at exactly the pass height crosses itself in a figure-eight.',
         },
         {
           type: 'table',
@@ -329,8 +333,8 @@ target (2.5, 1.0):
         },
         {
           type: 'plot3d',
-          x: [-2.2, 2.2],
-          y: [-2.2, 2.2],
+          x: [-2.6, 2.6],
+          y: [-2.6, 2.6],
           z: [-2, 2],
           equal: true,
           parametricSurfaces: [{ x: 'sqrt(k + v^2)*cos(u)', y: 'sqrt(k + v^2)*sin(u)', z: 'v', u: [0, '2pi'], v: [-2, 2], color: 'purple', opacity: 0.75, label: '$x^2 + y^2 - z^2 = k$' }],
