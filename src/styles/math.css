@@ -365,12 +365,15 @@
 }
 .graph-slider {
   display: grid;
-  grid-template-columns: minmax(28px, auto) 1fr 52px;
+  grid-template-columns: minmax(28px, auto) minmax(96px, 1fr) 52px;
   align-items: center;
   gap: 12px;
 }
 .graph-slider.has-play {
-  grid-template-columns: minmax(28px, auto) 1fr 52px 32px;
+  grid-template-columns: minmax(28px, auto) minmax(96px, 1fr) 52px 32px;
+}
+.graph-slider-name {
+  min-width: 0;
 }
 .graph-play {
   display: grid;

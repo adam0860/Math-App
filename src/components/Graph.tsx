@@ -166,7 +166,7 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
       const X = (k: number) => sx(x0 + ((x1 - x0) * k) / NX);
       const Y = (j: number) => sy(y0 + ((y1 - y0) * j) / NY);
       levels.forEach((lev, li) => {
-        let d = '';
+        const segs: [number, number, number, number][] = [];
         for (let j = 0; j < NY; j++) {
           for (let k = 0; k < NX; k++) {
             const v00 = vals[j * (NX + 1) + k] - lev;
@@ -193,10 +193,43 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
               // A sign change across a pole (1/x, tan) is not a crossing: the midpoint stays far from the level.
               const mid = f({ ...env, x: x0 + ((x1 - x0) * (ka + kb)) / 2 / NX, y: y0 + ((y1 - y0) * (ja + jb)) / 2 / NY }) - lev;
               if (!Number.isFinite(mid) || Math.abs(mid) > span) continue;
-              d += `M${X(ka).toFixed(2)},${Y(ja).toFixed(2)}L${X(kb).toFixed(2)},${Y(jb).toFixed(2)}`;
+              segs.push([X(ka), Y(ja), X(kb), Y(jb)]);
             }
           }
         }
+        // Stitch the cell pieces into continuous polylines (so dashes and joins render properly).
+        const key = (x: number, y: number) => `${Math.round(x * 20)},${Math.round(y * 20)}`;
+        const ends = new Map<string, number[]>();
+        segs.forEach((s, si) => {
+          for (const k2 of [key(s[0], s[1]), key(s[2], s[3])]) {
+            const arr = ends.get(k2);
+            if (arr) arr.push(si);
+            else ends.set(k2, [si]);
+          }
+        });
+        const used = new Uint8Array(segs.length);
+        let d = '';
+        const walk = (x: number, y: number, out: [number, number][]) => {
+          for (;;) {
+            const cand = (ends.get(key(x, y)) ?? []).find((si) => !used[si]);
+            if (cand === undefined) return;
+            used[cand] = 1;
+            const s = segs[cand];
+            const forward = key(s[0], s[1]) === key(x, y);
+            [x, y] = forward ? [s[2], s[3]] : [s[0], s[1]];
+            out.push([x, y]);
+          }
+        };
+        segs.forEach((s, si) => {
+          if (used[si]) return;
+          used[si] = 1;
+          const fwd: [number, number][] = [[s[2], s[3]]];
+          walk(s[2], s[3], fwd);
+          const back: [number, number][] = [];
+          walk(s[0], s[1], back);
+          const line = [...back.reverse(), [s[0], s[1]] as [number, number], ...fwd];
+          d += line.map(([px, py], q) => `${q ? 'L' : 'M'}${px.toFixed(2)},${py.toFixed(2)}`).join('');
+        });
         if (d) paths.push({ d, color: c.color ?? COLORS[(i + 3) % COLORS.length], dashed: c.dashed, key: `i${i}-${li}` });
       });
     });
@@ -215,7 +248,6 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
     const ch = H / Math.max(3, Math.round((n * H) / W));
     const ny = Math.round(H / ch);
     const raw: { X: number; Y: number; u: number; v: number }[] = [];
-    let maxLen = 0;
     for (let j = 0; j < ny; j++) {
       for (let k = 0; k < n; k++) {
         const X = (k + 0.5) * cw;
@@ -228,17 +260,20 @@ export function Graph({ g, compact }: { g: GraphBlock; compact?: boolean }) {
         // Screen-space direction (y flips; respect unequal axis scales).
         const u = (P * W) / (x1 - x0);
         const v = (-Q * H) / (y1 - y0);
-        maxLen = Math.max(maxLen, Math.hypot(u, v));
         raw.push({ X, Y, u, v });
       }
     }
     const cell = Math.min(cw, ch) * 0.85;
-    const k = (F.scale ?? 1) * (maxLen > 0 ? cell / maxLen : 0);
+    // Scale by the 90th-percentile length so one huge arrow near a singularity doesn't
+    // shrink all the others; longer arrows are capped at one cell.
+    const lens = raw.map(({ u, v }) => Math.hypot(u, v)).sort((p, q) => p - q);
+    const ref = lens.length ? lens[Math.min(lens.length - 1, Math.floor(lens.length * 0.9))] : 0;
+    const k = (F.scale ?? 1) * (ref > 0 ? cell / ref : 0);
     return raw
       .map(({ X, Y, u, v }) => {
         const L = Math.hypot(u, v);
         if (L < 1e-12) return null;
-        const len = F.normalize ? cell * (F.scale ?? 1) * 0.8 : L * k;
+        const len = F.normalize ? cell * (F.scale ?? 1) * 0.8 : Math.min(L * k, cell * (F.scale ?? 1));
         if (len < 1.5) return null;
         const dx = (u / L) * len, dy = (v / L) * len;
         const ax = X - dx / 2, ay = Y - dy / 2, bx = X + dx / 2, by = Y + dy / 2;
