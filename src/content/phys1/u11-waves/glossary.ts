@@ -60,7 +60,7 @@ export const glossary: GlossaryEntry[] = [
     course: 'phys1',
     category: 'Waves',
     short: 'When waves overlap, their displacements **add** (superposition). Crests meeting crests reinforce (constructive interference); crests meeting troughs cancel (destructive interference).',
-    long: 'Two equal-frequency waves with phase difference $\\phi$ combine into a wave of amplitude $2A\\cos(\\phi/2)$: $2A$ when in phase, $0$ when exactly out of phase. Superposition holds because the wave equation is linear.',
+    long: 'Two equal-frequency waves with phase difference $\\phi$ combine into a wave of amplitude $2A|\\cos(\\phi/2)|$: $2A$ when in phase, $0$ when exactly out of phase. Superposition holds because the wave equation is linear.',
     tex: 'A\\sin(kx - \\omega t) + A\\sin(kx - \\omega t + \\phi) = 2A\\cos\\tfrac{\\phi}{2}\\,\\sin\\!\\left(kx - \\omega t + \\tfrac{\\phi}{2}\\right)',
     see: ['superposition-principle', 'phys-standing-wave', 'phys-beats'],
   },

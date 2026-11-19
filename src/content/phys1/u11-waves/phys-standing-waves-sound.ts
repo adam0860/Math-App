@@ -353,7 +353,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'warning',
           title: 'Protect your hearing',
-          text: 'Sustained levels above about $85\\,\\text{dB}$ damage hearing over time, and a rifle shot at the shooter\'s ear peaks well above $140\\,\\text{dB}$, more than $100$ times the intensity at the threshold of pain (about $120\\,\\text{dB}$). Because the scale is logarithmic, earplugs rated at $30\\,\\text{dB}$ cut the intensity reaching your ear by a factor of $1000$.',
+          text: 'Sustained levels above about $85\\,\\text{dB}$ damage hearing over time, and a centerfire rifle shot peaks at roughly $160$–$175\\,\\text{dB}$ at the shooter\'s ear (even a $.22$ rimfire reaches about $140\\,\\text{dB}$), $10^4$ or more times the intensity at the threshold of pain (about $120\\,\\text{dB}$). Because the scale is logarithmic, earplugs rated at $30\\,\\text{dB}$ cut the intensity reaching your ear by a factor of $1000$.',
         },
       ],
     },
