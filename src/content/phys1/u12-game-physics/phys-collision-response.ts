@@ -148,7 +148,7 @@ std::optional<Contact> sphereSphere(Vec3 cA, float rA, Vec3 cB, float rB) {
           type: 'theorem',
           name: 'AABB overlap test',
           tex: '\\text{overlap} \\iff \\big(\\min_x^A \\le \\max_x^B \\ \\text{and}\\ \\max_x^A \\ge \\min_x^B\\big) \\ \\text{and the same for } y \\text{ and } z',
-          text: 'Six comparisons, no multiplications. This is the one-dimensional case of the separating axis theorem: two convex shapes are disjoint if and only if some axis separates their projections.',
+          text: 'Six comparisons, no multiplications. This is the separating axis theorem applied to the coordinate axes: two convex shapes are disjoint if and only if some axis separates their projections.',
         },
         {
           type: 'graph',
@@ -379,10 +379,9 @@ std::optional<Contact> sphereSphere(Vec3 cA, float rA, Vec3 cB, float rB) {
         'Compute each contact point\'s velocity $\\vec{v} + \\vec{\\omega} \\times \\vec{r}$ and the relative velocity $\\vec{v}_{\\text{rel}}$',
         'Project onto the normal: $v_n = \\vec{v}_{\\text{rel}}\\cdot\\hat{n}$; if $v_n \\ge 0$, the bodies are separating, so stop',
         'Compute $j = -(1 + e)v_n$ divided by the inverse effective mass',
-        'Apply $\\pm j\\hat{n}$ to the linear and angular velocities of both bodies',
-        'Compute and clamp the friction impulse $|j_t| \\le \\mu j$, then apply it along $\\hat{t}$',
+        'Apply $\\pm j\\hat{n}$ to both bodies\' linear and angular velocities, and apply the friction impulse along $\\hat{t}$, clamped to $|j_t| \\le \\mu j$',
       ],
-      explanation: 'You need the contact-point velocities before you can project them; the separating check prevents "sticky" contacts that pull bodies together; $j$ needs $v_n$; and the friction clamp needs the normal impulse $j$, so friction comes last. (Engines that iterate apply these steps to every contact, several times per step.)',
+      explanation: 'You need the contact-point velocities before you can project them; the separating check prevents "sticky" contacts that pull bodies together; $j$ needs $v_n$; and the friction clamp needs the normal impulse $j$. (Engines that iterate apply these steps to every contact, several times per step.)',
     },
     // ------------------------------------------------------------------ 12
     {

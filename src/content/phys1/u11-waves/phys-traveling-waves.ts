@@ -65,7 +65,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'analogy',
           title: 'The stadium wave',
-          text: 'In a stadium wave nobody runs around the stadium. Each fan stands up and sits down a moment after their neighbor, and the *timing pattern* sweeps around the stands at tens of meters per second. A rope element does the same: it moves because the element beside it pulls on it.',
+          text: 'In a stadium wave nobody runs around the stadium. Each fan stands up and sits down a moment after their neighbor, and the *timing pattern* sweeps around the stands at about $12\\,\\text{m/s}$, far faster than anyone moves. A rope element does the same: it moves because the element beside it pulls on it.',
         },
         {
           type: 'callout',
