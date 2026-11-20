@@ -520,7 +520,7 @@ export const lesson: Lesson = {
     // ------------------------------------------------------------------ 6
     {
       kind: 'error',
-      prompt: 'This iterative **preorder** traversal of the tree $A(B(D, E), C(-, F))$ prints $A\\,C\\,F\\,B\\,E\\,D$ instead of $A\\,B\\,D\\,E\\,C\\,F$. Tap the first line that is wrong.',
+      prompt: 'This iterative **preorder** traversal of the tree $A(B(D, E), C(-, F))$ prints $A\\,C\\,F\\,B\\,E\\,D$ instead of $A\\,B\\,D\\,E\\,C\\,F$. Tap a line that is in the wrong place.',
       lines: [
         '`std::vector<const Node*> st;`',
         '`if (root) st.push_back(root);`',
