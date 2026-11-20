@@ -665,10 +665,13 @@ function needsSci(q: NumericQuestion): boolean {
 function Numeric({ q, revealed, onReady, ref }: QProps<NumericQuestion>) {
   const [value, setValue] = useState('');
   useEffect(() => onReady(value.trim() !== '' && previewTex(expandSciNotation(cleanAnswer(value).split(/,|;|\bor\b/)[0] || ' ')) !== null), [value, onReady]);
+  // A single answer typed with thousands separators ("499,500") is one number, not a list.
+  const single = !Array.isArray(q.answer) || q.answer.length === 1;
+  const typed = single && /^\s*[-+]?\d{1,3}(,\d{3})+(\.\d+)?\s*$/.test(value) ? value.replace(/,/g, '') : value;
   const check = () =>
     Array.isArray(q.answer)
-      ? numericListMatches(value, q.answer, { tolerance: q.tolerance, minDecimals: q.minDecimals })
-      : numericMatches(value, q.answer, { tolerance: q.tolerance, minDecimals: q.minDecimals });
+      ? numericListMatches(typed, q.answer, { tolerance: q.tolerance, minDecimals: q.minDecimals })
+      : numericMatches(typed, q.answer, { tolerance: q.tolerance, minDecimals: q.minDecimals });
   useImperativeHandle(ref, () => ({ evaluate: check }));
   const right = revealed && check();
   const multi = Array.isArray(q.answer) && q.answer.length > 1;

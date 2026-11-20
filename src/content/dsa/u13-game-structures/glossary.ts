@@ -131,7 +131,7 @@ export const glossary: GlossaryEntry[] = [
     course: 'dsa',
     category: 'Engine Structures',
     short: 'A set of integers from $0$ to $U - 1$ stored as two arrays: `dense` holds the $n$ members packed, and `sparse[e]` holds the position of $e$ in `dense`. Insert, remove (swap-and-pop) and membership are $O(1)$, and iteration touches only the $n$ members.',
-    long: 'Invariant: `sparse[dense[i]] == i` for every $i < n$. Membership checks `sparse[e] < n && dense[sparse[e]] == e`, so stale or even uninitialized values in `sparse` are harmless (Briggs and Torczon, 1993). In an ECS each component type is a sparse set with a parallel array of component data.',
+    long: 'Invariant: `sparse[dense[i]] == i` for every $i < n$. Membership checks `sparse[e] < n && dense[sparse[e]] == e`, so stale values in `sparse` are harmless (Briggs and Torczon, 1993; in C++, initialize the array anyway, since reading an uninitialized value is undefined behavior). In an ECS each component type is a sparse set with a parallel array of component data.',
     tex: '\\texttt{contains}(e) \\iff \\texttt{sparse}[e] < n \\ \\land\\ \\texttt{dense}[\\texttt{sparse}[e]] = e',
     see: ['dsa-ecs', 'dsa-swap-and-pop', 'dsa-slot-map'],
   },
