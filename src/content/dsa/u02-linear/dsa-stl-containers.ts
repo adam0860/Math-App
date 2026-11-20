@@ -29,7 +29,7 @@ export const lesson: Lesson = {
             ['`std::array<T, N>`', 'a fixed C array, stored inline (no heap)', '$O(1)$', 'n/a (fixed size)', 'n/a', 'n/a'],
             ['`std::vector<T>`', 'one contiguous heap block, grown geometrically', '$O(1)$', 'amortized $O(1)$', '$O(n)$', '$O(n)$ (shifts)'],
             ['`std::deque<T>`', 'map of fixed-size blocks', '$O(1)$ (two hops)', '$O(1)$', '$O(1)$', '$O(n)$'],
-            ['`std::list<T>`', 'circular doubly linked nodes with a sentinel', '$O(n)$', '$O(1)$', '$O(1)$', '$O(1)$ given an iterator, plus $O(1)$ `splice`'],
+            ['`std::list<T>`', 'circular doubly linked nodes with a sentinel', '$O(n)$', '$O(1)$', '$O(1)$', '$O(1)$ given an iterator, plus $O(1)$ `splice` of a whole list or one node'],
             ['`std::forward_list<T>`', 'singly linked nodes', '$O(n)$', 'none', '$O(1)$', '$O(1)$ after a given iterator'],
           ],
         },
