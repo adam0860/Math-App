@@ -66,7 +66,7 @@ export const dsaCheatSheets: CheatSheet[] = [
           },
           {
             label: 'deque',
-            text: 'Insert at either end invalidates iterators but **not** references to elements; insert in the middle invalidates everything. Erasing at an end invalidates only the erased element.',
+            text: 'Insert at either end invalidates iterators but **not** references to elements; insert in the middle invalidates everything. Erasing at an end invalidates only the erased element (plus `end()` when the last element is erased).',
           },
           {
             label: 'list, map, set',
@@ -617,7 +617,7 @@ export const dsaCheatSheets: CheatSheet[] = [
           },
           {
             label: 'Arithmetic',
-            text: 'Overflow: sums of many `int`s need `long long`; `mid = lo + (hi - lo) / 2`; products like `a * b` before a modulo. `INF + w` overflows in shortest paths: guard it. Integer division and `%` with negatives round toward zero in C++.',
+            text: 'Overflow: sums of many `int`s need `long long`; `mid = lo + (hi - lo) / 2`; products like `a * b` before a modulo. `INF + w` overflows in shortest paths: guard it. In C++ integer division truncates toward zero, so `-7 / 2 == -3` and `-7 % 2 == -1` (the remainder takes the sign of the dividend).',
           },
           {
             label: 'Indices and iterators',
