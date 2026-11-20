@@ -387,7 +387,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'p',
-          text: 'If the tree is **complete** (every level full except possibly the last, which is filled from the left), you need no links at all: use the [[dsa-implicit-tree|implicit layout]]. Store the nodes in level order; then the children of index $i$ are at $2i + 1$ and $2i + 2$, and its parent at $\\lfloor (i - 1)/2 \\rfloor$. Binary heaps use this layout. For a tree that is not complete, the gaps waste slots: a chain of height $h$ needs $2^{h+1} - 1$ slots for $h + 1$ nodes.',
+          text: 'If the tree is **complete** (every level full except possibly the last, which is filled from the left), you need no links at all: use the [[dsa-implicit-tree|implicit layout]]. Store the nodes in level order; then the children of index $i$ are at $2i + 1$ and $2i + 2$, and its parent at $\\lfloor (i - 1)/2 \\rfloor$. Binary heaps use this layout. For a tree that is not complete, the gaps waste slots: a chain of right children of height $h$ needs $2^{h+1} - 1$ slots for $h + 1$ nodes.',
         },
         {
           type: 'figure',

@@ -173,7 +173,7 @@ mix(k) % 64            buckets used  55 of 64, longest chain   5`,
         {
           type: 'algo',
           view: 'array',
-          code: `std::size_t i = h(key) % m;
+          code: `std::size_t i = h(key) % m;   probes = 1;
 while (slot[i].full) {   // collision
     ++probes;
     i = (i + 1) % m;     // next slot

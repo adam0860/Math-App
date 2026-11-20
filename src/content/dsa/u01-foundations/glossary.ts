@@ -60,7 +60,7 @@ export const glossary: GlossaryEntry[] = [
     course: 'dsa',
     category: 'Arrays',
     short: 'A contiguous array that can grow: it keeps a heap block with **capacity** $\\ge$ **size**, and when full it reallocates to a block a constant factor larger and moves the elements over.',
-    long: 'Multiplicative growth (GCC and Clang double, MSVC grows by $1.5\\times$) makes appending amortized $O(1)$, while indexing stays $O(1)$. Reallocation invalidates every pointer, reference and iterator into the array. `std::vector` is C++\'s dynamic array.',
+    long: 'Multiplicative growth (libstdc++ and libc++ double, MSVC\'s library grows by $1.5\\times$) makes appending amortized $O(1)$, while indexing stays $O(1)$. Reallocation invalidates every pointer, reference and iterator into the array. `std::vector` is C++\'s dynamic array.',
     example: 'std::vector<int> v;\nv.reserve(1000);          // capacity >= 1000, size 0\nfor (int i = 0; i < 1000; ++i)\n    v.push_back(i);       // no reallocation',
     exampleLang: 'cpp',
     see: ['dsa-accounting-method', 'dsa-iterator-invalidation', 'dm-amortized-analysis'],
@@ -124,7 +124,7 @@ export const glossary: GlossaryEntry[] = [
     course: 'dsa',
     category: 'Recursion',
     short: 'A crash caused by using more call-stack memory than the thread has, usually through recursion whose depth grows with the input (or never stops).',
-    long: 'Default stacks are about $8$ MB for a Linux main thread and $1$ MB on Windows, so recursion $10^5$–$10^6$ levels deep fails. The fix is to keep depth $O(\log n)$ (divide and conquer, balanced trees) or to use a loop with an explicit heap-allocated stack.',
+    long: 'Default stacks are about $8$ MB for a Linux main thread and $1$ MB on Windows, so recursion $10^5$–$10^6$ levels deep fails. The fix is to keep depth $O(\\log n)$ (divide and conquer, balanced trees) or to use a loop with an explicit heap-allocated stack.',
     see: ['dsa-call-stack', 'dsa-tail-call'],
   },
   {

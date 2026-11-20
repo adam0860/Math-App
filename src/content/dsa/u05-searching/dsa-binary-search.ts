@@ -374,7 +374,7 @@ export const lesson: Lesson = {
       prompt: 'Complete the two loop bodies. Both use the half-open range $[lo, hi)$ and the same update lines `lo = mid + 1;` / `hi = mid;`.',
       template: '`lowerBound` (first $a[i] \\ge x$) moves right when `a[mid]` ___ `x`. `upperBound` (first $a[i] > x$) moves right when `a[mid]` ___ `x`. Both loops run while `lo` ___ `hi`.',
       blanks: [{ answers: ['`<`'] }, { answers: ['`<=`'] }, { answers: ['`<`'] }],
-      wordBank: ['`<`', '`<=`', '`<`', '`>`', '`>=`', '`!=`'],
+      wordBank: ['`<`', '`<=`', '`<`', '`>`', '`>=`', '`==`'],
       hint: 'Moving right means "this cell and everything before it are ruled out". Which cells are ruled out for each bound?',
       explanation: 'For `lowerBound` the answer is the first cell with $a[i] \\ge x$, so a cell is ruled out (and $lo$ jumps past it) exactly when $a[mid] < x$. For `upperBound` the answer is the first cell with $a[i] > x$, so cells equal to $x$ are ruled out too: move right when $a[mid] \\le x$. The loop runs while the unknown range $[lo, hi)$ is non-empty, i.e. `lo < hi`.',
     },

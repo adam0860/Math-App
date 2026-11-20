@@ -27,7 +27,7 @@ export const lesson: Lesson = {
           headers: ['Container', 'Built from', 'Index $[i]$', 'Push/pop back', 'Push/pop front', 'Insert/erase middle'],
           rows: [
             ['`std::array<T, N>`', 'a fixed C array, stored inline (no heap)', '$O(1)$', 'n/a (fixed size)', 'n/a', 'n/a'],
-            ['`std::vector<T>`', 'one contiguous heap block, doubling', '$O(1)$', 'amortized $O(1)$', '$O(n)$', '$O(n)$ (shifts)'],
+            ['`std::vector<T>`', 'one contiguous heap block, grown geometrically', '$O(1)$', 'amortized $O(1)$', '$O(n)$', '$O(n)$ (shifts)'],
             ['`std::deque<T>`', 'map of fixed-size blocks', '$O(1)$ (two hops)', '$O(1)$', '$O(1)$', '$O(n)$'],
             ['`std::list<T>`', 'circular doubly linked nodes with a sentinel', '$O(n)$', '$O(1)$', '$O(1)$', '$O(1)$ given an iterator, plus $O(1)$ `splice`'],
             ['`std::forward_list<T>`', 'singly linked nodes', '$O(n)$', 'none', '$O(1)$', '$O(1)$ after a given iterator'],
@@ -258,7 +258,7 @@ t = 2.50  grenade explodes`,
       prompt: 'Declare a priority queue of `int`s whose `top()` is the **smallest** element.',
       template: '`std::priority_queue<int,` ___ `,` ___ `> pq;`',
       blanks: [{ answers: ['`std::vector<int>`'] }, { answers: ['`std::greater<int>`'] }],
-      wordBank: ['`std::vector<int>`', '`std::list<int>`', '`std::greater<int>`', '`std::less<int>`', '`std::deque<int>`'],
+      wordBank: ['`std::vector<int>`', '`std::list<int>`', '`std::greater<int>`', '`std::less<int>`', '`std::set<int>`'],
       explanation: 'The comparator is the third template argument, so the second (the underlying container) must be spelled out too: `std::vector<int>` (it needs random access, so `std::list` is not allowed). `std::less<int>`, the default, gives a max-heap; `std::greater<int>` reverses it, so the smallest element is on top.',
     },
     // ------------------------------------------------------------------ 8

@@ -322,7 +322,7 @@ export const lesson: Lesson = {
       lang: 'text',
       answer: '5',
       hint: 'Run BFS from `S` ring by ring: distance 1, distance 2, …',
-      explanation: 'Label rows and columns from $0$. Distance 1: $(0,1), (1,0)$. Distance 2: $(0,2), (2,0)$. Distance 3: $(1,2), (2,1)$. Distance 4: $(1,3), (2,2), (3,1)$. Distance 5: $(3,2)$, which is `G`. Two different 5-move paths exist (over the top through $(1,2)$, or down the left side through $(2,1)$); BFS reports the length, and the parent pointers pick one. With 8-connectivity the answer would drop to $3$.',
+      explanation: 'Label rows and columns from $0$. Distance 1: $(0,1), (1,0)$. Distance 2: $(0,2), (2,0)$. Distance 3: $(1,2), (2,1)$. Distance 4: $(1,3), (2,2), (3,1)$. Distance 5: $(3,2)$, which is `G`. Three different 5-move paths exist (one over the top through $(1,2)$, two down the left side through $(2,1)$); BFS reports the length, and the parent pointers pick one. With 8-connectivity the answer would drop to $3$.',
     },
     // ------------------------------------------------------------------ 12
     {

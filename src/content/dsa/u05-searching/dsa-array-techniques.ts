@@ -747,7 +747,7 @@ export const lesson: Lesson = {
           code: CODE.deque,
           output: OUT.deque,
           annotations: [
-            { lines: '13-14', text: 'At most one front pop per step: the window moves by one, so only one index can leave.' },
+            { lines: 13, text: 'At most one front pop per step: the window moves by one, so only one index can leave.' },
             { lines: 14, text: 'The `while` can pop many indices at once, but each index is popped at most once over the whole run.' },
             { lines: '32-35', text: 'The counter confirms the amortized bound: about $2$ deque operations per element (one push, at most one pop), not $64$.' },
           ],

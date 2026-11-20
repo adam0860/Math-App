@@ -391,11 +391,11 @@ export const lesson: Lesson = {
       blocks: [
         {
           type: 'p',
-          text: 'Run one extra round. If no edge relaxes, the distances are final and no negative cycle is reachable from $s$. If some edge still relaxes, one is. The first half is the path-relaxation property; the second half needs a short argument.',
+          text: 'Run one extra round. If no edge relaxes, the distances are final and no negative cycle is reachable from $s$. If some edge still relaxes, one is. The second half is the path-relaxation property (with no negative cycle, $V - 1$ rounds already made every distance exact, so nothing can relax); the first half needs a short argument.',
         },
         {
           type: 'derivation',
-          title: 'No negative cycle $\\Rightarrow$ the check round finds nothing',
+          title: 'The check round finds nothing $\\Rightarrow$ no reachable negative cycle',
           steps: [
             { tex: '\\text{suppose } C = v_0 \\to v_1 \\to \\cdots \\to v_k = v_0 \\text{ is reachable and } d[v_i] \\le d[v_{i-1}] + w(v_{i-1}, v_i) \\ \\forall i', why: 'Prove the contrapositive: if **no** edge can relax, then every reachable cycle has weight $\\ge 0$. All $d[v_i]$ are finite because the cycle is reachable.' },
             { tex: '\\sum_{i=1}^{k} d[v_i] \\le \\sum_{i=1}^{k} d[v_{i-1}] + \\sum_{i=1}^{k} w(v_{i-1}, v_i)', why: 'Add the $k$ inequalities.' },
@@ -602,7 +602,7 @@ export const lesson: Lesson = {
           type: 'callout',
           variant: 'code',
           title: 'Precomputed next-hop tables in games',
-          text: 'For a level with a few hundred waypoints, many games precompute the `nxt` matrix offline with Floyd–Warshall and ship it. At runtime, "where do I step next to reach $j$?" is one array lookup, with zero search cost per frame. With $500$ waypoints the table is $250\\,000$ entries — $250$ KB as `uint8_t`... except $500 > 255$, so `uint16_t` and $500$ KB. Past a few thousand waypoints, memory pushes you back to A* at runtime.',
+          text: 'For a level with a few hundred waypoints, many games precompute the `nxt` matrix offline with Floyd–Warshall and ship it. At runtime, "where do I step next to reach $j$?" is one array lookup, with zero search cost per frame. With $500$ waypoints the table is $250\\,000$ entries; since $500 > 255$, a vertex index needs a `uint16_t`, so that is $500$ KB. Past a few thousand waypoints, memory pushes you back to A* at runtime.',
         },
         {
           type: 'callout',

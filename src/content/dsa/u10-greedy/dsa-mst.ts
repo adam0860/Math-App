@@ -581,9 +581,9 @@ export const lesson: Lesson = {
       prompt: 'Lazy Prim and lazy Dijkstra differ in one expression: the priority pushed when relaxing edge $(u, v)$ of weight `w`. Fill in both.',
       templateIsCode: true,
       template: '// Prim\npq.push({___, v});\n// Dijkstra\npq.push({___, v});',
-      blanks: [{ answers: ['w'] }, { answers: ['dist[u] + w'] }],
+      blanks: [{ answers: ['w'] }, { answers: ['dist[u] + w', 'dist[v]'] }],
       wordBank: ['w', 'dist[u] + w', 'dist[v]', 'w - dist[u]'],
-      explanation: 'Prim\'s heap is ordered by the weight of the single edge that would attach $v$ to the tree, `w`, because it minimizes the total weight of the tree. Dijkstra\'s heap is ordered by the length of the whole path from the source, `dist[u] + w`, because it minimizes each vertex\'s distance. Same skeleton, same lazy deletion, completely different trees — the error question in the Dijkstra lesson was exactly this mix-up.',
+      explanation: 'Prim\'s heap is ordered by the weight of the single edge that would attach $v$ to the tree, `w`, because it minimizes the total weight of the tree. Dijkstra\'s heap is ordered by the length of the whole path from the source, `dist[u] + w`, because it minimizes each vertex\'s distance. (Right after the relaxation `dist[v]` holds that same value, so `dist[v]` is also correct there; `dijkstra.cpp` writes it that way.) Same skeleton, same lazy deletion, completely different trees — the error question in the Dijkstra lesson was exactly this mix-up.',
     },
   ],
   takeaways: [

@@ -10,7 +10,7 @@ export const glossary: GlossaryEntry[] = [
     course: 'dsa',
     category: 'Trees',
     short: 'Storing a complete binary tree in an array in level order, with no pointers: the children of index $i$ are at $2i + 1$ and $2i + 2$, and its parent is at $\\lfloor (i - 1)/2 \\rfloor$ (root at index $0$).',
-    long: 'Binary heaps and segment trees use this layout. It saves the memory of child links and keeps nodes contiguous, but it only suits complete (or nearly complete) trees: a tree of height $h$ needs $2^{h+1} - 1$ slots regardless of how many nodes it has. Storing a sorted array in this order (the Eytzinger layout) makes binary search more cache-friendly.',
+    long: 'Binary heaps and segment trees use this layout. It saves the memory of child links and keeps nodes contiguous, but it only suits complete (or nearly complete) trees: a tree of height $h$ can need up to $2^{h+1} - 1$ slots, however few nodes it has. Storing a sorted array in this order (the Eytzinger layout) makes binary search more cache-friendly.',
     tex: '\\text{left}(i) = 2i + 1, \\quad \\text{right}(i) = 2i + 2, \\quad \\text{parent}(i) = \\left\\lfloor \\tfrac{i - 1}{2} \\right\\rfloor',
     see: ['dm-m-ary-tree', 'dm-tree-traversal'],
   },

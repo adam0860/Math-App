@@ -261,7 +261,7 @@ after splice: a = 1 7 8 9 2 3, c has 0 elements, *it = 2`,
             { lines: 14, text: 'The sentinel is a member, initialized to point at itself: an empty circular list.' },
             { lines: '24-29', text: 'Insert before `pos`: the new node gets both links at construction, then the two neighbours are pointed at it. No `if` anywhere, even when the list is empty (then `pos` is the sentinel and `pos->prev` is the sentinel too).' },
             { lines: '30-34', text: 'Erase: each neighbour skips over `n`. The sentinel guarantees `n->prev` and `n->next` exist.' },
-            { lines: '58-61', text: '`std::list` is this exact design. `splice` relinks a whole range of nodes from another list in $O(1)$: no copying, no allocation, and the moved elements keep their addresses, so `it` still points at $2$.' },
+            { lines: '58-61', text: '`std::list` is this exact design. `splice` relinks all of another list\'s nodes in $O(1)$ (splicing just a sub-range from a different list is linear, since the sizes must be recounted): no copying, no allocation, and the moved elements keep their addresses, so `it` still points at $2$.' },
           ],
         },
         {
@@ -560,7 +560,7 @@ sums: list 4096, vector 4096`,
       blocks: [
         {
           type: 'p',
-          text: 'Linked lists still earn their place when you need what vectors cannot give: elements that **never move** (pointers and iterators to them stay valid no matter what else is inserted or erased), $O(1)$ removal of an element you already hold, and $O(1)$ `splice` of whole ranges between lists. The version game engines actually use is the [[dsa-intrusive-list|intrusive list]].',
+          text: 'Linked lists still earn their place when you need what vectors cannot give: elements that **never move** (pointers and iterators to them stay valid no matter what else is inserted or erased), $O(1)$ removal of an element you already hold, and $O(1)$ `splice` of whole lists or single nodes between lists. The version game engines actually use is the [[dsa-intrusive-list|intrusive list]].',
         },
         {
           type: 'p',

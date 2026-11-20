@@ -335,7 +335,7 @@ open 1000x1000 level, iterative: max stack 499501 cells`,
           annotations: [
             { lines: '9-18', text: 'The recursive version: check bounds and walls, fill, recurse into four neighbours. Here it already reaches $21$ frames on a $5 \\times 8$ map. On the $1000 \\times 1000$ map it would overflow the stack.' },
             { lines: 23, text: 'Mark a cell when it is **pushed**, not when it is popped, so no cell is ever on the stack twice and the stack holds at most one entry per open cell.' },
-            { lines: '27-28', text: 'Pop the most recent cell: last in, first out, the same order in which the recursion would explore.' },
+            { lines: '27-28', text: 'Pop the most recent cell: last in, first out, like the call stack. The visiting order is not identical to the recursive version\'s (neighbours are pushed in order and marked on push), but the filled region is the same.' },
             { lines: 57, text: '$499\\,501$ pairs of `int`s is about $4$ MB, which is trivial on the heap. The same fill done recursively would need up to $10^6$ stack frames.' },
           ],
         },

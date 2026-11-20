@@ -11,8 +11,9 @@ import { Inline } from './RichText';
 
 const AW = 440;
 
-function ArrayView({ frame, arr, bars }: { frame: AlgoFrame; arr: (number | string)[]; bars?: boolean }) {
-  const n = Math.max(1, arr.length);
+function ArrayView({ frame, arr, bars, slots }: { frame: AlgoFrame; arr: (number | string)[]; bars?: boolean; slots: number }) {
+  // `slots` may be one more than the array length so a one-past-the-end pointer (hi = n) has room.
+  const n = Math.max(1, slots);
   const cw = Math.min(60, (AW - 16) / n);
   const x0 = (AW - cw * n) / 2;
   const marks = new Map((frame.marks ?? []).map((m) => [m.index, m.color]));
@@ -166,6 +167,17 @@ export function Algo({ a }: { a: AlgoBlock }) {
     return out;
   }, [a.frames]);
 
+  // Layout width: the longest array, plus one slot if any pointer ever sits one past the end.
+  const slots = useMemo(() => {
+    let m = 1;
+    a.frames.forEach((f, i) => {
+      const len = arrays[i].length;
+      m = Math.max(m, len);
+      if ((f.pointers ?? []).some((p) => p.index >= len)) m = Math.max(m, len + 1);
+    });
+    return m;
+  }, [a.frames, arrays]);
+
   const codeLines = useMemo(() => (a.code ? highlightLines(a.code, a.lang ?? 'cpp') : null), [a.code, a.lang]);
 
   useEffect(() => {
@@ -187,7 +199,7 @@ export function Algo({ a }: { a: AlgoBlock }) {
 
   return (
     <figure className="graph algo">
-      <div className="algo-pic">{a.view === 'array' ? <ArrayView frame={frame} arr={arrays[k]} bars={a.bars} /> : <GraphView a={a} frame={frame} />}</div>
+      <div className="algo-pic">{a.view === 'array' ? <ArrayView frame={frame} arr={arrays[k]} bars={a.bars} slots={slots} /> : <GraphView a={a} frame={frame} />}</div>
       <div className="algo-note-line" aria-live="polite">
         <span className="algo-count">
           {k + 1}/{n}
