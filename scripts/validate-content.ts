@@ -19,7 +19,7 @@
  */
 import katex from 'katex';
 import 'katex/contrib/mhchem';
-import type { Block, FigureBlock, GraphBlock, Plot3DBlock, Lesson, Step, QuestionStep, GlossaryEntry, ReadingRef, NumOrExpr } from '../src/content/types';
+import type { AlgoBlock, Block, FigureBlock, GraphBlock, Plot3DBlock, Lesson, Step, QuestionStep, GlossaryEntry, ReadingRef, NumOrExpr } from '../src/content/types';
 import { compile, equivalent, evalConst, parse, variablesOf, type Env } from '../src/lib/mathexpr';
 import { MATH_GLOSSARY_IDS } from './glossary-master';
 import { loadContent } from './load-content';
@@ -46,7 +46,7 @@ const definedIds = new Set(glossary.map((g) => g.id));
 const resolvable = (id: string) => definedIds.has(id) || (partial && masterIds.has(id));
 
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-const PREFIX: Record<string, string> = { algebra: 'alg-', trig: 'trig-', calc1: 'calc1-', calc2: 'calc2-', calc3: 'calc3-', linalg: 'la-', chem: 'chem-', genchem: 'gchem-', orgo: 'ochem-', discrete: 'dm-', stats: 'stat-', phys1: 'phys-' };
+const PREFIX: Record<string, string> = { algebra: 'alg-', trig: 'trig-', calc1: 'calc1-', calc2: 'calc2-', calc3: 'calc3-', linalg: 'la-', chem: 'chem-', genchem: 'gchem-', orgo: 'ochem-', discrete: 'dm-', stats: 'stat-', dsa: 'dsa-', phys1: 'phys-' };
 
 // ----------------------------------------------------------------------- TeX
 function checkTex(where: string, tex: string, display = false) {
@@ -342,6 +342,67 @@ function checkPlot3D(where: string, g: Plot3DBlock) {
   if (drawables === 0) err(where, 'plot3d draws nothing (add surfaces, parametricSurfaces, curves, points, vectors or field)');
 }
 
+function checkAlgo(where: string, a: AlgoBlock) {
+  if (a.caption) checkInline(where + ' caption', a.caption);
+  if (!Array.isArray(a.frames) || a.frames.length < 2) {
+    err(where, 'algo needs at least 2 frames');
+    return;
+  }
+  const codeLines = a.code ? a.code.split('\n').length : 0;
+  if (a.code && /\t/.test(a.code)) warn(where, 'algo code contains tab characters; indent with spaces');
+  const ids = new Set<string>();
+  if (a.view === 'graph') {
+    if (!a.nodes?.length) err(where, 'algo graph view needs nodes');
+    const W = a.width ?? 420, H = a.height ?? 260;
+    for (const nd of a.nodes ?? []) {
+      if (ids.has(nd.id)) err(where, `duplicate node id "${nd.id}"`);
+      ids.add(nd.id);
+      if (nd.x < 18 || nd.x > W - 18 || nd.y < 18 || nd.y > H - 30) warn(where, `node "${nd.id}" at (${nd.x}, ${nd.y}) is too close to the edge of the ${W}×${H} box`);
+    }
+    for (const e of a.edges ?? []) if (!ids.has(e.from) || !ids.has(e.to)) err(where, `edge ${e.from}→${e.to} uses an unknown node`);
+  } else if (a.view !== 'array') {
+    err(where, `algo view must be 'array' or 'graph'`);
+  }
+  let len = -1;
+  a.frames.forEach((f, i) => {
+    const w = `${where} frame ${i + 1}`;
+    if (!f.note?.trim()) err(w, 'frame needs a note');
+    else checkInline(w + ' note', f.note);
+    f.vars?.forEach(([k]) => checkInline(w + ' var', k));
+    f.lines?.forEach((l) => {
+      if (!a.code) err(w, 'lines given but the block has no code');
+      else if (!Number.isInteger(l) || l < 1 || l > codeLines) err(w, `line ${l} is outside the code (${codeLines} lines)`);
+    });
+    if (a.view === 'array') {
+      if (f.array) len = f.array.length;
+      if (i === 0 && !f.array) err(w, 'the first frame must set array');
+      if (a.bars && f.array?.some((v) => typeof v !== 'number')) err(w, 'bars need numeric values');
+      const inRange = (k: number, lab: string, allowEnd = false) => {
+        if (!Number.isInteger(k) || k < 0 || k > (allowEnd ? len : len - 1)) err(w, `${lab} index ${k} is outside the array (length ${len})`);
+      };
+      f.marks?.forEach((m) => inRange(m.index, 'mark'));
+      f.dim?.forEach((k) => inRange(k, 'dim'));
+      f.pointers?.forEach((p) => inRange(p.index, `pointer ${p.label}`, true));
+      if (f.nodeColors || f.edgeColors || f.nodeNotes) err(w, 'graph fields in an array view');
+    } else {
+      const known = (id: string, lab: string) => {
+        if (!ids.has(id)) err(w, `${lab} refers to unknown node "${id}"`);
+      };
+      f.nodeColors?.forEach((c) => known(c.id, 'nodeColors'));
+      f.nodeNotes?.forEach((c) => known(c.id, 'nodeNotes'));
+      f.nodeLabels?.forEach((c) => known(c.id, 'nodeLabels'));
+      f.hidden?.forEach((id) => known(id, 'hidden'));
+      f.edgeColors?.forEach((e) => {
+        known(e.from, 'edgeColors');
+        known(e.to, 'edgeColors');
+        if (!(a.edges ?? []).some((x) => (x.from === e.from && x.to === e.to) || (!x.directed && x.from === e.to && x.to === e.from)))
+          err(w, `edgeColors ${e.from}→${e.to} is not an edge`);
+      });
+      if (f.array || f.marks || f.pointers) err(w, 'array fields in a graph view');
+    }
+  });
+}
+
 // --------------------------------------------------------------------- blocks
 interface LessonStats {
   why: number;
@@ -420,6 +481,10 @@ function checkBlocks(where: string, blocks: Block[], stats: LessonStats) {
       case 'plot3d':
         stats.graphs++;
         checkPlot3D(w, b);
+        break;
+      case 'algo':
+        stats.graphs++;
+        checkAlgo(w, b);
         break;
       case 'theorem':
         checkInline(w + ' name', b.name);

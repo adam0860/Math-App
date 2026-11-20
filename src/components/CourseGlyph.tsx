@@ -13,6 +13,7 @@ const GLYPHS: Record<CourseId, { from: string; to: string; shape: 'hex' | 'circl
   orgo: { from: '#facc15', to: '#c2410c', shape: 'hex', text: 'C–H', size: 18 },
   stats: { from: '#2dd4bf', to: '#0e7490', shape: 'square', text: 'μσ', size: 20, italic: true },
   phys1: { from: '#f87171', to: '#b91c1c', shape: 'circle', text: 'F=ma', size: 14, italic: true },
+  dsa: { from: '#a3e635', to: '#3f6212', shape: 'square', text: '{ }', size: 20 },
   discrete: { from: '#a78bfa', to: '#4338ca', shape: 'circle', text: '∀∃', size: 20 },
 };
 

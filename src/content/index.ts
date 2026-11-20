@@ -6,6 +6,7 @@ import { calc2Course } from './calc2';
 import { calc3Course } from './calc3';
 import { linalgCourse } from './linalg';
 import { discreteCourse } from './discrete';
+import { dsaCourse } from './dsa';
 import { statsCourse } from './stats';
 import { phys1Course } from './phys1';
 import { chemCourse } from './chem';
@@ -14,7 +15,7 @@ import { orgoCourse } from './orgo';
 import { glossary } from './glossary';
 import { cheatSheets } from './cheatsheets';
 
-export const courses: Course[] = [algebraCourse, trigCourse, calc1Course, calc2Course, calc3Course, linalgCourse, discreteCourse, statsCourse, phys1Course, chemCourse, genchemCourse, orgoCourse];
+export const courses: Course[] = [algebraCourse, trigCourse, calc1Course, calc2Course, calc3Course, linalgCourse, discreteCourse, dsaCourse, statsCourse, phys1Course, chemCourse, genchemCourse, orgoCourse];
 
 /** Short label for a course id ("Calc I"), or "All courses" for shared glossary terms. */
 export function courseLabel(id: CourseId | 'all'): string {

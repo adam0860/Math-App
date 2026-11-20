@@ -88,6 +88,14 @@ const courseMeta = {
     description:
       'The first semester of calculus-based university physics: kinematics with derivatives and integrals, Newton’s laws, work and energy, momentum and collisions, rotation and angular momentum, gravitation and orbits, oscillations, waves and sound, and how game engines simulate all of it.',
   },
+  dsa: {
+    exportName: 'dsaCourse',
+    title: 'Data Structures and Algorithms',
+    short: 'DSA',
+    subtitle: 'The core CS course, in C++: structures, algorithms and how to analyze them',
+    description:
+      'The data structures and algorithms every programmer is expected to know, implemented in modern C++: arrays and memory, lists, stacks and queues, hashing, sorting and searching, trees and heaps, graph algorithms and pathfinding, greedy and dynamic programming, backtracking and string algorithms, NP-completeness, and the spatial and engine structures games are built on. Step through every algorithm as it runs.',
+  },
   discrete: {
     exportName: 'discreteCourse',
     title: 'Discrete Mathematics',
