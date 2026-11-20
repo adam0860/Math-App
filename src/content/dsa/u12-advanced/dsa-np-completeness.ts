@@ -212,7 +212,7 @@ worst approx/optimal ratio seen: 2.00 (guaranteed <= 2)`,
         },
         {
           type: 'p',
-          text: 'The first NP-complete problem needed a direct proof: the **Cook–Levin theorem** (1971) shows that [[dm-satisfiability|SAT]] is NP-complete by encoding any polynomial-time verifier\'s computation as a Boolean formula. Karp (1972) then reduced SAT to 21 more problems, and today there are thousands. NP-hard problems need not be in NP at all: optimization versions ("find the shortest tour") and even undecidable problems such as halting are NP-hard.',
+          text: 'The first NP-complete problem needed a direct proof: the **Cook–Levin theorem** (1971) shows that [[dm-satisfiability|SAT]] is NP-complete by encoding any polynomial-time verifier\'s computation as a Boolean formula. Karp (1972) then used reductions from SAT to prove 21 classic problems NP-complete (SAT among them), and today there are thousands. NP-hard problems need not be in NP at all: optimization versions ("find the shortest tour") and even undecidable problems such as halting are NP-hard.',
         },
         {
           type: 'table',

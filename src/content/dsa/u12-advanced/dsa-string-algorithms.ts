@@ -191,7 +191,7 @@ pi(ababaca) = 0 0 1 2 3 0 1`,
     // ------------------------------------------------------------------ 6
     {
       kind: 'error',
-      prompt: 'This failure-function code produces wrong values (and can read out of bounds). Tap the line with the bug.',
+      prompt: 'This failure-function code produces wrong values (and can loop forever). Tap the line with the bug.',
       lines: [
         '`std::vector<int> pi(m, 0);`',
         '`for (int i = 1, k = 0; i < m; ++i) {`',
@@ -201,7 +201,7 @@ pi(ababaca) = 0 0 1 2 3 0 1`,
         '`}`',
       ],
       errorLines: [3],
-      explanation: 'The fall-back must go to the longest border of the **matched part** $p[0..k-1]$, which is `pi[k - 1]`, not `pi[k]`. Using `pi[k]` looks at a prefix one character too long (and when $k = m - 1$ it reads $\\pi$ of a position not computed yet). Off-by-one errors between "length $k$" and "index $k - 1$" are the classic KMP bug; the fix is `k = pi[k - 1]`.',
+      explanation: 'The fall-back must go to the longest border of the **matched part** $p[0..k-1]$, which is `pi[k - 1]`, not `pi[k]`. Using `pi[k]` looks at a prefix one character too long, and since $\\pi[k]$ can equal $k$ it can loop forever: for `aab`, at $i = 2$ it sets $k = \\pi[1] = 1$ again and again. Off-by-one errors between "length $k$" and "index $k - 1$" are the classic KMP bug; the fix is `k = pi[k - 1]`.',
     },
     // ------------------------------------------------------------------ 7
     {
