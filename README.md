@@ -10,7 +10,7 @@ It is a sibling of C++ Forge and shares its engine.
 
 ![STEM Forge lesson with an interactive Taylor series graph](docs/screenshot-lesson.png)
 
-- **Twelve complete courses (401 lessons)**
+- **Thirteen complete courses (435 lessons)**
   - **College Algebra:** 10 units — numbers and exponents, polynomials and factoring,
     equations and inequalities, lines, systems and matrices, quadratics and complex
     numbers, functions, polynomial and rational functions, exponentials and logarithms,
@@ -43,6 +43,11 @@ It is a sibling of C++ Forge and shares its engine.
     optimization (Lagrange multipliers, gradient descent), double and triple integrals with
     change of variables, vector fields, line and surface integrals, and the theorems of Green,
     Stokes and Gauss — with rotatable 3D plots of every surface, curve and field.
+  - **Data Structures and Algorithms:** 13 units in C++20 — analysis and memory, lists,
+    stacks and queues, hashing, sorting and searching, trees, heaps, tries and range trees,
+    graph algorithms, shortest paths and A*, greedy algorithms and MSTs, dynamic
+    programming, backtracking and string algorithms, NP-completeness, and the spatial and
+    engine data structures games use. Step through every algorithm as it runs.
   - **Linear Algebra:** 8 units — vectors, dot and cross products, linear systems and row
     reduction, linear independence and transformations (rotations, shears, reflections),
     matrix algebra and the 4×4 homogeneous matrices game engines use, determinants, vector
@@ -155,7 +160,7 @@ A single React + TypeScript codebase (built with Vite) runs everywhere:
 src/
   content/            all course content as typed data (see docs/CONTENT_GUIDE.md)
     types.ts          the content model: lessons, blocks, graphs, questions, glossary, formula sheets
-    algebra/ trig/ calc1/ calc2/ calc3/ linalg/ discrete/ stats/ phys1/ chem/ genchem/ orgo/   one folder per unit: one file per lesson + unit glossary
+    algebra/ trig/ calc1/ calc2/ calc3/ linalg/ discrete/ dsa/ stats/ phys1/ chem/ genchem/ orgo/   one folder per unit: one file per lesson + unit glossary
     glossary/ cheatsheets/
   components/         KaTeX rendering, interactive graphs, derivations, rich text, code blocks…
   questions/          the seven interactive question types
