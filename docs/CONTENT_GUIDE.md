@@ -219,7 +219,7 @@ TeX is full of backslashes, so **every backslash must be doubled** in TS source:
         // graph view:
         nodeColors: [{ id: 'A', color: 'green' }], nodeNotes: [{ id: 'A', text: 'd=0' }],
         nodeLabels: [{ id: 'A', label: '42' }], hidden: ['E'],
-        edgeColors: [{ from: 'A', to: 'B', color: 'blue' }] },
+        edgeColors: [{ from: 'A', to: 'B', color: 'blue' }], hiddenEdges: [{ from: 'B', to: 'C' }] },
     ],
   }
   ```
